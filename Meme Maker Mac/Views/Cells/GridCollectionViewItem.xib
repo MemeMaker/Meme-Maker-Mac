@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GridCollectionViewItem" customModule="Meme_Maker_Mac" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-CG-ria">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="1Zm-oi-XPJ"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="6Ki-CG-ria" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="WBE-NV-OAF"/>
+                <constraint firstAttribute="trailing" secondItem="6Ki-CG-ria" secondAttribute="trailing" id="jPU-lb-j1A"/>
+                <constraint firstAttribute="bottom" secondItem="6Ki-CG-ria" secondAttribute="bottom" id="l7d-pF-0gt"/>
+                <constraint firstItem="6Ki-CG-ria" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="xLZ-eR-lof"/>
+            </constraints>
+            <point key="canvasLocation" x="351" y="450"/>
+        </customView>
+    </objects>
+</document>

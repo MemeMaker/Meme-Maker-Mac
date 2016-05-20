@@ -9,6 +9,8 @@
 import Cocoa
 
 class ViewController: NSViewController {
+	
+	@IBOutlet weak var collectionView: NSCollectionView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

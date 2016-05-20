@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AC81CEF274A00679BE2 /* AppDelegate.swift */; };
-		59490ACB1CEF274A00679BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490ACA1CEF274A00679BE2 /* ViewController.swift */; };
 		59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */; };
 		59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59490ACF1CEF274A00679BE2 /* Assets.xcassets */; };
 		59490AD31CEF274A00679BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59490AD11CEF274A00679BE2 /* Main.storyboard */; };
 		59490ADE1CEF274A00679BE2 /* Meme_Maker_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490ADD1CEF274A00679BE2 /* Meme_Maker_MacTests.swift */; };
 		59490AE91CEF274A00679BE2 /* Meme_Maker_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */; };
+		59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AFB1CEF282300679BE2 /* ViewController.swift */; };
+		59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AFD1CEF283100679BE2 /* WindowController.swift */; };
+		59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */; };
+		59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */; };
+		59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */; };
+		59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AC81CEF274A00679BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		59490ACA1CEF274A00679BE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Maker_Mac.xcdatamodel; sourceTree = "<group>"; };
 		59490ACF1CEF274A00679BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59490AD21CEF274A00679BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		59490AE41CEF274A00679BE2 /* Meme Maker MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_Maker_MacUITests.swift; sourceTree = "<group>"; };
 		59490AEA1CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59490AFB1CEF282300679BE2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
+		59490AFD1CEF283100679BE2 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = Controllers/WindowController.swift; sourceTree = "<group>"; };
+		59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridCollectionViewItem.swift; path = Views/Cells/GridCollectionViewItem.swift; sourceTree = "<group>"; };
+		59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GridCollectionViewItem.xib; path = Views/Cells/GridCollectionViewItem.xib; sourceTree = "<group>"; };
+		59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCollectionViewItel.swift; path = Views/Cells/ListCollectionViewItel.swift; sourceTree = "<group>"; };
+		59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListCollectionViewItel.xib; path = Views/Cells/ListCollectionViewItel.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +107,12 @@
 		59490AC71CEF274A00679BE2 /* Meme Maker Mac */ = {
 			isa = PBXGroup;
 			children = (
-				59490AC81CEF274A00679BE2 /* AppDelegate.swift */,
-				59490ACA1CEF274A00679BE2 /* ViewController.swift */,
+				59490AFA1CEF277A00679BE2 /* App Delegate */,
 				59490ACF1CEF274A00679BE2 /* Assets.xcassets */,
-				59490AD11CEF274A00679BE2 /* Main.storyboard */,
-				59490AD41CEF274A00679BE2 /* Info.plist */,
-				59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */,
+				59490AF81CEF276A00679BE2 /* Models */,
+				59490AF91CEF277100679BE2 /* Views */,
+				59490AF71CEF276600679BE2 /* Controllers */,
+				59490AF61CEF275E00679BE2 /* Supporting Files */,
 			);
 			path = "Meme Maker Mac";
 			sourceTree = "<group>";
@@ -123,6 +133,59 @@
 				59490AEA1CEF274A00679BE2 /* Info.plist */,
 			);
 			path = "Meme Maker MacUITests";
+			sourceTree = "<group>";
+		};
+		59490AF61CEF275E00679BE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				59490AD41CEF274A00679BE2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		59490AF71CEF276600679BE2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				59490AFD1CEF283100679BE2 /* WindowController.swift */,
+				59490AFB1CEF282300679BE2 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		59490AF81CEF276A00679BE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		59490AF91CEF277100679BE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59490AFF1CEF333900679BE2 /* Cells */,
+				59490AD11CEF274A00679BE2 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		59490AFA1CEF277A00679BE2 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				59490AC81CEF274A00679BE2 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		59490AFF1CEF333900679BE2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */,
+				59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */,
+				59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */,
+				59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */,
 				59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */,
 				59490AD31CEF274A00679BE2 /* Main.storyboard in Resources */,
+				59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59490ACB1CEF274A00679BE2 /* ViewController.swift in Sources */,
+				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
+				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
+				59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */,
 				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
+				59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */,
 				59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
