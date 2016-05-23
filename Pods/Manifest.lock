@@ -1,0 +1,10 @@
+PODS:
+  - SSZipArchive (1.1)
+
+DEPENDENCIES:
+  - SSZipArchive
+
+SPEC CHECKSUMS:
+  SSZipArchive: de3d215ab73f87db627f81f2ce24f1731e3886c3
+
+COCOAPODS: 0.39.0

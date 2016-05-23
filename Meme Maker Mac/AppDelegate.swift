@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SSZipArchive
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -15,10 +16,59 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// Insert code here to initialize your application
+		
+		
+		let manager = SettingsManager.sharedManager()
+		let timesLaunched = manager.getInteger(kSettingsTimesLaunched)
+		if (timesLaunched == 0) {
+			manager.setBool(false, key: kSettingsAutoDismiss)
+			manager.setBool(false, key: kSettingsResetSettingsOnLaunch)
+			manager.setBool(true, key: kSettingsContinuousEditing)
+			manager.setBool(true, key: kSettingsDarkMode)
+			manager.setBool(false, key: kSettingsUploadMemes)
+			manager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
+			manager.setObject("rank", key: kSettingsLastSortKey)
+			print("Unarchiving to \(getImagesFolder())")
+			SSZipArchive.unzipFileAtPath(NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
+			saveDefaultMemes()
+		}
+		manager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
+		if manager.getBool(kSettingsResetSettingsOnLaunch) {
+			let topAttr = XTextAttributes(savename: "topAttr")
+			topAttr.saveAttributes("topAttr")
+			topAttr.setDefault()
+			let bottomAttr = XTextAttributes(savename: "bottomAttr")
+			bottomAttr.setDefault()
+			bottomAttr.saveAttributes("bottomAttr")
+		}
+		if (SettingsManager.sharedManager().getInteger(kSettingsNumberOfElementsInGrid) < 3 || SettingsManager.sharedManager().getInteger(kSettingsNumberOfElementsInGrid) > 7) {
+			SettingsManager.sharedManager().setInteger(3, key: kSettingsNumberOfElementsInGrid)
+		}
+		if ("rank memeID name".containsString(SettingsManager.sharedManager().getObject(kSettingsLastSortKey) as! String)) {
+			SettingsManager.sharedManager().setObject("rank", key: kSettingsLastSortKey)
+		}
+		
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {
 		// Insert code here to tear down your application
+	}
+	
+	// MARK: - Utility
+	
+	func saveDefaultMemes() -> Void {
+		let data = NSData(contentsOfFile: NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "dat")!)
+		if (data != nil) {
+			do {
+				let jsonmemes = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+				let _ = XMeme.getAllMemesFromArray(jsonmemes as! NSArray, context: managedObjectContext)!
+				try managedObjectContext.save()
+			}
+			catch _ {
+				print("Unable to parse")
+				return
+			}
+		}
 	}
 
 	// MARK: - Core Data stack

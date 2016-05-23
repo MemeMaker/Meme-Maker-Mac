@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GridCollectionViewItem" customModule="Meme_Maker_Mac" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="6Ki-CG-ria" id="IYg-jd-HLK"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-CG-ria">
+                <imageView identifier="GridCollectionViewItem" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ki-CG-ria">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="1Zm-oi-XPJ"/>
                 </imageView>
@@ -29,5 +30,6 @@
             </constraints>
             <point key="canvasLocation" x="351" y="450"/>
         </customView>
+        <collectionViewItem id="8Ce-EU-bWn" customClass="GridCollectionViewItem" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
     </objects>
 </document>

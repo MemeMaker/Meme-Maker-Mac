@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="eGf-kz-IpK" id="O38-ly-FZe"/>
+                <outlet property="textField" destination="Myr-i1-D3g" id="iiL-Lu-BCM"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -40,5 +42,6 @@
                 <constraint firstItem="Myr-i1-D3g" firstAttribute="leading" secondItem="eGf-kz-IpK" secondAttribute="trailing" constant="8" id="u3T-MG-SX3"/>
             </constraints>
         </customView>
+        <collectionViewItem id="EdB-ri-uzO" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
     </objects>
 </document>
