@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController, NSCollectionViewDataSource, NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
+class ViewController: NSViewController {
 	
 	@IBOutlet weak var collectionView: NSCollectionView!
 	
@@ -16,10 +16,17 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 	var allMemes = NSMutableArray()
 	var fetchedMemes = NSMutableArray()
 	
+	var windowController: WindowController?
+	
 	var context: NSManagedObjectContext? = nil
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		if let windowController = NSApplication.sharedApplication().keyWindow?.windowController as? WindowController {
+			windowController.delegate = self
+			self.windowController = windowController
+		}
 		
 		configureCollectionView()
 		
@@ -27,6 +34,10 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 		context = appDelegate.managedObjectContext
 		
 		self.fetchLocalMemes()
+	
+		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.collectionView.reloadData()
+		}
 		
 	}
 	
@@ -68,8 +79,25 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 //		collectionView.layer?.backgroundColor = NSColor.blackColor().CGColor
 		collectionView.reloadData()
 	}
+	
+	override var representedObject: AnyObject? {
+		didSet {
+			// Update the view, if already loaded.
+		}
+	}
+	
+	func isGrid () -> Bool {
+		if let windowController = windowController {
+			return windowController.grid
+		}
+		return true
+	}
+	
+}
 
-	// MARK: - Collection view data source
+// MARK: - Collection view data source
+
+extension ViewController : NSCollectionViewDataSource {
 	
 	func numberOfSectionsInCollectionView(collectionView: NSCollectionView) -> Int {
 		return 1
@@ -81,8 +109,15 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 	
 	func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
 		
-		let item = collectionView.makeItemWithIdentifier("GridCollectionViewItem", forIndexPath: indexPath)
-		guard let collectionViewItem = item as? BaseCollectionViewItem else {return item}
+		// Change between list and grid!
+		var item = NSCollectionViewItem()
+		if isGrid() {
+			item = collectionView.makeItemWithIdentifier("GridCollectionViewItem", forIndexPath: indexPath)
+		}
+		else {
+			item = collectionView.makeItemWithIdentifier("ListCollectionViewItel", forIndexPath: indexPath)
+		}
+		guard let collectionViewItem = item as? BaseCollectionViewItem else { return item }
 		
 		let meme = allMemes.objectAtIndex(indexPath.item) as! XMeme
 		collectionViewItem.meme = meme
@@ -97,7 +132,11 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 		return item
 	}
 	
-	// MARK: - Collection view delegate
+}
+
+// MARK: - Collection view delegate
+
+extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
 	
 	func collectionView(collectionView: NSCollectionView, didSelectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
 		guard let indexPath = indexPaths.first else {return}
@@ -111,12 +150,36 @@ class ViewController: NSViewController, NSCollectionViewDataSource, NSCollection
 		(item as! BaseCollectionViewItem).setHighlight(false)
 	}
 	
-	
-	override var representedObject: AnyObject? {
-		didSet {
-			// Update the view, if already loaded.
+	func collectionView(collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> NSSize {
+		let width = collectionView.frame.size.width
+		if (isGrid()) {
+			var nr: CGFloat = 4
+			if width < 400 { nr = 3 }
+			else if width < 500 { nr = 4 }
+			else if width < 600 { nr = 5 }
+			else { nr = 6 }
+			let size = CGSizeMake(collectionView.frame.size.width/nr, collectionView.frame.size.width/nr)
+			return NSSizeFromCGSize(size)
 		}
+		return NSSizeFromCGSize(CGSizeMake(width, 60))
 	}
 	
 }
 
+// MARK: - Window controller delegate
+
+extension ViewController : WindowControllerDelegate {
+	
+	func windowController(windowController: NSWindowController, didToggleGridView: Bool) {
+		self.collectionView.reloadData()
+	}
+	
+	func windowController(windowController: NSWindowController, didSelectFontToolbar: Bool) {
+		
+	}
+	
+	func windowController(windowController: NSWindowController, didSelectColorToolbar: Bool) {
+		
+	}
+	
+}

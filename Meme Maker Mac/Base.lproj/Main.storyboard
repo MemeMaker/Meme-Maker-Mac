@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -655,9 +655,9 @@
                     <window key="window" title="Meme Maker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="195" y="240" width="741" height="480"/>
+                        <rect key="contentRect" x="195" y="240" width="1050" height="790"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="740" height="480"/>
+                        <value key="minSize" type="size" width="750" height="480"/>
                         <toolbar key="toolbar" implicitIdentifier="50592A73-7111-41BF-8FAB-08285A88A466" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0pm-9b-DiY">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="a5P-t8-Na1">
@@ -673,7 +673,7 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="NZr-HF-BMe"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="QMh-t8-6NE"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="zW3-fz-9Tp"/>
-                                <toolbarItem implicitItemIdentifier="D8D16064-A409-414F-A535-1B59DBC894F8" explicitItemIdentifier="GridTB" label="Grid" paletteLabel="Grid" tag="11" image="NSIconViewTemplate" id="KQg-QC-4vO">
+                                <toolbarItem implicitItemIdentifier="D8D16064-A409-414F-A535-1B59DBC894F8" explicitItemIdentifier="GridTB" label="Grid" paletteLabel="Grid" tag="11" image="list" id="KQg-QC-4vO">
                                     <connections>
                                         <action selector="gridViewToggleAction:" target="B8D-0N-5wS" id="4TM-gR-Q5S"/>
                                     </connections>
@@ -692,8 +692,9 @@
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="bKw-Mq-oy4" customClass="ViewController" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="74.5" y="340"/>
+            <point key="canvasLocation" x="74" y="498"/>
         </scene>
         <!--Meme Maker-->
         <scene sceneID="hIz-AP-VOD">
@@ -703,14 +704,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="480"/>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="480"/>
                                 <clipView key="contentView" id="nYQ-hn-LAp">
-                                    <rect key="frame" x="1" y="1" width="238" height="478"/>
+                                    <rect key="frame" x="1" y="1" width="286" height="478"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <collectionView selectable="YES" id="GW8-J4-ij2">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="478"/>
+                                        <collectionView selectable="YES" allowsEmptySelection="NO" id="GW8-J4-ij2">
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="478"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -721,17 +722,17 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="J7y-t0-qJR">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="6rr-Wb-vAg">
-                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <rect key="frame" x="-100" y="-100" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="1/3" id="DLi-b3-yXH"/>
+                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="2/5" id="DLi-b3-yXH"/>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SCM-jQ-Qd5"/>
                             <constraint firstAttribute="bottom" secondItem="JSe-qD-Vmw" secondAttribute="bottom" id="inp-jf-X7M"/>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="n9y-7q-LTk"/>
@@ -743,10 +744,10 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="995"/>
+            <point key="canvasLocation" x="74" y="1294"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSIconViewTemplate" width="10" height="10"/>
+        <image name="list" width="32" height="32"/>
     </resources>
 </document>

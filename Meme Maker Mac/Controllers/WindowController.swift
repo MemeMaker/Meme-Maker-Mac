@@ -8,25 +8,33 @@
 
 import Cocoa
 
+@objc protocol WindowControllerDelegate: class {
+	func windowController(windowController: NSWindowController, didToggleGridView: Bool) -> Void
+	func windowController(windowController: NSWindowController, didSelectFontToolbar: Bool) -> Void
+	func windowController(windowController: NSWindowController, didSelectColorToolbar: Bool) -> Void
+}
+
 class WindowController: NSWindowController {
+	
+	weak var delegate: WindowControllerDelegate?
+	
+	var grid: Bool = true
 
     override func windowDidLoad() {
 		
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-		
-//		if let window = window, let screen = NSScreen.mainScreen() {
-//			let screenRect = screen.visibleFrame
-//			window.setFrame(NSRect(x: screenRect.origin.x, y: screenRect.origin.y, width: screenRect.width/2.0, height: screenRect.height), display: true)
-//		}
 		
     }
 	
 	// MARK: - Toolbar actions
 	
 	@IBAction func gridViewToggleAction(sender: AnyObject) {
-		print("Toggling grid view!")
+		grid = !grid
+		if let toolbarItem = sender as? NSToolbarItem {
+			if (grid) { toolbarItem.image = NSImage(named: "list") }
+			else { toolbarItem.image = NSImage(named: "grid") }
+		}
+		delegate?.windowController(self, didToggleGridView: grid)
 	}
 	
 	@IBAction func fontToolbarAction(sender: AnyObject) {

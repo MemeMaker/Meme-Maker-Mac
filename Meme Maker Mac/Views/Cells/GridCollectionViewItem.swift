@@ -20,12 +20,12 @@ class GridCollectionViewItem: BaseCollectionViewItem {
 		// Customize layer
 		view.layer?.backgroundColor = NSColor.clearColor().CGColor
 		view.layer?.borderWidth = 0.0
-		view.layer?.borderColor = NSColor.lightGrayColor().CGColor
+		view.layer?.borderColor = NSColor.whiteColor().CGColor
 		
     }
 	
 	override func setHighlight(selected: Bool) {
-		view.layer?.borderWidth = selected ? 2.0 : 0.0
+		view.layer?.borderWidth = selected ? 3.0 : 0.0
 	}
 	
 }
