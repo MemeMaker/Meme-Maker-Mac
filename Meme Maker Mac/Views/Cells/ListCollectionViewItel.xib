@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target">
@@ -20,12 +20,15 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eGf-kz-IpK">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <rect key="frame" x="8" y="0.0" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eGf-kz-IpK" secondAttribute="height" multiplier="1:1" id="eLu-hO-2fZ"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="nmg-Ce-c3J"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Myr-i1-D3g">
-                    <rect key="frame" x="66" y="22" width="176" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="aC3-LT-jHs">
+                    <rect key="frame" x="78" y="22" width="156" height="17"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="aC3-LT-jHs">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -35,11 +38,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="eGf-kz-IpK" secondAttribute="bottom" id="Dne-uT-eyh"/>
                 <constraint firstItem="eGf-kz-IpK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="HUo-ev-Ido"/>
-                <constraint firstItem="eGf-kz-IpK" firstAttribute="width" secondItem="Hz6-mo-xeY" secondAttribute="width" multiplier="1/4" id="PKo-xd-UI3"/>
-                <constraint firstItem="eGf-kz-IpK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="QWD-St-eJ8"/>
+                <constraint firstItem="eGf-kz-IpK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="QWD-St-eJ8"/>
                 <constraint firstItem="Myr-i1-D3g" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="eQw-Xu-Cew"/>
-                <constraint firstAttribute="trailing" secondItem="Myr-i1-D3g" secondAttribute="trailing" id="qTB-mG-PVj"/>
-                <constraint firstItem="Myr-i1-D3g" firstAttribute="leading" secondItem="eGf-kz-IpK" secondAttribute="trailing" constant="8" id="u3T-MG-SX3"/>
+                <constraint firstAttribute="trailing" secondItem="Myr-i1-D3g" secondAttribute="trailing" constant="8" id="qTB-mG-PVj"/>
+                <constraint firstItem="Myr-i1-D3g" firstAttribute="leading" secondItem="eGf-kz-IpK" secondAttribute="trailing" constant="12" id="u3T-MG-SX3"/>
             </constraints>
         </customView>
         <collectionViewItem id="EdB-ri-uzO" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target"/>

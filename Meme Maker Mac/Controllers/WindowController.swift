@@ -6,17 +6,12 @@
 //  Copyright © 2016 avikantz. All rights reserved.
 //
 
+let kToggleViewModeNotification: String = "kToggleViewModeNotification"
+let kToggleViewModeKey: String = "kToggleViewModeKey"
+
 import Cocoa
 
-@objc protocol WindowControllerDelegate: class {
-	func windowController(windowController: NSWindowController, didToggleGridView: Bool) -> Void
-	func windowController(windowController: NSWindowController, didSelectFontToolbar: Bool) -> Void
-	func windowController(windowController: NSWindowController, didSelectColorToolbar: Bool) -> Void
-}
-
 class WindowController: NSWindowController {
-	
-	weak var delegate: WindowControllerDelegate?
 	
 	var grid: Bool = true
 
@@ -34,7 +29,7 @@ class WindowController: NSWindowController {
 			if (grid) { toolbarItem.image = NSImage(named: "list") }
 			else { toolbarItem.image = NSImage(named: "grid") }
 		}
-		delegate?.windowController(self, didToggleGridView: grid)
+		NSNotificationCenter.defaultCenter().postNotificationName(kToggleViewModeNotification, object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(bool: grid)])
 	}
 	
 	@IBAction func fontToolbarAction(sender: AnyObject) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -705,13 +705,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="480"/>
-                                <clipView key="contentView" id="nYQ-hn-LAp">
-                                    <rect key="frame" x="1" y="1" width="286" height="478"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="458"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="nYQ-hn-LAp">
+                                    <rect key="frame" x="1" y="1" width="286" height="456"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="GW8-J4-ij2">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="478"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="286" height="456"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -730,16 +730,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gqh-8l-ZPz">
+                                <rect key="frame" x="1" y="458" width="286" height="22"/>
+                                <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" sendsWholeSearchString="YES" maximumRecents="10" id="LGo-NO-tjv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </searchFieldCell>
+                                <connections>
+                                    <action selector="searchAction:" target="XfG-lQ-9wD" id="h5w-p7-AyH"/>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="30n-ej-Ive"/>
+                                </connections>
+                            </searchField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="2/5" id="DLi-b3-yXH"/>
-                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="SCM-jQ-Qd5"/>
+                            <constraint firstItem="Gqh-8l-ZPz" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="NOE-Mj-Qha"/>
+                            <constraint firstItem="Gqh-8l-ZPz" firstAttribute="trailing" secondItem="GW8-J4-ij2" secondAttribute="trailing" id="W9l-9L-o8H"/>
+                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="top" secondItem="Gqh-8l-ZPz" secondAttribute="bottom" id="axf-S9-C48"/>
+                            <constraint firstItem="Gqh-8l-ZPz" firstAttribute="leading" secondItem="GW8-J4-ij2" secondAttribute="leading" id="djs-a0-KcE"/>
                             <constraint firstAttribute="bottom" secondItem="JSe-qD-Vmw" secondAttribute="bottom" id="inp-jf-X7M"/>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="n9y-7q-LTk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionScrollView" destination="JSe-qD-Vmw" id="Qlx-Qk-7Fw"/>
                         <outlet property="collectionView" destination="GW8-J4-ij2" id="n4J-dk-X0y"/>
+                        <outlet property="searchField" destination="Gqh-8l-ZPz" id="qMn-Nk-mUl"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

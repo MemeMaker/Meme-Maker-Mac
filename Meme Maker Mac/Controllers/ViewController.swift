@@ -11,23 +11,20 @@ import Cocoa
 class ViewController: NSViewController {
 	
 	@IBOutlet weak var collectionView: NSCollectionView!
+	@IBOutlet weak var collectionScrollView: NSScrollView!
 	
 	var memes = NSMutableArray()
 	var allMemes = NSMutableArray()
-	var fetchedMemes = NSMutableArray()
-	
-	var windowController: WindowController?
 	
 	var context: NSManagedObjectContext? = nil
+	
+	@IBOutlet weak var searchField: NSSearchField!
+	
+	private var gridMode: Bool = true;
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		if let windowController = NSApplication.sharedApplication().keyWindow?.windowController as? WindowController {
-			windowController.delegate = self
-			self.windowController = windowController
-		}
-		
+	
 		configureCollectionView()
 		
 		let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
@@ -38,6 +35,16 @@ class ViewController: NSViewController {
 		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			self.collectionView.reloadData()
 		}
+		
+		NSNotificationCenter.defaultCenter().addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
+			let dict = notificaton.userInfo
+			let mode = dict![kToggleViewModeKey] as! NSNumber
+			self.gridMode = mode.boolValue
+			self.collectionView.reloadData()
+		}
+		
+		collectionScrollView.wantsLayer = true
+		collectionScrollView.layer?.cornerRadius = 8
 		
 	}
 	
@@ -58,13 +65,7 @@ class ViewController: NSViewController {
 			print("Error in fetching.")
 		}
 		
-		self.collectionView.reloadData()
-		
-//		memesPerRow = SettingsManager.sharedManager().getInteger(kSettingsNumberOfElementsInGrid)
-//		isListView = SettingsManager.sharedManager().getBool(kSettingsViewModeIsList)
-//		updateCollectionViewCells()
-//		
-//		self.filterMemesWithSearchText(self.searchBar.text!)
+		self.filterMemesWithSearchText(self.searchField.stringValue)
 	}
 	
 	private func configureCollectionView() {
@@ -75,22 +76,13 @@ class ViewController: NSViewController {
 		flowLayout.minimumInteritemSpacing = 0
 		flowLayout.minimumLineSpacing = 0
 		collectionView.collectionViewLayout = flowLayout
-//		collectionView.wantsLayer = true
-//		collectionView.layer?.backgroundColor = NSColor.blackColor().CGColor
 		collectionView.reloadData()
-	}
-	
-	override var representedObject: AnyObject? {
-		didSet {
-			// Update the view, if already loaded.
-		}
+		collectionView.wantsLayer = true
+		collectionView.layer?.cornerRadius = 4
 	}
 	
 	func isGrid () -> Bool {
-		if let windowController = windowController {
-			return windowController.grid
-		}
-		return true
+		return gridMode
 	}
 	
 }
@@ -104,7 +96,7 @@ extension ViewController : NSCollectionViewDataSource {
 	}
 	
 	func collectionView(collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-		return allMemes.count
+		return memes.count
 	}
 	
 	func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
@@ -119,7 +111,11 @@ extension ViewController : NSCollectionViewDataSource {
 		}
 		guard let collectionViewItem = item as? BaseCollectionViewItem else { return item }
 		
-		let meme = allMemes.objectAtIndex(indexPath.item) as! XMeme
+		if !isGrid() {
+			
+		}
+		
+		let meme = memes.objectAtIndex(indexPath.item) as! XMeme
 		collectionViewItem.meme = meme
 		
 		if let selectedIndexPath = collectionView.selectionIndexPaths.first where selectedIndexPath == indexPath {
@@ -154,9 +150,9 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 		let width = collectionView.frame.size.width
 		if (isGrid()) {
 			var nr: CGFloat = 4
-			if width < 400 { nr = 3 }
-			else if width < 500 { nr = 4 }
-			else if width < 600 { nr = 5 }
+			if width < 300 { nr = 3 }
+			else if width < 400 { nr = 4 }
+			else if width < 500 { nr = 5 }
 			else { nr = 6 }
 			let size = CGSizeMake(collectionView.frame.size.width/nr, collectionView.frame.size.width/nr)
 			return NSSizeFromCGSize(size)
@@ -166,20 +162,18 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 	
 }
 
-// MARK: - Window controller delegate
-
-extension ViewController : WindowControllerDelegate {
+extension ViewController: NSSearchFieldDelegate {
 	
-	func windowController(windowController: NSWindowController, didToggleGridView: Bool) {
-		self.collectionView.reloadData()
+	@IBAction func searchAction(sender: AnyObject) {
+		self.filterMemesWithSearchText((sender as! NSSearchField).stringValue)
 	}
 	
-	func windowController(windowController: NSWindowController, didSelectFontToolbar: Bool) {
-		
-	}
-	
-	func windowController(windowController: NSWindowController, didSelectColorToolbar: Bool) {
-		
+	func filterMemesWithSearchText(searchText: String!) {
+		memes = allMemes.mutableCopy() as! NSMutableArray
+		if (searchText.characters.count > 0) {
+			memes.filterUsingPredicate(NSPredicate(format: "name contains[cd] %@ OR tags contains[cd] %@", searchText, searchText))
+		}
+		collectionView.reloadData()
 	}
 	
 }
