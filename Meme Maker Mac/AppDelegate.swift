@@ -17,23 +17,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// Insert code here to initialize your application
 		
-		
-		let manager = SettingsManager.sharedManager()
-		let timesLaunched = manager.getInteger(kSettingsTimesLaunched)
+		let timesLaunched = SettingsManager.getInteger(kSettingsTimesLaunched)
 		if (timesLaunched == 0) {
-			manager.setBool(false, key: kSettingsAutoDismiss)
-			manager.setBool(false, key: kSettingsResetSettingsOnLaunch)
-			manager.setBool(true, key: kSettingsContinuousEditing)
-			manager.setBool(true, key: kSettingsDarkMode)
-			manager.setBool(false, key: kSettingsUploadMemes)
-			manager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
-			manager.setObject("rank", key: kSettingsLastSortKey)
+			SettingsManager.setBool(false, key: kSettingsAutoDismiss)
+			SettingsManager.setBool(false, key: kSettingsResetSettingsOnLaunch)
+			SettingsManager.setBool(true, key: kSettingsContinuousEditing)
+			SettingsManager.setBool(true, key: kSettingsDarkMode)
+			SettingsManager.setBool(false, key: kSettingsUploadMemes)
+			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
+			SettingsManager.setObject("rank", key: kSettingsLastSortKey)
 			print("Unarchiving to \(getImagesFolder())")
 			SSZipArchive.unzipFileAtPath(NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
 			saveDefaultMemes()
 		}
-		manager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
-		if manager.getBool(kSettingsResetSettingsOnLaunch) {
+		SettingsManager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
+		if SettingsManager.getBool(kSettingsResetSettingsOnLaunch) {
 			let topAttr = XTextAttributes(savename: "topAttr")
 			topAttr.saveAttributes("topAttr")
 			topAttr.setDefault()
@@ -41,11 +39,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			bottomAttr.setDefault()
 			bottomAttr.saveAttributes("bottomAttr")
 		}
-		if (SettingsManager.sharedManager().getInteger(kSettingsNumberOfElementsInGrid) < 3 || SettingsManager.sharedManager().getInteger(kSettingsNumberOfElementsInGrid) > 7) {
-			SettingsManager.sharedManager().setInteger(3, key: kSettingsNumberOfElementsInGrid)
+		if (SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) < 3 || SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) > 7) {
+			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
 		}
-		if ("rank memeID name".containsString(SettingsManager.sharedManager().getObject(kSettingsLastSortKey) as! String)) {
-			SettingsManager.sharedManager().setObject("rank", key: kSettingsLastSortKey)
+		if ("rank memeID name".containsString(SettingsManager.getObject(kSettingsLastSortKey) as! String)) {
+			SettingsManager.setObject("rank", key: kSettingsLastSortKey)
 		}
 		
 	}
@@ -88,7 +86,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
 	    // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.) This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-	    let fileManager = NSFileManager.defaultManager()
+	    let fileSettingsManager = NSFileManager.defaultManager()
 	    var failError: NSError? = nil
 	    var shouldFail = false
 	    var failureReason = "There was an error creating or loading the application's saved data."
@@ -104,7 +102,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	        let nserror = error as NSError
 	        if nserror.code == NSFileReadNoSuchFileError {
 	            do {
-	                try fileManager.createDirectoryAtPath(self.applicationDocumentsDirectory.path!, withIntermediateDirectories: true, attributes: nil)
+	                try fileSettingsManager.createDirectoryAtPath(self.applicationDocumentsDirectory.path!, withIntermediateDirectories: true, attributes: nil)
 	            } catch {
 	                failError = nserror
 	            }
@@ -166,8 +164,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	    }
 	}
 
-	func windowWillReturnUndoManager(window: NSWindow) -> NSUndoManager? {
-	    // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
+	func windowWillReturnUndoSettingsManager(window: NSWindow) -> NSUndoManager? {
+	    // Returns the NSUndoSettingsManager for the application. In this case, the SettingsManager returned is that of the managed object context for the application.
 	    return managedObjectContext.undoManager
 	}
 

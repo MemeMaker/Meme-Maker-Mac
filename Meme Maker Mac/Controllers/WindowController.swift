@@ -13,11 +13,22 @@ import Cocoa
 
 class WindowController: NSWindowController {
 	
-	var grid: Bool = true
+	@IBOutlet weak var gridToolBarItem: NSToolbarItem!
+	
+	var grid: Bool = false {
+		didSet {
+			SettingsManager.setBool(grid, key: kSettingsViewModeIsGrid)
+			NSNotificationCenter.defaultCenter().postNotificationName(kToggleViewModeNotification, object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(bool: grid)])
+			if (grid) { gridToolBarItem.image = NSImage(named: "list") }
+			else { gridToolBarItem.image = NSImage(named: "grid") }
+		}
+	}
 
     override func windowDidLoad() {
 		
         super.windowDidLoad()
+		
+		grid = SettingsManager.getBool(kSettingsViewModeIsGrid)
 		
     }
 	
@@ -25,11 +36,6 @@ class WindowController: NSWindowController {
 	
 	@IBAction func gridViewToggleAction(sender: AnyObject) {
 		grid = !grid
-		if let toolbarItem = sender as? NSToolbarItem {
-			if (grid) { toolbarItem.image = NSImage(named: "list") }
-			else { toolbarItem.image = NSImage(named: "grid") }
-		}
-		NSNotificationCenter.defaultCenter().postNotificationName(kToggleViewModeNotification, object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(bool: grid)])
 	}
 	
 	@IBAction func fontToolbarAction(sender: AnyObject) {

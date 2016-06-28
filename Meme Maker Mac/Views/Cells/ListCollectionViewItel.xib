@@ -9,7 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="eGf-kz-IpK" id="O38-ly-FZe"/>
-                <outlet property="textField" destination="Myr-i1-D3g" id="iiL-Lu-BCM"/>
+                <outlet property="textField" destination="Xxa-43-f7W" id="D7V-Be-V47"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -26,9 +26,9 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="nmg-Ce-c3J"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Myr-i1-D3g">
-                    <rect key="frame" x="78" y="22" width="156" height="17"/>
-                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Label" id="aC3-LT-jHs">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Xxa-43-f7W">
+                    <rect key="frame" x="74" y="22" width="160" height="17"/>
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Multiline Label" id="lFP-jV-Pem">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -37,11 +37,11 @@
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="eGf-kz-IpK" secondAttribute="bottom" id="Dne-uT-eyh"/>
+                <constraint firstAttribute="trailing" secondItem="Xxa-43-f7W" secondAttribute="trailing" constant="8" id="Fcy-GF-CRa"/>
                 <constraint firstItem="eGf-kz-IpK" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="HUo-ev-Ido"/>
                 <constraint firstItem="eGf-kz-IpK" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="8" id="QWD-St-eJ8"/>
-                <constraint firstItem="Myr-i1-D3g" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="eQw-Xu-Cew"/>
-                <constraint firstAttribute="trailing" secondItem="Myr-i1-D3g" secondAttribute="trailing" constant="8" id="qTB-mG-PVj"/>
-                <constraint firstItem="Myr-i1-D3g" firstAttribute="leading" secondItem="eGf-kz-IpK" secondAttribute="trailing" constant="12" id="u3T-MG-SX3"/>
+                <constraint firstItem="Xxa-43-f7W" firstAttribute="centerY" secondItem="eGf-kz-IpK" secondAttribute="centerY" id="alt-HE-Yhg"/>
+                <constraint firstItem="Xxa-43-f7W" firstAttribute="leading" secondItem="eGf-kz-IpK" secondAttribute="trailing" constant="8" id="g7f-8d-vWx"/>
             </constraints>
         </customView>
         <collectionViewItem id="EdB-ri-uzO" customClass="ListCollectionViewItel" customModule="Meme_Maker_Mac" customModuleProvider="target"/>

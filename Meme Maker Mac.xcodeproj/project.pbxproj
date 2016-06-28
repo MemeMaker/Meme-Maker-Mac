@@ -19,6 +19,7 @@
 		59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */; };
 		59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */; };
 		59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */; };
+		5973F15C1D22418000080706 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973F15B1D22418000080706 /* EditorViewController.swift */; };
 		59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */; };
 		59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C91CF3199400C39BCF /* XMeme.swift */; };
 		59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */; };
@@ -66,6 +67,7 @@
 		59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GridCollectionViewItem.xib; path = Views/Cells/GridCollectionViewItem.xib; sourceTree = "<group>"; };
 		59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCollectionViewItel.swift; path = Views/Cells/ListCollectionViewItel.swift; sourceTree = "<group>"; };
 		59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListCollectionViewItel.xib; path = Views/Cells/ListCollectionViewItel.xib; sourceTree = "<group>"; };
+		5973F15B1D22418000080706 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
 		59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Meme Maker Mac.entitlements"; sourceTree = "<group>"; };
 		59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewItem.swift; path = Views/Cells/BaseCollectionViewItem.swift; sourceTree = "<group>"; };
 		59FA74C91CF3199400C39BCF /* XMeme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMeme.swift; path = Models/XMeme.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				59490AFD1CEF283100679BE2 /* WindowController.swift */,
 				59490AFB1CEF282300679BE2 /* ViewController.swift */,
+				5973F15B1D22418000080706 /* EditorViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */,
 				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
 				59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */,
+				5973F15C1D22418000080706 /* EditorViewController.swift in Sources */,
 				59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */,
 				59FA74DD1CF31C0F00C39BCF /* SettingsManager.swift in Sources */,
 				59FA74D21CF3199400C39BCF /* XTextAttributes.swift in Sources */,

@@ -14,7 +14,7 @@ let kSettingsAutoDismiss			= "kAutoDismiss"
 let kSettingsUploadMemes			= "kEnableMemeUpload"
 let kSettingsResetSettingsOnLaunch	= "kResetSettingsOnLaunch"
 let kSettingsDarkMode				= "kDarkMode"
-let kSettingsViewModeIsList			= "kMemeListViewModeIsList"
+let kSettingsViewModeIsGrid			= "kMemeListViewModeIsGrid"
 let kSettingsLastSortKey			= "kLastSortOrderKey"
 let kSettingsNumberOfElementsInGrid	= "kNumberOfElementsInGrid"
 
@@ -33,67 +33,61 @@ func updateGlobalTheme () -> Void {
 }
 
 func isDarkMode() -> Bool {
-	return SettingsManager.sharedManager().getBool(kSettingsDarkMode)
+	return SettingsManager.getBool(kSettingsDarkMode)
 }
 
 class SettingsManager: NSObject {
 
 	// MARK:- Shared Instance
 	
-	private static let sharedInstance = SettingsManager()
-	
-	private let defaults = NSUserDefaults.standardUserDefaults()
-	
-	class func sharedManager () -> SettingsManager {
-		return sharedInstance
-	}
+	private static let defaults = NSUserDefaults.standardUserDefaults()
 	
 	// MARK:- Save and fetch stuff
 	
-	func setObject(object: AnyObject, key: String) {
+	class func setObject(object: AnyObject, key: String) {
 		defaults.setObject(object, forKey: key)
 	}
 	
-	func getObject(key: String) -> AnyObject? {
+	class func getObject(key: String) -> AnyObject? {
 		return defaults.objectForKey(key)
 	}
 	
-	func setBool(bool: Bool, key: String) {
+	class func setBool(bool: Bool, key: String) {
 		defaults.setBool(bool, forKey: key)
 	}
 	
-	func getBool(key: String) -> Bool {
+	class func getBool(key: String) -> Bool {
 		return defaults.boolForKey(key)
 	}
 	
-	func setInteger(value: Int, key: String) {
+	class func setInteger(value: Int, key: String) {
 		defaults.setInteger(value, forKey: key)
 	}
 	
-	func getInteger(key: String) -> Int {
+	class func getInteger(key: String) -> Int {
 		return defaults.integerForKey(key)
 	}
 	
-	func setFloat(value: Float, key: String) {
+	class func setFloat(value: Float, key: String) {
 		defaults.setFloat(value, forKey: key)
 	}
 	
-	func getFloat(key: String) -> Float {
+	class func getFloat(key: String) -> Float {
 		return defaults.floatForKey(key)
 	}
 	
-	func deleteObject(key: String) {
+	class func deleteObject(key: String) {
 		defaults.removeObjectForKey(key)
 	}
 	
-	func saveLastUpdateDate() -> Void {
+	class func saveLastUpdateDate() -> Void {
 		let formatter = NSDateFormatter()
 		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 		let date = formatter.stringFromDate(NSDate())
 		defaults.setObject(date, forKey: "lastUpdateDate")
 	}
 	
-	func getLastUpdateDate() -> NSDate {
+	class func getLastUpdateDate() -> NSDate {
 		if (defaults.objectForKey("lastUpdateDate") != nil) {
 			let dateString = "\(defaults.objectForKey("lastUpdateDate") as! String)"
 			let formatter = NSDateFormatter()

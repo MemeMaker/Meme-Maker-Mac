@@ -13,6 +13,8 @@ class ViewController: NSViewController {
 	@IBOutlet weak var collectionView: NSCollectionView!
 	@IBOutlet weak var collectionScrollView: NSScrollView!
 	
+	var editorVC: EditorViewController!
+	
 	var memes = NSMutableArray()
 	var allMemes = NSMutableArray()
 	
@@ -43,14 +45,11 @@ class ViewController: NSViewController {
 			self.collectionView.reloadData()
 		}
 		
-		collectionScrollView.wantsLayer = true
-		collectionScrollView.layer?.cornerRadius = 8
-		
 	}
 	
 	func fetchLocalMemes() -> Void {
 		let request = NSFetchRequest(entityName: "XMeme")
-		if let lastSortKey = SettingsManager.sharedManager().getObject(kSettingsLastSortKey) {
+		if let lastSortKey = SettingsManager.getObject(kSettingsLastSortKey) {
 			request.sortDescriptors = [NSSortDescriptor.init(key: lastSortKey as? String, ascending: true)]
 		}
 		else {
@@ -79,10 +78,21 @@ class ViewController: NSViewController {
 		collectionView.reloadData()
 		collectionView.wantsLayer = true
 		collectionView.layer?.cornerRadius = 4
+		collectionScrollView.wantsLayer = true
+		collectionScrollView.layer?.cornerRadius = 4
 	}
 	
 	func isGrid () -> Bool {
 		return gridMode
+	}
+	
+	// MARK: - Navigation
+	
+	override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+		if (segue.identifier == "editorSegue") {
+			guard let editorVC = segue.destinationController  as? EditorViewController else { return }
+			self.editorVC = editorVC
+		}
 	}
 	
 }
@@ -112,7 +122,7 @@ extension ViewController : NSCollectionViewDataSource {
 		guard let collectionViewItem = item as? BaseCollectionViewItem else { return item }
 		
 		if !isGrid() {
-			
+			collectionViewItem.gray = (indexPath.item % 2 == 1)
 		}
 		
 		let meme = memes.objectAtIndex(indexPath.item) as! XMeme
@@ -135,14 +145,16 @@ extension ViewController : NSCollectionViewDataSource {
 extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
 	
 	func collectionView(collectionView: NSCollectionView, didSelectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
-		guard let indexPath = indexPaths.first else {return}
-		guard let item = collectionView.itemAtIndexPath(indexPath) else {return}
+		guard let indexPath = indexPaths.first else { return }
+		guard let item = collectionView.itemAtIndexPath(indexPath) else { return }
 		(item as! BaseCollectionViewItem).setHighlight(true)
+		guard let meme = memes[indexPath.item] as? XMeme else { return }
+		self.editorVC.meme = meme
 	}
 	
 	func collectionView(collectionView: NSCollectionView, didDeselectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
-		guard let indexPath = indexPaths.first else {return}
-		guard let item = collectionView.itemAtIndexPath(indexPath) else {return}
+		guard let indexPath = indexPaths.first else { return }
+		guard let item = collectionView.itemAtIndexPath(indexPath) else { return }
 		(item as! BaseCollectionViewItem).setHighlight(false)
 	}
 	

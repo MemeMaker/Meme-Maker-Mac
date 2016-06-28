@@ -34,6 +34,16 @@ class BaseCollectionViewItem: NSCollectionViewItem {
 		}
 	}
 	
+	var gray: Bool = false {
+		didSet {
+			if gray {
+				self.view.layer?.backgroundColor = NSColor.controlHighlightColor().CGColor
+			} else {
+				self.view.layer?.backgroundColor = NSColor.whiteColor().CGColor
+			}
+		}
+	}
+	
 	func squareImageFromImage(image: NSImage) -> NSImage {
 		
 		let minwh = Double(min(image.size.width, image.size.height))
@@ -88,6 +98,8 @@ class BaseCollectionViewItem: NSCollectionViewItem {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		
+		self.view.wantsLayer = true
     }
     
 }

@@ -655,7 +655,7 @@
                     <window key="window" title="Meme Maker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="195" y="240" width="1050" height="790"/>
+                        <rect key="contentRect" x="240" y="240" width="750" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="750" height="480"/>
                         <toolbar key="toolbar" implicitIdentifier="50592A73-7111-41BF-8FAB-08285A88A466" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0pm-9b-DiY">
@@ -688,6 +688,7 @@
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="gridToolBarItem" destination="KQg-QC-4vO" id="xp6-ga-WQq"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
@@ -704,14 +705,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="458"/>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="nYQ-hn-LAp">
-                                    <rect key="frame" x="1" y="1" width="286" height="456"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="GW8-J4-ij2">
-                                            <rect key="frame" x="0.0" y="0.0" width="286" height="456"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -731,7 +732,7 @@
                                 </scroller>
                             </scrollView>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gqh-8l-ZPz">
-                                <rect key="frame" x="1" y="458" width="286" height="22"/>
+                                <rect key="frame" x="0.0" y="458" width="240" height="22"/>
                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" sendsWholeSearchString="YES" maximumRecents="10" id="LGo-NO-tjv">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -742,15 +743,25 @@
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="30n-ej-Ive"/>
                                 </connections>
                             </searchField>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="aJm-2p-fb5">
+                                <rect key="frame" x="240" y="0.0" width="480" height="480"/>
+                                <connections>
+                                    <segue destination="qyR-yM-Rrq" kind="embed" identifier="editorSegue" id="OIe-Rd-MIh"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="2/5" id="DLi-b3-yXH"/>
+                            <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="1/3" id="DLi-b3-yXH"/>
+                            <constraint firstAttribute="trailing" secondItem="aJm-2p-fb5" secondAttribute="trailing" id="Ddl-yG-fQ7"/>
                             <constraint firstItem="Gqh-8l-ZPz" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="NOE-Mj-Qha"/>
                             <constraint firstItem="Gqh-8l-ZPz" firstAttribute="trailing" secondItem="GW8-J4-ij2" secondAttribute="trailing" id="W9l-9L-o8H"/>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="top" secondItem="Gqh-8l-ZPz" secondAttribute="bottom" id="axf-S9-C48"/>
                             <constraint firstItem="Gqh-8l-ZPz" firstAttribute="leading" secondItem="GW8-J4-ij2" secondAttribute="leading" id="djs-a0-KcE"/>
+                            <constraint firstItem="aJm-2p-fb5" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ess-wT-BaR"/>
+                            <constraint firstItem="aJm-2p-fb5" firstAttribute="leading" secondItem="JSe-qD-Vmw" secondAttribute="trailing" id="hpC-ZG-HI6"/>
                             <constraint firstAttribute="bottom" secondItem="JSe-qD-Vmw" secondAttribute="bottom" id="inp-jf-X7M"/>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="n9y-7q-LTk"/>
+                            <constraint firstAttribute="bottom" secondItem="aJm-2p-fb5" secondAttribute="bottom" id="sqj-7r-W2H"/>
                         </constraints>
                     </view>
                     <connections>
@@ -761,7 +772,77 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1294"/>
+            <point key="canvasLocation" x="74" y="1163"/>
+        </scene>
+        <!--Editor View Controller-->
+        <scene sceneID="6Sn-cT-nRc">
+            <objects>
+                <viewController id="qyR-yM-Rrq" customClass="EditorViewController" customModule="Meme_Maker_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="lkP-n5-8n5">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
+                                <rect key="frame" x="20" y="20" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" drawsBackground="YES" id="79j-o4-dsV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
+                                    <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
+                                <rect key="frame" x="20" y="436" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5xz-us-7jh"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Top text" drawsBackground="YES" id="7I6-dd-Otk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="LGn-cA-834"/>
+                                    <outlet property="nextKeyView" destination="Bdl-en-70C" id="WUi-wu-w3M"/>
+                                </connections>
+                            </textField>
+                            <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Vi-KWg">
+                                <rect key="frame" x="320" y="240" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="360" id="O9q-PG-GZM"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="Q0s-X5-ffz"/>
+                                </constraints>
+                                <imageCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="cRV-Yk-dBd"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Bdl-en-70C" secondAttribute="bottom" constant="20" id="1jM-Jq-Yyb"/>
+                            <constraint firstItem="Q3a-3w-ITS" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="9JZ-6Q-fOs"/>
+                            <constraint firstAttribute="trailing" secondItem="Q3a-3w-ITS" secondAttribute="trailing" constant="20" id="BeD-1J-fHa"/>
+                            <constraint firstAttribute="trailing" secondItem="Bdl-en-70C" secondAttribute="trailing" constant="20" id="CEg-jW-pLt"/>
+                            <constraint firstItem="Q3a-3w-ITS" firstAttribute="top" secondItem="lkP-n5-8n5" secondAttribute="top" constant="20" id="IL6-0d-jH8"/>
+                            <constraint firstItem="NaU-Vi-KWg" firstAttribute="centerX" secondItem="lkP-n5-8n5" secondAttribute="centerX" id="WEF-dy-jDW"/>
+                            <constraint firstItem="Bdl-en-70C" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="aOA-p0-POV"/>
+                            <constraint firstItem="NaU-Vi-KWg" firstAttribute="centerY" secondItem="lkP-n5-8n5" secondAttribute="centerY" id="ydx-Zm-bZA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomField" destination="Bdl-en-70C" id="c1I-cg-aDo"/>
+                        <outlet property="imageView" destination="NaU-Vi-KWg" id="P2m-kh-5N4"/>
+                        <outlet property="imageViewHeightConstraint" destination="O9q-PG-GZM" id="Rhx-mT-AQJ"/>
+                        <outlet property="imageViewWidthConstraint" destination="Q0s-X5-ffz" id="OYE-d6-yq9"/>
+                        <outlet property="topField" destination="Q3a-3w-ITS" id="ghx-ky-HV4"/>
+                    </connections>
+                </viewController>
+                <customObject id="a0M-w0-Wfy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="1841"/>
         </scene>
     </scenes>
     <resources>
