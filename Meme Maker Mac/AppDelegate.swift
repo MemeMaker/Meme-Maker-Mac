@@ -31,14 +31,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			saveDefaultMemes()
 		}
 		SettingsManager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
-		if SettingsManager.getBool(kSettingsResetSettingsOnLaunch) {
+//		if SettingsManager.getBool(kSettingsResetSettingsOnLaunch) {
 			let topAttr = XTextAttributes(savename: "topAttr")
-			topAttr.saveAttributes("topAttr")
 			topAttr.setDefault()
+			topAttr.saveAttributes("topAttr")
 			let bottomAttr = XTextAttributes(savename: "bottomAttr")
 			bottomAttr.setDefault()
 			bottomAttr.saveAttributes("bottomAttr")
-		}
+//		}
 		if (SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) < 3 || SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) > 7) {
 			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
 		}

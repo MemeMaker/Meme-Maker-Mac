@@ -14,8 +14,8 @@ class XTextAttributes: NSObject {
 	var text: NSString! = ""
 	var uppercase: Bool = true
 
-	var rect: NSRect = CGRectZero
-	var offset: NSPoint = CGPointZero
+	var rect: CGRect = CGRectZero
+	var offset: CGPoint = CGPointZero
 	
 	var fontSize: CGFloat = 44
 	var font: NSFont = NSFont(name: "Impact", size: 44)!
@@ -60,11 +60,13 @@ class XTextAttributes: NSObject {
 				let fontName = dict["fontName"] as! String
 				font = NSFont(name: fontName, size: fontSize)!
 				
-				let textRGB =  NSDictionary(dictionary: dict["textColorRGB"] as! Dictionary)
-				textColor = NSColor(red: textRGB["red"] as! CGFloat, green: textRGB["green"] as! CGFloat, blue: textRGB["blue"] as! CGFloat, alpha: 1)
+				if let textRGB = dict["textColorRGB"] as? [String: AnyObject] {
+					textColor = NSColor(red: textRGB["red"] as! CGFloat, green: textRGB["green"] as! CGFloat, blue: textRGB["blue"] as! CGFloat, alpha: 1)
+				}
 				
-				let outRGB = dict["outColorRGB"] as! NSDictionary
-				outlineColor = NSColor(red: outRGB["red"] as! CGFloat, green: outRGB["green"] as! CGFloat, blue: outRGB["blue"] as! CGFloat, alpha: 1)
+				if let outRGB = dict["outColorRGB"] as? [String: AnyObject] {
+					outlineColor = NSColor(red: outRGB["red"] as! CGFloat, green: outRGB["green"] as! CGFloat, blue: outRGB["blue"] as! CGFloat, alpha: 1)
+				}
 				
 				let align = dict["alignment"] as! Int
 				switch align {
@@ -102,11 +104,15 @@ class XTextAttributes: NSObject {
 		dict["fontSize"] = fontSizeNum
 		dict["fontName"] = fontName
 		
-		let textRGB = ["red": textColor.redComponent, "green": textColor.greenComponent, "blue": textColor.blueComponent]
-		dict["textColorRGB"] = textRGB
+		if let ntextColor = textColor.colorUsingColorSpaceName(NSDeviceRGBColorSpace) {
+			let textRGB = ["red": ntextColor.redComponent, "green": ntextColor.greenComponent, "blue": ntextColor.blueComponent]
+			dict["textColorRGB"] = textRGB
+		}
 		
-		let outRGB = ["red": outlineColor.redComponent, "green": outlineColor.greenComponent, "blue": outlineColor.blueComponent]
-		dict["outColorRGB"] = outRGB
+		if let noutColor = outlineColor.colorUsingColorSpaceName(NSDeviceRGBColorSpace) {
+			let outRGB = ["red": noutColor.redComponent, "green": noutColor.greenComponent, "blue": noutColor.blueComponent]
+			dict["outColorRGB"] = outRGB
+		}
 		
 		var align: Int = 0
 		switch alignment {

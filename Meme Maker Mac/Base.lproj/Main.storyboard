@@ -782,21 +782,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
-                                <rect key="frame" x="20" y="20" width="600" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" drawsBackground="YES" id="79j-o4-dsV">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
-                                    <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
-                                </connections>
-                            </textField>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
                                 <rect key="frame" x="20" y="436" width="600" height="24"/>
                                 <constraints>
@@ -808,6 +793,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
+                                    <action selector="topTextChanged:" target="qyR-yM-Rrq" id="eS6-5g-dIu"/>
                                     <outlet property="delegate" destination="qyR-yM-Rrq" id="LGn-cA-834"/>
                                     <outlet property="nextKeyView" destination="Bdl-en-70C" id="WUi-wu-w3M"/>
                                 </connections>
@@ -820,6 +806,22 @@
                                 </constraints>
                                 <imageCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="cRV-Yk-dBd"/>
                             </imageView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
+                                <rect key="frame" x="20" y="20" width="600" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" drawsBackground="YES" id="79j-o4-dsV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="bottomTextChanged:" target="qyR-yM-Rrq" id="f4r-ao-rSv"/>
+                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
+                                    <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Bdl-en-70C" secondAttribute="bottom" constant="20" id="1jM-Jq-Yyb"/>
