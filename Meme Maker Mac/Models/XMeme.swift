@@ -10,8 +10,6 @@ import Foundation
 import CoreData
 
 class XMeme: NSManagedObject {
-
-// Insert code here to add functionality to your managed object subclass
 	
 	var imageURL: NSURL?
 	

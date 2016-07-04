@@ -38,8 +38,6 @@ class EditorViewController: NSViewController {
 				baseImage = image
 			}
 			
-			topTextAttr.text = "\(topField.stringValue)"
-			bottomTextAttr.text = "\(bottomField.stringValue)"
 			cookImage()
 			
 		}
@@ -55,8 +53,18 @@ class EditorViewController: NSViewController {
 		
 		handleNotifications()
 		
+		topField.stringValue = topTextAttr.text as String
+		bottomField.stringValue = bottomTextAttr.text as String
+		
 		topAlignmentSegmentedControl.selectedSegment = topTextAttr.absAlignment
 		bottomAlignmentSegmentedControl.selectedSegment = bottomTextAttr.absAlignment
+		
+		NSFontManager.sharedFontManager().target = self
+		NSFontManager.sharedFontManager().action = #selector(EditorViewController.fontChanged(_:))
+		
+		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
+		
+//		NSFontPanel.sharedFontPanel().add
 		
     }
 	
@@ -66,6 +74,7 @@ class EditorViewController: NSViewController {
 		self.imageView.addGestureRecognizer(pinchGestureRecognizer!)
 		
 		panGestureRecognizer = NSPanGestureRecognizer(target: self, action: #selector(EditorViewController.handlePan(_:)))
+		
 		panGestureRecognizer?.delegate = self
 		self.imageView.addGestureRecognizer(panGestureRecognizer!)
 		
@@ -73,6 +82,14 @@ class EditorViewController: NSViewController {
 		doubleClickGestureRecognizer?.numberOfClicksRequired = 2
 		self.imageView.addGestureRecognizer(doubleClickGestureRecognizer!)
 		
+	}
+	
+	func fontChanged(sender: AnyObject) -> Void {
+		if let font = NSFontManager.sharedFontManager().selectedFont {
+			topTextAttr.font = NSFont(name: font.fontName, size: topTextAttr.fontSize)!
+			bottomTextAttr.font = NSFont(name: font.fontName, size: bottomTextAttr.fontSize)!
+			cookImage()
+		}
 	}
 	
 	func handleNotifications() -> Void {
@@ -86,14 +103,14 @@ class EditorViewController: NSViewController {
 		}
 		
 		center.addObserverForName(kFontBiggerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 2, 120)
-			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 2, 120)
+			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 4, 120)
+			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 4, 120)
 			self.cookImage()
 		}
 		
 		center.addObserverForName(kFontSmallerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 2, 20)
-			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 2, 20)
+			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 4, 20)
+			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 4, 20)
 			self.cookImage()
 		}
 		

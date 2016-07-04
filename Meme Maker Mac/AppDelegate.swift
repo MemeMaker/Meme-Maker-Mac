@@ -30,7 +30,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			SettingsManager.setBool(false, key: kSettingsAutoDismiss)
 			SettingsManager.setBool(false, key: kSettingsResetSettingsOnLaunch)
 			SettingsManager.setBool(true, key: kSettingsContinuousEditing)
-			SettingsManager.setBool(true, key: kSettingsDarkMode)
 			SettingsManager.setBool(false, key: kSettingsUploadMemes)
 			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
 			SettingsManager.setObject("rank", key: kSettingsLastSortKey)

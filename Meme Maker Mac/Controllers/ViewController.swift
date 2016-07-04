@@ -92,6 +92,23 @@ class ViewController: NSViewController {
 		if (segue.identifier == "editorSegue") {
 			guard let editorVC = segue.destinationController  as? EditorViewController else { return }
 			self.editorVC = editorVC
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/3 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+				let lastMemeID = SettingsManager.getInteger(kSettingsLastMemeIdOpened)
+				let fetchRequest = NSFetchRequest(entityName: "XMeme")
+				fetchRequest.predicate = NSPredicate(format: "memeID == %li", lastMemeID)
+				do {
+					let fetchedArray = try self.context!.executeFetchRequest(fetchRequest)
+					if (fetchedArray.count > 0) {
+						if let meme = fetchedArray.first as? XMeme {
+							self.editorVC.meme = meme
+						}
+					}
+				}
+				catch _ {
+					
+				}
+			})
+
 		}
 	}
 	
@@ -150,6 +167,7 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 		(item as! BaseCollectionViewItem).setHighlight(true)
 		guard let meme = memes[indexPath.item] as? XMeme else { return }
 //		XTextAttributes.clearTopAndBottomTexts() // Maybe don't clear them?
+		SettingsManager.setInteger(Int(meme.memeID), key: kSettingsLastMemeIdOpened)
 		self.editorVC.meme = meme
 		self.editorVC.cookImage()
 	}

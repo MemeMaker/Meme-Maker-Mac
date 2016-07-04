@@ -10,31 +10,16 @@ import AppKit
 
 let kSettingsTimesLaunched			= "kTimesLaunched"
 let kSettingsContinuousEditing		= "kContinuousEditing"
+let kSettingsLastMemeIdOpened		= "kSettingsLastMemeIdOpened"
 let kSettingsAutoDismiss			= "kAutoDismiss"
 let kSettingsUploadMemes			= "kEnableMemeUpload"
 let kSettingsResetSettingsOnLaunch	= "kResetSettingsOnLaunch"
-let kSettingsDarkMode				= "kDarkMode"
 let kSettingsViewModeIsGrid			= "kMemeListViewModeIsGrid"
 let kSettingsLastSortKey			= "kLastSortOrderKey"
 let kSettingsNumberOfElementsInGrid	= "kNumberOfElementsInGrid"
 
 var globalBackColor: NSColor = NSColor.whiteColor()
 var globalTintColor: NSColor = NSColor.blackColor()
-
-func updateGlobalTheme () -> Void {
-	if isDarkMode() {
-		globalBackColor = NSColor.whiteColor()
-		globalTintColor = NSColor.blackColor()
-	}
-	else {
-		globalBackColor = NSColor.blackColor()
-		globalTintColor = NSColor.whiteColor()
-	}
-}
-
-func isDarkMode() -> Bool {
-	return SettingsManager.getBool(kSettingsDarkMode)
-}
 
 class SettingsManager: NSObject {
 
