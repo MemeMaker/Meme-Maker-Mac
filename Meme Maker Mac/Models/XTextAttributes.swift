@@ -24,6 +24,28 @@ class XTextAttributes: NSObject {
 	var outlineColor: NSColor = NSColor.blackColor()
 	
 	var alignment: NSTextAlignment = .Center
+	var absAlignment: Int {
+		set (absA) {
+			switch absA {
+				case 0: alignment = .Left
+					break;
+				case 2: alignment = .Right
+					break;
+				case 3: alignment = .Justified
+					break;
+				default: alignment = .Center
+					break;
+			}
+		}
+		get {
+			switch alignment {
+				case .Left: return 0
+				case .Right: return 2
+				case .Justified: return 3
+				default: return 1
+			}
+		}
+	}
 	
 	var strokeWidth: CGFloat = 2
 	
@@ -137,6 +159,11 @@ class XTextAttributes: NSObject {
 		
 		return true
 		
+	}
+	
+	func resetOffset() -> Void {
+		offset = CGPointZero
+		fontSize = 44
 	}
 	
 	func setDefault() -> Void {

@@ -6,13 +6,21 @@
 //  Copyright © 2016 avikantz. All rights reserved.
 //
 
+let kToggleViewModeNotification: String = "kToggleViewModeNotification"
+let kToggleViewModeKey: String = "kToggleViewModeKey"
+
+let kResetPositionNotification: String = "kResetPositionNotification"
+
+let kFontBiggerNotification: String = "kFontBiggerNotification"
+let kFontSmallerNotification: String = "kFontSmallerNotification"
+
+let kAlignTextNotification: String = "kAlignTextNotification"
+
 import Cocoa
 import SSZipArchive
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// Insert code here to initialize your application
@@ -46,6 +54,47 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationWillTerminate(aNotification: NSNotification) {
 		// Insert code here to tear down your application
 	}
+	
+	// MARK: - Application menu actions
+	
+	@IBAction func newMenuAction(sender: AnyObject) {
+	}
+	
+	@IBAction func saveMenuAction(sender: AnyObject) {
+	}
+	
+	@IBAction func openMenuAction(sender: AnyObject) {
+	}
+	
+	@IBAction func resetMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
+	}
+	
+	@IBAction func biggerMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kFontBiggerNotification, object: nil)
+	}
+	
+	@IBAction func smallerMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kFontSmallerNotification, object: nil)
+	}
+	
+	@IBAction func alignTextLeftMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 0)])
+	}
+	
+	@IBAction func alignTextCenterMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 1)])
+	}
+	
+	@IBAction func alignTextRightMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 2)])
+	}
+	
+	@IBAction func alignTextJustifyMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 3)])
+	}
+	
+	
 	
 	// MARK: - Utility
 	

@@ -18,6 +18,9 @@ class EditorViewController: NSViewController {
 	@IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
 	
+	@IBOutlet weak var topAlignmentSegmentedControl: NSSegmentedControl!
+	@IBOutlet weak var bottomAlignmentSegmentedControl: NSSegmentedControl!
+	
 	var pinchGestureRecognizer: NSMagnificationGestureRecognizer?
 	var panGestureRecognizer: NSPanGestureRecognizer?
 	var doubleClickGestureRecognizer: NSClickGestureRecognizer?
@@ -48,6 +51,17 @@ class EditorViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
 		
+		setupGestureRecognizers()
+		
+		handleNotifications()
+		
+		topAlignmentSegmentedControl.selectedSegment = topTextAttr.absAlignment
+		bottomAlignmentSegmentedControl.selectedSegment = bottomTextAttr.absAlignment
+		
+    }
+	
+	func setupGestureRecognizers() -> Void {
+		
 		pinchGestureRecognizer = NSMagnificationGestureRecognizer(target: self, action: #selector(EditorViewController.handlePinch(_:)))
 		self.imageView.addGestureRecognizer(pinchGestureRecognizer!)
 		
@@ -59,7 +73,43 @@ class EditorViewController: NSViewController {
 		doubleClickGestureRecognizer?.numberOfClicksRequired = 2
 		self.imageView.addGestureRecognizer(doubleClickGestureRecognizer!)
 		
-    }
+	}
+	
+	func handleNotifications() -> Void {
+		
+		let center = NSNotificationCenter.defaultCenter()
+		
+		center.addObserverForName(kResetPositionNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.topTextAttr.resetOffset()
+			self.bottomTextAttr.resetOffset()
+			self.cookImage()
+		}
+		
+		center.addObserverForName(kFontBiggerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 2, 120)
+			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 2, 120)
+			self.cookImage()
+		}
+		
+		center.addObserverForName(kFontSmallerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 2, 20)
+			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 2, 20)
+			self.cookImage()
+		}
+		
+		center.addObserverForName(kAlignTextNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			guard let userInfo = notification.userInfo else { return }
+			if let alignment = userInfo["alignment"]?.integerValue {
+				self.topAlignmentSegmentedControl.selectedSegment = alignment
+				self.bottomAlignmentSegmentedControl.selectedSegment = alignment
+				self.topTextAttr.absAlignment = alignment
+				self.bottomTextAttr.absAlignment = alignment
+				self.cookImage()
+			}
+		}
+		
+		
+	}
     
 }
 
@@ -78,7 +128,7 @@ extension EditorViewController {
 		let topText = topTextAttr.uppercase ? topTextAttr.text.uppercaseString : topTextAttr.text;
 		let bottomText = bottomTextAttr.uppercase ? bottomTextAttr.text.uppercaseString : bottomTextAttr.text;
 		
-		topTextAttr.rect = CGRectMake(0, imageSize.height - maxHeight, imageSize.width, maxHeight);
+		topTextAttr.rect = CGRectMake(4, imageSize.height - maxHeight - 8, imageSize.width - 8, maxHeight);
 		var topTextRect = topText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
 //
 		// Adjust top size
@@ -89,14 +139,14 @@ extension EditorViewController {
 		
 		var bottomTextRect = bottomText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
 		var expectedBottomSize = bottomTextRect.size
-		bottomTextAttr.rect = CGRectMake(0, 0, imageSize.width, expectedBottomSize.height)
+		bottomTextAttr.rect = CGRectMake(4, 0, imageSize.width - 8, expectedBottomSize.height)
 		
 		// Adjust bottom size
 		while (ceil(bottomTextRect.size.height) > maxHeight) {
 			bottomTextAttr.fontSize -= 2;
 			bottomTextRect = bottomText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
 			expectedBottomSize = bottomTextRect.size
-			bottomTextAttr.rect = CGRectMake(0, 0, imageSize.width, expectedBottomSize.height)
+			bottomTextAttr.rect = CGRectMake(4, 0, imageSize.width - 8, expectedBottomSize.height)
 		}
 		
 		let offScreenRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(imageSize.width), pixelsHigh: Int(imageSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bitmapFormat: NSBitmapFormat.NSAlphaFirstBitmapFormat, bytesPerRow: 0, bitsPerPixel: 0)
@@ -132,19 +182,29 @@ extension EditorViewController {
 extension EditorViewController {
 	
 	@IBAction func topAlignmentChange(sender: NSSegmentedControl) {
-		
+		let alignment = sender.selectedSegment
+		topTextAttr.absAlignment = alignment
+		cookImage()
 	}
 	
 	@IBAction func topSizeChange(sender: NSSegmentedControl) {
-		
+		topTextAttr.fontSize += (sender.selectedSegment == 0) ? -2 : 2;
+		topTextAttr.fontSize = max(topTextAttr.fontSize, 12)
+		topTextAttr.fontSize = min(topTextAttr.fontSize, 144)
+		cookImage()
 	}
 	
 	@IBAction func bottomAlignmentChange(sender: NSSegmentedControl) {
-		
+		let alignment = sender.selectedSegment
+		bottomTextAttr.absAlignment = alignment
+		cookImage()
 	}
 	
 	@IBAction func bottomSizeChange(sender: NSSegmentedControl) {
-		
+		bottomTextAttr.fontSize += (sender.selectedSegment == 0) ? -2 : 2;
+		bottomTextAttr.fontSize = max(bottomTextAttr.fontSize, 12)
+		bottomTextAttr.fontSize = min(bottomTextAttr.fontSize, 144)
+		cookImage()
 	}
 	
 }

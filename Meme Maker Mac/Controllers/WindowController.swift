@@ -6,9 +6,6 @@
 //  Copyright © 2016 avikantz. All rights reserved.
 //
 
-let kToggleViewModeNotification: String = "kToggleViewModeNotification"
-let kToggleViewModeKey: String = "kToggleViewModeKey"
-
 import Cocoa
 
 class WindowController: NSWindowController {
@@ -46,6 +43,9 @@ class WindowController: NSWindowController {
 		
 	}
 	
+	@IBAction func resetToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
+	}
 	
 
 }
