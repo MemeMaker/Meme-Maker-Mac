@@ -782,22 +782,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
-                                <rect key="frame" x="20" y="436" width="600" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="5xz-us-7jh"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Top text" drawsBackground="YES" id="7I6-dd-Otk">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="topTextChanged:" target="qyR-yM-Rrq" id="eS6-5g-dIu"/>
-                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="LGn-cA-834"/>
-                                    <outlet property="nextKeyView" destination="Bdl-en-70C" id="WUi-wu-w3M"/>
-                                </connections>
-                            </textField>
                             <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Vi-KWg">
                                 <rect key="frame" x="320" y="240" width="0.0" height="0.0"/>
                                 <constraints>
@@ -807,11 +791,11 @@
                                 <imageCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="cRV-Yk-dBd"/>
                             </imageView>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
-                                <rect key="frame" x="20" y="20" width="600" height="24"/>
+                                <rect key="frame" x="129" y="20" width="432" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" drawsBackground="YES" id="79j-o4-dsV">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" bezelStyle="round" id="79j-o4-dsV">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -822,15 +806,119 @@
                                     <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
                                 </connections>
                             </textField>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vOP-W8-gWb">
+                                <rect key="frame" x="20" y="435" width="101" height="25"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="m9c-yo-HpY">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment image="align-left" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-center" width="24" selected="YES" tag="2">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-right" width="24" tag="1">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-justify" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="topAlignmentChange:" target="qyR-yM-Rrq" id="Hqx-iw-h4m"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jvW-eR-6lp">
+                                <rect key="frame" x="569" y="435" width="51" height="25"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="qlW-Qj-Q7S">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment image="minus" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="plus" width="24" tag="1">
+                                            <nil key="label"/>
+                                        </segment>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="topSizeChange:" target="qyR-yM-Rrq" id="EOt-yC-ydc"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugt-Am-hsx">
+                                <rect key="frame" x="20" y="19" width="101" height="25"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="fuQ-Pa-Bxq">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment image="align-left" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-center" width="24" selected="YES" tag="2">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-right" width="24" tag="1">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="align-justify" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="bottomAlignmentChange:" target="qyR-yM-Rrq" id="oKg-hS-A3X"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qp3-gH-Xbr">
+                                <rect key="frame" x="569" y="19" width="51" height="25"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="Yu9-oH-cau">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment image="minus" width="24">
+                                            <nil key="label"/>
+                                        </segment>
+                                        <segment image="plus" width="24" tag="1">
+                                            <nil key="label"/>
+                                        </segment>
+                                    </segments>
+                                </segmentedCell>
+                                <connections>
+                                    <action selector="bottomSizeChange:" target="qyR-yM-Rrq" id="sE6-8m-mcC"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
+                                <rect key="frame" x="129" y="436" width="432" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="5xz-us-7jh"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Top text" bezelStyle="round" id="7I6-dd-Otk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="topTextChanged:" target="qyR-yM-Rrq" id="eS6-5g-dIu"/>
+                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="LGn-cA-834"/>
+                                    <outlet property="nextKeyView" destination="Bdl-en-70C" id="WUi-wu-w3M"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Bdl-en-70C" secondAttribute="bottom" constant="20" id="1jM-Jq-Yyb"/>
-                            <constraint firstItem="Q3a-3w-ITS" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="9JZ-6Q-fOs"/>
-                            <constraint firstAttribute="trailing" secondItem="Q3a-3w-ITS" secondAttribute="trailing" constant="20" id="BeD-1J-fHa"/>
-                            <constraint firstAttribute="trailing" secondItem="Bdl-en-70C" secondAttribute="trailing" constant="20" id="CEg-jW-pLt"/>
+                            <constraint firstItem="jvW-eR-6lp" firstAttribute="centerY" secondItem="Q3a-3w-ITS" secondAttribute="centerY" id="3Fp-wy-JTd"/>
+                            <constraint firstItem="ugt-Am-hsx" firstAttribute="centerY" secondItem="Bdl-en-70C" secondAttribute="centerY" id="7GP-UB-fJD"/>
+                            <constraint firstItem="jvW-eR-6lp" firstAttribute="leading" secondItem="Q3a-3w-ITS" secondAttribute="trailing" constant="8" id="BmH-Ld-n5p"/>
+                            <constraint firstItem="qp3-gH-Xbr" firstAttribute="centerY" secondItem="Bdl-en-70C" secondAttribute="centerY" id="GON-Rg-Fv2"/>
+                            <constraint firstItem="vOP-W8-gWb" firstAttribute="centerY" secondItem="Q3a-3w-ITS" secondAttribute="centerY" id="HMB-es-vWP"/>
+                            <constraint firstAttribute="trailing" secondItem="jvW-eR-6lp" secondAttribute="trailing" constant="20" id="I4L-Bv-bfp"/>
                             <constraint firstItem="Q3a-3w-ITS" firstAttribute="top" secondItem="lkP-n5-8n5" secondAttribute="top" constant="20" id="IL6-0d-jH8"/>
+                            <constraint firstAttribute="trailing" secondItem="qp3-gH-Xbr" secondAttribute="trailing" constant="20" id="Rxw-yu-IzX"/>
                             <constraint firstItem="NaU-Vi-KWg" firstAttribute="centerX" secondItem="lkP-n5-8n5" secondAttribute="centerX" id="WEF-dy-jDW"/>
-                            <constraint firstItem="Bdl-en-70C" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="aOA-p0-POV"/>
+                            <constraint firstItem="Bdl-en-70C" firstAttribute="leading" secondItem="ugt-Am-hsx" secondAttribute="trailing" constant="8" id="Wmc-U0-qNx"/>
+                            <constraint firstItem="ugt-Am-hsx" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="Xsv-45-2fY"/>
+                            <constraint firstItem="vOP-W8-gWb" firstAttribute="leading" secondItem="lkP-n5-8n5" secondAttribute="leading" constant="20" id="bQ8-UN-qdL"/>
+                            <constraint firstItem="qp3-gH-Xbr" firstAttribute="leading" secondItem="Bdl-en-70C" secondAttribute="trailing" constant="8" id="bSy-Kd-jc4"/>
+                            <constraint firstItem="Q3a-3w-ITS" firstAttribute="leading" secondItem="vOP-W8-gWb" secondAttribute="trailing" constant="8" id="fgc-El-jv5"/>
                             <constraint firstItem="NaU-Vi-KWg" firstAttribute="centerY" secondItem="lkP-n5-8n5" secondAttribute="centerY" id="ydx-Zm-bZA"/>
                         </constraints>
                     </view>
@@ -848,6 +936,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="align-center" width="16" height="16"/>
+        <image name="align-justify" width="16" height="16"/>
+        <image name="align-left" width="16" height="16"/>
+        <image name="align-right" width="16" height="16"/>
         <image name="list" width="32" height="32"/>
+        <image name="minus" width="8" height="8"/>
+        <image name="plus" width="8" height="8"/>
     </resources>
 </document>

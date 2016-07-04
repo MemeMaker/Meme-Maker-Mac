@@ -18,23 +18,27 @@ class EditorViewController: NSViewController {
 	@IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
 	
+	var pinchGestureRecognizer: NSMagnificationGestureRecognizer?
+	var panGestureRecognizer: NSPanGestureRecognizer?
+	var doubleClickGestureRecognizer: NSClickGestureRecognizer?
+	
+	var movingTop: Bool = true;
+	
 	var topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
 	var bottomTextAttr: XTextAttributes = XTextAttributes(savename: "bottomAttr")
 	
 	var meme: XMeme!  {
 		didSet {
 			
-			topTextAttr.saveAttributes("topAttr")
-			bottomTextAttr.saveAttributes("bottomAttr")
+			if let image = NSImage.init(contentsOfFile: imagesPathForFileName("\(meme.memeID)")) {
+				imageView?.image = image
+				baseImage = image
+			}
 			
 			topTextAttr.text = "\(topField.stringValue)"
 			bottomTextAttr.text = "\(bottomField.stringValue)"
 			cookImage()
 			
-			if let image = NSImage.init(contentsOfFile: imagesPathForFileName("\(meme.memeID)")) {
-				imageView?.image = image
-				baseImage = image
-			}
 		}
 	}
 	
@@ -43,9 +47,23 @@ class EditorViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+		
+		pinchGestureRecognizer = NSMagnificationGestureRecognizer(target: self, action: #selector(EditorViewController.handlePinch(_:)))
+		self.imageView.addGestureRecognizer(pinchGestureRecognizer!)
+		
+		panGestureRecognizer = NSPanGestureRecognizer(target: self, action: #selector(EditorViewController.handlePan(_:)))
+		panGestureRecognizer?.delegate = self
+		self.imageView.addGestureRecognizer(panGestureRecognizer!)
+		
+		doubleClickGestureRecognizer = NSClickGestureRecognizer(target: self, action: #selector(EditorViewController.handleDoubleClick(_:)))
+		doubleClickGestureRecognizer?.numberOfClicksRequired = 2
+		self.imageView.addGestureRecognizer(doubleClickGestureRecognizer!)
+		
     }
     
 }
+
+// MARK: - Cooking
 
 extension EditorViewController {
 	
@@ -54,28 +72,31 @@ extension EditorViewController {
 			return;
 		}
 		let imageSize = baseImage?.size as CGSize!
-		let maxHeight = imageSize.height/2 + 2	// Max height of top and bottom texts
-		let stringDrawingOptions: NSStringDrawingOptions = [.UsesLineFragmentOrigin, .UsesFontLeading]
+		let maxHeight = imageSize.height/2 - 8	// Max height of top and bottom texts
+		let stringDrawingOptions: NSStringDrawingOptions = [.UsesLineFragmentOrigin]
 		
-		var topTextRect = topTextAttr.text.boundingRectWithSize(CGSizeMake(imageSize.width, maxHeight), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
-		var expectedTopSize = topTextRect.size
-		// Bottom rect starts from bottom, not from center.y
-		topTextAttr.rect = CGRectMake(0, (imageSize.height) - (expectedTopSize.height), imageSize.width, expectedTopSize.height);
+		let topText = topTextAttr.uppercase ? topTextAttr.text.uppercaseString : topTextAttr.text;
+		let bottomText = bottomTextAttr.uppercase ? bottomTextAttr.text.uppercaseString : bottomTextAttr.text;
+		
+		topTextAttr.rect = CGRectMake(0, imageSize.height - maxHeight, imageSize.width, maxHeight);
+		var topTextRect = topText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
+//
 		// Adjust top size
 		while (ceil(topTextRect.size.height) > maxHeight) {
 			topTextAttr.fontSize -= 1;
-			topTextRect = topTextAttr.text.boundingRectWithSize(CGSizeMake(imageSize.width, maxHeight), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
-			expectedTopSize = topTextRect.size
-			topTextAttr.rect = CGRectMake(0, (imageSize.height) - (expectedTopSize.height), imageSize.width, expectedTopSize.height)
+			topTextRect = topText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
 		}
 		
-		var bottomTextRect = bottomTextAttr.text.boundingRectWithSize(CGSizeMake(imageSize.width, maxHeight), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
-		bottomTextAttr.rect = CGRectMake(0, 0, imageSize.width, imageSize.height/2)
+		var bottomTextRect = bottomText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
+		var expectedBottomSize = bottomTextRect.size
+		bottomTextAttr.rect = CGRectMake(0, 0, imageSize.width, expectedBottomSize.height)
 		
 		// Adjust bottom size
 		while (ceil(bottomTextRect.size.height) > maxHeight) {
-			bottomTextAttr.fontSize -= 1;
-			bottomTextRect = bottomTextAttr.text.boundingRectWithSize(CGSizeMake(imageSize.width, maxHeight), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
+			bottomTextAttr.fontSize -= 2;
+			bottomTextRect = bottomText.boundingRectWithSize(CGSizeMake(imageSize.width - 8, 1000), options: stringDrawingOptions, attributes: bottomTextAttr.getTextAttributes(), context: nil)
+			expectedBottomSize = bottomTextRect.size
+			bottomTextAttr.rect = CGRectMake(0, 0, imageSize.width, expectedBottomSize.height)
 		}
 		
 		let offScreenRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(imageSize.width), pixelsHigh: Int(imageSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bitmapFormat: NSBitmapFormat.NSAlphaFirstBitmapFormat, bytesPerRow: 0, bitsPerPixel: 0)
@@ -86,11 +107,11 @@ extension EditorViewController {
 		
 		baseImage?.drawInRect(NSMakeRect(0, 0, imageSize.width, imageSize.height))
 		
-		let topText = topTextAttr.uppercase ? topTextAttr.text.uppercaseString : topTextAttr.text;
-		let bottomText = bottomTextAttr.uppercase ? bottomTextAttr.text.uppercaseString : bottomTextAttr.text;
-		
 		let topRect = CGRectMake(topTextAttr.rect.origin.x + topTextAttr.offset.x, topTextAttr.rect.origin.y + topTextAttr.offset.y, topTextAttr.rect.size.width, topTextAttr.rect.size.height)
 		let bottomRect = CGRectMake(bottomTextAttr.rect.origin.x + bottomTextAttr.offset.x, bottomTextAttr.rect.origin.y + bottomTextAttr.offset.y, bottomTextAttr.rect.size.width, bottomTextAttr.rect.size.height)
+		
+		topTextAttr.saveAttributes("topAttr")
+		bottomTextAttr.saveAttributes("bottomAttr")
 		
 		topText.drawInRect(NSRectFromCGRect(topRect), withAttributes: topTextAttr.getTextAttributes())
 		bottomText.drawInRect(NSRectFromCGRect(bottomRect), withAttributes: bottomTextAttr.getTextAttributes())
@@ -103,6 +124,84 @@ extension EditorViewController {
 		imageView.image = newImage
 		
 	}
+	
+}
+
+// MARK: - Attribute control
+
+extension EditorViewController {
+	
+	@IBAction func topAlignmentChange(sender: NSSegmentedControl) {
+		
+	}
+	
+	@IBAction func topSizeChange(sender: NSSegmentedControl) {
+		
+	}
+	
+	@IBAction func bottomAlignmentChange(sender: NSSegmentedControl) {
+		
+	}
+	
+	@IBAction func bottomSizeChange(sender: NSSegmentedControl) {
+		
+	}
+	
+}
+
+// MARK: - Gesture handlers
+
+extension EditorViewController: NSGestureRecognizerDelegate {
+	
+	func handlePinch(recognizer: NSMagnificationGestureRecognizer) -> Void {
+		let fontScale = recognizer.magnification
+		let point = recognizer.locationInView(self.imageView)
+		let topRect = NSMakeRect(0, (self.imageView.bounds.size.height)/2, (self.imageView.bounds.size.width), (self.imageView.bounds.size.height)/2)
+		if (topRect.contains(point)) {
+			if (fontScale > 0) {
+				topTextAttr.fontSize = min(topTextAttr.fontSize + fontScale, 120)
+			} else {
+				topTextAttr.fontSize = max(topTextAttr.fontSize + fontScale, 20)
+			}
+		} else {
+			if (fontScale > 0) {
+				bottomTextAttr.fontSize = min(bottomTextAttr.fontSize + fontScale, 120)
+			} else {
+				bottomTextAttr.fontSize = max(bottomTextAttr.fontSize + fontScale, 20)
+			}
+		}
+		cookImage()
+	}
+	
+	func handlePan(recognizer: NSPanGestureRecognizer) -> Void {
+		let translation = recognizer.translationInView(self.imageView)
+		if (movingTop) {
+			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.view).x/60,
+			                                 topTextAttr.offset.y + recognizer.velocityInView(self.view).y/60);
+		}
+		else {
+			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.view).x/60,
+			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.view).y/60);
+		}
+		recognizer.setTranslation(translation, inView: imageView)
+		cookImage()
+	}
+	
+	func handleDoubleClick(recognizer: NSClickGestureRecognizer) -> Void {
+		topTextAttr.uppercase = !topTextAttr.uppercase
+		bottomTextAttr.uppercase = !bottomTextAttr.uppercase
+		cookImage()
+	}
+	
+	func gestureRecognizerShouldBegin(gestureRecognizer: NSGestureRecognizer) -> Bool {
+		if (gestureRecognizer == self.panGestureRecognizer) {
+			let topRect = NSMakeRect(0, (self.imageView.bounds.size.height)/2, (self.imageView.bounds.size.width), (self.imageView.bounds.size.height)/2)
+			let location = gestureRecognizer.locationInView(imageView)
+			movingTop = (topRect.contains(location))
+		}
+		return true
+	}
+	
 	
 }
 

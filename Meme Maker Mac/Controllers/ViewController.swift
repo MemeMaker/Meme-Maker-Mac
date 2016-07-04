@@ -149,7 +149,9 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 		guard let item = collectionView.itemAtIndexPath(indexPath) else { return }
 		(item as! BaseCollectionViewItem).setHighlight(true)
 		guard let meme = memes[indexPath.item] as? XMeme else { return }
+//		XTextAttributes.clearTopAndBottomTexts() // Maybe don't clear them?
 		self.editorVC.meme = meme
+		self.editorVC.cookImage()
 	}
 	
 	func collectionView(collectionView: NSCollectionView, didDeselectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
@@ -177,7 +179,11 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 extension ViewController: NSSearchFieldDelegate {
 	
 	@IBAction func searchAction(sender: AnyObject) {
-		self.filterMemesWithSearchText((sender as! NSSearchField).stringValue)
+//		self.filterMemesWithSearchText((sender as! NSSearchField).stringValue)
+	}
+	
+	override func controlTextDidChange(obj: NSNotification) {
+		self.filterMemesWithSearchText(self.searchField.stringValue)
 	}
 	
 	func filterMemesWithSearchText(searchText: String!) {

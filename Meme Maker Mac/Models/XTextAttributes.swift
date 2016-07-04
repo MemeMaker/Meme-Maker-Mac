@@ -82,8 +82,7 @@ class XTextAttributes: NSObject {
 				opacity	= dict["opacity"] as! CGFloat
 				
 			}
-		}
-		catch _ {
+		} catch _ {
 			print("attribute reading failed")
 		}
 		
@@ -132,8 +131,7 @@ class XTextAttributes: NSObject {
 		do {
 			let data = try NSJSONSerialization.dataWithJSONObject(dict, options: .PrettyPrinted)
 			try data.writeToFile(documentsPathForFileName(savename), options: .AtomicWrite)
-		}
-		catch _ {
+		} catch _ {
 			print("attribute writing failed")
 		}
 		
@@ -145,7 +143,7 @@ class XTextAttributes: NSObject {
 		uppercase = true
 		offset = CGPointZero
 		fontSize = 44
-		font = NSFont(name: "Impact", size: 44)!
+		font = NSFont(name: "Impact", size: fontSize)!
 		textColor = NSColor.whiteColor()
 		outlineColor = NSColor.blackColor()
 		alignment = .Center
@@ -163,6 +161,7 @@ class XTextAttributes: NSObject {
 		attr[NSForegroundColorAttributeName] = textColor.colorWithAlphaComponent(opacity)
 		
 		let paragraphStyle = NSMutableParagraphStyle()
+		paragraphStyle.maximumLineHeight = fontSize
 		paragraphStyle.alignment = alignment
 		
 		attr[NSParagraphStyleAttributeName] = paragraphStyle
@@ -182,16 +181,14 @@ class XTextAttributes: NSObject {
 	}
 	
 	class func clearTopAndBottomTexts() -> Void {
-		// We don't want text to retain while selecting new meme on iPhone, let it be there on iPad
+		// We don't want text to retain when selecting new meme?
 		let topTextAttr = XTextAttributes(savename: "topAttr")
 		topTextAttr.text = ""
-		topTextAttr.offset = CGPointZero
-		topTextAttr.fontSize = 44
+		topTextAttr.setDefault()
 		topTextAttr.saveAttributes("topAttr")
 		let bottomTextAttr = XTextAttributes(savename: "bottomAttr")
 		bottomTextAttr.text = ""
-		bottomTextAttr.offset = CGPointZero
-		bottomTextAttr.fontSize = 44
+		bottomTextAttr.setDefault()
 		bottomTextAttr.saveAttributes("bottomAttr")
 	}
 	
