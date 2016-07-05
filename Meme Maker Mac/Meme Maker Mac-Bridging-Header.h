@@ -3,3 +3,4 @@
 //
 
 #import "DragDropImageView.h"
+#import "GRVibrantTitlebarWindow.h"
