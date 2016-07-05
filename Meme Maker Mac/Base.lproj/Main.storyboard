@@ -525,11 +525,11 @@
             <objects>
                 <viewController title="Meme Maker" storyboardIdentifier="ViewC" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="ViewController" customModule="Meme_Maker_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="960" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <searchField wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gqh-8l-ZPz">
-                                <rect key="frame" x="0.0" y="458" width="240" height="22"/>
+                                <rect key="frame" x="0.0" y="578" width="320" height="22"/>
                                 <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Search" usesSingleLineMode="YES" bezelStyle="round" sendsSearchStringImmediately="YES" sendsWholeSearchString="YES" maximumRecents="10" id="LGo-NO-tjv">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -539,20 +539,14 @@
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="30n-ej-Ive"/>
                                 </connections>
                             </searchField>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="aJm-2p-fb5">
-                                <rect key="frame" x="240" y="0.0" width="480" height="480"/>
-                                <connections>
-                                    <segue destination="qyR-yM-Rrq" kind="embed" identifier="editorSegue" id="OIe-Rd-MIh"/>
-                                </connections>
-                            </containerView>
                             <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="578"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="nYQ-hn-LAp">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="578"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView selectable="YES" allowsEmptySelection="NO" id="GW8-J4-ij2">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="458"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="578"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
@@ -571,6 +565,12 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="aJm-2p-fb5">
+                                <rect key="frame" x="320" y="0.0" width="640" height="600"/>
+                                <connections>
+                                    <segue destination="qyR-yM-Rrq" kind="embed" identifier="editorSegue" id="OIe-Rd-MIh"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="JSe-qD-Vmw" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="1/3" id="DLi-b3-yXH"/>
@@ -607,8 +607,8 @@
                             <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Vi-KWg" customClass="DragDropImageView">
                                 <rect key="frame" x="320" y="240" width="0.0" height="0.0"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="360" id="O9q-PG-GZM"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="Q0s-X5-ffz"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="520" id="O9q-PG-GZM"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="640" id="Q0s-X5-ffz"/>
                                 </constraints>
                                 <imageCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="cRV-Yk-dBd"/>
                             </imageView>
@@ -754,7 +754,7 @@
                 </viewController>
                 <customObject id="a0M-w0-Wfy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1841"/>
+            <point key="canvasLocation" x="74" y="1852"/>
         </scene>
     </scenes>
     <resources>

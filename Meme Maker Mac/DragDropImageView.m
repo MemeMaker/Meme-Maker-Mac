@@ -124,6 +124,7 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 		NSURL* fileURL;
 		
 		//set the image using the best representation we can get from the pasteboard
+		// Maybe resize image?
 		if([NSImage canInitWithPasteboard: [sender draggingPasteboard]]) {
 			NSImage *newImage = [[NSImage alloc] initWithPasteboard: [sender draggingPasteboard]];
 			[self setImage:newImage];
@@ -133,12 +134,10 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 			//            self.frame = selfFrame;
 			//            self.superview.frame = self.frame;
 			//            [newImage release];
+			
+			fileURL = [NSURL URLFromPasteboard: [sender draggingPasteboard]];
+			[self.delegate dragDropImageView:self didFinishDropAtFilePath:fileURL.path andImage:newImage];
 		}
-		
-		//if the drag comes from a file, set the window title to the filename
-		fileURL=[NSURL URLFromPasteboard: [sender draggingPasteboard]];
-		//        [[self window] setTitle: fileURL!=NULL ? [fileURL absoluteString] : @"(no name)"];
-		[self.delegate dropComplete:[fileURL path]];
 	}
 	
 	return YES;

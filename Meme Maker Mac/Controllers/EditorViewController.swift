@@ -13,7 +13,7 @@ class EditorViewController: NSViewController {
 	@IBOutlet weak var topField: NSTextField!
 	@IBOutlet weak var bottomField: NSTextField!
 	
-	@IBOutlet weak var imageView: NSImageView!
+	@IBOutlet weak var imageView: DragDropImageView!
 	
 	@IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
@@ -41,7 +41,15 @@ class EditorViewController: NSViewController {
 		}
 	}
 	
-	var baseImage: NSImage?
+	var baseImage: NSImage? {
+		didSet {
+			if let width = self.baseImage?.size.width {
+				ratio = width/640
+			}
+		}
+	}
+	
+	var ratio: CGFloat = 1.0
 	
 	// MARK:
 
@@ -52,6 +60,8 @@ class EditorViewController: NSViewController {
 		setupGestureRecognizers()
 		
 		handleNotifications()
+		
+		imageView.delegate = self
 		
 		topField.stringValue = topTextAttr.text as String
 		bottomField.stringValue = bottomTextAttr.text as String
@@ -108,14 +118,14 @@ class EditorViewController: NSViewController {
 		}
 		
 		center.addObserverForName(kFontBiggerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 4, 120)
-			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 4, 120)
+			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 4 * self.ratio, 120 * self.ratio)
+			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 4 * self.ratio, 120 * self.ratio)
 			self.cookImage()
 		}
 		
 		center.addObserverForName(kFontSmallerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 4, 20)
-			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 4, 20)
+			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 4 * self.ratio, 20 * self.ratio)
+			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 4 * self.ratio, 20 * self.ratio)
 			self.cookImage()
 		}
 		
@@ -150,6 +160,16 @@ class EditorViewController: NSViewController {
 		
 	}
     
+}
+
+extension EditorViewController: DragDropImageViewDelegate {
+	
+	func dragDropImageView(imageView: DragDropImageView!, didFinishDropAtFilePath filePath: String!, andImage image: NSImage!) {
+		// Don't create a new meme object; just change the base image
+		baseImage = image
+		cookImage()
+	}
+	
 }
 
 // MARK: - Cooking
@@ -227,9 +247,9 @@ extension EditorViewController {
 	}
 	
 	@IBAction func topSizeChange(sender: NSSegmentedControl) {
-		topTextAttr.fontSize += (sender.selectedSegment == 0) ? -2 : 2;
-		topTextAttr.fontSize = max(topTextAttr.fontSize, 12)
-		topTextAttr.fontSize = min(topTextAttr.fontSize, 144)
+		topTextAttr.fontSize += ((sender.selectedSegment == 0) ? -2 : 2) * self.ratio;
+		topTextAttr.fontSize = max(topTextAttr.fontSize, 12 * self.ratio)
+		topTextAttr.fontSize = min(topTextAttr.fontSize, 144 * self.ratio)
 		cookImage()
 	}
 	
@@ -240,9 +260,9 @@ extension EditorViewController {
 	}
 	
 	@IBAction func bottomSizeChange(sender: NSSegmentedControl) {
-		bottomTextAttr.fontSize += (sender.selectedSegment == 0) ? -2 : 2;
-		bottomTextAttr.fontSize = max(bottomTextAttr.fontSize, 12)
-		bottomTextAttr.fontSize = min(bottomTextAttr.fontSize, 144)
+		bottomTextAttr.fontSize += ((sender.selectedSegment == 0) ? -2 : 2) * self.ratio;
+		bottomTextAttr.fontSize = max(bottomTextAttr.fontSize, 12 * self.ratio)
+		bottomTextAttr.fontSize = min(bottomTextAttr.fontSize, 144 * self.ratio)
 		cookImage()
 	}
 	
@@ -274,15 +294,15 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 		let topRect = NSMakeRect(0, (self.imageView.bounds.size.height)/2, (self.imageView.bounds.size.width), (self.imageView.bounds.size.height)/2)
 		if (topRect.contains(point)) {
 			if (fontScale > 0) {
-				topTextAttr.fontSize = min(topTextAttr.fontSize + fontScale, 120)
+				topTextAttr.fontSize = min(topTextAttr.fontSize + fontScale * ratio, 120 * ratio)
 			} else {
-				topTextAttr.fontSize = max(topTextAttr.fontSize + fontScale, 20)
+				topTextAttr.fontSize = max(topTextAttr.fontSize + fontScale * ratio, 20 * ratio)
 			}
 		} else {
 			if (fontScale > 0) {
-				bottomTextAttr.fontSize = min(bottomTextAttr.fontSize + fontScale, 120)
+				bottomTextAttr.fontSize = min(bottomTextAttr.fontSize + fontScale * ratio, 120 * ratio)
 			} else {
-				bottomTextAttr.fontSize = max(bottomTextAttr.fontSize + fontScale, 20)
+				bottomTextAttr.fontSize = max(bottomTextAttr.fontSize + fontScale * ratio, 20 * ratio)
 			}
 		}
 		cookImage()
@@ -291,12 +311,12 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 	func handlePan(recognizer: NSPanGestureRecognizer) -> Void {
 		let translation = recognizer.translationInView(self.imageView)
 		if (movingTop) {
-			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.imageView).x/60,
-			                                 topTextAttr.offset.y + recognizer.velocityInView(self.imageView).y/60);
+			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + ratio * recognizer.velocityInView(self.imageView).x/50,
+			                                 topTextAttr.offset.y + ratio * recognizer.velocityInView(self.imageView).y/50);
 		}
 		else {
-			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.imageView).x/60,
-			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.imageView).y/60);
+			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + ratio * recognizer.velocityInView(self.imageView).x/50,
+			                                    bottomTextAttr.offset.y + ratio * recognizer.velocityInView(self.imageView).y/50);
 		}
 		recognizer.setTranslation(translation, inView: imageView)
 		cookImage()

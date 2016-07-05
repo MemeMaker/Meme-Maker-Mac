@@ -28,6 +28,6 @@
 
 @protocol DragDropImageViewDelegate <NSObject>
 
-- (void)dropComplete:(NSString *)filePath;
+- (void)dragDropImageView:(DragDropImageView *)imageView didFinishDropAtFilePath:(NSString *)filePath andImage:(NSImage *)image;
 
 @end
