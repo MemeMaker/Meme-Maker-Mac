@@ -39,8 +39,12 @@ class WindowController: NSWindowController {
 		
 	}
 	
-	@IBAction func colorsToolbarAction(sender: AnyObject) {
-		
+	@IBAction func textColorToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kTextColorPanelNotification, object: nil)
+	}
+	
+	@IBAction func outlineColorToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
 	}
 	
 	@IBAction func resetToolbarAction(sender: AnyObject) {

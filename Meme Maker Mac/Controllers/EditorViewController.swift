@@ -25,8 +25,10 @@ class EditorViewController: NSViewController {
 	var panGestureRecognizer: NSPanGestureRecognizer?
 	var doubleClickGestureRecognizer: NSClickGestureRecognizer?
 	
-	var movingTop: Bool = true;
-	var shouldDragText: Bool = false;
+	var movingTop: Bool = true
+	var shouldDragText: Bool = false
+	
+	var textColorChange: Bool = true
 	
 	var topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
 	var bottomTextAttr: XTextAttributes = XTextAttributes(savename: "bottomAttr")
@@ -72,11 +74,7 @@ class EditorViewController: NSViewController {
 		NSFontManager.sharedFontManager().target = self
 		NSFontManager.sharedFontManager().action = #selector(EditorViewController.changeFont(_:))
 		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
-		
-		NSColorPanel.sharedColorPanel().setTarget(self)
-		NSColorPanel.sharedColorPanel().setAction(#selector(EditorViewController.changeColor(_:)))
-		NSColorPanel.sharedColorPanel().color = topTextAttr.textColor
-		NSColorPanel.sharedColorPanel().runToolbarCustomizationPalette(self)
+		NSFontPanel.sharedFontPanel().title = "Font"
 		
 		NSEvent.addLocalMonitorForEventsMatchingMask(.FlagsChangedMask) { (theEvent) -> NSEvent? in
 			self.flagsChanged(theEvent)
@@ -114,6 +112,8 @@ class EditorViewController: NSViewController {
 		center.addObserverForName(kResetAllNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			self.topTextAttr.setDefault()
 			self.bottomTextAttr.setDefault()
+			NSColorPanel.sharedColorPanel().color = self.topTextAttr.textColor
+			NSFontPanel.sharedFontPanel().setPanelFont(self.topTextAttr.font, isMultiple: false)
 			self.cookImage()
 		}
 		
@@ -156,6 +156,28 @@ class EditorViewController: NSViewController {
 				}
 				self.cookImage()
 			}
+		}
+		
+		center.addObserverForName(kTextColorPanelNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let panel = NSColorPanel.sharedColorPanel()
+			panel.setTarget(self)
+			self.textColorChange = true
+			panel.setAction(#selector(EditorViewController.changeColor(_:)))
+			panel.color = self.topTextAttr.textColor
+			panel.runToolbarCustomizationPalette(self)
+			panel.title = "Text Color"
+			panel.makeKeyAndOrderFront(self)
+		}
+		
+		center.addObserverForName(kOutlineColorPanelNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let panel = NSColorPanel.sharedColorPanel()
+			panel.setTarget(self)
+			self.textColorChange = false
+			panel.setAction(#selector(EditorViewController.changeColor(_:)))
+			panel.color = self.topTextAttr.outlineColor
+			panel.runToolbarCustomizationPalette(self)
+			panel.title = "Outline Color"
+			panel.makeKeyAndOrderFront(self)
 		}
 		
 	}
@@ -277,8 +299,13 @@ extension EditorViewController {
 	}
 	
 	override func changeColor(sender: AnyObject?) {
-		topTextAttr.textColor = (sender?.color)!
-		bottomTextAttr.textColor = (sender?.color)!
+		if (textColorChange) {
+			topTextAttr.textColor = (sender?.color)!
+			bottomTextAttr.textColor = (sender?.color)!
+		} else {
+			topTextAttr.outlineColor = (sender?.color)!
+			bottomTextAttr.outlineColor = (sender?.color)!
+		}
 		cookImage()
 	}
 	

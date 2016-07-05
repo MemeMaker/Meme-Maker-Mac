@@ -463,7 +463,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74.5" y="-33"/>
+            <point key="canvasLocation" x="74.5" y="-147"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -472,16 +472,11 @@
                     <window key="window" title="Meme Maker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="240" y="259" width="960" height="600"/>
+                        <rect key="contentRect" x="240" y="286" width="960" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="960" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="50592A73-7111-41BF-8FAB-08285A88A466" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0pm-9b-DiY">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="a5P-t8-Na1">
-                                    <connections>
-                                        <action selector="colorsToolbarAction:" target="B8D-0N-5wS" id="wGH-dw-yXB"/>
-                                    </connections>
-                                </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="NiN-9Q-Vyp">
                                     <connections>
                                         <action selector="fontToolbarAction:" target="B8D-0N-5wS" id="5S1-Ax-Hu4"/>
@@ -500,13 +495,24 @@
                                         <action selector="resetToolbarAction:" target="B8D-0N-5wS" id="uBZ-cs-jwY"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="4BDC7411-85EF-46DE-8A38-9EEA6D89BD61" label="Outline Color" paletteLabel="Outline Color" tag="-1" image="NSColorPanel" id="P7r-bG-Ywm">
+                                    <connections>
+                                        <action selector="outlineColorToolbarAction:" target="B8D-0N-5wS" id="5Ge-br-ZmM"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="672CB77D-39B2-436B-9B72-105603941287" label="Text Color" paletteLabel="Text Color" tag="-1" image="NSColorPanel" id="Wbj-DN-ytA">
+                                    <connections>
+                                        <action selector="textColorToolbarAction:" target="B8D-0N-5wS" id="kU0-H1-SBG"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="KQg-QC-4vO"/>
                                 <toolbarItem reference="zW3-fz-9Tp"/>
                                 <toolbarItem reference="SGO-B3-kes"/>
                                 <toolbarItem reference="NiN-9Q-Vyp"/>
-                                <toolbarItem reference="a5P-t8-Na1"/>
+                                <toolbarItem reference="Wbj-DN-ytA"/>
+                                <toolbarItem reference="P7r-bG-Ywm"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>
@@ -518,7 +524,7 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="bKw-Mq-oy4" customClass="ViewController" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="74" y="472"/>
+            <point key="canvasLocation" x="74" y="362.5"/>
         </scene>
         <!--Meme Maker-->
         <scene sceneID="hIz-AP-VOD">
@@ -594,7 +600,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1163"/>
+            <point key="canvasLocation" x="74" y="1111"/>
         </scene>
         <!--Editor-->
         <scene sceneID="6Sn-cT-nRc">
@@ -758,6 +764,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NSColorPanel" width="32" height="32"/>
         <image name="align-center" width="16" height="16"/>
         <image name="align-justify" width="16" height="16"/>
         <image name="align-left" width="16" height="16"/>

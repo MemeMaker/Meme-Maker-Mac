@@ -19,6 +19,9 @@ let kAlignTextNotification: String = "kAlignTextNotification"
 
 let kFillDefaultTextNotification: String = "kFillDefaultTextNotification"
 
+let kTextColorPanelNotification: String = "kTextColorPanelNotification"
+let kOutlineColorPanelNotification: String = "kOutlineColorPanelNotification"
+
 import Cocoa
 import SSZipArchive
 
