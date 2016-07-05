@@ -213,7 +213,9 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 	}
 	NSDateFormatter *formatter = [NSDateFormatter new];
 	[formatter setDateFormat:@"yyyy-MM-dd 'at' hh.mm.ss a"];
-	NSString *fileName = [NSString stringWithFormat:@"Meme %@.jpg", [formatter stringFromDate:[NSDate date]]];
+	NSString *titleName = @"Meme";
+	if (self.memeName.length > 0) titleName = self.memeName;
+	NSString *fileName = [NSString stringWithFormat:@"%@ %@.jpg", titleName, [formatter stringFromDate:[NSDate date]]];
 	[bitmapData writeToFile:[[dropDestination path] stringByAppendingPathComponent:fileName]  atomically:YES];
 	return [NSArray arrayWithObjects:fileName, nil];
 }

@@ -51,6 +51,9 @@ class XTextAttributes: NSObject {
 	
 	var opacity: CGFloat = 1
 	
+	var shadowEnabled: Bool = true
+	var shadow3D: Bool = false
+	
 	init(savename: String) {
 		
 		super.init()
@@ -103,6 +106,9 @@ class XTextAttributes: NSObject {
 				
 				opacity	= dict["opacity"] as! CGFloat
 				
+				shadowEnabled = dict["shadowEnabled"] as! Bool
+				shadow3D = dict["shadow3D"] as! Bool
+				
 			}
 		} catch _ {
 			print("attribute reading failed")
@@ -147,6 +153,9 @@ class XTextAttributes: NSObject {
 		dict["strokeWidth"] = NSNumber(float: Float(strokeWidth))
 		
 		dict["opacity"] = NSNumber(float: Float(opacity))
+		
+		dict["shadowEnabled"] = NSNumber(bool: shadowEnabled)
+		dict["shadow3D"] = NSNumber(bool: shadow3D)
 		
 //		print("SAVING : \(savename) = \(dict)")
 		
@@ -197,11 +206,18 @@ class XTextAttributes: NSObject {
 		
 		attr[NSStrokeColorAttributeName] = outlineColor
 		
-		let shadow = NSShadow()
-		shadow.shadowColor = outlineColor
-		shadow.shadowOffset = CGSizeMake(1, 1)
-		shadow.shadowBlurRadius = 1
-		attr[NSShadowAttributeName] = shadow
+		if (shadowEnabled) {
+			let shadow = NSShadow()
+			shadow.shadowColor = outlineColor
+			if (shadow3D) {
+				shadow.shadowOffset = CGSizeMake(0, -1)
+				shadow.shadowBlurRadius = 1.5
+			} else {
+				shadow.shadowOffset = CGSizeMake(0.1, 0.1)
+				shadow.shadowBlurRadius = 0.8
+			}
+			attr[NSShadowAttributeName] = shadow
+		}
 		
 		return attr
 		

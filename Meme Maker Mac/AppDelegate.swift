@@ -22,6 +22,10 @@ let kFillDefaultTextNotification: String = "kFillDefaultTextNotification"
 let kTextColorPanelNotification: String = "kTextColorPanelNotification"
 let kOutlineColorPanelNotification: String = "kOutlineColorPanelNotification"
 
+let kUpdateAttributesNotification: String = "kUpdateAttributesNotification"
+let kTopAttrName: String = "topAttr"
+let kBottomAttrName: String = "bottomAttr"
+
 import Cocoa
 import SSZipArchive
 
@@ -104,7 +108,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func showFontsMenuAction(sender: AnyObject) {
-		let topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
+		let topTextAttr: XTextAttributes =  XTextAttributes(savename: kTopAttrName)
 		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
 		NSFontPanel.sharedFontPanel().orderFront(sender)
 	}

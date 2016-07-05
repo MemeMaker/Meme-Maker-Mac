@@ -37,6 +37,7 @@ class EditorViewController: NSViewController {
 		didSet {
 			if let image = NSImage.init(contentsOfFile: imagesPathForFileName("\(meme.memeID)")) {
 				imageView?.image = image
+				imageView?.memeName = meme.name
 				baseImage = image
 			}
 			cookImage()
@@ -180,6 +181,17 @@ class EditorViewController: NSViewController {
 			panel.makeKeyAndOrderFront(self)
 		}
 		
+		center.addObserverForName(kUpdateAttributesNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			guard let userInfo = notification.userInfo else { return }
+			if let topAttr = userInfo[kTopAttrName] as? XTextAttributes {
+				self.topTextAttr = topAttr
+			}
+			if let bottomAttr = userInfo[kBottomAttrName] as? XTextAttributes {
+				self.bottomTextAttr = bottomAttr
+			}
+			self.cookImage()
+		}
+		
 	}
     
 }
@@ -189,6 +201,7 @@ extension EditorViewController: DragDropImageViewDelegate {
 	func dragDropImageView(imageView: DragDropImageView!, didFinishDropAtFilePath filePath: String!, andImage image: NSImage!) {
 		// Don't create a new meme object; just change the base image
 		baseImage = image
+		imageView.memeName = ""
 		cookImage()
 	}
 	

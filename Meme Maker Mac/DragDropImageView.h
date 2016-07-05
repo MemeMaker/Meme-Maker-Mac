@@ -18,6 +18,8 @@
     BOOL highlight;
 }
 
+@property (nonatomic, copy) NSString *memeName;
+
 @property (assign) BOOL allowDrag;
 @property (assign) BOOL allowDrop;
 @property (assign) id<DragDropImageViewDelegate> delegate;
