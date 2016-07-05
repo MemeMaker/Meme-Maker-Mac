@@ -42,6 +42,8 @@ class EditorViewController: NSViewController {
 	}
 	
 	var baseImage: NSImage?
+	
+	// MARK:
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,11 @@ class EditorViewController: NSViewController {
 		NSColorPanel.sharedColorPanel().color = topTextAttr.textColor
 		NSColorPanel.sharedColorPanel().runToolbarCustomizationPalette(self)
 		
+		NSEvent.addLocalMonitorForEventsMatchingMask(.FlagsChangedMask) { (theEvent) -> NSEvent? in
+			self.flagsChanged(theEvent)
+			return theEvent
+		}
+		
     }
 	
 	func setupGestureRecognizers() -> Void {
@@ -82,22 +89,6 @@ class EditorViewController: NSViewController {
 		doubleClickGestureRecognizer?.numberOfClicksRequired = 2
 		self.imageView.addGestureRecognizer(doubleClickGestureRecognizer!)
 		
-	}
-	
-	override func changeFont(sender: AnyObject?) {
-		if let topFont = sender?.convertFont(topTextAttr.font) {
-			topTextAttr.font = topFont
-		}
-		if let bottomFont = sender?.convertFont(bottomTextAttr.font) {
-			bottomTextAttr.font = bottomFont
-		}
-		cookImage()
-	}
-	
-	override func changeColor(sender: AnyObject?) {
-		topTextAttr.textColor = (sender?.color)!
-		bottomTextAttr.textColor = (sender?.color)!
-		cookImage()
 	}
 	
 	func handleNotifications() -> Void {
@@ -139,6 +130,23 @@ class EditorViewController: NSViewController {
 			}
 		}
 		
+		center.addObserverForName(kFillDefaultTextNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			guard let userInfo = notification.userInfo else { return }
+			if let topbottom = userInfo["topbottom"]?.integerValue {
+				if (topbottom == 1) {
+					if let topText = self.meme.topText {
+						self.topTextAttr.text = topText
+						self.topField.stringValue = topText
+					}
+				} else if (topbottom == 9) {
+					if let bottomText = self.meme.bottomText {
+						self.bottomTextAttr.text = bottomText
+						self.bottomField.stringValue = bottomText
+					}
+				}
+				self.cookImage()
+			}
+		}
 		
 	}
     
@@ -238,6 +246,22 @@ extension EditorViewController {
 		cookImage()
 	}
 	
+	override func changeFont(sender: AnyObject?) {
+		if let topFont = sender?.convertFont(topTextAttr.font) {
+			topTextAttr.font = topFont
+		}
+		if let bottomFont = sender?.convertFont(bottomTextAttr.font) {
+			bottomTextAttr.font = bottomFont
+		}
+		cookImage()
+	}
+	
+	override func changeColor(sender: AnyObject?) {
+		topTextAttr.textColor = (sender?.color)!
+		bottomTextAttr.textColor = (sender?.color)!
+		cookImage()
+	}
+	
 }
 
 // MARK: - Gesture and key control
@@ -267,12 +291,12 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 	func handlePan(recognizer: NSPanGestureRecognizer) -> Void {
 		let translation = recognizer.translationInView(self.imageView)
 		if (movingTop) {
-			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.view).x/50,
-			                                 topTextAttr.offset.y + recognizer.velocityInView(self.view).y/50);
+			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.imageView).x/60,
+			                                 topTextAttr.offset.y + recognizer.velocityInView(self.imageView).y/60);
 		}
 		else {
-			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.view).x/50,
-			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.view).y/50);
+			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.imageView).x/60,
+			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.imageView).y/60);
 		}
 		recognizer.setTranslation(translation, inView: imageView)
 		cookImage()
@@ -294,11 +318,6 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 		return true
 	}
 	
-//	override var acceptsFirstResponder: Bool { return true }
-//	override func becomeFirstResponder() -> Bool {
-//		return true
-//	}
-	
 	override func flagsChanged(theEvent: NSEvent) {
 		let rawValue = theEvent.modifierFlags.rawValue
 		shouldDragText = (rawValue/1000 == 524)
@@ -307,18 +326,6 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 }
 
 extension EditorViewController: NSTextFieldDelegate {
-	
-	@IBAction func topTextChanged(sender: NSTextField) {
-//		topTextAttr.text = "\(topField.stringValue)"
-//		topTextAttr.saveAttributes("topAttr")
-//		cookImage()
-	}
-	
-	@IBAction func bottomTextChanged(sender: NSTextField) {
-//		bottomTextAttr.text = "\(bottomField.stringValue)"
-//		bottomTextAttr.saveAttributes("bottomAttr")
-//		cookImage()
-	}
 	
 	override func controlTextDidChange(obj: NSNotification) {
 		topTextAttr.text = "\(topField.stringValue)"

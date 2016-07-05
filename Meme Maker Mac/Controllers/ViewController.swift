@@ -196,10 +196,6 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 
 extension ViewController: NSSearchFieldDelegate {
 	
-	@IBAction func searchAction(sender: AnyObject) {
-//		self.filterMemesWithSearchText((sender as! NSSearchField).stringValue)
-	}
-	
 	override func controlTextDidChange(obj: NSNotification) {
 		self.filterMemesWithSearchText(self.searchField.stringValue)
 	}

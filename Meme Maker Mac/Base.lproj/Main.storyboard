@@ -115,6 +115,19 @@
                                                 <action selector="resetAllMenuAction:" target="Voe-Tx-rLC" id="ZhR-gQ-Twe"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="MwF-wx-UGA"/>
+                                        <menuItem title="Fill default text top" tag="1" keyEquivalent="a" id="NXh-sY-giC">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="fillDefaultTextMenuAction:" target="Voe-Tx-rLC" id="Grz-9K-rO6"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Fill default text bottom" tag="9" keyEquivalent="z" id="LML-0b-cXm">
+                                            <modifierMask key="keyEquivalentModifierMask" control="YES"/>
+                                            <connections>
+                                                <action selector="fillDefaultTextMenuAction:" target="Voe-Tx-rLC" id="ZvI-9N-UhU"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="5ir-zF-H9l"/>
                                         <menuItem title="Cut" keyEquivalent="x" id="uRl-iY-unG">
                                             <connections>
@@ -129,12 +142,6 @@
                                         <menuItem title="Paste" keyEquivalent="v" id="gVA-U4-sdL">
                                             <connections>
                                                 <action selector="paste:" target="Ady-hI-5gd" id="UvS-8e-Qdg"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Paste and Match Style" keyEquivalent="V" id="WeT-3V-zwk">
-                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
-                                            <connections>
-                                                <action selector="pasteAsPlainText:" target="Ady-hI-5gd" id="cEh-KX-wJQ"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Delete" id="pa3-QI-u2k">
@@ -465,9 +472,9 @@
                     <window key="window" title="Meme Maker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="240" y="240" width="750" height="480"/>
+                        <rect key="contentRect" x="240" y="259" width="960" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="750" height="480"/>
+                        <value key="minSize" type="size" width="960" height="600"/>
                         <toolbar key="toolbar" implicitIdentifier="50592A73-7111-41BF-8FAB-08285A88A466" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="0pm-9b-DiY">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="a5P-t8-Na1">
@@ -511,7 +518,7 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="bKw-Mq-oy4" customClass="ViewController" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="74" y="498"/>
+            <point key="canvasLocation" x="74" y="472"/>
         </scene>
         <!--Meme Maker-->
         <scene sceneID="hIz-AP-VOD">
@@ -529,7 +536,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </searchFieldCell>
                                 <connections>
-                                    <action selector="searchAction:" target="XfG-lQ-9wD" id="h5w-p7-AyH"/>
                                     <outlet property="delegate" destination="XfG-lQ-9wD" id="30n-ej-Ive"/>
                                 </connections>
                             </searchField>
@@ -598,7 +604,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Vi-KWg">
+                            <imageView autoresizesSubviews="NO" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NaU-Vi-KWg" customClass="DragDropImageView">
                                 <rect key="frame" x="320" y="240" width="0.0" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="360" id="O9q-PG-GZM"/>
@@ -617,7 +623,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="bottomTextChanged:" target="qyR-yM-Rrq" id="f4r-ao-rSv"/>
                                     <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
                                     <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
                                 </connections>
@@ -690,7 +695,6 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="topTextChanged:" target="qyR-yM-Rrq" id="eS6-5g-dIu"/>
                                     <outlet property="delegate" destination="qyR-yM-Rrq" id="LGn-cA-834"/>
                                     <outlet property="nextKeyView" destination="Bdl-en-70C" id="WUi-wu-w3M"/>
                                 </connections>

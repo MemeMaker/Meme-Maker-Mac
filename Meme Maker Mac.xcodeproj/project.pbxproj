@@ -20,6 +20,7 @@
 		59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */; };
 		59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */; };
 		5973F15C1D22418000080706 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973F15B1D22418000080706 /* EditorViewController.swift */; };
+		59AB9EE51D2BA571002386B5 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EE41D2BA571002386B5 /* DragDropImageView.m */; };
 		59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */; };
 		59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C91CF3199400C39BCF /* XMeme.swift */; };
 		59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */; };
@@ -68,6 +69,9 @@
 		59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCollectionViewItel.swift; path = Views/Cells/ListCollectionViewItel.swift; sourceTree = "<group>"; };
 		59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListCollectionViewItel.xib; path = Views/Cells/ListCollectionViewItel.xib; sourceTree = "<group>"; };
 		5973F15B1D22418000080706 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
+		59AB9EE21D2BA570002386B5 /* Meme Maker Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meme Maker Mac-Bridging-Header.h"; sourceTree = "<group>"; };
+		59AB9EE31D2BA571002386B5 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropImageView.h; sourceTree = "<group>"; };
+		59AB9EE41D2BA571002386B5 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropImageView.m; sourceTree = "<group>"; };
 		59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Meme Maker Mac.entitlements"; sourceTree = "<group>"; };
 		59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewItem.swift; path = Views/Cells/BaseCollectionViewItem.swift; sourceTree = "<group>"; };
 		59FA74C91CF3199400C39BCF /* XMeme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMeme.swift; path = Models/XMeme.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 		59490AF61CEF275E00679BE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59AB9EDF1D2B8059002386B5 /* DragDropImageView */,
 				59FA74D51CF3199D00C39BCF /* Default */,
 				59490AD41CEF274A00679BE2 /* Info.plist */,
 				59FA74DA1CF31B6300C39BCF /* PrefixHeader.swift */,
@@ -220,6 +225,16 @@
 				59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		59AB9EDF1D2B8059002386B5 /* DragDropImageView */ = {
+			isa = PBXGroup;
+			children = (
+				59AB9EE31D2BA571002386B5 /* DragDropImageView.h */,
+				59AB9EE41D2BA571002386B5 /* DragDropImageView.m */,
+				59AB9EE21D2BA570002386B5 /* Meme Maker Mac-Bridging-Header.h */,
+			);
+			name = DragDropImageView;
 			sourceTree = "<group>";
 		};
 		59FA74D51CF3199D00C39BCF /* Default */ = {
@@ -452,6 +467,7 @@
 				59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */,
 				59FA74DB1CF31B6300C39BCF /* PrefixHeader.swift in Sources */,
 				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
+				59AB9EE51D2BA571002386B5 /* DragDropImageView.m in Sources */,
 				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
 				59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */,
 				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
@@ -595,6 +611,7 @@
 			baseConfigurationReference = 81DCF0E6C3E12AD2B440E369 /* Pods-Meme Maker Mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -602,6 +619,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -610,6 +629,7 @@
 			baseConfigurationReference = A998A181C4675F794C9B1C9A /* Pods-Meme Maker Mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -617,6 +637,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
 			};
 			name = Release;
 		};

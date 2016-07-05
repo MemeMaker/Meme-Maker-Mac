@@ -17,6 +17,8 @@ let kFontSmallerNotification: String = "kFontSmallerNotification"
 
 let kAlignTextNotification: String = "kAlignTextNotification"
 
+let kFillDefaultTextNotification: String = "kFillDefaultTextNotification"
+
 import Cocoa
 import SSZipArchive
 
@@ -102,6 +104,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		let topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
 		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
 		NSFontPanel.sharedFontPanel().orderFront(sender)
+	}
+	
+	@IBAction func fillDefaultTextMenuAction(sender: NSMenuItem) {
+		let tag = sender.tag
+		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
 	}
 	
 	
