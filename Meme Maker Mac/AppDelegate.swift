@@ -10,6 +10,7 @@ let kToggleViewModeNotification: String = "kToggleViewModeNotification"
 let kToggleViewModeKey: String = "kToggleViewModeKey"
 
 let kResetPositionNotification: String = "kResetPositionNotification"
+let kResetAllNotification: String = "kResetAllNotification"
 
 let kFontBiggerNotification: String = "kFontBiggerNotification"
 let kFontSmallerNotification: String = "kFontSmallerNotification"
@@ -69,6 +70,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
 	}
 	
+	@IBAction func resetAllMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kResetAllNotification, object: nil)
+	}
+	
 	@IBAction func biggerMenuAction(sender: AnyObject) {
 		NSNotificationCenter.defaultCenter().postNotificationName(kFontBiggerNotification, object: nil)
 	}
@@ -93,6 +98,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 3)])
 	}
 	
+	@IBAction func showFontsMenuAction(sender: AnyObject) {
+		let topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
+		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
+		NSFontPanel.sharedFontPanel().orderFront(sender)
+	}
 	
 	
 	// MARK: - Utility

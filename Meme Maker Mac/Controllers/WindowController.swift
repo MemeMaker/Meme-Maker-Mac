@@ -46,6 +46,5 @@ class WindowController: NSWindowController {
 	@IBAction func resetToolbarAction(sender: AnyObject) {
 		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
 	}
-	
 
 }

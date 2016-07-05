@@ -26,20 +26,18 @@ class EditorViewController: NSViewController {
 	var doubleClickGestureRecognizer: NSClickGestureRecognizer?
 	
 	var movingTop: Bool = true;
+	var shouldDragText: Bool = false;
 	
 	var topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
 	var bottomTextAttr: XTextAttributes = XTextAttributes(savename: "bottomAttr")
 	
 	var meme: XMeme!  {
 		didSet {
-			
 			if let image = NSImage.init(contentsOfFile: imagesPathForFileName("\(meme.memeID)")) {
 				imageView?.image = image
 				baseImage = image
 			}
-			
 			cookImage()
-			
 		}
 	}
 	
@@ -60,11 +58,13 @@ class EditorViewController: NSViewController {
 		bottomAlignmentSegmentedControl.selectedSegment = bottomTextAttr.absAlignment
 		
 		NSFontManager.sharedFontManager().target = self
-		NSFontManager.sharedFontManager().action = #selector(EditorViewController.fontChanged(_:))
-		
+		NSFontManager.sharedFontManager().action = #selector(EditorViewController.changeFont(_:))
 		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
 		
-//		NSFontPanel.sharedFontPanel().add
+		NSColorPanel.sharedColorPanel().setTarget(self)
+		NSColorPanel.sharedColorPanel().setAction(#selector(EditorViewController.changeColor(_:)))
+		NSColorPanel.sharedColorPanel().color = topTextAttr.textColor
+		NSColorPanel.sharedColorPanel().runToolbarCustomizationPalette(self)
 		
     }
 	
@@ -84,12 +84,20 @@ class EditorViewController: NSViewController {
 		
 	}
 	
-	func fontChanged(sender: AnyObject) -> Void {
-		if let font = NSFontManager.sharedFontManager().selectedFont {
-			topTextAttr.font = NSFont(name: font.fontName, size: topTextAttr.fontSize)!
-			bottomTextAttr.font = NSFont(name: font.fontName, size: bottomTextAttr.fontSize)!
-			cookImage()
+	override func changeFont(sender: AnyObject?) {
+		if let topFont = sender?.convertFont(topTextAttr.font) {
+			topTextAttr.font = topFont
 		}
+		if let bottomFont = sender?.convertFont(bottomTextAttr.font) {
+			bottomTextAttr.font = bottomFont
+		}
+		cookImage()
+	}
+	
+	override func changeColor(sender: AnyObject?) {
+		topTextAttr.textColor = (sender?.color)!
+		bottomTextAttr.textColor = (sender?.color)!
+		cookImage()
 	}
 	
 	func handleNotifications() -> Void {
@@ -99,6 +107,12 @@ class EditorViewController: NSViewController {
 		center.addObserverForName(kResetPositionNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			self.topTextAttr.resetOffset()
 			self.bottomTextAttr.resetOffset()
+			self.cookImage()
+		}
+		
+		center.addObserverForName(kResetAllNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.topTextAttr.setDefault()
+			self.bottomTextAttr.setDefault()
 			self.cookImage()
 		}
 		
@@ -226,7 +240,7 @@ extension EditorViewController {
 	
 }
 
-// MARK: - Gesture handlers
+// MARK: - Gesture and key control
 
 extension EditorViewController: NSGestureRecognizerDelegate {
 	
@@ -253,12 +267,12 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 	func handlePan(recognizer: NSPanGestureRecognizer) -> Void {
 		let translation = recognizer.translationInView(self.imageView)
 		if (movingTop) {
-			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.view).x/60,
-			                                 topTextAttr.offset.y + recognizer.velocityInView(self.view).y/60);
+			topTextAttr.offset = CGPointMake(topTextAttr.offset.x + recognizer.velocityInView(self.view).x/50,
+			                                 topTextAttr.offset.y + recognizer.velocityInView(self.view).y/50);
 		}
 		else {
-			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.view).x/60,
-			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.view).y/60);
+			bottomTextAttr.offset = CGPointMake(bottomTextAttr.offset.x + recognizer.velocityInView(self.view).x/50,
+			                                    bottomTextAttr.offset.y + recognizer.velocityInView(self.view).y/50);
 		}
 		recognizer.setTranslation(translation, inView: imageView)
 		cookImage()
@@ -271,6 +285,7 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 	}
 	
 	func gestureRecognizerShouldBegin(gestureRecognizer: NSGestureRecognizer) -> Bool {
+		if (!shouldDragText) { return false; }
 		if (gestureRecognizer == self.panGestureRecognizer) {
 			let topRect = NSMakeRect(0, (self.imageView.bounds.size.height)/2, (self.imageView.bounds.size.width), (self.imageView.bounds.size.height)/2)
 			let location = gestureRecognizer.locationInView(imageView)
@@ -279,6 +294,15 @@ extension EditorViewController: NSGestureRecognizerDelegate {
 		return true
 	}
 	
+//	override var acceptsFirstResponder: Bool { return true }
+//	override func becomeFirstResponder() -> Bool {
+//		return true
+//	}
+	
+	override func flagsChanged(theEvent: NSEvent) {
+		let rawValue = theEvent.modifierFlags.rawValue
+		shouldDragText = (rawValue/1000 == 524)
+	}
 	
 }
 

@@ -110,6 +110,11 @@
                                                 <action selector="resetMenuAction:" target="Voe-Tx-rLC" id="qKl-Xr-Cwr"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Reset all attributes" keyEquivalent="R" id="vFi-7a-Rqz">
+                                            <connections>
+                                                <action selector="resetAllMenuAction:" target="Voe-Tx-rLC" id="ZhR-gQ-Twe"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="5ir-zF-H9l"/>
                                         <menuItem title="Cut" keyEquivalent="x" id="uRl-iY-unG">
                                             <connections>
@@ -323,7 +328,11 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <menu key="submenu" title="Font" systemMenu="font" id="aXa-aM-Jaq">
                                                 <items>
-                                                    <menuItem title="Show Fonts" keyEquivalent="t" id="Q5e-8K-NDq"/>
+                                                    <menuItem title="Show Fonts" keyEquivalent="t" id="Q5e-8K-NDq">
+                                                        <connections>
+                                                            <action selector="showFontsMenuAction:" target="Voe-Tx-rLC" id="qU2-Wo-zyU"/>
+                                                        </connections>
+                                                    </menuItem>
                                                     <menuItem isSeparatorItem="YES" id="5gT-KC-WSO"/>
                                                     <menuItem title="Show Colors" keyEquivalent="C" id="bgn-CT-cEk">
                                                         <connections>
@@ -581,10 +590,10 @@
             </objects>
             <point key="canvasLocation" x="74" y="1163"/>
         </scene>
-        <!--Editor View Controller-->
+        <!--Editor-->
         <scene sceneID="6Sn-cT-nRc">
             <objects>
-                <viewController id="qyR-yM-Rrq" customClass="EditorViewController" customModule="Meme_Maker_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Editor" showSeguePresentationStyle="single" id="qyR-yM-Rrq" customClass="EditorViewController" customModule="Meme_Maker_Mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="lkP-n5-8n5">
                         <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
