@@ -6,28 +6,6 @@
 //  Copyright © 2016 avikantz. All rights reserved.
 //
 
-let kFetchCompleteNotification: String = "kFetchCompleteNotification"
-
-let kToggleViewModeNotification: String = "kToggleViewModeNotification"
-let kToggleViewModeKey: String = "kToggleViewModeKey"
-
-let kResetPositionNotification: String = "kResetPositionNotification"
-let kResetAllNotification: String = "kResetAllNotification"
-
-let kFontBiggerNotification: String = "kFontBiggerNotification"
-let kFontSmallerNotification: String = "kFontSmallerNotification"
-
-let kAlignTextNotification: String = "kAlignTextNotification"
-
-let kFillDefaultTextNotification: String = "kFillDefaultTextNotification"
-
-let kTextColorPanelNotification: String = "kTextColorPanelNotification"
-let kOutlineColorPanelNotification: String = "kOutlineColorPanelNotification"
-
-let kUpdateAttributesNotification: String = "kUpdateAttributesNotification"
-let kTopAttrName: String = "topAttr"
-let kBottomAttrName: String = "bottomAttr"
-
 import Cocoa
 import SSZipArchive
 
@@ -39,12 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		
 		let timesLaunched = SettingsManager.getInteger(kSettingsTimesLaunched)
 		if (timesLaunched == 0) {
-			SettingsManager.setBool(false, key: kSettingsAutoDismiss)
 			SettingsManager.setBool(false, key: kSettingsResetSettingsOnLaunch)
-			SettingsManager.setBool(true, key: kSettingsContinuousEditing)
-			SettingsManager.setBool(false, key: kSettingsUploadMemes)
-			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
-			SettingsManager.setObject("rank", key: kSettingsLastSortKey)
+			SettingsManager.setInteger(1, key: kSettingsLastSortKey) // default
 			print("Unarchiving to \(getImagesFolder())")
 			SSZipArchive.unzipFileAtPath(NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
 			saveDefaultMemes()
@@ -52,12 +26,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		SettingsManager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
 		if SettingsManager.getBool(kSettingsResetSettingsOnLaunch) {
 			XTextAttributes.clearTopAndBottomTexts()
-		}
-		if (SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) < 3 || SettingsManager.getInteger(kSettingsNumberOfElementsInGrid) > 7) {
-			SettingsManager.setInteger(3, key: kSettingsNumberOfElementsInGrid)
-		}
-		if ("rank memeID name".containsString(SettingsManager.getObject(kSettingsLastSortKey) as! String)) {
-			SettingsManager.setObject("rank", key: kSettingsLastSortKey)
 		}
 		
 	}

@@ -35,6 +35,10 @@ class WindowController: NSWindowController {
 		grid = !grid
 	}
 	
+	@IBAction func sortToolbarAction(sender: AnyObject) {
+		
+	}
+	
 	@IBAction func fontToolbarAction(sender: AnyObject) {
 		
 	}

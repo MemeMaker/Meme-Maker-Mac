@@ -33,21 +33,8 @@ class ViewController: NSViewController {
 		context = appDelegate.managedObjectContext
 		
 		self.fetchLocalMemes()
-	
-		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.collectionView.reloadData()
-		}
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
-			let dict = notificaton.userInfo
-			let mode = dict![kToggleViewModeKey] as! NSNumber
-			self.gridMode = mode.boolValue
-			self.collectionView.reloadData()
-		}
-		
-		NSNotificationCenter.defaultCenter().addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			self.fetchLocalMemes()
-		}
+		handleNotifications()
 		
 		if (NSDate().timeIntervalSinceDate(SettingsManager.getLastUpdateDate())) > 7 * 86400 {
 			print("Fetching latest memes, just for you!")
@@ -87,8 +74,43 @@ class ViewController: NSViewController {
 		collectionView.reloadData()
 		collectionView.wantsLayer = true
 		collectionView.layer?.cornerRadius = 4
+		collectionView.layer?.backgroundColor = NSColor.clearColor().CGColor
 		collectionScrollView.wantsLayer = true
 		collectionScrollView.layer?.cornerRadius = 4
+		collectionScrollView.layer?.backgroundColor = NSColor.clearColor().CGColor
+	}
+	
+	func handleNotifications() -> Void {
+		
+		let center = NSNotificationCenter.defaultCenter()
+		
+		center.addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.collectionView.reloadData()
+		}
+		
+		center.addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
+			let dict = notificaton.userInfo
+			let mode = dict![kToggleViewModeKey] as! NSNumber
+			self.gridMode = mode.boolValue
+			self.collectionView.reloadData()
+		}
+		
+		center.addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.fetchLocalMemes()
+		}
+		
+		center.addObserverForName(kSortModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let sortMode = SettingsManager.getInteger(kSettingsLastSortKey)
+			if (sortMode == 1) { // Default
+				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "memeID", ascending: true)])
+			} else if (sortMode == 2) { // Alphabetical
+				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "name", ascending: true)])
+			} else if (sortMode == 3) { // Rank wise
+				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "rank", ascending: true)])
+			}
+			self.collectionView.reloadData()
+		}
+		
 	}
 	
 	func isGrid () -> Bool {

@@ -8,16 +8,6 @@
 
 import AppKit
 
-let kSettingsTimesLaunched			= "kTimesLaunched"
-let kSettingsContinuousEditing		= "kContinuousEditing"
-let kSettingsLastMemeIdOpened		= "kSettingsLastMemeIdOpened"
-let kSettingsAutoDismiss			= "kAutoDismiss"
-let kSettingsUploadMemes			= "kEnableMemeUpload"
-let kSettingsResetSettingsOnLaunch	= "kResetSettingsOnLaunch"
-let kSettingsViewModeIsGrid			= "kMemeListViewModeIsGrid"
-let kSettingsLastSortKey			= "kLastSortOrderKey"
-let kSettingsNumberOfElementsInGrid	= "kNumberOfElementsInGrid"
-
 var globalBackColor: NSColor = NSColor.whiteColor()
 var globalTintColor: NSColor = NSColor.blackColor()
 

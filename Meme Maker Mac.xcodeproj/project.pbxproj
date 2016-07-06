@@ -30,6 +30,8 @@
 		59AB9EF61D2C268D002386B5 /* GRVibrantTitlebarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF11D2C268D002386B5 /* GRVibrantTitlebarWindow.m */; };
 		59AB9EF71D2C268D002386B5 /* GRVibrantTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */; };
 		59AB9EFA1D2C2693002386B5 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF91D2C2693002386B5 /* DragDropImageView.m */; };
+		59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D161D2D75F600CF0EF9 /* SortViewController.swift */; };
+		59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D181D2D77D400CF0EF9 /* Constants.swift */; };
 		59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */; };
 		59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C91CF3199400C39BCF /* XMeme.swift */; };
 		59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */; };
@@ -96,6 +98,8 @@
 		59AB9EF81D2C2693002386B5 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragDropImageView.h; path = "Supporting Files/DragDropImageView/DragDropImageView.h"; sourceTree = "<group>"; };
 		59AB9EF91D2C2693002386B5 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragDropImageView.m; path = "Supporting Files/DragDropImageView/DragDropImageView.m"; sourceTree = "<group>"; };
 		59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Meme Maker Mac.entitlements"; sourceTree = "<group>"; };
+		59D21D161D2D75F600CF0EF9 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortViewController.swift; path = Controllers/SortViewController.swift; sourceTree = "<group>"; };
+		59D21D181D2D77D400CF0EF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Constants.swift; sourceTree = "<group>"; };
 		59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewItem.swift; path = Views/Cells/BaseCollectionViewItem.swift; sourceTree = "<group>"; };
 		59FA74C91CF3199400C39BCF /* XMeme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMeme.swift; path = Models/XMeme.swift; sourceTree = "<group>"; };
 		59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XMeme+CoreDataProperties.swift"; path = "Models/XMeme+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 				59490AFB1CEF282300679BE2 /* ViewController.swift */,
 				5973F15B1D22418000080706 /* EditorViewController.swift */,
 				59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */,
+				59D21D161D2D75F600CF0EF9 /* SortViewController.swift */,
 				5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */,
 			);
 			name = Controllers;
@@ -232,8 +237,9 @@
 		59490AF81CEF276A00679BE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */,
 				59FA74DE1CF31C1200C39BCF /* XMeme */,
+				59D21D181D2D77D400CF0EF9 /* Constants.swift */,
+				5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */,
 				59FA74DC1CF31C0F00C39BCF /* SettingsManager.swift */,
 				59FA74CB1CF3199400C39BCF /* XTextAttributes.swift */,
 				59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */,
@@ -404,6 +410,9 @@
 					59490AC41CEF274A00679BE2 = {
 						CreatedOnToolsVersion = 7.3;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 0;
+							};
 							com.apple.Sandbox = {
 								enabled = 1;
 							};
@@ -603,6 +612,8 @@
 				5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */,
 				59AB9EF51D2C268D002386B5 /* GRVibrantTitlebarView.m in Sources */,
 				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
+				59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */,
+				59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */,
 				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
 				59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */,
 				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
