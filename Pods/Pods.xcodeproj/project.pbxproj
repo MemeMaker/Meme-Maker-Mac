@@ -7,239 +7,144 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0175BAB0080434C0AE52DAAC457862D5 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2451A714F731333DF12B284B8F035 /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0329E860258289C23F2019F97BF47214 /* aes_via_ace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BBBF6B704FF4E3FF6CA98A2DD954E96 /* aes_via_ace.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A48A695980D8B768F986F98EC1916F /* Error.swift */; };
-		0DCCEE7414DB4546222B76395D35E56A /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = 49D357969FC11E60B11274553EBDDFF1 /* unzip.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42B9D49E6D36CA380920E278C9421B /* Timeline.swift */; };
-		16554288B4F3F0922AAC2A98ABF10D37 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 60323D1B97A56C5B873715934F8915E9 /* sha1.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		175F6D901ADA66899E355ECB840C0B5C /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = EDE19850450F93C447DE8B734BBBD383 /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BF960E423B27E31B5751A24069F8FA3 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 231CB0D1B4146D68C0CD8F51695E7850 /* ioapi.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1D57FA69C7531B1F4CAC0035847E13FD /* brg_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A5DCA1F9CB33FA7B5B28234123F932 /* brg_endian.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		222D55F1F6043A169FF748E61CFF0A74 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = B610981E0C5920AF8F30EEEE6A828755 /* entropy.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		26846E6E2B3ADDB630FE46E5A92AF3A9 /* fileenc.h in Headers */ = {isa = PBXBuildFile; fileRef = 22345CD29A9BD108C76F2DFECF4CD24A /* fileenc.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2BB66C52898A2CE97D0456BB1BF48A19 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
-		2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0762840155BB0D4FA26BEA00F04E1C90 /* Validation.swift */; };
-		34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBFDA51568557B41B1AFC842B33DD8F /* NetworkReachabilityManager.swift */; };
-		3E9321EB450FD56C5D52431BE0779E92 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
-		3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5B2D2EAE0175523875DB6D65A204CD /* ResponseSerialization.swift */; };
-		4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06891F18C7E67964D2E5D816F49304 /* Manager.swift */; };
-		41C0672B8AF4BEE7C151D061F382BD13 /* aesopt.h in Headers */ = {isa = PBXBuildFile; fileRef = F450B71BBC6840678664D9E9FF5DCFC2 /* aesopt.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4266BE26DA2C6F850552E0848527EC50 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 73B77B620FFA9480D360E35CD3FBDA0F /* mztools.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		437242097BB41304E123C3B131E3D42D /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 04ABB581CF0BD5BA779173A4526381E1 /* aescrypt.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		4781D3597633F3C68A08F5A7432D7B17 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D04C1796EC13A85B35B76D14D2160AA9 /* ioapi.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		497AF488397708F93783CB4FFDCABC8D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA0FF24A660736DEE1AC7D1558829E1 /* Alamofire.framework */; };
-		522C2D06F8E81CB1F19E364B86B5E2C4 /* entropy.h in Headers */ = {isa = PBXBuildFile; fileRef = 268CF959657E50E11C85413EDC768C4E /* entropy.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		54875557B970569EBAAEF4BB760DC275 /* prng.h in Headers */ = {isa = PBXBuildFile; fileRef = F3BD7CC6BE0B246B0C8853AF27E942BD /* prng.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		56F486D37F623B81A6380AB56596FB23 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = C1AF21BCE367362C7BCF670C574A5DDF /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		583A63D1B9E076C4624ACF60C3E25D84 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
+		010C8891923747603EE2B9D22A4A942C /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C2940D2C413CCDDF6DF674DD2F93D /* mztools.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		06C1B5A56271E9D54A36F315BF3DDBB3 /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = 734D5C2F6EE1E819FD13617ABC7AF9C8 /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ECA4F5FEDE8809BC60F14DFB46066FC /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EA8517DF1BE57252A27CF7892E9C82D /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18666B8430CBA8435A359F2FAF986273 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = E2F80A21C1EA00B9C2F0982A0F25EC07 /* prng.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		18DD2C57192030FCA74004593BA2EFB6 /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CF5F3FB9C2E481BCD976F24C78D7BD /* unzip.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2232D35214B3BC11C72A177FC52D7B43 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 7567B285F35DDF20CC6541C71DD34658 /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		28B28AE0420E9596CEAA57E5654BFD6C /* SSZipArchive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BB8CD8C7F155B0CA4B37EF90BF43E10 /* SSZipArchive-dummy.m */; };
+		2E1F250792956E7DD463CB1AE7780FD4 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 22BAF982A99B1795F746A74492393AD1 /* mztools.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3E9321EB450FD56C5D52431BE0779E92 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		4005B177A0658C855C35A7FE2A662247 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D3CFBE31E5585EA285F8EB14CD2C2BA /* aes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A5BF2CD1FB83D5E8CD0077EA9613018 /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = 687168AE5E5C3CFFBFE920FBAD8D389A /* ioapi.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4D6CB7F65637F79A41F8D515EA8B6EF1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		56F099752E17C1F536646FD5848DD421 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 43327C4BC21EE0E2E153B407CE7FD6C9 /* SSZipArchive.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		5B31BC691C715E75951A6411D03EE037 /* Pods-Meme Maker MacTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFB1EF08DC8C5252EA12A360F6A47CF1 /* Pods-Meme Maker MacTests-dummy.m */; };
-		5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E43E05A33BED200B4AA35D09301A66 /* Upload.swift */; };
-		5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2982DA5B1327CDEE2CFA94536A564CFE /* Download.swift */; };
+		5B89CA5CEEBB83ED33B79D91C952E4E8 /* fileenc.h in Headers */ = {isa = PBXBuildFile; fileRef = 30AE5781E5B99BB6C90F2AECCD0CB750 /* fileenc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5F4A613B12262B8BED0DDB11213EC10D /* Pods-Meme Maker MacUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC24CBCB0D0F37E6BDE2EA3DD6B8362C /* Pods-Meme Maker MacUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		600A905DEFE36C2FC7EA879C02A3C8D4 /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 21D2AEBB73D8740071587FCD7A221B6F /* zip.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EC3F9F20DD28348DE083E55B65ACE3 /* Response.swift */; };
-		7215C851885068BCE0FD65D27DAB8538 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9B43CD068C7DDA582394FA4972A67E /* Image.swift */; };
-		75B6D3141974E70834ACED6035BCB0DD /* AlamofireImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8875D04F3BD61337D2F3C9819042DFC /* AlamofireImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77907A202881AD59DB0334545D571428 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07F47F13D0FA3A8480F2B74C1BE709E /* ImageDownloader.swift */; };
-		77D9BA0D1C89CF50206D23A99A0C70E6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
-		792199644CA990BC5C8B19A024F1BA08 /* AlamofireImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAC497451C7AB58A401A896C46034F3 /* AlamofireImage-dummy.m */; };
-		7970FBBE94002D4B45D95299149C3E54 /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = 6152492249B4FCEFADFB48A14F5A9863 /* mztools.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F41753C58E6D976470E5ACB690403 /* ServerTrustPolicy.swift */; };
-		7EB6120359520F06C57D32313E8C6529 /* aestab.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE043A858FB6653DCF985CDDFA2134C /* aestab.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92418A1C718E2F557FC83A8E00C77797 /* Alamofire.swift */; };
-		923433219F9C5AC736E9A9AABBEFE6BA /* Pods-Meme Maker Mac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85063BE0074C7A726A921BFE6D7B1249 /* Pods-Meme Maker Mac-dummy.m */; };
-		9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 375349FE907BA2B30AA8F7C3B8CEA06E /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9626CB7E07485A86C5D24CC917762D7A /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = CCF811AE988677F988DD13FCBDD2057D /* fileenc.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		9C2F00327F91697E70ECB20E4606A340 /* Pods-Meme Maker Mac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DAC82E7F47B44382B6079D3B64E12C /* Pods-Meme Maker Mac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A08B34F78A28DC25B924C9F2EFCE119B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
-		A185016265600761D47FB6FA426053A8 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 3CBEF73AC594ECC3B2D3A5FBCFC2BF2C /* aestab.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A2C90E8497C998BCB5A3E954669141CE /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = D6F9E21C895A0E2CD65FF1C815148E9E /* hmac.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A98CEA7EE61521B5D51095275A27FDD3 /* pwd2key.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C3570701E6136ABAC5817892995BD92 /* pwd2key.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AA23F04FFEB35E4855DA0EA3B95C0C72 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 3330318B3C17C1C2BE165A9C6A64B79E /* prng.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEB9E54E01D003128B11B58EF202DEE /* Result.swift */; };
-		ADC3A614B8B9FB3F16A48A6484ABC7E2 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 57D9B5A4F826523367268C08FE03D8E3 /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87CF21BC5B63563BF8BAC834001110A0 /* Alamofire-dummy.m */; };
-		AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C578A53CFB47468E48E36005EFB68 /* Stream.swift */; };
-		B235EA78CC200C68A23ADA3A9DC99466 /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 17ADFB65D694C959B24CEA363D04E38A /* crypt.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B9A327CFB2A8274E714607172C5005BD /* SSZipArchive-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FC301D77B4C7DEB491AF167CC4A5A3D /* SSZipArchive-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BD8D0A68FFB2BFCFEECBC0467A135BCE /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = F1C8DBA61EC683088C026E5DFCA28A4E /* SSZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDCBA6BE62E57D33576AF8CE203131C3 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = EAD97CBCC5209E071501DB5CB395BABD /* sha1.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DFD0BF311429B78DB3963A5AF22B63 /* Notifications.swift */; };
-		C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0821DEB3DB16DA884CE9F81B630BE66D /* ParameterEncoding.swift */; };
-		C1E09113EB9F34E6E0952FF9F60A388B /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = A5B61368DB5DCC8E633073830F524E6D /* zip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C6251EBEF34A8A2A74E1DA90C29FC822 /* SSZipArchive-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E687A07100A1E3C36B4ED66F0B73595 /* SSZipArchive-dummy.m */; };
-		C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6AD490BDEF7A996848950E204E7CD8 /* MultipartFormData.swift */; };
-		C99D8EFD6B21230CEB4F5943AFD19BA2 /* aes.h in Headers */ = {isa = PBXBuildFile; fileRef = 709704D2A0267F9F0901BE2BCC1F38E9 /* aes.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1C9DBB2F9688CC3D1EED6E6A0F57A1A /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = BA85EEE0EAB7A9FAF12D46ADDE076C5C /* pwd2key.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D1F3A1BAB097B8C2CD2BF6509CF88E8C /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = AC4E7AC091F7F6B977A5780CE2DC28D7 /* aeskey.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		D47D5E6318AF36073B0DDC664299F634 /* brg_types.h in Headers */ = {isa = PBXBuildFile; fileRef = BE23641BC01F0E0CDB0936DBFC09144C /* brg_types.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DC1157D522DCDCF273CA6A8CD50524A5 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = FD8CD5D5A11D8D4E7619477AE738024D /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6B359867DF4E69E39616842829A59E56 /* prng.h in Headers */ = {isa = PBXBuildFile; fileRef = 498660BCD0307407153720FEF08AD335 /* prng.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		720F389947955749767BC9C587A94CC2 /* ZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = E892AEC19EC09091E9E1ED568E17F4DD /* ZipArchive.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B85CBE1017B479C9CB217FE592773F3 /* Pods-Meme Maker Mac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A0DAC82E7F47B44382B6079D3B64E12C /* Pods-Meme Maker Mac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D522D81DC348018AB85C900FA6AF52C /* aes_via_ace.h in Headers */ = {isa = PBXBuildFile; fileRef = C314615DC7321206B6123F76C3CD3F60 /* aes_via_ace.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8197DB49374BFC505E075D494F6A9AD9 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E450767D718E4C13189348516BD5A47F /* unzip.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		871326463DF355BA66E3837EC732E7DA /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = A47A9242CF9FCC22E9FCE24609007A7D /* hmac.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A08B34F78A28DC25B924C9F2EFCE119B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		A24811DE928AAD8097AA344553D5C8D2 /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE28B439FA08E14E5376B5C9364E18 /* entropy.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A3FB38156FEABE810B5912E8AA56A17D /* brg_endian.h in Headers */ = {isa = PBXBuildFile; fileRef = B88236C7346290C87EBF442FB0629C3D /* brg_endian.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A6AA74A076A1BD98A35071176D611678 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = C2B0A490E0CD7250AD4A58206654A5EB /* sha1.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A799A38ABE815BD198841731C7A817CE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		A838A089323F85421F67700C0F66AB40 /* pwd2key.h in Headers */ = {isa = PBXBuildFile; fileRef = 544151A0F231B8D6F9B4CCACA570B099 /* pwd2key.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B87131E5243C39356B9F8EAB526A74AA /* Pods-Meme Maker Mac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85063BE0074C7A726A921BFE6D7B1249 /* Pods-Meme Maker Mac-dummy.m */; };
+		BF7498070F6D0B839C2879056FD96F7A /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FB0D0F06F6333AA78BAB72E521C7C81 /* zip.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BF8C1D2F5955D2AF4766EE16B0B8710A /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DA421C4559788B92DB6D55A261EA093 /* crypt.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C3E5005E1AA4D15E99AD30F38336FC54 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 9E8A6C0DCB1B1E9EAAC6BE549DA4C1B8 /* hmac.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C431740A6591D208A7E53B93C25E4FC9 /* aestab.h in Headers */ = {isa = PBXBuildFile; fileRef = 970D82E19258CC2F57ACAED9E0336924 /* aestab.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C5084F7567251CE0E8D832FEF391CB49 /* brg_types.h in Headers */ = {isa = PBXBuildFile; fileRef = AE4A8D0BB89C218B716091A46235D70C /* brg_types.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C628B2AB89A19905357A731A19ED8FDC /* SSZipArchive-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F18B0989B82BE90383D59A169DE9A974 /* SSZipArchive-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFB5E867A8E194F539539E976CF24DCF /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = BE93C3F9BD11EB2DBEC89A51804DF3C9 /* aescrypt.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D0D91980274FC35014AE18E76DE5E880 /* aesopt.h in Headers */ = {isa = PBXBuildFile; fileRef = BD5E72C20E947E057CE0B20280B721B1 /* aesopt.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D58EEE9229794A1F7704C74DC926FC35 /* entropy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CC23305C4FCA7F76E53092CA7981DE3 /* entropy.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D59218D6E9147C1E8171F8720BB61226 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 41AEDA514F6C738820C3D70879400CD0 /* fileenc.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E117FF0059BF3D6843A61E22E4B5A851 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49BDFF2AA3C868954D7AECE8E7259 /* pwd2key.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		E15AE3724349D007A3FB499547332F0E /* Pods-Meme Maker MacUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51B5BA190D218B8242424955FC397003 /* Pods-Meme Maker MacUITests-dummy.m */; };
-		E74F895CB4277C7401E1B5B780BA8666 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC830A66A7770E89DCBF3049411FB1 /* ImageCache.swift */; };
+		E810FEBD968137A319724FC4AAC6E065 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = EA7C1C3914C6379FF979F959D822918A /* aestab.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		EA63D313717D25C2A85DDE0785A77ABE /* Pods-Meme Maker MacTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F92A0CB50063B9B9C97840C1B22FE98 /* Pods-Meme Maker MacTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EE50C41DCC02CD10093E43EA06D4D0DB /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AE1CE24EC0B8D0917900ED7C256E9E /* ImageFilter.swift */; };
-		EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE47A4F58AAF63C7C9B378DDF536D0 /* Request.swift */; };
-		F3F3FD9096F43B73CBB52EF0E1CCF73E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */; };
-		FA5DD6BB60051DB75C2D83A2341CD0C9 /* Request+AlamofireImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0CBF677DDBF84C0F54F11AB88BEE0E /* Request+AlamofireImage.swift */; };
+		EF43096D7EF7FCE5AED0069A703AD098 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = E0DD8BEA9963BE4113A968C04542C5D5 /* aeskey.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F921FDF471B5C4CB356EB7EBA41B021E /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = A4D3E6E7BDCE40955B560870D4DF98AF /* ioapi.c */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FF31C24A9FFF03F414ACDE46DE4D4E23 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 2381C57614EE24D7EE49296DC200032D /* sha1.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		13439FE35EDC0D13260500740CF9125D /* PBXContainerItemProxy */ = {
+		5D5E7393B9369C6D44310A583EA25FE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
-			remoteInfo = Alamofire;
-		};
-		65442D1C5E5F34C6D63A419830D9E428 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79C040AFDDCE1BCBF6D8B5EB0B85887F;
-			remoteInfo = Alamofire;
-		};
-		E48D173EFC48CDDB7D4C49F7265B9881 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D135CD210377886D1FD70F62C63EA89;
-			remoteInfo = AlamofireImage;
-		};
-		E878853EC3D5FECD2B9289827F0D8C5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9843BDDF4E110A4C4C8C68D98248B306;
+			remoteGlobalIDString = ED9D02D62160EA2557EC7484450C9CBA;
 			remoteInfo = SSZipArchive;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04ABB581CF0BD5BA779173A4526381E1 /* aescrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aescrypt.c; path = SSZipArchive/aes/aescrypt.c; sourceTree = "<group>"; };
-		06AC830A66A7770E89DCBF3049411FB1 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Source/ImageCache.swift; sourceTree = "<group>"; };
-		0762840155BB0D4FA26BEA00F04E1C90 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		0821DEB3DB16DA884CE9F81B630BE66D /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		0BBFDA51568557B41B1AFC842B33DD8F /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		0F92A0CB50063B9B9C97840C1B22FE98 /* Pods-Meme Maker MacTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Meme Maker MacTests-umbrella.h"; sourceTree = "<group>"; };
-		11A48A695980D8B768F986F98EC1916F /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
-		17ADFB65D694C959B24CEA363D04E38A /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
-		19A5DCA1F9CB33FA7B5B28234123F932 /* brg_endian.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_endian.h; path = SSZipArchive/aes/brg_endian.h; sourceTree = "<group>"; };
+		15307F061B750EE6D0833C197F979521 /* SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SSZipArchive.xcconfig; sourceTree = "<group>"; };
 		1CA2A1D6DF6595058AA6A9FDBE586466 /* Pods-Meme Maker MacUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meme Maker MacUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1DE67C83D904568C07078523F81C1049 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21A9EB66B187C5087FE0CE475697079A /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		21D2AEBB73D8740071587FCD7A221B6F /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
-		21F494A48A66AC80DC373AC4806F3D92 /* SSZipArchive.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SSZipArchive.xcconfig; sourceTree = "<group>"; };
-		22345CD29A9BD108C76F2DFECF4CD24A /* fileenc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fileenc.h; path = SSZipArchive/aes/fileenc.h; sourceTree = "<group>"; };
-		22AE1CE24EC0B8D0917900ED7C256E9E /* ImageFilter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFilter.swift; path = Source/ImageFilter.swift; sourceTree = "<group>"; };
-		231CB0D1B4146D68C0CD8F51695E7850 /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
-		268CF959657E50E11C85413EDC768C4E /* entropy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = entropy.h; path = SSZipArchive/aes/entropy.h; sourceTree = "<group>"; };
-		2982DA5B1327CDEE2CFA94536A564CFE /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
+		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		22BAF982A99B1795F746A74492393AD1 /* mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
+		2381C57614EE24D7EE49296DC200032D /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = SSZipArchive/aes/sha1.h; sourceTree = "<group>"; };
+		23F2A66BC8980F9392EBD5DC1092A718 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
 		29DB2B586CB7A97EF1274C099AE04A0B /* Pods-Meme Maker MacTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meme Maker MacTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		29EC3F9F20DD28348DE083E55B65ACE3 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		3330318B3C17C1C2BE165A9C6A64B79E /* prng.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = prng.c; path = SSZipArchive/aes/prng.c; sourceTree = "<group>"; };
+		2D3CFBE31E5585EA285F8EB14CD2C2BA /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = SSZipArchive/aes/aes.h; sourceTree = "<group>"; };
+		30AE5781E5B99BB6C90F2AECCD0CB750 /* fileenc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fileenc.h; path = SSZipArchive/aes/fileenc.h; sourceTree = "<group>"; };
 		34ACD7C93DADBA2C78E5A6D09C4D1B57 /* Pods-Meme Maker MacTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker MacTests-resources.sh"; sourceTree = "<group>"; };
-		375349FE907BA2B30AA8F7C3B8CEA06E /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		3CBEF73AC594ECC3B2D3A5FBCFC2BF2C /* aestab.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aestab.c; path = SSZipArchive/aes/aestab.c; sourceTree = "<group>"; };
-		3E687A07100A1E3C36B4ED66F0B73595 /* SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSZipArchive-dummy.m"; sourceTree = "<group>"; };
-		3FC301D77B4C7DEB491AF167CC4A5A3D /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
+		370CACD81D3A57FF25B79839FBD7D016 /* Pods_Meme_Maker_MacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA8517DF1BE57252A27CF7892E9C82D /* Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Common.h; path = SSZipArchive/Common.h; sourceTree = "<group>"; };
+		3FB0D0F06F6333AA78BAB72E521C7C81 /* zip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = zip.h; path = SSZipArchive/minizip/zip.h; sourceTree = "<group>"; };
 		40F1893E374EC509D498223FB0D3CE0E /* Pods-Meme Maker MacTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker MacTests-frameworks.sh"; sourceTree = "<group>"; };
-		41F78BF1CAEF929D0E7DD773C028D96F /* AlamofireImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireImage-prefix.pch"; sourceTree = "<group>"; };
-		44121CB843B79C84E276195D9A8FC0EC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46015272CAF3553BF3DD50E793322923 /* SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
-		4877A03AF71A5619C37C01BBF98977E8 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		4935DDF6FB5F6175A2342A6B74357CC2 /* AlamofireImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireImage.xcconfig; sourceTree = "<group>"; };
+		41AEDA514F6C738820C3D70879400CD0 /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fileenc.c; path = SSZipArchive/aes/fileenc.c; sourceTree = "<group>"; };
+		43327C4BC21EE0E2E153B407CE7FD6C9 /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
 		49613342F370EB1949C54C94BA550598 /* Pods-Meme Maker Mac-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker Mac-resources.sh"; sourceTree = "<group>"; };
-		49D357969FC11E60B11274553EBDDFF1 /* unzip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
+		498660BCD0307407153720FEF08AD335 /* prng.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = prng.h; path = SSZipArchive/aes/prng.h; sourceTree = "<group>"; };
 		51B5BA190D218B8242424955FC397003 /* Pods-Meme Maker MacUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Meme Maker MacUITests-dummy.m"; sourceTree = "<group>"; };
-		57D9B5A4F826523367268C08FE03D8E3 /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = SSZipArchive/aes/hmac.h; sourceTree = "<group>"; };
-		5AEE47A4F58AAF63C7C9B378DDF536D0 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		5BBBF6B704FF4E3FF6CA98A2DD954E96 /* aes_via_ace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes_via_ace.h; path = SSZipArchive/aes/aes_via_ace.h; sourceTree = "<group>"; };
-		5E502965CE77933CCFC6E845295F4621 /* AlamofireImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AlamofireImage.modulemap; sourceTree = "<group>"; };
-		5EBE73BA3351ED71D771FF3A1A490CE6 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		544151A0F231B8D6F9B4CCACA570B099 /* pwd2key.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pwd2key.h; path = SSZipArchive/aes/pwd2key.h; sourceTree = "<group>"; };
+		5DA421C4559788B92DB6D55A261EA093 /* crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = crypt.h; path = SSZipArchive/minizip/crypt.h; sourceTree = "<group>"; };
 		5FD18F94420A092F8D5176090B305042 /* Pods-Meme Maker MacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker MacTests.debug.xcconfig"; sourceTree = "<group>"; };
-		60323D1B97A56C5B873715934F8915E9 /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = SSZipArchive/aes/sha1.h; sourceTree = "<group>"; };
-		6152492249B4FCEFADFB48A14F5A9863 /* mztools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mztools.h; path = SSZipArchive/minizip/mztools.h; sourceTree = "<group>"; };
 		63419F962EC8D1A0ABBAD7AA890143B3 /* Pods-Meme Maker MacUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Meme Maker MacUITests.modulemap"; sourceTree = "<group>"; };
-		6641F878648B74D602A2A6553103346E /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F68D1612253478548CA1B5FA7F6B08 /* Pods-Meme Maker Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		6C9B43CD068C7DDA582394FA4972A67E /* Image.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Source/Image.swift; sourceTree = "<group>"; };
-		709704D2A0267F9F0901BE2BCC1F38E9 /* aes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes.h; path = SSZipArchive/aes/aes.h; sourceTree = "<group>"; };
-		73B77B620FFA9480D360E35CD3FBDA0F /* mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
-		7E5B2D2EAE0175523875DB6D65A204CD /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		687168AE5E5C3CFFBFE920FBAD8D389A /* ioapi.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ioapi.h; path = SSZipArchive/minizip/ioapi.h; sourceTree = "<group>"; };
+		6CC23305C4FCA7F76E53092CA7981DE3 /* entropy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = entropy.h; path = SSZipArchive/aes/entropy.h; sourceTree = "<group>"; };
+		734D5C2F6EE1E819FD13617ABC7AF9C8 /* SSZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
+		74DE8AF21D7850A3C4888570F2C41DD9 /* Pods_Meme_Maker_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7567B285F35DDF20CC6541C71DD34658 /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
+		7BB8CD8C7F155B0CA4B37EF90BF43E10 /* SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSZipArchive-dummy.m"; sourceTree = "<group>"; };
 		85063BE0074C7A726A921BFE6D7B1249 /* Pods-Meme Maker Mac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Meme Maker Mac-dummy.m"; sourceTree = "<group>"; };
 		86C1A45F3478E67EDCDB6CEAF0D8EAB9 /* Pods-Meme Maker Mac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Meme Maker Mac.modulemap"; sourceTree = "<group>"; };
-		87CF21BC5B63563BF8BAC834001110A0 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		89E43E05A33BED200B4AA35D09301A66 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
 		89E73BD44BC2BC1CBFA84BC3AADC9F8E /* Pods-Meme Maker Mac-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Meme Maker Mac-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8C3570701E6136ABAC5817892995BD92 /* pwd2key.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = pwd2key.h; path = SSZipArchive/aes/pwd2key.h; sourceTree = "<group>"; };
-		8D8A89C4D0DC1C6FEF6257AEDC18D35C /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
-		8DE043A858FB6653DCF985CDDFA2134C /* aestab.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aestab.h; path = SSZipArchive/aes/aestab.h; sourceTree = "<group>"; };
-		92418A1C718E2F557FC83A8E00C77797 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		8BB49BDFF2AA3C868954D7AECE8E7259 /* pwd2key.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pwd2key.c; path = SSZipArchive/aes/pwd2key.c; sourceTree = "<group>"; };
+		8C61E4233E3E0F65418B33EC0C6D3D75 /* SSZipArchive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SSZipArchive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EDE28B439FA08E14E5376B5C9364E18 /* entropy.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = entropy.c; path = SSZipArchive/aes/entropy.c; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		948D59EEB94E2ED9555C6A951BC0A300 /* Pods-Meme Maker MacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker MacTests.release.xcconfig"; sourceTree = "<group>"; };
+		970D82E19258CC2F57ACAED9E0336924 /* aestab.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aestab.h; path = SSZipArchive/aes/aestab.h; sourceTree = "<group>"; };
 		9AF9F4CE0EEA71D9F56C02457E41BBF9 /* Pods-Meme Maker MacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker MacUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		9ED2451A714F731333DF12B284B8F035 /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
-		A07F47F13D0FA3A8480F2B74C1BE709E /* ImageDownloader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Source/ImageDownloader.swift; sourceTree = "<group>"; };
+		9E8A6C0DCB1B1E9EAAC6BE549DA4C1B8 /* hmac.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = SSZipArchive/aes/hmac.c; sourceTree = "<group>"; };
+		9F1C2940D2C413CCDDF6DF674DD2F93D /* mztools.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mztools.c; path = SSZipArchive/minizip/mztools.c; sourceTree = "<group>"; };
 		A0DAC82E7F47B44382B6079D3B64E12C /* Pods-Meme Maker Mac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Meme Maker Mac-umbrella.h"; sourceTree = "<group>"; };
 		A238FA5DC52997264D5BB3623B35E795 /* Pods-Meme Maker MacUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker MacUITests-resources.sh"; sourceTree = "<group>"; };
-		A5B61368DB5DCC8E633073830F524E6D /* zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = zip.c; path = SSZipArchive/minizip/zip.c; sourceTree = "<group>"; };
-		AC4E7AC091F7F6B977A5780CE2DC28D7 /* aeskey.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aeskey.c; path = SSZipArchive/aes/aeskey.c; sourceTree = "<group>"; };
-		B610981E0C5920AF8F30EEEE6A828755 /* entropy.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = entropy.c; path = SSZipArchive/aes/entropy.c; sourceTree = "<group>"; };
+		A47A9242CF9FCC22E9FCE24609007A7D /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = SSZipArchive/aes/hmac.h; sourceTree = "<group>"; };
+		A4D3E6E7BDCE40955B560870D4DF98AF /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
+		AE4A8D0BB89C218B716091A46235D70C /* brg_types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_types.h; path = SSZipArchive/aes/brg_types.h; sourceTree = "<group>"; };
+		B88236C7346290C87EBF442FB0629C3D /* brg_endian.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_endian.h; path = SSZipArchive/aes/brg_endian.h; sourceTree = "<group>"; };
 		B8F4B7F18575152E782F6A8EA250EDED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA85EEE0EAB7A9FAF12D46ADDE076C5C /* pwd2key.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = pwd2key.c; path = SSZipArchive/aes/pwd2key.c; sourceTree = "<group>"; };
 		BC24CBCB0D0F37E6BDE2EA3DD6B8362C /* Pods-Meme Maker MacUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Meme Maker MacUITests-umbrella.h"; sourceTree = "<group>"; };
-		BE23641BC01F0E0CDB0936DBFC09144C /* brg_types.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = brg_types.h; path = SSZipArchive/aes/brg_types.h; sourceTree = "<group>"; };
-		BF0CBF677DDBF84C0F54F11AB88BEE0E /* Request+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Request+AlamofireImage.swift"; path = "Source/Request+AlamofireImage.swift"; sourceTree = "<group>"; };
-		BF6AD490BDEF7A996848950E204E7CD8 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
+		BD5E72C20E947E057CE0B20280B721B1 /* aesopt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aesopt.h; path = SSZipArchive/aes/aesopt.h; sourceTree = "<group>"; };
+		BD723831D7196E0C525BCEEF18C3A8D9 /* SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
+		BE93C3F9BD11EB2DBEC89A51804DF3C9 /* aescrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aescrypt.c; path = SSZipArchive/aes/aescrypt.c; sourceTree = "<group>"; };
 		BFFB76D00063C00AFCDDA294838FEBBA /* Pods-Meme Maker MacTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Meme Maker MacTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C1AF21BCE367362C7BCF670C574A5DDF /* Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Common.h; path = SSZipArchive/Common.h; sourceTree = "<group>"; };
+		C2B0A490E0CD7250AD4A58206654A5EB /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = SSZipArchive/aes/sha1.c; sourceTree = "<group>"; };
+		C314615DC7321206B6123F76C3CD3F60 /* aes_via_ace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aes_via_ace.h; path = SSZipArchive/aes/aes_via_ace.h; sourceTree = "<group>"; };
 		C3929CF887E9F46F8A34D399FA770F13 /* Pods-Meme Maker Mac-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Meme Maker Mac-acknowledgements.plist"; sourceTree = "<group>"; };
-		C6F6B22E12EE34C0F74102243153595D /* Pods_Meme_Maker_MacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5261C95086CEDBE2D96393096B2F3C5 /* Pods_Meme_Maker_MacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C713C78CF4A26E00F8DE9C71EC3D0007 /* Pods-Meme Maker MacUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker MacUITests-frameworks.sh"; sourceTree = "<group>"; };
-		C7CF8E5864CCB393DB04F7EE71DD208B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8875D04F3BD61337D2F3C9819042DFC /* AlamofireImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireImage-umbrella.h"; sourceTree = "<group>"; };
-		CAA0FF24A660736DEE1AC7D1558829E1 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCF811AE988677F988DD13FCBDD2057D /* fileenc.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = fileenc.c; path = SSZipArchive/aes/fileenc.c; sourceTree = "<group>"; };
-		CD42B9D49E6D36CA380920E278C9421B /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		CD4FA3C500755F5F4C3FB31284D1D0C4 /* Pods-Meme Maker Mac-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Meme Maker Mac-frameworks.sh"; sourceTree = "<group>"; };
-		CF06891F18C7E67964D2E5D816F49304 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		D04C1796EC13A85B35B76D14D2160AA9 /* ioapi.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = ioapi.c; path = SSZipArchive/minizip/ioapi.c; sourceTree = "<group>"; };
-		D6F9E21C895A0E2CD65FF1C815148E9E /* hmac.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = SSZipArchive/aes/hmac.c; sourceTree = "<group>"; };
-		D84F41753C58E6D976470E5ACB690403 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		DB4C578A53CFB47468E48E36005EFB68 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
 		E0BC6DA026FD4467D71D48B7923EA2F4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		E0DD8BEA9963BE4113A968C04542C5D5 /* aeskey.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aeskey.c; path = SSZipArchive/aes/aeskey.c; sourceTree = "<group>"; };
+		E2F80A21C1EA00B9C2F0982A0F25EC07 /* prng.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = prng.c; path = SSZipArchive/aes/prng.c; sourceTree = "<group>"; };
 		E31B6402ED654563F56251A763458FA6 /* Pods-Meme Maker MacTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Meme Maker MacTests.modulemap"; sourceTree = "<group>"; };
 		E3BFA2924343F008C953203BCD32AD08 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E450767D718E4C13189348516BD5A47F /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		E892AEC19EC09091E9E1ED568E17F4DD /* ZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
 		E9E827EA8DE75CA201CB631FBDA89E6F /* Pods-Meme Maker Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker Mac.release.xcconfig"; sourceTree = "<group>"; };
-		EAAC497451C7AB58A401A896C46034F3 /* AlamofireImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireImage-dummy.m"; sourceTree = "<group>"; };
-		EAD97CBCC5209E071501DB5CB395BABD /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = SSZipArchive/aes/sha1.c; sourceTree = "<group>"; };
-		EBEB9E54E01D003128B11B58EF202DEE /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		ED394A88892100CAF8EBC19F9400C1E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDBC61EF1970EF65A90D633297BEB819 /* Pods_Meme_Maker_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDE19850450F93C447DE8B734BBBD383 /* ZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
-		F1C8DBA61EC683088C026E5DFCA28A4E /* SSZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipArchive.h; path = SSZipArchive/SSZipArchive.h; sourceTree = "<group>"; };
-		F3BD7CC6BE0B246B0C8853AF27E942BD /* prng.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = prng.h; path = SSZipArchive/aes/prng.h; sourceTree = "<group>"; };
-		F42E44751BC9152B59955D080B69E540 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		F450B71BBC6840678664D9E9FF5DCFC2 /* aesopt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = aesopt.h; path = SSZipArchive/aes/aesopt.h; sourceTree = "<group>"; };
+		EA7C1C3914C6379FF979F959D822918A /* aestab.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = aestab.c; path = SSZipArchive/aes/aestab.c; sourceTree = "<group>"; };
+		F18B0989B82BE90383D59A169DE9A974 /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
+		F1CF5F3FB9C2E481BCD976F24C78D7BD /* unzip.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = unzip.h; path = SSZipArchive/minizip/unzip.h; sourceTree = "<group>"; };
 		F6015D61685F4C1ABB54395ED32FA803 /* Pods-Meme Maker MacUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Meme Maker MacUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F8DFD0BF311429B78DB3963A5AF22B63 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		FC797ABB875B89019CAD027C12A765F0 /* Pods-Meme Maker MacUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Meme Maker MacUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FD7B3DDEE9A06A6097AB8B1D5CD589C1 /* Pods_Meme_Maker_MacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD8CD5D5A11D8D4E7619477AE738024D /* unzip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = unzip.c; path = SSZipArchive/minizip/unzip.c; sourceTree = "<group>"; };
+		FE477243E57EC3A6EE72CE9F46366526 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFB1EF08DC8C5252EA12A360F6A47CF1 /* Pods-Meme Maker MacTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Meme Maker MacTests-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4193E450CC9ADE930B1D5C9BB1851931 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				583A63D1B9E076C4624ACF60C3E25D84 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		50EAFABB527A53709C2F15C6630D0CDF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -248,20 +153,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C810E55DDC38375B9F1E6818CF476CD /* Frameworks */ = {
+		5DC47FC97C0AE716B99BCA921DA08F05 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				497AF488397708F93783CB4FFDCABC8D /* Alamofire.framework in Frameworks */,
-				77D9BA0D1C89CF50206D23A99A0C70E6 /* Cocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		86631BCDD6995CFD2A8A7716F3673282 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F3F3FD9096F43B73CBB52EF0E1CCF73E /* Cocoa.framework in Frameworks */,
+				A799A38ABE815BD198841731C7A817CE /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,11 +169,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B5530282BC80B7E2BA5FA8F212343FD2 /* Frameworks */ = {
+		99639309662D439BAAF32109FE4D3522 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB66C52898A2CE97D0456BB1BF48A19 /* Cocoa.framework in Frameworks */,
+				4D6CB7F65637F79A41F8D515EA8B6EF1 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,13 +198,12 @@
 			path = "Target Support Files/Pods-Meme Maker Mac";
 			sourceTree = "<group>";
 		};
-		36B9736EE8454B22D89C71FA01E8A482 /* Frameworks */ = {
+		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
 			isa = PBXGroup;
 			children = (
-				CAA0FF24A660736DEE1AC7D1558829E1 /* Alamofire.framework */,
-				5EB9664AB86C37B115097E18C07EBC6F /* OS X */,
+				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
 			);
-			name = Frameworks;
+			name = "OS X";
 			sourceTree = "<group>";
 		};
 		378F472A3F473CA7A2A53752D58CFE9C /* Targets Support Files */ = {
@@ -319,6 +214,14 @@
 				53E053471C6CE3BCFAE73F305DDCB983 /* Pods-Meme Maker MacUITests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		53E053471C6CE3BCFAE73F305DDCB983 /* Pods-Meme Maker MacUITests */ = {
@@ -339,6 +242,14 @@
 			path = "Target Support Files/Pods-Meme Maker MacUITests";
 			sourceTree = "<group>";
 		};
+		567F67ABFFC4D93AB771783242BFBD1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6FA57A79918FBE5F639A863CA16137F /* SSZipArchive */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		56C05575529235899634BC6968649D51 /* Pods-Meme Maker MacTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,168 +268,82 @@
 			path = "Target Support Files/Pods-Meme Maker MacTests";
 			sourceTree = "<group>";
 		};
-		589C318707D245B1ACD3173661CC2B30 /* SSZipArchive */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				709704D2A0267F9F0901BE2BCC1F38E9 /* aes.h */,
-				5BBBF6B704FF4E3FF6CA98A2DD954E96 /* aes_via_ace.h */,
-				04ABB581CF0BD5BA779173A4526381E1 /* aescrypt.c */,
-				AC4E7AC091F7F6B977A5780CE2DC28D7 /* aeskey.c */,
-				F450B71BBC6840678664D9E9FF5DCFC2 /* aesopt.h */,
-				3CBEF73AC594ECC3B2D3A5FBCFC2BF2C /* aestab.c */,
-				8DE043A858FB6653DCF985CDDFA2134C /* aestab.h */,
-				19A5DCA1F9CB33FA7B5B28234123F932 /* brg_endian.h */,
-				BE23641BC01F0E0CDB0936DBFC09144C /* brg_types.h */,
-				C1AF21BCE367362C7BCF670C574A5DDF /* Common.h */,
-				17ADFB65D694C959B24CEA363D04E38A /* crypt.h */,
-				B610981E0C5920AF8F30EEEE6A828755 /* entropy.c */,
-				268CF959657E50E11C85413EDC768C4E /* entropy.h */,
-				CCF811AE988677F988DD13FCBDD2057D /* fileenc.c */,
-				22345CD29A9BD108C76F2DFECF4CD24A /* fileenc.h */,
-				D6F9E21C895A0E2CD65FF1C815148E9E /* hmac.c */,
-				57D9B5A4F826523367268C08FE03D8E3 /* hmac.h */,
-				D04C1796EC13A85B35B76D14D2160AA9 /* ioapi.c */,
-				231CB0D1B4146D68C0CD8F51695E7850 /* ioapi.h */,
-				73B77B620FFA9480D360E35CD3FBDA0F /* mztools.c */,
-				6152492249B4FCEFADFB48A14F5A9863 /* mztools.h */,
-				3330318B3C17C1C2BE165A9C6A64B79E /* prng.c */,
-				F3BD7CC6BE0B246B0C8853AF27E942BD /* prng.h */,
-				BA85EEE0EAB7A9FAF12D46ADDE076C5C /* pwd2key.c */,
-				8C3570701E6136ABAC5817892995BD92 /* pwd2key.h */,
-				EAD97CBCC5209E071501DB5CB395BABD /* sha1.c */,
-				60323D1B97A56C5B873715934F8915E9 /* sha1.h */,
-				F1C8DBA61EC683088C026E5DFCA28A4E /* SSZipArchive.h */,
-				9ED2451A714F731333DF12B284B8F035 /* SSZipArchive.m */,
-				FD8CD5D5A11D8D4E7619477AE738024D /* unzip.c */,
-				49D357969FC11E60B11274553EBDDFF1 /* unzip.h */,
-				A5B61368DB5DCC8E633073830F524E6D /* zip.c */,
-				21D2AEBB73D8740071587FCD7A221B6F /* zip.h */,
-				EDE19850450F93C447DE8B734BBBD383 /* ZipArchive.h */,
-				78FBF6E2B7A5D832D96668C1EC64C5D9 /* Support Files */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				567F67ABFFC4D93AB771783242BFBD1E /* Pods */,
+				D77157341826C787716335976E9ACECF /* Products */,
+				378F472A3F473CA7A2A53752D58CFE9C /* Targets Support Files */,
 			);
-			path = SSZipArchive;
 			sourceTree = "<group>";
 		};
-		5EB9664AB86C37B115097E18C07EBC6F /* OS X */ = {
+		B1542284CF87EBCF08F445F4886F6D78 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E2F5A625191B67577ECECE0AA91DD542 /* Cocoa.framework */,
-			);
-			name = "OS X";
-			sourceTree = "<group>";
-		};
-		6C2C883EC9A1D6B1F1E4D896035E0435 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5E502965CE77933CCFC6E845295F4621 /* AlamofireImage.modulemap */,
-				4935DDF6FB5F6175A2342A6B74357CC2 /* AlamofireImage.xcconfig */,
-				EAAC497451C7AB58A401A896C46034F3 /* AlamofireImage-dummy.m */,
-				41F78BF1CAEF929D0E7DD773C028D96F /* AlamofireImage-prefix.pch */,
-				C8875D04F3BD61337D2F3C9819042DFC /* AlamofireImage-umbrella.h */,
-				ED394A88892100CAF8EBC19F9400C1E8 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/AlamofireImage";
-			sourceTree = "<group>";
-		};
-		78FBF6E2B7A5D832D96668C1EC64C5D9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C7CF8E5864CCB393DB04F7EE71DD208B /* Info.plist */,
-				8D8A89C4D0DC1C6FEF6257AEDC18D35C /* SSZipArchive.modulemap */,
-				21F494A48A66AC80DC373AC4806F3D92 /* SSZipArchive.xcconfig */,
-				3E687A07100A1E3C36B4ED66F0B73595 /* SSZipArchive-dummy.m */,
-				46015272CAF3553BF3DD50E793322923 /* SSZipArchive-prefix.pch */,
-				3FC301D77B4C7DEB491AF167CC4A5A3D /* SSZipArchive-umbrella.h */,
+				FE477243E57EC3A6EE72CE9F46366526 /* Info.plist */,
+				23F2A66BC8980F9392EBD5DC1092A718 /* SSZipArchive.modulemap */,
+				15307F061B750EE6D0833C197F979521 /* SSZipArchive.xcconfig */,
+				7BB8CD8C7F155B0CA4B37EF90BF43E10 /* SSZipArchive-dummy.m */,
+				BD723831D7196E0C525BCEEF18C3A8D9 /* SSZipArchive-prefix.pch */,
+				F18B0989B82BE90383D59A169DE9A974 /* SSZipArchive-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SSZipArchive";
 			sourceTree = "<group>";
 		};
-		7A791E1DBB2C4B7517CE6F45B123A893 /* Products */ = {
+		B6FA57A79918FBE5F639A863CA16137F /* SSZipArchive */ = {
 			isa = PBXGroup;
 			children = (
-				44121CB843B79C84E276195D9A8FC0EC /* Alamofire.framework */,
-				6641F878648B74D602A2A6553103346E /* AlamofireImage.framework */,
-				EDBC61EF1970EF65A90D633297BEB819 /* Pods_Meme_Maker_Mac.framework */,
-				C6F6B22E12EE34C0F74102243153595D /* Pods_Meme_Maker_MacTests.framework */,
-				FD7B3DDEE9A06A6097AB8B1D5CD589C1 /* Pods_Meme_Maker_MacUITests.framework */,
-				5EBE73BA3351ED71D771FF3A1A490CE6 /* SSZipArchive.framework */,
+				2D3CFBE31E5585EA285F8EB14CD2C2BA /* aes.h */,
+				C314615DC7321206B6123F76C3CD3F60 /* aes_via_ace.h */,
+				BE93C3F9BD11EB2DBEC89A51804DF3C9 /* aescrypt.c */,
+				E0DD8BEA9963BE4113A968C04542C5D5 /* aeskey.c */,
+				BD5E72C20E947E057CE0B20280B721B1 /* aesopt.h */,
+				EA7C1C3914C6379FF979F959D822918A /* aestab.c */,
+				970D82E19258CC2F57ACAED9E0336924 /* aestab.h */,
+				B88236C7346290C87EBF442FB0629C3D /* brg_endian.h */,
+				AE4A8D0BB89C218B716091A46235D70C /* brg_types.h */,
+				3EA8517DF1BE57252A27CF7892E9C82D /* Common.h */,
+				5DA421C4559788B92DB6D55A261EA093 /* crypt.h */,
+				8EDE28B439FA08E14E5376B5C9364E18 /* entropy.c */,
+				6CC23305C4FCA7F76E53092CA7981DE3 /* entropy.h */,
+				41AEDA514F6C738820C3D70879400CD0 /* fileenc.c */,
+				30AE5781E5B99BB6C90F2AECCD0CB750 /* fileenc.h */,
+				9E8A6C0DCB1B1E9EAAC6BE549DA4C1B8 /* hmac.c */,
+				A47A9242CF9FCC22E9FCE24609007A7D /* hmac.h */,
+				A4D3E6E7BDCE40955B560870D4DF98AF /* ioapi.c */,
+				687168AE5E5C3CFFBFE920FBAD8D389A /* ioapi.h */,
+				9F1C2940D2C413CCDDF6DF674DD2F93D /* mztools.c */,
+				22BAF982A99B1795F746A74492393AD1 /* mztools.h */,
+				E2F80A21C1EA00B9C2F0982A0F25EC07 /* prng.c */,
+				498660BCD0307407153720FEF08AD335 /* prng.h */,
+				8BB49BDFF2AA3C868954D7AECE8E7259 /* pwd2key.c */,
+				544151A0F231B8D6F9B4CCACA570B099 /* pwd2key.h */,
+				C2B0A490E0CD7250AD4A58206654A5EB /* sha1.c */,
+				2381C57614EE24D7EE49296DC200032D /* sha1.h */,
+				734D5C2F6EE1E819FD13617ABC7AF9C8 /* SSZipArchive.h */,
+				43327C4BC21EE0E2E153B407CE7FD6C9 /* SSZipArchive.m */,
+				E450767D718E4C13189348516BD5A47F /* unzip.c */,
+				F1CF5F3FB9C2E481BCD976F24C78D7BD /* unzip.h */,
+				7567B285F35DDF20CC6541C71DD34658 /* zip.c */,
+				3FB0D0F06F6333AA78BAB72E521C7C81 /* zip.h */,
+				E892AEC19EC09091E9E1ED568E17F4DD /* ZipArchive.h */,
+				B1542284CF87EBCF08F445F4886F6D78 /* Support Files */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		D77157341826C787716335976E9ACECF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74DE8AF21D7850A3C4888570F2C41DD9 /* Pods_Meme_Maker_Mac.framework */,
+				370CACD81D3A57FF25B79839FBD7D016 /* Pods_Meme_Maker_MacTests.framework */,
+				C5261C95086CEDBE2D96393096B2F3C5 /* Pods_Meme_Maker_MacUITests.framework */,
+				8C61E4233E3E0F65418B33EC0C6D3D75 /* SSZipArchive.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				36B9736EE8454B22D89C71FA01E8A482 /* Frameworks */,
-				A2138281026F69E6C0DC180394F93F76 /* Pods */,
-				7A791E1DBB2C4B7517CE6F45B123A893 /* Products */,
-				378F472A3F473CA7A2A53752D58CFE9C /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		845FB26E1968EBC3BB8C8B1F337E3CD4 /* AlamofireImage */ = {
-			isa = PBXGroup;
-			children = (
-				6C9B43CD068C7DDA582394FA4972A67E /* Image.swift */,
-				06AC830A66A7770E89DCBF3049411FB1 /* ImageCache.swift */,
-				A07F47F13D0FA3A8480F2B74C1BE709E /* ImageDownloader.swift */,
-				22AE1CE24EC0B8D0917900ED7C256E9E /* ImageFilter.swift */,
-				BF0CBF677DDBF84C0F54F11AB88BEE0E /* Request+AlamofireImage.swift */,
-				6C2C883EC9A1D6B1F1E4D896035E0435 /* Support Files */,
-			);
-			path = AlamofireImage;
-			sourceTree = "<group>";
-		};
-		99F8F39933BF78901A51245F5EC59AB7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4877A03AF71A5619C37C01BBF98977E8 /* Alamofire.modulemap */,
-				21A9EB66B187C5087FE0CE475697079A /* Alamofire.xcconfig */,
-				87CF21BC5B63563BF8BAC834001110A0 /* Alamofire-dummy.m */,
-				F42E44751BC9152B59955D080B69E540 /* Alamofire-prefix.pch */,
-				375349FE907BA2B30AA8F7C3B8CEA06E /* Alamofire-umbrella.h */,
-				1DE67C83D904568C07078523F81C1049 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		A2138281026F69E6C0DC180394F93F76 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B9C1B34642FA32576405DDB8CF4F5A58 /* Alamofire */,
-				845FB26E1968EBC3BB8C8B1F337E3CD4 /* AlamofireImage */,
-				589C318707D245B1ACD3173661CC2B30 /* SSZipArchive */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B9C1B34642FA32576405DDB8CF4F5A58 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				92418A1C718E2F557FC83A8E00C77797 /* Alamofire.swift */,
-				2982DA5B1327CDEE2CFA94536A564CFE /* Download.swift */,
-				11A48A695980D8B768F986F98EC1916F /* Error.swift */,
-				CF06891F18C7E67964D2E5D816F49304 /* Manager.swift */,
-				BF6AD490BDEF7A996848950E204E7CD8 /* MultipartFormData.swift */,
-				0BBFDA51568557B41B1AFC842B33DD8F /* NetworkReachabilityManager.swift */,
-				F8DFD0BF311429B78DB3963A5AF22B63 /* Notifications.swift */,
-				0821DEB3DB16DA884CE9F81B630BE66D /* ParameterEncoding.swift */,
-				5AEE47A4F58AAF63C7C9B378DDF536D0 /* Request.swift */,
-				29EC3F9F20DD28348DE083E55B65ACE3 /* Response.swift */,
-				7E5B2D2EAE0175523875DB6D65A204CD /* ResponseSerialization.swift */,
-				EBEB9E54E01D003128B11B58EF202DEE /* Result.swift */,
-				D84F41753C58E6D976470E5ACB690403 /* ServerTrustPolicy.swift */,
-				DB4C578A53CFB47468E48E36005EFB68 /* Stream.swift */,
-				CD42B9D49E6D36CA380920E278C9421B /* Timeline.swift */,
-				89E43E05A33BED200B4AA35D09301A66 /* Upload.swift */,
-				0762840155BB0D4FA26BEA00F04E1C90 /* Validation.swift */,
-				99F8F39933BF78901A51245F5EC59AB7 /* Support Files */,
-			);
-			path = Alamofire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,34 +357,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2D2693E26B31A8B8BAB5CD503F06F094 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C99D8EFD6B21230CEB4F5943AFD19BA2 /* aes.h in Headers */,
-				0329E860258289C23F2019F97BF47214 /* aes_via_ace.h in Headers */,
-				41C0672B8AF4BEE7C151D061F382BD13 /* aesopt.h in Headers */,
-				7EB6120359520F06C57D32313E8C6529 /* aestab.h in Headers */,
-				1D57FA69C7531B1F4CAC0035847E13FD /* brg_endian.h in Headers */,
-				D47D5E6318AF36073B0DDC664299F634 /* brg_types.h in Headers */,
-				56F486D37F623B81A6380AB56596FB23 /* Common.h in Headers */,
-				B235EA78CC200C68A23ADA3A9DC99466 /* crypt.h in Headers */,
-				522C2D06F8E81CB1F19E364B86B5E2C4 /* entropy.h in Headers */,
-				26846E6E2B3ADDB630FE46E5A92AF3A9 /* fileenc.h in Headers */,
-				ADC3A614B8B9FB3F16A48A6484ABC7E2 /* hmac.h in Headers */,
-				1BF960E423B27E31B5751A24069F8FA3 /* ioapi.h in Headers */,
-				7970FBBE94002D4B45D95299149C3E54 /* mztools.h in Headers */,
-				54875557B970569EBAAEF4BB760DC275 /* prng.h in Headers */,
-				A98CEA7EE61521B5D51095275A27FDD3 /* pwd2key.h in Headers */,
-				16554288B4F3F0922AAC2A98ABF10D37 /* sha1.h in Headers */,
-				B9A327CFB2A8274E714607172C5005BD /* SSZipArchive-umbrella.h in Headers */,
-				BD8D0A68FFB2BFCFEECBC0467A135BCE /* SSZipArchive.h in Headers */,
-				0DCCEE7414DB4546222B76395D35E56A /* unzip.h in Headers */,
-				600A905DEFE36C2FC7EA879C02A3C8D4 /* zip.h in Headers */,
-				175F6D901ADA66899E355ECB840C0B5C /* ZipArchive.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2D547E39454AD406D95F83DE6A258881 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,27 +365,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		303D0F2134B00DB4D5A89C4F935EFF30 /* Headers */ = {
+		6AE376B5CBD707A0D8022A9E740D1FB8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75B6D3141974E70834ACED6035BCB0DD /* AlamofireImage-umbrella.h in Headers */,
+				4005B177A0658C855C35A7FE2A662247 /* aes.h in Headers */,
+				7D522D81DC348018AB85C900FA6AF52C /* aes_via_ace.h in Headers */,
+				D0D91980274FC35014AE18E76DE5E880 /* aesopt.h in Headers */,
+				C431740A6591D208A7E53B93C25E4FC9 /* aestab.h in Headers */,
+				A3FB38156FEABE810B5912E8AA56A17D /* brg_endian.h in Headers */,
+				C5084F7567251CE0E8D832FEF391CB49 /* brg_types.h in Headers */,
+				0ECA4F5FEDE8809BC60F14DFB46066FC /* Common.h in Headers */,
+				BF8C1D2F5955D2AF4766EE16B0B8710A /* crypt.h in Headers */,
+				D58EEE9229794A1F7704C74DC926FC35 /* entropy.h in Headers */,
+				5B89CA5CEEBB83ED33B79D91C952E4E8 /* fileenc.h in Headers */,
+				871326463DF355BA66E3837EC732E7DA /* hmac.h in Headers */,
+				4A5BF2CD1FB83D5E8CD0077EA9613018 /* ioapi.h in Headers */,
+				2E1F250792956E7DD463CB1AE7780FD4 /* mztools.h in Headers */,
+				6B359867DF4E69E39616842829A59E56 /* prng.h in Headers */,
+				A838A089323F85421F67700C0F66AB40 /* pwd2key.h in Headers */,
+				FF31C24A9FFF03F414ACDE46DE4D4E23 /* sha1.h in Headers */,
+				C628B2AB89A19905357A731A19ED8FDC /* SSZipArchive-umbrella.h in Headers */,
+				06C1B5A56271E9D54A36F315BF3DDBB3 /* SSZipArchive.h in Headers */,
+				18DD2C57192030FCA74004593BA2EFB6 /* unzip.h in Headers */,
+				BF7498070F6D0B839C2879056FD96F7A /* zip.h in Headers */,
+				720F389947955749767BC9C587A94CC2 /* ZipArchive.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE2F454D7DA6AE959DB11E2FE7E8D45C /* Headers */ = {
+		807E77163BED3672A1042D18857EEAA9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2F00327F91697E70ECB20E4606A340 /* Pods-Meme Maker Mac-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFDF3B631BBB965A372347705CA14854 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9469DF81ECB494E84675969B5E13374C /* Alamofire-umbrella.h in Headers */,
+				7B85CBE1017B479C9CB217FE592773F3 /* Pods-Meme Maker Mac-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,79 +418,25 @@
 			);
 			name = "Pods-Meme Maker MacTests";
 			productName = "Pods-Meme Maker MacTests";
-			productReference = C6F6B22E12EE34C0F74102243153595D /* Pods_Meme_Maker_MacTests.framework */;
+			productReference = 370CACD81D3A57FF25B79839FBD7D016 /* Pods_Meme_Maker_MacTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4D135CD210377886D1FD70F62C63EA89 /* AlamofireImage */ = {
+		920CAEAD61C03DEB9187EBB58E298C08 /* Pods-Meme Maker Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 85DDE0DA5A19FA99F3341E1BE047857B /* Build configuration list for PBXNativeTarget "AlamofireImage" */;
+			buildConfigurationList = 50E79988E8556A7773072AC5998D7428 /* Build configuration list for PBXNativeTarget "Pods-Meme Maker Mac" */;
 			buildPhases = (
-				9A170AD6DA8185E652FF855D54443669 /* Sources */,
-				6C810E55DDC38375B9F1E6818CF476CD /* Frameworks */,
-				303D0F2134B00DB4D5A89C4F935EFF30 /* Headers */,
+				8FA35DEC92AE69CB31098F44F489FF81 /* Sources */,
+				5DC47FC97C0AE716B99BCA921DA08F05 /* Frameworks */,
+				807E77163BED3672A1042D18857EEAA9 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AC0689E03DEFC1DB19DF46552FBC10AB /* PBXTargetDependency */,
-			);
-			name = AlamofireImage;
-			productName = AlamofireImage;
-			productReference = 6641F878648B74D602A2A6553103346E /* AlamofireImage.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */;
-			buildPhases = (
-				95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */,
-				86631BCDD6995CFD2A8A7716F3673282 /* Frameworks */,
-				EFDF3B631BBB965A372347705CA14854 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Alamofire;
-			productName = Alamofire;
-			productReference = 44121CB843B79C84E276195D9A8FC0EC /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		9843BDDF4E110A4C4C8C68D98248B306 /* SSZipArchive */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 370E59E62781E16227AEDC5EDF1726AD /* Build configuration list for PBXNativeTarget "SSZipArchive" */;
-			buildPhases = (
-				0A25A23E7EEFA24952FBFB62DAAE3BEB /* Sources */,
-				4193E450CC9ADE930B1D5C9BB1851931 /* Frameworks */,
-				2D2693E26B31A8B8BAB5CD503F06F094 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SSZipArchive;
-			productName = SSZipArchive;
-			productReference = 5EBE73BA3351ED71D771FF3A1A490CE6 /* SSZipArchive.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A32C736EFD68F5096883AEA2A7CE428B /* Pods-Meme Maker Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C478D3ABE866DCEE561FC8EBA7527C07 /* Build configuration list for PBXNativeTarget "Pods-Meme Maker Mac" */;
-			buildPhases = (
-				60487DE9479B81AD2106347C34D6E75C /* Sources */,
-				B5530282BC80B7E2BA5FA8F212343FD2 /* Frameworks */,
-				DE2F454D7DA6AE959DB11E2FE7E8D45C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4FF806E00E11E7200C15508732D36EDA /* PBXTargetDependency */,
-				80DA4E9AF09687163499C0858E42CAC8 /* PBXTargetDependency */,
-				8288395D10465447FD1C5AA3A4DC7E13 /* PBXTargetDependency */,
+				C8A3398CE821907A032AF1FD54FA1EAE /* PBXTargetDependency */,
 			);
 			name = "Pods-Meme Maker Mac";
 			productName = "Pods-Meme Maker Mac";
-			productReference = EDBC61EF1970EF65A90D633297BEB819 /* Pods_Meme_Maker_Mac.framework */;
+			productReference = 74DE8AF21D7850A3C4888570F2C41DD9 /* Pods_Meme_Maker_Mac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C5BE30E61CAE609BCD986E8B947B35A1 /* Pods-Meme Maker MacUITests */ = {
@@ -698,7 +453,24 @@
 			);
 			name = "Pods-Meme Maker MacUITests";
 			productName = "Pods-Meme Maker MacUITests";
-			productReference = FD7B3DDEE9A06A6097AB8B1D5CD589C1 /* Pods_Meme_Maker_MacUITests.framework */;
+			productReference = C5261C95086CEDBE2D96393096B2F3C5 /* Pods_Meme_Maker_MacUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		ED9D02D62160EA2557EC7484450C9CBA /* SSZipArchive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7AED37908D7CE850E8989148D5FF1D97 /* Build configuration list for PBXNativeTarget "SSZipArchive" */;
+			buildPhases = (
+				D4BEE750557A6E0BD7467188053EDF55 /* Sources */,
+				99639309662D439BAAF32109FE4D3522 /* Frameworks */,
+				6AE376B5CBD707A0D8022A9E740D1FB8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSZipArchive;
+			productName = SSZipArchive;
+			productReference = 8C61E4233E3E0F65418B33EC0C6D3D75 /* SSZipArchive.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -718,43 +490,19 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7A791E1DBB2C4B7517CE6F45B123A893 /* Products */;
+			productRefGroup = D77157341826C787716335976E9ACECF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */,
-				4D135CD210377886D1FD70F62C63EA89 /* AlamofireImage */,
-				A32C736EFD68F5096883AEA2A7CE428B /* Pods-Meme Maker Mac */,
+				920CAEAD61C03DEB9187EBB58E298C08 /* Pods-Meme Maker Mac */,
 				1C8373D42E244EA2DCE343DAFE1CA220 /* Pods-Meme Maker MacTests */,
 				C5BE30E61CAE609BCD986E8B947B35A1 /* Pods-Meme Maker MacUITests */,
-				9843BDDF4E110A4C4C8C68D98248B306 /* SSZipArchive */,
+				ED9D02D62160EA2557EC7484450C9CBA /* SSZipArchive */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0A25A23E7EEFA24952FBFB62DAAE3BEB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				437242097BB41304E123C3B131E3D42D /* aescrypt.c in Sources */,
-				D1F3A1BAB097B8C2CD2BF6509CF88E8C /* aeskey.c in Sources */,
-				A185016265600761D47FB6FA426053A8 /* aestab.c in Sources */,
-				222D55F1F6043A169FF748E61CFF0A74 /* entropy.c in Sources */,
-				9626CB7E07485A86C5D24CC917762D7A /* fileenc.c in Sources */,
-				A2C90E8497C998BCB5A3E954669141CE /* hmac.c in Sources */,
-				4781D3597633F3C68A08F5A7432D7B17 /* ioapi.c in Sources */,
-				4266BE26DA2C6F850552E0848527EC50 /* mztools.c in Sources */,
-				AA23F04FFEB35E4855DA0EA3B95C0C72 /* prng.c in Sources */,
-				D1C9DBB2F9688CC3D1EED6E6A0F57A1A /* pwd2key.c in Sources */,
-				BDCBA6BE62E57D33576AF8CE203131C3 /* sha1.c in Sources */,
-				C6251EBEF34A8A2A74E1DA90C29FC822 /* SSZipArchive-dummy.m in Sources */,
-				0175BAB0080434C0AE52DAAC457862D5 /* SSZipArchive.m in Sources */,
-				DC1157D522DCDCF273CA6A8CD50524A5 /* unzip.c in Sources */,
-				C1E09113EB9F34E6E0952FF9F60A388B /* zip.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		10DE66145F0F01AF8FAAC6737BCA6C3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -771,82 +519,82 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60487DE9479B81AD2106347C34D6E75C /* Sources */ = {
+		8FA35DEC92AE69CB31098F44F489FF81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				923433219F9C5AC736E9A9AABBEFE6BA /* Pods-Meme Maker Mac-dummy.m in Sources */,
+				B87131E5243C39356B9F8EAB526A74AA /* Pods-Meme Maker Mac-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95CC2C7E06DC188A05DAAEE9CAA555A3 /* Sources */ = {
+		D4BEE750557A6E0BD7467188053EDF55 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADF19C953CE2A7D0B72EC93A81FCCC26 /* Alamofire-dummy.m in Sources */,
-				8EB11202167FCDDF1257AAAB1D1FB244 /* Alamofire.swift in Sources */,
-				5CB05FBCB32D21E194B5ECF680CB6AE0 /* Download.swift in Sources */,
-				095406039B4D371E48D08B38A2975AC8 /* Error.swift in Sources */,
-				4081EA628AF0B73AC51FFB9D7AB3B89E /* Manager.swift in Sources */,
-				C7B6DD7C0456C50289A2C381DFE9FA3F /* MultipartFormData.swift in Sources */,
-				34CCDCA848A701466256BC2927DA8856 /* NetworkReachabilityManager.swift in Sources */,
-				BE41196F6A3903E59C3306FE3F8B43FE /* Notifications.swift in Sources */,
-				C0DB70AB368765DC64BFB5FEA75E0696 /* ParameterEncoding.swift in Sources */,
-				EFE92E8D3813DD26E78E93EEAF6D7E7E /* Request.swift in Sources */,
-				62E8346F03C03E7F4D631361F325689E /* Response.swift in Sources */,
-				3EA8F215C9C1432D74E5CCA4834AA8C0 /* ResponseSerialization.swift in Sources */,
-				AA314156AC500125F4078EE968DB14C6 /* Result.swift in Sources */,
-				7B48852C4D848FA2DA416A98F6425869 /* ServerTrustPolicy.swift in Sources */,
-				AE4CF87C02C042DF13ED5B21C4FDC1E0 /* Stream.swift in Sources */,
-				16102E4E35FAA0FC4161282FECE56469 /* Timeline.swift in Sources */,
-				5BC19E6E0F199276003F0AF96838BCE5 /* Upload.swift in Sources */,
-				2D3405986FC586FA6C0A5E0B6BA7E64E /* Validation.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A170AD6DA8185E652FF855D54443669 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				792199644CA990BC5C8B19A024F1BA08 /* AlamofireImage-dummy.m in Sources */,
-				7215C851885068BCE0FD65D27DAB8538 /* Image.swift in Sources */,
-				E74F895CB4277C7401E1B5B780BA8666 /* ImageCache.swift in Sources */,
-				77907A202881AD59DB0334545D571428 /* ImageDownloader.swift in Sources */,
-				EE50C41DCC02CD10093E43EA06D4D0DB /* ImageFilter.swift in Sources */,
-				FA5DD6BB60051DB75C2D83A2341CD0C9 /* Request+AlamofireImage.swift in Sources */,
+				CFB5E867A8E194F539539E976CF24DCF /* aescrypt.c in Sources */,
+				EF43096D7EF7FCE5AED0069A703AD098 /* aeskey.c in Sources */,
+				E810FEBD968137A319724FC4AAC6E065 /* aestab.c in Sources */,
+				A24811DE928AAD8097AA344553D5C8D2 /* entropy.c in Sources */,
+				D59218D6E9147C1E8171F8720BB61226 /* fileenc.c in Sources */,
+				C3E5005E1AA4D15E99AD30F38336FC54 /* hmac.c in Sources */,
+				F921FDF471B5C4CB356EB7EBA41B021E /* ioapi.c in Sources */,
+				010C8891923747603EE2B9D22A4A942C /* mztools.c in Sources */,
+				18666B8430CBA8435A359F2FAF986273 /* prng.c in Sources */,
+				E117FF0059BF3D6843A61E22E4B5A851 /* pwd2key.c in Sources */,
+				A6AA74A076A1BD98A35071176D611678 /* sha1.c in Sources */,
+				28B28AE0420E9596CEAA57E5654BFD6C /* SSZipArchive-dummy.m in Sources */,
+				56F099752E17C1F536646FD5848DD421 /* SSZipArchive.m in Sources */,
+				8197DB49374BFC505E075D494F6A9AD9 /* unzip.c in Sources */,
+				2232D35214B3BC11C72A177FC52D7B43 /* zip.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4FF806E00E11E7200C15508732D36EDA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
-			targetProxy = 13439FE35EDC0D13260500740CF9125D /* PBXContainerItemProxy */;
-		};
-		80DA4E9AF09687163499C0858E42CAC8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlamofireImage;
-			target = 4D135CD210377886D1FD70F62C63EA89 /* AlamofireImage */;
-			targetProxy = E48D173EFC48CDDB7D4C49F7265B9881 /* PBXContainerItemProxy */;
-		};
-		8288395D10465447FD1C5AA3A4DC7E13 /* PBXTargetDependency */ = {
+		C8A3398CE821907A032AF1FD54FA1EAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SSZipArchive;
-			target = 9843BDDF4E110A4C4C8C68D98248B306 /* SSZipArchive */;
-			targetProxy = E878853EC3D5FECD2B9289827F0D8C5D /* PBXContainerItemProxy */;
-		};
-		AC0689E03DEFC1DB19DF46552FBC10AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 79C040AFDDCE1BCBF6D8B5EB0B85887F /* Alamofire */;
-			targetProxy = 65442D1C5E5F34C6D63A419830D9E428 /* PBXContainerItemProxy */;
+			target = ED9D02D62160EA2557EC7484450C9CBA /* SSZipArchive */;
+			targetProxy = 5D5E7393B9369C6D44310A583EA25FE3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		05145B37312F328E6E94E13496D1588D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9E827EA8DE75CA201CB631FBDA89E6F /* Pods-Meme Maker Mac.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Meme Maker Mac/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MODULEMAP_FILE = "Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Meme_Maker_Mac;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0577E960F68FF02722D75DA2D211E3A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -888,36 +636,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		1889F9E560896E0D677AB1A1F1D780C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21F494A48A66AC80DC373AC4806F3D92 /* SSZipArchive.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SSZipArchive/SSZipArchive-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SSZipArchive/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				MODULEMAP_FILE = "Target Support Files/SSZipArchive/SSZipArchive.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SSZipArchive;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		3612A05D63776F6FE07C458FA974BA42 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -991,44 +709,14 @@
 			};
 			name = Release;
 		};
-		5D70BAD0503052D474965C9D6D1A84EC /* Release */ = {
+		76B8BBF001B0CDF70CA7D29584B78D6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4935DDF6FB5F6175A2342A6B74357CC2 /* AlamofireImage.xcconfig */;
+			baseConfigurationReference = 66F68D1612253478548CA1B5FA7F6B08 /* Pods-Meme Maker Mac.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AlamofireImage;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		70B2752694F7AB41DD32FB4C92F1B429 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9E827EA8DE75CA201CB631FBDA89E6F /* Pods-Meme Maker Mac.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1042,7 +730,7 @@
 				MACH_O_TYPE = staticlib;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MODULEMAP_FILE = "Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1053,16 +741,16 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		81145D86707F1FF28F56074D32BAA318 /* Debug */ = {
+		8E3C7DE32D19BA3F83066787ABD76C05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21F494A48A66AC80DC373AC4806F3D92 /* SSZipArchive.xcconfig */;
+			baseConfigurationReference = 15307F061B750EE6D0833C197F979521 /* SSZipArchive.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1076,75 +764,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MODULEMAP_FILE = "Target Support Files/SSZipArchive/SSZipArchive.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = SSZipArchive;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		81B3096945D568104AC14EE4F805950B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21A9EB66B187C5087FE0CE475697079A /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Release;
-		};
-		82B1EC5E8815E78991717D970C44B8D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 21A9EB66B187C5087FE0CE475697079A /* Alamofire.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		A6AF107767A58413D45217CEB7FE610E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1180,6 +807,36 @@
 			};
 			name = Release;
 		};
+		AD70555B52BE315098BE9DE72E1C2B7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15307F061B750EE6D0833C197F979521 /* SSZipArchive.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SSZipArchive/SSZipArchive-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SSZipArchive/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MODULEMAP_FILE = "Target Support Files/SSZipArchive/SSZipArchive.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SSZipArchive;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C69537808D3D332E881A1EAB9FE69E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AF9F4CE0EEA71D9F56C02457E41BBF9 /* Pods-Meme Maker MacUITests.debug.xcconfig */;
@@ -1209,37 +866,6 @@
 				PRODUCT_NAME = Pods_Meme_Maker_MacUITests;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CD1FB98F487E557128A9E017F0F804B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4935DDF6FB5F6175A2342A6B74357CC2 /* AlamofireImage.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AlamofireImage/AlamofireImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AlamofireImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				MODULEMAP_FILE = "Target Support Files/AlamofireImage/AlamofireImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AlamofireImage;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1279,41 +905,6 @@
 			};
 			name = Release;
 		};
-		FE83A4C120E95D6A6EE2AB19C35F8670 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66F68D1612253478548CA1B5FA7F6B08 /* Pods-Meme Maker Mac.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Meme Maker Mac/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MODULEMAP_FILE = "Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Meme_Maker_Mac;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1335,29 +926,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		370E59E62781E16227AEDC5EDF1726AD /* Build configuration list for PBXNativeTarget "SSZipArchive" */ = {
+		50E79988E8556A7773072AC5998D7428 /* Build configuration list for PBXNativeTarget "Pods-Meme Maker Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				81145D86707F1FF28F56074D32BAA318 /* Debug */,
-				1889F9E560896E0D677AB1A1F1D780C6 /* Release */,
+				76B8BBF001B0CDF70CA7D29584B78D6D /* Debug */,
+				05145B37312F328E6E94E13496D1588D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3CFB42910790CF0BDBCCEBAACD6B9367 /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
+		7AED37908D7CE850E8989148D5FF1D97 /* Build configuration list for PBXNativeTarget "SSZipArchive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				82B1EC5E8815E78991717D970C44B8D8 /* Debug */,
-				81B3096945D568104AC14EE4F805950B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		85DDE0DA5A19FA99F3341E1BE047857B /* Build configuration list for PBXNativeTarget "AlamofireImage" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD1FB98F487E557128A9E017F0F804B6 /* Debug */,
-				5D70BAD0503052D474965C9D6D1A84EC /* Release */,
+				AD70555B52BE315098BE9DE72E1C2B7A /* Debug */,
+				8E3C7DE32D19BA3F83066787ABD76C05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1367,15 +949,6 @@
 			buildConfigurations = (
 				3612A05D63776F6FE07C458FA974BA42 /* Debug */,
 				DB287EC7186C254FEE691859FED3B418 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C478D3ABE866DCEE561FC8EBA7527C07 /* Build configuration list for PBXNativeTarget "Pods-Meme Maker Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE83A4C120E95D6A6EE2AB19C35F8670 /* Debug */,
-				70B2752694F7AB41DD32FB4C92F1B429 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
