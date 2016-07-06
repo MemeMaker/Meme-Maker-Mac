@@ -10,27 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Meme Maker Mac/Views/Cells/BaseCollectionViewItem.swift"
-            timestampString = "487332903.260921"
+            timestampString = "489489507.620738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "BaseCollectionViewItem"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Meme Maker Mac/Views/Cells/BaseCollectionViewItem.swift"
-            timestampString = "487332188.359997"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "BaseCollectionViewItem"
             landmarkType = "3">
          </BreakpointContent>
@@ -253,7 +237,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
             endingLineNumber = "95"
-            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkName = "isGrid()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

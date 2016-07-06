@@ -4,7 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AlamofireImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Meme Maker Mac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Meme Maker MacTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Meme Maker MacUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>455C24EAC6E1BA3084F3B7280DED1459</key>
+		<key>1C8373D42E244EA2DCE343DAFE1CA220</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBB143148A9E0968CABEB3F24C5C1ADA</key>
+		<key>4D135CD210377886D1FD70F62C63EA89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9843BDDF4E110A4C4C8C68D98248B306</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A32C736EFD68F5096883AEA2A7CE428B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5BE30E61CAE609BCD986E8B947B35A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

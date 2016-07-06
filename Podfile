@@ -5,7 +5,8 @@ use_frameworks!
 
 target 'Meme Maker Mac' do
 
-pod 'SSZipArchive'
+	pod 'SSZipArchive'
+	pod 'AlamofireImage', '~> 2.0'
 
 end
 

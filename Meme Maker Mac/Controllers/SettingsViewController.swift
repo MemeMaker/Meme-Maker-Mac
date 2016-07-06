@@ -15,6 +15,8 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var darkModeButton: NSButton!
 	
 	@IBOutlet weak var lastUpdatedLabel: NSTextField!
+	
+	@IBOutlet weak var updationSpinner: NSProgressIndicator!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,8 @@ class SettingsViewController: NSViewController {
 		resetSettingsButton.state = SettingsManager.getBool(kSettingsResetSettingsOnLaunch) ? NSOnState : NSOffState
 		
 //		darkModeButton.state = SettingsManager.getBool(ksettings)
+		
+		lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
 		
     }
 	
@@ -39,16 +43,54 @@ extension SettingsViewController {
 	}
 	
 	@IBAction func updateMemesAction(sender: AnyObject) {
-		// Perform update...
+		let fetcher = MemeFetcher()
+		fetcher.fetchMemes()
+		updationSpinner.hidden = false
+		updationSpinner.startAnimation(self)
+		NSNotificationCenter.defaultCenter().addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.updationSpinner.stopAnimation(self)
+			self.updationSpinner.hidden = true
+			self.lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
+		}
 	}
 	
 	@IBAction func reportBugAction(sender: AnyObject) {
-		
+		let shareItems = [getSystemDetails()]
+		let service = NSSharingService(named: NSSharingServiceNameComposeEmail)
+		service?.delegate = self
+		service?.recipients = ["samaritan@darmarmy.xyz"]
+		service?.subject = "Meme maker bug report"
+		service?.performWithItems(shareItems)
 	}
 	
 	@IBAction func feedbackAction(sender: AnyObject) {
-		
+		let shareItems = [getSystemDetails()]
+		let service = NSSharingService(named: NSSharingServiceNameComposeEmail)
+		service?.delegate = self
+		service?.recipients = ["samaritan@darmarmy.xyz"]
+		service?.subject = "Meme maker feedback/suggestion"
+		service?.performWithItems(shareItems)
 	}
 	
+	func getSystemDetails() -> String {
+		if let dict = NSDictionary(contentsOfFile: "/System/Library/CoreServices/SystemVersion.plist") {
+			let details = "\n\n\nSystem version = \(dict["ProductName"]!) \(dict["ProductVersion"]!)\n"
+			return details
+		}
+		return ""
+	}
     
 }
+
+extension SettingsViewController: NSSharingServiceDelegate {
+	
+	func sharingService(sharingService: NSSharingService, didShareItems items: [AnyObject]) {
+		print("share success")
+	}
+	
+	func sharingService(sharingService: NSSharingService, didFailToShareItems items: [AnyObject], error: NSError) {
+		print("share failure")
+	}
+	
+}
+

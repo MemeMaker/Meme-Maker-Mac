@@ -83,4 +83,14 @@ class SettingsManager: NSObject {
 		return NSDate(timeIntervalSinceNow: (-10 * 86400))
 	}
 	
+	class func getLastUpdateDateString() -> String {
+		if (defaults.objectForKey("lastUpdateDate") != nil) {
+			let formatter = NSDateFormatter()
+			formatter.dateFormat = "MMM dd, yyyy hh:mm a"
+			let date = self.getLastUpdateDate()
+			return formatter.stringFromDate(date)
+		}
+		return ""
+	}
+	
 }

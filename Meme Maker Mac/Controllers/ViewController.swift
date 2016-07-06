@@ -45,6 +45,16 @@ class ViewController: NSViewController {
 			self.collectionView.reloadData()
 		}
 		
+		NSNotificationCenter.defaultCenter().addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.fetchLocalMemes()
+		}
+		
+		if (NSDate().timeIntervalSinceDate(SettingsManager.getLastUpdateDate())) > 7 * 86400 {
+			print("Fetching latest memes, just for you!")
+			let fetcher = MemeFetcher()
+			fetcher.fetchMemes()
+		}
+		
 	}
 	
 	func fetchLocalMemes() -> Void {
@@ -63,7 +73,6 @@ class ViewController: NSViewController {
 		catch _ {
 			print("Error in fetching.")
 		}
-		
 		self.filterMemesWithSearchText(self.searchField.stringValue)
 	}
 	

@@ -520,18 +520,8 @@
                                             <action selector="darkModeAction:" target="cWc-bB-CNr" id="Ffe-xv-roP"/>
                                         </connections>
                                     </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SqC-VJ-CMo">
-                                        <rect key="frame" x="54" y="120" width="132" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Update Memes" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W5Q-xw-hJL">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="updateMemesAction:" target="cWc-bB-CNr" id="ahP-Lr-phO"/>
-                                        </connections>
-                                    </button>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q43-wU-MYT">
-                                        <rect key="frame" x="191" y="129" width="231" height="17"/>
+                                        <rect key="frame" x="170" y="131" width="231" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Last updated: Jun 22 2016, 07:24 PM" id="tcI-Ga-ymv">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlShadowColor" catalog="System" colorSpace="catalog"/>
@@ -568,19 +558,34 @@
                                             <action selector="resetSettingsAction:" target="cWc-bB-CNr" id="ehq-3v-mHK"/>
                                         </connections>
                                     </button>
+                                    <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="SGI-j9-3wU">
+                                        <rect key="frame" x="36" y="131" width="16" height="16"/>
+                                    </progressIndicator>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SqC-VJ-CMo">
+                                        <rect key="frame" x="60" y="129" width="100" height="19"/>
+                                        <buttonCell key="cell" type="roundRect" title="Update Memes" bezelStyle="roundedRect" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="W5Q-xw-hJL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="cellTitle"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="updateMemesAction:" target="cWc-bB-CNr" id="ahP-Lr-phO"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="SqC-VJ-CMo" firstAttribute="leading" secondItem="QNy-0M-qOd" secondAttribute="leading" id="28v-Us-RLk"/>
                                     <constraint firstItem="QNy-0M-qOd" firstAttribute="top" secondItem="qTy-cp-Uf8" secondAttribute="bottom" constant="14" id="4cI-ek-UOh"/>
+                                    <constraint firstItem="SqC-VJ-CMo" firstAttribute="leading" secondItem="SGI-j9-3wU" secondAttribute="trailing" constant="8" id="4xB-k8-8Ea"/>
                                     <constraint firstAttribute="bottom" secondItem="2cU-yy-mV0" secondAttribute="bottom" constant="20" id="5F3-41-4X1"/>
-                                    <constraint firstItem="2cU-yy-mV0" firstAttribute="trailing" secondItem="q43-wU-MYT" secondAttribute="trailing" id="6Yd-a7-bgu"/>
-                                    <constraint firstItem="q43-wU-MYT" firstAttribute="trailing" secondItem="QNy-0M-qOd" secondAttribute="trailing" id="8lb-bV-Uc0"/>
                                     <constraint firstItem="qTy-cp-Uf8" firstAttribute="top" secondItem="BpT-fz-c8N" secondAttribute="top" constant="60" id="B3Z-om-Qz7"/>
                                     <constraint firstAttribute="bottom" secondItem="f2t-lk-hxt" secondAttribute="bottom" constant="20" id="C9E-cm-1RF"/>
                                     <constraint firstItem="qTy-cp-Uf8" firstAttribute="leading" secondItem="BpT-fz-c8N" secondAttribute="leading" constant="60" id="JX3-Gb-C0O"/>
+                                    <constraint firstItem="q43-wU-MYT" firstAttribute="leading" secondItem="SqC-VJ-CMo" secondAttribute="trailing" constant="12" id="N9f-LA-i6c"/>
                                     <constraint firstItem="SqC-VJ-CMo" firstAttribute="top" secondItem="QNy-0M-qOd" secondAttribute="bottom" constant="20" id="VkD-Bg-fGl"/>
                                     <constraint firstItem="f2t-lk-hxt" firstAttribute="leading" secondItem="SqC-VJ-CMo" secondAttribute="leading" id="aCc-a1-QUv"/>
+                                    <constraint firstItem="2cU-yy-mV0" firstAttribute="trailing" secondItem="QNy-0M-qOd" secondAttribute="trailing" id="cPt-W3-NK6"/>
                                     <constraint firstItem="QNy-0M-qOd" firstAttribute="leading" secondItem="qTy-cp-Uf8" secondAttribute="leading" id="ipw-Yg-yKN"/>
+                                    <constraint firstItem="SGI-j9-3wU" firstAttribute="centerY" secondItem="SqC-VJ-CMo" secondAttribute="centerY" id="lHV-4T-BIg"/>
                                     <constraint firstItem="q43-wU-MYT" firstAttribute="centerY" secondItem="SqC-VJ-CMo" secondAttribute="centerY" id="mEW-N7-Bbu"/>
                                     <constraint firstAttribute="trailing" secondItem="qTy-cp-Uf8" secondAttribute="trailing" constant="60" id="nln-9h-GbZ"/>
                                     <constraint firstItem="QNy-0M-qOd" firstAttribute="trailing" secondItem="qTy-cp-Uf8" secondAttribute="trailing" id="vVi-zq-QiJ"/>
@@ -598,6 +603,7 @@
                         <outlet property="darkModeButton" destination="QNy-0M-qOd" id="OoS-YR-hDI"/>
                         <outlet property="lastUpdatedLabel" destination="q43-wU-MYT" id="yx4-wR-Cq4"/>
                         <outlet property="resetSettingsButton" destination="qTy-cp-Uf8" id="dhK-RJ-jVT"/>
+                        <outlet property="updationSpinner" destination="SGI-j9-3wU" id="amV-JF-fTH"/>
                     </connections>
                 </viewController>
                 <customObject id="tsZ-WO-BRW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1101,7 +1107,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IlK-Px-2sU">
                                 <rect key="frame" x="18" y="24" width="58" height="14"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Color" id="6OJ-vn-oSL">
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1109,7 +1115,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="kao-c9-8Ip">
                                 <rect key="frame" x="132" y="24" width="57" height="14"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Text Font" id="m7k-oZ-exq">
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1117,7 +1123,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMw-m6-IOj">
                                 <rect key="frame" x="229" y="24" width="73" height="14"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Outline Color" id="CXE-3r-vpx">
-                                    <font key="font" metaFont="system" size="11"/>
+                                    <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

@@ -8,6 +8,24 @@
 
 import Foundation
 
+let API_BASE_URL: String = "http://alpha-meme-maker.herokuapp.com"
+
+func apiMemesPaging(page: Int) -> NSURL {
+	return NSURL(string: "\(API_BASE_URL)/\(page)/")!
+}
+
+func apiParticularMeme(memeID: Int) -> NSURL {
+	return NSURL(string: "\(API_BASE_URL)/memes/\(memeID)/")!
+}
+
+func apiSubmissionsPaging(page: Int) -> NSURL {
+	return NSURL(string: "\(API_BASE_URL)/submissions/\(page)/")!
+}
+
+func apiSubmissionsForMeme(memeID: Int) -> NSURL {
+	return NSURL(string: "\(API_BASE_URL)/memes/\(memeID)/submissions/")!
+}
+
 func getDocumentsDirectory() -> String {
 	let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
 	let documentsDirectory = paths[0]

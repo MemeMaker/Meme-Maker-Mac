@@ -6,6 +6,8 @@
 //  Copyright © 2016 avikantz. All rights reserved.
 //
 
+let kFetchCompleteNotification: String = "kFetchCompleteNotification"
+
 let kToggleViewModeNotification: String = "kToggleViewModeNotification"
 let kToggleViewModeKey: String = "kToggleViewModeKey"
 
