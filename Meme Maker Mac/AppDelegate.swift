@@ -118,6 +118,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
 	}
 	
+	@IBAction func textColorMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kTextColorPanelNotification, object: nil)
+	}
+	
+	@IBAction func outlineColorMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
+	}
+	
+	
 	
 	// MARK: - Utility
 	

@@ -93,5 +93,18 @@ extension AttributeEditorViewController {
 		updateAttributes()
 	}
 	
+	@IBAction func textColorAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kTextColorPanelNotification, object: nil)
+	}
+	
+	@IBAction func outlineColorAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
+	}
+	
+	@IBAction func textFontAction(sender: AnyObject) {
+		let topTextAttr: XTextAttributes =  XTextAttributes(savename: kTopAttrName)
+		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
+		NSFontPanel.sharedFontPanel().orderFront(sender)
+	}
     
 }

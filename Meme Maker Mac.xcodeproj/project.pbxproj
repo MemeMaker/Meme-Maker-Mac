@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */; };
 		59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AC81CEF274A00679BE2 /* AppDelegate.swift */; };
 		59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */; };
 		59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59490ACF1CEF274A00679BE2 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AC81CEF274A00679BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Maker_Mac.xcdatamodel; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				59490AFB1CEF282300679BE2 /* ViewController.swift */,
 				5973F15B1D22418000080706 /* EditorViewController.swift */,
 				59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */,
+				5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				59AB9EF41D2C268D002386B5 /* GRSeparatorLineView.m in Sources */,
 				59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */,
 				59FA74DB1CF31B6300C39BCF /* PrefixHeader.swift in Sources */,
+				5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */,
 				59AB9EF51D2C268D002386B5 /* GRVibrantTitlebarView.m in Sources */,
 				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
 				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
