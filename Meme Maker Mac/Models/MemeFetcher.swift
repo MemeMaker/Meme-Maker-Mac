@@ -54,6 +54,7 @@ public class MemeFetcher: NSObject {
 					}
 					else {
 						self.memes = self.fetchedMemes
+						print("Fetch complete!")
 						dispatch_async(dispatch_get_main_queue(), {
 							SettingsManager.saveLastUpdateDate()
 							NSNotificationCenter.defaultCenter().postNotificationName(kFetchCompleteNotification, object: nil, userInfo: ["memes": self.memes])

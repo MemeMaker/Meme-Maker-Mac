@@ -13,9 +13,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Meme Maker Mac" id="1Xt-HY-uBw">
+                            <menuItem title="Meme Maker" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Meme Maker Mac" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Meme Maker" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About Meme Maker Mac" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -1295,6 +1295,6 @@
         <image name="sortRank" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uvv-ax-6Vw"/>
+        <segue reference="neb-Kp-YXs"/>
     </inferredMetricsTieBreakers>
 </document>

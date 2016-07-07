@@ -15,6 +15,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		// Insert code here to initialize your application
 		
+		if (!NSFileManager.defaultManager().fileExistsAtPath(documentsPathForFileName("prefs"))) {
+			let dict = NSMutableDictionary()
+			dict.writeToFile(documentsPathForFileName("prefs"), atomically: true)
+		}
+		
 		let timesLaunched = SettingsManager.getInteger(kSettingsTimesLaunched)
 		if (timesLaunched == 0) {
 			SettingsManager.setBool(false, key: kSettingsResetSettingsOnLaunch)
@@ -107,6 +112,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 				let jsonmemes = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
 				let _ = XMeme.getAllMemesFromArray(jsonmemes as! NSArray, context: managedObjectContext)!
 				try managedObjectContext.save()
+				NSNotificationCenter.defaultCenter().postNotificationName(kFetchCompleteNotification, object: nil)
 			}
 			catch _ {
 				print("Unable to parse")

@@ -46,10 +46,13 @@ class ViewController: NSViewController {
 	
 	func fetchLocalMemes() -> Void {
 		let request = NSFetchRequest(entityName: "XMeme")
-		if let lastSortKey = SettingsManager.getObject(kSettingsLastSortKey) {
-			request.sortDescriptors = [NSSortDescriptor.init(key: lastSortKey as? String, ascending: true)]
-		}
-		else {
+		
+		let sortMode = SettingsManager.getInteger(kSettingsLastSortKey)
+		if (sortMode == 1) { // Default
+			request.sortDescriptors =  [NSSortDescriptor.init(key: "memeID", ascending: true)]
+		} else if (sortMode == 2) { // Alphabetical
+			request.sortDescriptors = [NSSortDescriptor.init(key: "name", ascending: true)]
+		} else {
 			request.sortDescriptors = [NSSortDescriptor.init(key: "rank", ascending: true)]
 		}
 		do {
