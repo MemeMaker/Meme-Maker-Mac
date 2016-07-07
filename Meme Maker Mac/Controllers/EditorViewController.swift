@@ -192,6 +192,13 @@ class EditorViewController: NSViewController {
 			self.cookImage()
 		}
 		
+		center.addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let viewSize = self.view.bounds
+			self.imageViewWidthConstraint.constant = viewSize.width - 16
+			self.imageViewHeightConstraint.constant = viewSize.height - 96
+			self.view.needsLayout = true
+		}
+		
 	}
     
 }
