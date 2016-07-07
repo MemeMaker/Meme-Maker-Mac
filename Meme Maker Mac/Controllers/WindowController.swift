@@ -12,6 +12,8 @@ class WindowController: NSWindowController {
 	
 	@IBOutlet weak var gridToolBarItem: NSToolbarItem!
 	
+	@IBOutlet weak var searchField: NSSearchField!
+	
 	var grid: Bool = false {
 		didSet {
 			SettingsManager.setBool(grid, key: kSettingsViewModeIsGrid)
@@ -55,4 +57,14 @@ class WindowController: NSWindowController {
 		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
 	}
 
+}
+
+extension WindowController {
+	
+	override func controlTextDidChange(obj: NSNotification) {
+		let text = self.searchField.stringValue
+		SettingsManager.setObject(text, key: kSettingsLastSearchKey)
+		NSNotificationCenter.defaultCenter().postNotificationName(kSearchBarTextChangedNotification, object: nil, userInfo: [kSettingsLastSearchKey: text])
+	}
+	
 }

@@ -127,20 +127,35 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 		// Maybe resize image?
 		if([NSImage canInitWithPasteboard: [sender draggingPasteboard]]) {
 			NSImage *newImage = [[NSImage alloc] initWithPasteboard: [sender draggingPasteboard]];
+			if (MAX(newImage.size.width, newImage.size.height) > 1600) {
+				CGFloat ratio = newImage.size.width/newImage.size.height;
+				newImage = [self imageResize:newImage newSize:NSMakeSize(1600, 1600/ratio)];
+			}
 			[self setImage:newImage];
-			//            NSRect selfFrame = self.frame;
-			//            selfFrame.size = newImage.size;
-			//            selfFrame.origin = CGPointMake(0, 0);
-			//            self.frame = selfFrame;
-			//            self.superview.frame = self.frame;
-			//            [newImage release];
-			
+
 			fileURL = [NSURL URLFromPasteboard: [sender draggingPasteboard]];
 			[self.delegate dragDropImageView:self didFinishDropAtFilePath:fileURL.path andImage:newImage];
 		}
 	}
 	
 	return YES;
+}
+
+- (NSImage *)imageResize:(NSImage *)anImage newSize:(NSSize)newSize {
+	NSImage *sourceImage = anImage;
+	// Report an error if the source isn't a valid image
+	if (![sourceImage isValid]){
+		NSLog(@"Invalid Image");
+	} else {
+		NSImage *smallImage = [[NSImage alloc] initWithSize: newSize];
+		[smallImage lockFocus];
+		[sourceImage setSize: newSize];
+		[[NSGraphicsContext currentContext] setImageInterpolation:NSImageInterpolationHigh];
+		[sourceImage drawAtPoint:NSZeroPoint fromRect:CGRectMake(0, 0, newSize.width, newSize.height) operation:NSCompositeCopy fraction:1.0];
+		[smallImage unlockFocus];
+		return smallImage;
+	}
+	return nil;
 }
 
 - (NSRect)windowWillUseStandardFrame:(NSWindow *)window defaultFrame:(NSRect)newFrame; {

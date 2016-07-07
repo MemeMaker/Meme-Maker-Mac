@@ -44,6 +44,7 @@ class SortViewController: NSViewController {
 		popSortButton.state = NSOffState
 		SettingsManager.setInteger(1, key: kSettingsLastSortKey)
 		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
+		self.dismissController(self)
 	}
 	
 	@IBAction func alphaSortAction(sender: AnyObject) {
@@ -52,6 +53,7 @@ class SortViewController: NSViewController {
 		popSortButton.state = NSOffState
 		SettingsManager.setInteger(2, key: kSettingsLastSortKey)
 		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
+		self.dismissController(self)
 	}
 	
 	@IBAction func popSortAction(sender: AnyObject) {
@@ -60,6 +62,7 @@ class SortViewController: NSViewController {
 		popSortButton.state = NSOnState
 		SettingsManager.setInteger(3, key: kSettingsLastSortKey)
 		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
+		self.dismissController(self)
 	}
 	
 }

@@ -20,8 +20,6 @@ class ViewController: NSViewController {
 	
 	var context: NSManagedObjectContext? = nil
 	
-	@IBOutlet weak var searchField: NSSearchField!
-	
 	private var gridMode: Bool = true;
 
 	override func viewDidLoad() {
@@ -63,7 +61,11 @@ class ViewController: NSViewController {
 		catch _ {
 			print("Error in fetching.")
 		}
-		self.filterMemesWithSearchText(self.searchField.stringValue)
+		var searchText = ""
+		if let text = SettingsManager.getObject(kSettingsLastSearchKey) {
+			searchText = text as! String
+		}
+		self.filterMemesWithSearchText(searchText)
 	}
 	
 	private func configureCollectionView() {
@@ -92,10 +94,11 @@ class ViewController: NSViewController {
 		}
 		
 		center.addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
-			let dict = notificaton.userInfo
-			let mode = dict![kToggleViewModeKey] as! NSNumber
-			self.gridMode = mode.boolValue
-			self.collectionView.reloadData()
+			if let dict = notificaton.userInfo {
+				let mode = dict[kToggleViewModeKey] as! NSNumber
+				self.gridMode = mode.boolValue
+				self.collectionView.reloadData()
+			}
 		}
 		
 		center.addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
@@ -112,6 +115,14 @@ class ViewController: NSViewController {
 				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "rank", ascending: true)])
 			}
 			self.collectionView.reloadData()
+		}
+		
+		center.addObserverForName(kSearchBarTextChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			if let dict = notification.userInfo {
+				if let searchText = dict[kSettingsLastSearchKey] as? String {
+					self.filterMemesWithSearchText(searchText)
+				}
+			}
 		}
 		
 	}
@@ -229,10 +240,6 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 }
 
 extension ViewController: NSSearchFieldDelegate {
-	
-	override func controlTextDidChange(obj: NSNotification) {
-		self.filterMemesWithSearchText(self.searchField.stringValue)
-	}
 	
 	func filterMemesWithSearchText(searchText: String!) {
 		memes = allMemes.mutableCopy() as! NSMutableArray

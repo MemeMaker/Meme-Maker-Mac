@@ -301,6 +301,11 @@ extension EditorViewController {
 		cookImage()
 	}
 	
+	@IBAction func fillDefaultTextAction(sender: NSSegmentedControl) {
+		let tag = sender.tag
+		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
+	}
+	
 	override func changeFont(sender: AnyObject?) {
 		if let topFont = sender?.convertFont(topTextAttr.font) {
 			topTextAttr.font = topFont

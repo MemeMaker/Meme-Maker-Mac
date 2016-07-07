@@ -15,6 +15,7 @@ let kSettingsLastMemeIdOpened		= "kSettingsLastMemeIdOpened"
 let kSettingsResetSettingsOnLaunch	= "kResetSettingsOnLaunch"
 let kSettingsViewModeIsGrid			= "kMemeListViewModeIsGrid"
 let kSettingsLastSortKey			= "kLastSortOrderKey"
+let kSettingsLastSearchKey			= "kLastSearchKey"
 
 // MARK: - Notifications
 
@@ -40,5 +41,6 @@ let kUpdateAttributesNotification: String = "kUpdateAttributesNotification"
 let kTopAttrName: String = "topAttr"
 let kBottomAttrName: String = "bottomAttr"
 
+let kSearchBarTextChangedNotification: String = "kSearchBarTextChangedNotification"
 let kSortModeChangedNotification: String = "kSortModeChangedNotification"
 
