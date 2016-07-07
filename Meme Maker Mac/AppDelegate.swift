@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if (timesLaunched == 0) {
 			SettingsManager.setBool(false, key: kSettingsResetSettingsOnLaunch)
 			SettingsManager.setInteger(1, key: kSettingsLastSortKey) // default
+			SettingsManager.setBool(false, key: kSettingsDarkMode)
 			SettingsManager.setObject("", key: kSettingsLastSearchKey)
 			print("Unarchiving to \(getImagesFolder())")
 			SSZipArchive.unzipFileAtPath(NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
@@ -33,6 +34,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		if SettingsManager.getBool(kSettingsResetSettingsOnLaunch) {
 			XTextAttributes.clearTopAndBottomTexts()
 		}
+		
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/2 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+			NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": SettingsManager.getBool(kSettingsDarkMode)])
+		})
+
 		
 	}
 
@@ -101,7 +107,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	@IBAction func outlineColorMenuAction(sender: AnyObject) {
 		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
 	}
-	
 	
 	
 	// MARK: - Utility

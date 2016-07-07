@@ -17,6 +17,8 @@ class SettingsViewController: NSViewController {
 	@IBOutlet weak var lastUpdatedLabel: NSTextField!
 	
 	@IBOutlet weak var updationSpinner: NSProgressIndicator!
+	
+	@IBOutlet weak var veView: NSVisualEffectView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +26,41 @@ class SettingsViewController: NSViewController {
 		
 		resetSettingsButton.state = SettingsManager.getBool(kSettingsResetSettingsOnLaunch) ? NSOnState : NSOffState
 		
-//		darkModeButton.state = SettingsManager.getBool(ksettings)
+		darkModeButton.state = SettingsManager.getBool(kSettingsDarkMode) ? NSOnState : NSOffState
 		
 		lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
 		
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+			self.veView.material = darkMode ? .UltraDark : .Light
+		}
+		
     }
+	
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+	}
 	
 }
 
 extension SettingsViewController {
+	
+	@IBAction func memeMakerAction(sender: AnyObject) {
+		
+	}
 
 	@IBAction func resetSettingsAction(sender: AnyObject) {
 		SettingsManager.setBool(sender.state == NSOnState, key: kSettingsResetSettingsOnLaunch)
 	}
 	
 	@IBAction func darkModeAction(sender: AnyObject) {
+		let darkMode = sender.state == NSOnState
+		veView.material = darkMode ? .UltraDark : .Light;
+		SettingsManager.setBool(darkMode, key: kSettingsDarkMode)
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+		
 		
 	}
 	

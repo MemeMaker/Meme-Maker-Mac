@@ -13,6 +13,7 @@ import Foundation
 let kSettingsTimesLaunched			= "kTimesLaunched"
 let kSettingsLastMemeIdOpened		= "kSettingsLastMemeIdOpened"
 let kSettingsResetSettingsOnLaunch	= "kResetSettingsOnLaunch"
+let kSettingsDarkMode				= "kSettingsDarkMode"
 let kSettingsViewModeIsGrid			= "kMemeListViewModeIsGrid"
 let kSettingsLastSortKey			= "kLastSortOrderKey"
 let kSettingsLastSearchKey			= "kLastSearchKey"
@@ -43,4 +44,9 @@ let kBottomAttrName: String = "bottomAttr"
 
 let kSearchBarTextChangedNotification: String = "kSearchBarTextChangedNotification"
 let kSortModeChangedNotification: String = "kSortModeChangedNotification"
+
+let kDarkModeChangedNotification: String = "kDarkModeChangedNotification"
+
+let kUndoNotification: String = "kUndoNotification"
+let kRedoNotification: String = "kRedoNotification"
 

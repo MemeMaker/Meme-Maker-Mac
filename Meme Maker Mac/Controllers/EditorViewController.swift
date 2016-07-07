@@ -82,6 +82,10 @@ class EditorViewController: NSViewController {
 			return theEvent
 		}
 		
+//		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+//			
+//		}
+		
     }
 	
 	func setupGestureRecognizers() -> Void {

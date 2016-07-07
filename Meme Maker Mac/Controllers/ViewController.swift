@@ -21,6 +21,8 @@ class ViewController: NSViewController {
 	var context: NSManagedObjectContext? = nil
 	
 	private var gridMode: Bool = true;
+	
+	@IBOutlet weak var veView: NSVisualEffectView!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -40,6 +42,17 @@ class ViewController: NSViewController {
 			fetcher.fetchMemes()
 		}
 		
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+			self.veView.material = darkMode ? .UltraDark : .Light
+		}
+		
+	}
+	
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
 	}
 	
 	func fetchLocalMemes() -> Void {

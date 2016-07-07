@@ -35,6 +35,15 @@
     self.titleView = [[GRVibrantTitleView alloc] initWithFrame:NSMakeRect(kTitleLeftOffset, NSHeight(self.frame)-kTitleHeight-kTitleTopOffset, NSWidth(self.frame)-kTitleLeftOffset, kTitleHeight)];
     self.titleView.autoresizingMask = NSViewWidthSizable|NSViewMinYMargin;
     [self addSubview:self.titleView];
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:@"kDarkModeChangedNotification" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+		if ([[note.userInfo objectForKey:@"darkMode"] boolValue]) {
+			self.material = NSVisualEffectMaterialUltraDark;
+		} else {
+			self.material = NSVisualEffectMaterialLight;
+		}
+		self.needsLayout = YES;
+	}];
     
     return self;
 }

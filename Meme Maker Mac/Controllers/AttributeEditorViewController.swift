@@ -19,6 +19,7 @@ class AttributeEditorViewController: NSViewController {
 	@IBOutlet weak var shadowEnabledButton: NSButton!
 	@IBOutlet weak var shadow3dbutton: NSButton!
 	
+	@IBOutlet weak var veView: NSVisualEffectView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,18 @@ class AttributeEditorViewController: NSViewController {
 		
 		updateViews()
 		
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+			self.veView.material = darkMode ? .UltraDark : .Light
+		}
+		
     }
+	
+	override func viewDidAppear() {
+		super.viewDidAppear()
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+	}
 	
 	func updateViews() -> Void {
 		

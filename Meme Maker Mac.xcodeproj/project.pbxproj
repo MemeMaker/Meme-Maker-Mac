@@ -11,6 +11,7 @@
 		355DAD2DF834F7D6EF0A7FA4 /* Pods_Meme_Maker_MacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87ACDF416E43163D763FE822 /* Pods_Meme_Maker_MacUITests.framework */; };
 		5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */; };
 		5935C23E1D2CEF78005E18AE /* MemeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */; };
+		594147651D2EBBD0004A6AF7 /* XUndoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594147641D2EBBD0004A6AF7 /* XUndoManager.swift */; };
 		59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AC81CEF274A00679BE2 /* AppDelegate.swift */; };
 		59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */; };
 		59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59490ACF1CEF274A00679BE2 /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 		417C7AAC2C5D6D9B254C58C2 /* Pods_Meme_Maker_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeFetcher.swift; path = Models/MemeFetcher.swift; sourceTree = "<group>"; };
+		594147641D2EBBD0004A6AF7 /* XUndoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XUndoManager.swift; path = Models/XUndoManager.swift; sourceTree = "<group>"; };
 		59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AC81CEF274A00679BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Maker_Mac.xcdatamodel; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */,
 				59FA74DC1CF31C0F00C39BCF /* SettingsManager.swift */,
 				59FA74CB1CF3199400C39BCF /* XTextAttributes.swift */,
+				594147641D2EBBD0004A6AF7 /* XUndoManager.swift */,
 				59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */,
 			);
 			name = Models;
@@ -612,6 +615,7 @@
 				5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */,
 				59AB9EF51D2C268D002386B5 /* GRVibrantTitlebarView.m in Sources */,
 				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
+				594147651D2EBBD0004A6AF7 /* XUndoManager.swift in Sources */,
 				59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */,
 				59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */,
 				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
@@ -766,6 +770,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
@@ -784,6 +789,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
