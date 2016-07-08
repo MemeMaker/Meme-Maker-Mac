@@ -38,7 +38,7 @@
 	
 	[[NSNotificationCenter defaultCenter] addObserverForName:@"kDarkModeChangedNotification" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
 		if ([[note.userInfo objectForKey:@"darkMode"] boolValue]) {
-			self.material = NSVisualEffectMaterialUltraDark;
+			self.material = NSVisualEffectMaterialDark;
 		} else {
 			self.material = NSVisualEffectMaterialLight;
 		}

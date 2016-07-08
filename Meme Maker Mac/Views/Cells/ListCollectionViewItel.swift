@@ -26,11 +26,11 @@ class ListCollectionViewItel: BaseCollectionViewItem {
 	
 	override func viewDidAppear() {
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		self.textField?.textColor = darkMode ? NSColor.init(white: 0.9, alpha: 1) : NSColor.init(white: 0.1, alpha: 1)
+		self.textField?.textColor = darkMode ? NSColor.init(white: 0.95, alpha: 1) : NSColor.init(white: 0.25, alpha: 1)
 		
 		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.textField?.textColor = darkMode ? NSColor.init(white: 0.9, alpha: 1) : NSColor.init(white: 0.1, alpha: 1)
+			self.textField?.textColor = darkMode ? NSColor.init(white: 0.95, alpha: 1) : NSColor.init(white: 0.25, alpha: 1)
 		}
 	}
 	

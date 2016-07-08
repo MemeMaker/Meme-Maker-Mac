@@ -49,7 +49,7 @@ class SortViewController: NSViewController {
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
 		var append = ""
 		if (darkMode) {
-			veView.material = .UltraDark
+			veView.material = .Dark
 			append = "W"
 		} else {
 			veView.material = .Light

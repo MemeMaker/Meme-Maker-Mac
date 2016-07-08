@@ -33,8 +33,12 @@ class EditorViewController: NSViewController {
 	var topTextAttr: XTextAttributes =  XTextAttributes(savename: "topAttr")
 	var bottomTextAttr: XTextAttributes = XTextAttributes(savename: "bottomAttr")
 	
-	var meme: XMeme!  {
+//	let xUndoManager: XUndoManager = XUndoManager.sharedManager()
+//	var shouldAppend: Bool = true
+	
+	var meme: XMeme?  {
 		didSet {
+			guard let meme = self.meme else { return }
 			if let image = NSImage.init(contentsOfFile: imagesPathForFileName("\(meme.memeID)")) {
 				imageView?.image = image
 				imageView?.memeName = meme.name
@@ -90,7 +94,6 @@ class EditorViewController: NSViewController {
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/5	* Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
 				self.cookImage()
 			})
-
 		}
 		
     }
@@ -155,13 +158,14 @@ class EditorViewController: NSViewController {
 		center.addObserverForName(kFillDefaultTextNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			guard let userInfo = notification.userInfo else { return }
 			if let topbottom = userInfo["topbottom"]?.integerValue {
+				guard let meme = self.meme else { return }
 				if (topbottom == 1) {
-					if let topText = self.meme.topText {
+					if let topText = meme.topText {
 						self.topTextAttr.text = topText
 						self.topField.stringValue = topText
 					}
 				} else if (topbottom == 9) {
-					if let bottomText = self.meme.bottomText {
+					if let bottomText = meme.bottomText {
 						self.bottomTextAttr.text = bottomText
 						self.bottomField.stringValue = bottomText
 					}
@@ -209,6 +213,30 @@ class EditorViewController: NSViewController {
 			self.imageViewHeightConstraint.constant = viewSize.height - 96
 			self.view.needsLayout = true
 		}
+		
+		/*
+		center.addObserverForName(kUndoNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let (topA, bottomA) = self.xUndoManager.undo()
+			if let topAttr = topA {
+				self.topTextAttr = topAttr
+			}
+			if let bottomAttr = bottomA {
+				self.bottomTextAttr = bottomAttr
+			}
+			self.cookImage()
+		}
+		
+		center.addObserverForName(kRedoNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let (topA, bottomA) = self.xUndoManager.redo()
+			if let topAttr = topA {
+				self.topTextAttr = topAttr
+			}
+			if let bottomAttr = bottomA {
+				self.bottomTextAttr = bottomAttr
+			}
+			self.cookImage()
+		}
+		*/
 		
 	}
     
@@ -300,6 +328,7 @@ extension EditorViewController {
 		let alignment = sender.selectedSegment
 		topTextAttr.absAlignment = alignment
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	@IBAction func topSizeChange(sender: NSSegmentedControl) {
@@ -307,12 +336,14 @@ extension EditorViewController {
 		topTextAttr.fontSize = max(topTextAttr.fontSize, 12 * self.ratio)
 		topTextAttr.fontSize = min(topTextAttr.fontSize, 144 * self.ratio)
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	@IBAction func bottomAlignmentChange(sender: NSSegmentedControl) {
 		let alignment = sender.selectedSegment
 		bottomTextAttr.absAlignment = alignment
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	@IBAction func bottomSizeChange(sender: NSSegmentedControl) {
@@ -320,11 +351,13 @@ extension EditorViewController {
 		bottomTextAttr.fontSize = max(bottomTextAttr.fontSize, 12 * self.ratio)
 		bottomTextAttr.fontSize = min(bottomTextAttr.fontSize, 144 * self.ratio)
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	@IBAction func fillDefaultTextAction(sender: NSSegmentedControl) {
 		let tag = sender.tag
 		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	override func changeFont(sender: AnyObject?) {
@@ -335,6 +368,7 @@ extension EditorViewController {
 			bottomTextAttr.font = bottomFont
 		}
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 	override func changeColor(sender: AnyObject?) {
@@ -346,6 +380,7 @@ extension EditorViewController {
 			bottomTextAttr.outlineColor = (sender?.color)!
 		}
 		cookImage()
+//		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
 }

@@ -29,7 +29,7 @@ class AttributeEditorViewController: NSViewController {
 		
 		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .UltraDark : .Light
+			self.veView.material = darkMode ? .Dark : .Light
 		}
 		
     }

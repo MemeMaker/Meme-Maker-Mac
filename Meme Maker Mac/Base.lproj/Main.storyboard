@@ -757,6 +757,16 @@
                                         </connections>
                                     </searchField>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="DCB8947D-2CE0-48D3-B8C9-349DB304F348" label="Undo" paletteLabel="Undo" tag="-1" image="undo" id="bca-J0-gR9">
+                                    <connections>
+                                        <action selector="undoToolbarAction:" target="B8D-0N-5wS" id="1Kz-BR-KLV"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="4C02297B-F10D-43A5-B98F-2690FB645B8A" label="Redo" paletteLabel="Redo" tag="-1" image="redo" id="9g0-eU-CoR">
+                                    <connections>
+                                        <action selector="redoToolbarAction:" target="B8D-0N-5wS" id="F9I-aC-nIr"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="KQg-QC-4vO"/>
@@ -1374,12 +1384,14 @@
         <image name="list" width="32" height="32"/>
         <image name="minus" width="8" height="8"/>
         <image name="plus" width="8" height="8"/>
+        <image name="redo" width="32" height="32"/>
         <image name="reset" width="32" height="32"/>
         <image name="sort" width="111" height="111"/>
         <image name="sortAlpha" width="48" height="48"/>
         <image name="sortRank" width="48" height="48"/>
+        <image name="undo" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="neb-Kp-YXs"/>
+        <segue reference="uvv-ax-6Vw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,6 +95,15 @@ class WindowController: NSWindowController {
 	@IBAction func resetToolbarAction(sender: AnyObject) {
 		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
 	}
+	
+	@IBAction func undoToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kUndoNotification, object: nil)
+	}
+	
+	@IBAction func redoToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kRedoNotification, object: nil)
+	}
+	
 
 }
 

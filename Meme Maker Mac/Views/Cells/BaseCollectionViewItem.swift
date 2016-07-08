@@ -23,9 +23,9 @@ class BaseCollectionViewItem: NSCollectionViewItem {
 	var gray: Bool = false {
 		didSet {
 			if gray {
-				self.view.layer?.backgroundColor = NSColor(red: 212/255, green: 212/255, blue: 212/255, alpha: 0.3).CGColor
+				self.view.layer?.backgroundColor = NSColor(red: 212/255, green: 212/255, blue: 212/255, alpha: 0.2).CGColor
 			} else {
-				self.view.layer?.backgroundColor = NSColor(red: 232/255, green: 232/255, blue: 232/255, alpha: 0.3).CGColor
+				self.view.layer?.backgroundColor = NSColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.2).CGColor
 			}
 		}
 	}

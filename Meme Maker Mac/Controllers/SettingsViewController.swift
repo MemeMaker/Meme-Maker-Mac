@@ -32,7 +32,7 @@ class SettingsViewController: NSViewController {
 		
 		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .UltraDark : .Light
+			self.veView.material = darkMode ? .Dark : .Light
 		}
 		
     }
@@ -57,7 +57,7 @@ extension SettingsViewController {
 	
 	@IBAction func darkModeAction(sender: AnyObject) {
 		let darkMode = sender.state == NSOnState
-		veView.material = darkMode ? .UltraDark : .Light;
+		veView.material = darkMode ? .Dark : .Light;
 		SettingsManager.setBool(darkMode, key: kSettingsDarkMode)
 		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
 		

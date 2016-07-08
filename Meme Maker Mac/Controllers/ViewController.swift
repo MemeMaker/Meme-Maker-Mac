@@ -91,7 +91,7 @@ class ViewController: NSViewController {
 		collectionScrollView.wantsLayer = true
 		collectionScrollView.layer?.cornerRadius = 4
 		collectionScrollView.layer?.backgroundColor = NSColor.clearColor().CGColor
-	}
+}
 	
 	func handleNotifications() -> Void {
 		
@@ -135,7 +135,7 @@ class ViewController: NSViewController {
 		
 		center.addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .UltraDark : .Light
+			self.veView.material = darkMode ? .Dark : .Light
 		}
 		
 	}

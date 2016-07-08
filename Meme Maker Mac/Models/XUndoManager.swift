@@ -48,6 +48,7 @@ class XUndoManager: NSObject {
 	func redo() -> (topAttr: XTextAttributes?, bottomAttr: XTextAttributes?) {
 		index += 1
 		if (index > topAttrStack.count - 1) {
+			removeAll()
 			index = topAttrStack.count - 1
 			return (nil, nil)
 		}
