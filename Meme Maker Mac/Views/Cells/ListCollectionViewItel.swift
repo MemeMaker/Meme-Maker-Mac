@@ -24,6 +24,16 @@ class ListCollectionViewItel: BaseCollectionViewItem {
 		
 	}
 	
+	override func viewDidAppear() {
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		self.textField?.textColor = darkMode ? NSColor.init(white: 0.9, alpha: 1) : NSColor.init(white: 0.1, alpha: 1)
+		
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+			self.textField?.textColor = darkMode ? NSColor.init(white: 0.9, alpha: 1) : NSColor.init(white: 0.1, alpha: 1)
+		}
+	}
+	
 	override func setHighlight(selected: Bool) {
 		view.layer?.borderWidth = selected ? 2.0 : 0.0
 	}

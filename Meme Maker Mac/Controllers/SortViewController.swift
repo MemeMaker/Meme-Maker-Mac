@@ -14,6 +14,8 @@ class SortViewController: NSViewController {
 	@IBOutlet weak var alphaSortButton: NSButton!
 	@IBOutlet weak var popSortButton: NSButton!
 	
+	@IBOutlet weak var veView: NSVisualEffectView!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -36,7 +38,27 @@ class SortViewController: NSViewController {
 			SettingsManager.setInteger(1, key: kSettingsLastSortKey)
 		}
 		
+		updateViews()
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.updateViews()
+		}
+		
     }
+	
+	func updateViews() -> Void {
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		var append = ""
+		if (darkMode) {
+			veView.material = .UltraDark
+			append = "W"
+		} else {
+			veView.material = .Light
+		}
+		defaultSortButton.image = NSImage(named: "sort" + append)
+		alphaSortButton.image = NSImage(named: "sortAlpha" + append)
+		popSortButton.image = NSImage(named: "sortRank" + append)
+		
+	}
 	
 	@IBAction func defaultSortAction(sender: AnyObject) {
 		defaultSortButton.state = NSOnState

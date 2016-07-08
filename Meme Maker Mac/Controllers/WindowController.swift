@@ -10,7 +10,12 @@ import Cocoa
 
 class WindowController: NSWindowController {
 	
+	@IBOutlet weak var toolbar: NSToolbar!
+	
 	@IBOutlet weak var gridToolBarItem: NSToolbarItem!
+	@IBOutlet weak var sortToolbarItem: NSToolbarItem!
+	@IBOutlet weak var resetToolbarItem: NSToolbarItem!
+	@IBOutlet weak var attributesToolbarItem: NSToolbarItem!
 	
 	@IBOutlet weak var searchField: NSSearchField!
 	
@@ -18,8 +23,13 @@ class WindowController: NSWindowController {
 		didSet {
 			SettingsManager.setBool(grid, key: kSettingsViewModeIsGrid)
 			NSNotificationCenter.defaultCenter().postNotificationName(kToggleViewModeNotification, object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(bool: grid)])
-			if (grid) { gridToolBarItem.image = NSImage(named: "list") }
-			else { gridToolBarItem.image = NSImage(named: "grid") }
+			self.updateButtonImages()
+		}
+	}
+	
+	var isFullScreen: Bool = false {
+		didSet {
+			self.updateButtonImages()
 		}
 	}
 
@@ -28,8 +38,37 @@ class WindowController: NSWindowController {
         super.windowDidLoad()
 		
 		grid = SettingsManager.getBool(kSettingsViewModeIsGrid)
+		updateButtonImages()
+		
+		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.updateButtonImages()
+		}
+		
+		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowWillEnterFullScreenNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.isFullScreen = true
+		}
+		
+		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowWillExitFullScreenNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			self.isFullScreen = false
+		}
 		
     }
+	
+	func updateButtonImages() -> Void {
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		var suffix = ""
+		if (darkMode && !isFullScreen) {
+			suffix = "W"
+			toolbar.showsBaselineSeparator = false
+		} else {
+			toolbar.showsBaselineSeparator = true
+		}
+		if (grid) { gridToolBarItem.image = NSImage(named: "list" + suffix) }
+		else { gridToolBarItem.image = NSImage(named: "grid" + suffix) }
+		sortToolbarItem.image = NSImage(named: "sort" + suffix)
+		resetToolbarItem.image = NSImage(named: "reset" + suffix)
+		attributesToolbarItem.image = NSImage(named: "attrs" + suffix)
+	}
 	
 	// MARK: - Toolbar actions
 	

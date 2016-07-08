@@ -42,11 +42,6 @@ class ViewController: NSViewController {
 			fetcher.fetchMemes()
 		}
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .UltraDark : .Light
-		}
-		
 	}
 	
 	override func viewDidAppear() {
@@ -136,6 +131,11 @@ class ViewController: NSViewController {
 					self.filterMemesWithSearchText(searchText)
 				}
 			}
+		}
+		
+		center.addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+			self.veView.material = darkMode ? .UltraDark : .Light
 		}
 		
 	}

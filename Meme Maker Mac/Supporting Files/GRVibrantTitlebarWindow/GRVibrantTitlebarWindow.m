@@ -32,18 +32,26 @@
     
     [self setupTitlebar];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillEnterFullScreenNotification object:self queue:nil usingBlock:^(NSNotification *note) {
-        if (self.hidesTitlebarWhenFullscreen) [self.titlebarView setHidden:YES];
-    }];
+//    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillEnterFullScreenNotification object:self queue:nil usingBlock:^(NSNotification *note) {
+//        if (self.hidesTitlebarWhenFullscreen) [self.titlebarView setHidden:YES];
+//    }];
+//	
+//    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillExitFullScreenNotification object:self queue:nil usingBlock:^(NSNotification *note) {
+//        if (self.hidesTitlebarWhenFullscreen) [self.titlebarView setHidden:NO];
+//    }];
 	
-    [[NSNotificationCenter defaultCenter] addObserverForName:NSWindowWillExitFullScreenNotification object:self queue:nil usingBlock:^(NSNotification *note) {
-        if (self.hidesTitlebarWhenFullscreen) [self.titlebarView setHidden:NO];
-    }];
-    
     // defaults
     self.titleVisibility = NSWindowTitleVisible;
     self.titlebarAppearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
     self.hidesTitlebarWhenFullscreen = NO;
+	
+	[[NSNotificationCenter defaultCenter] addObserverForName:@"kDarkModeChangedNotification" object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification * _Nonnull note) {
+		if ([[note.userInfo objectForKey:@"darkMode"] boolValue]) {
+			self.titlebarAppearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantDark];
+		} else {
+			self.titlebarAppearance = [NSAppearance appearanceNamed:NSAppearanceNameVibrantLight];
+		}
+	}];
 }
 
 - (void)setupTitlebar {
