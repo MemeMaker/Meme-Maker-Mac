@@ -39,6 +39,7 @@ class EditorViewController: NSViewController {
 				imageView?.image = image
 				imageView?.memeName = meme.name
 				baseImage = image
+				saveLastImage(image)
 			}
 			cookImage()
 		}
@@ -80,6 +81,16 @@ class EditorViewController: NSViewController {
 		NSEvent.addLocalMonitorForEventsMatchingMask(.FlagsChangedMask) { (theEvent) -> NSEvent? in
 			self.flagsChanged(theEvent)
 			return theEvent
+		}
+		
+		if let image = getLastImage() {
+			baseImage = image
+			imageView?.image = image
+			imageView.memeName = ""
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/5	* Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+				self.cookImage()
+			})
+
 		}
 		
     }
@@ -208,8 +219,11 @@ extension EditorViewController: DragDropImageViewDelegate {
 	func dragDropImageView(imageView: DragDropImageView!, didFinishDropAtFilePath filePath: String!, andImage image: NSImage!) {
 		// Don't create a new meme object; just change the base image
 		baseImage = image
+		saveLastImage(image)
 		imageView.memeName = ""
-		cookImage()
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/5	* Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+			self.cookImage()
+		})
 	}
 	
 }

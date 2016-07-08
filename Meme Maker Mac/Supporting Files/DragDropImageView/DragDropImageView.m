@@ -177,13 +177,12 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 	if (self.allowDrag) {
 		NSPoint dragPosition;
 		NSRect imageLocation;
-		
 		dragPosition = [self convertPoint:[event locationInWindow] fromView:nil];
 		dragPosition.x -= 0;
 		dragPosition.y -= 0;
 		imageLocation.origin = dragPosition;
 		imageLocation.size = NSMakeSize(0,0);
-		[self dragPromisedFilesOfTypes:[NSArray arrayWithObject:NSPasteboardTypeTIFF] fromRect:imageLocation source:self slideBack:YES event:event];
+		[self dragPromisedFilesOfTypes:[NSArray arrayWithObjects:NSPasteboardTypeTIFF, NSPasteboardTypePNG, nil] fromRect:imageLocation source:self slideBack:YES event:event];
 	}
 }
 
@@ -192,7 +191,7 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 	NSImage* dragImage = [[NSImage alloc] initWithSize:[[self image] size]];
 	
 	[dragImage lockFocus];//draw inside of our dragImage
-	//draw our original image as 50% transparent
+	//draw our original image as 40% transparent
 	[[self image] dissolveToPoint: NSZeroPoint fraction: .4];
 	[dragImage unlockFocus];//finished drawing
 	
@@ -241,11 +240,12 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 	 --------------------------------------------------------*/
 	switch (context) {
 		case NSDraggingContextOutsideApplication:
-			return NSDragOperationCopy;
+			return NSDragOperationCopy | NSDragOperationLink | NSDragOperationMove;
 			//by using this fall through pattern, we will remain compatible if the contexts get more precise in the future.
 		case NSDraggingContextWithinApplication:
+			return NSDragOperationNone;
 		default:
-			return NSDragOperationCopy;
+			return NSDragOperationLink;
 			break;
 	}
 }
@@ -268,8 +268,12 @@ NSString *kPrivateDragUTI = @"com.avikantz.cocoadraganddrop";
 		//set data for TIFF type on the pasteboard as requested
 		[sender setData:[[self image] TIFFRepresentation] forType:NSPasteboardTypeTIFF];
 	
-	else if ([type compare: NSPasteboardTypePDF] == NSOrderedSame )
-		//set data for PDF type on the pasteboard as requested
-		[sender setData:[self dataWithPDFInsideRect:[self bounds]] forType:NSPasteboardTypePDF];
+	else if ([type compare: NSPasteboardTypePNG] == NSOrderedSame ) {
+		//set data for PNG type on the pasteboard as requested
+		NSData *bitmapData = [self.image TIFFRepresentation];
+		NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:bitmapData];
+		bitmapData = [imageRep representationUsingType:NSPNGFileType properties:@{}];
+		[sender setData:bitmapData forType:NSPasteboardTypePNG];
+	}
 }
 @end

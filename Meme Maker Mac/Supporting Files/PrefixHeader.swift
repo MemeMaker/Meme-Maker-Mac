@@ -75,3 +75,18 @@ func documentsPathForFileName(name: String) -> String {
 	}
 	return directoryPath.stringByAppendingString("\(name).dat")
 }
+
+func saveLastImage(image: NSImage) -> Void {
+	let bitmapImageRep = NSBitmapImageRep(data: image.TIFFRepresentation!)
+	if let data = bitmapImageRep?.representationUsingType(.NSJPEGFileType, properties: [NSImageCompressionFactor: NSNumber.init(float: 0.7)]) {
+		data.writeToFile(userImagesPathForFileName("lastImage"), atomically: true)
+	}
+}
+
+func getLastImage() -> NSImage? {
+	if let image = NSImage(contentsOfFile: userImagesPathForFileName("lastImage")) {
+		return image
+	}
+	return nil
+}
+
