@@ -443,9 +443,10 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Meme Maker Mac Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Help" keyEquivalent="/" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <segue destination="f7r-El-tim" kind="show" id="qWg-7w-dhn"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -460,7 +461,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900.5" y="-193"/>
+            <point key="canvasLocation" x="913.5" y="-211"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="QEy-oP-ta1">
@@ -481,7 +482,7 @@
                 </windowController>
                 <customObject id="9mO-u3-7pF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="-47"/>
+            <point key="canvasLocation" x="1250" y="141"/>
         </scene>
         <!--Prefrences-->
         <scene sceneID="pEp-GH-ABA">
@@ -545,6 +546,16 @@
                                             <action selector="updateMemesAction:" target="cWc-bB-CNr" id="ahP-Lr-phO"/>
                                         </connections>
                                     </button>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="qTy-cp-Uf8">
+                                        <rect key="frame" x="58" y="134" width="364" height="18"/>
+                                        <buttonCell key="cell" type="check" title="Reset settings on launch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aoI-Rn-Cus">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="resetSettingsAction:" target="cWc-bB-CNr" id="ehq-3v-mHK"/>
+                                        </connections>
+                                    </button>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="dsw-CB-Uwo">
                                         <rect key="frame" x="208" y="170" width="64" height="64"/>
                                         <constraints>
@@ -557,16 +568,7 @@
                                         </buttonCell>
                                         <connections>
                                             <action selector="memeMakerAction:" target="cWc-bB-CNr" id="nBn-Ez-nhQ"/>
-                                        </connections>
-                                    </button>
-                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="qTy-cp-Uf8">
-                                        <rect key="frame" x="58" y="134" width="364" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Reset settings on launch" bezelStyle="regularSquare" imagePosition="left" inset="2" id="aoI-Rn-Cus">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="resetSettingsAction:" target="cWc-bB-CNr" id="ehq-3v-mHK"/>
+                                            <segue destination="f7r-El-tim" kind="show" id="MqU-Ma-FXZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -609,7 +611,7 @@
                 </viewController>
                 <customObject id="tsZ-WO-BRW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1508" y="402"/>
+            <point key="canvasLocation" x="1250" y="550"/>
         </scene>
         <!--Sort View Controller-->
         <scene sceneID="Bth-SY-qF8">
@@ -687,7 +689,7 @@
                 </viewController>
                 <customObject id="M4T-At-slo" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-733" y="892"/>
+            <point key="canvasLocation" x="-541.5" y="918"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -791,7 +793,7 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="bKw-Mq-oy4" customClass="ViewController" customModule="Meme_Maker_Mac" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="74" y="362.5"/>
+            <point key="canvasLocation" x="74" y="346"/>
         </scene>
         <!--Meme Maker-->
         <scene sceneID="hIz-AP-VOD">
@@ -866,7 +868,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1111"/>
+            <point key="canvasLocation" x="74" y="1087"/>
         </scene>
         <!--Editor-->
         <scene sceneID="6Sn-cT-nRc">
@@ -1060,7 +1062,7 @@
                 </viewController>
                 <customObject id="a0M-w0-Wfy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="1852"/>
+            <point key="canvasLocation" x="244" y="1806"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="5dt-s2-mVc">
@@ -1081,7 +1083,7 @@
                 </windowController>
                 <customObject id="KdE-CU-Bh8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="1238"/>
+            <point key="canvasLocation" x="889" y="1064"/>
         </scene>
         <!--Attributes-->
         <scene sceneID="S7V-sC-9iR">
@@ -1367,7 +1369,413 @@
                 </viewController>
                 <customObject id="Chg-vW-SPp" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="1812"/>
+            <point key="canvasLocation" x="889" y="1578"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="uB0-AO-6Zu">
+            <objects>
+                <windowController showSeguePresentationStyle="single" id="f7r-El-tim" sceneMemberID="viewController">
+                    <window key="window" title="Meme Maker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="jpq-hd-d6D" customClass="GRVibrantTitlebarWindow">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES" unifiedTitleAndToolbar="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenAuxiliary="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="301" width="480" height="480"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="480" height="480"/>
+                        <value key="maxSize" type="size" width="480" height="480"/>
+                    </window>
+                    <connections>
+                        <segue destination="5Ii-d6-PnR" kind="relationship" relationship="window.shadowedContentViewController" id="MFG-Lw-FB1"/>
+                    </connections>
+                </windowController>
+                <customObject id="wpd-hH-RcF" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="246"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="8XK-42-8TK">
+            <objects>
+                <viewController id="5Ii-d6-PnR" customClass="HelpViewController" customModule="Meme_Maker_Mac" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Omf-UB-VE4">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="kyi-eU-Vnm">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                                <subviews>
+                                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="ffU-Rd-jhK">
+                                        <rect key="frame" x="396" y="384" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="qbh-wk-qCb"/>
+                                            <constraint firstAttribute="height" constant="64" id="zHe-Xx-YER"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="MemeMaker" id="bD7-wz-Ats"/>
+                                    </imageView>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="HgH-uA-2Wf">
+                                        <rect key="frame" x="30" y="348" width="348" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="QD3-0H-y2F"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="justified" id="uHx-bh-CUd">
+                                            <font key="font" metaFont="systemThin" size="12"/>
+                                            <string key="title">"Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do, so throw off the bowlines, sail away from safe harbor, catch the trade winds in your sails.  Explore, Dream, Discover." -Mark Twain</string>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-zy-O5V">
+                                        <rect key="frame" x="0.0" y="339" width="480" height="5"/>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <font key="titleFont" metaFont="system"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-uC-W0S">
+                                        <rect key="frame" x="140" y="210" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ ," id="Qon-Gk-dfn">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qs5-mS-wwx">
+                                        <rect key="frame" x="176" y="258" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="attrs" id="1aa-K3-elt"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5g-Eg-nnA">
+                                        <rect key="frame" x="114" y="276" width="56" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Attributes" id="BDn-ZX-UJE">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CG9-Wj-PBU">
+                                        <rect key="frame" x="140" y="260" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ 2" id="F9T-40-S9M">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-vF-nCp">
+                                        <rect key="frame" x="256" y="258" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="reset" id="OGv-gX-mve"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-RP-UBT">
+                                        <rect key="frame" x="294" y="276" width="85" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reset positions" id="xAJ-da-Puw">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-Vp-8QS">
+                                        <rect key="frame" x="294" y="260" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ R" id="876-42-1LP">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtF-5N-0xa">
+                                        <rect key="frame" x="256" y="210" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="reset" id="1aZ-JW-7iq"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pTD-6J-Xfd">
+                                        <rect key="frame" x="294" y="228" width="50" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Reset All" id="rx1-5C-CYj">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tn-sK-mIH">
+                                        <rect key="frame" x="294" y="210" width="48" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ ⇪ R" id="aoP-i5-cAm">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRH-aA-jK1">
+                                        <rect key="frame" x="176" y="210" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="attrs" id="cbo-Ua-f6A"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eXO-FX-AT3">
+                                        <rect key="frame" x="103" y="228" width="67" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Preferences" id="oeB-QE-UIi">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6J-gn-U77">
+                                        <rect key="frame" x="140" y="162" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ T" id="WEw-hf-5SH">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOa-Bn-pKW">
+                                        <rect key="frame" x="256" y="162" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSColorPanel" id="xVm-GG-UNa"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGB-MT-Lay">
+                                        <rect key="frame" x="294" y="180" width="63" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Color" id="hcQ-vS-ZTl">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-HF-fMJ">
+                                        <rect key="frame" x="125" y="180" width="53" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Font" id="fXi-r6-coK">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgV-3f-ARl">
+                                        <rect key="frame" x="294" y="162" width="47" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ ⇪ T" id="h6N-gp-q5h">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oc5-Mb-zOy">
+                                        <rect key="frame" x="176" y="162" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSFontPanel" id="Kmo-h5-3fn"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58C-98-SLu">
+                                        <rect key="frame" x="130" y="114" width="40" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ +/-" id="D4g-hs-kKL">
+                                            <font key="font" metaFont="systemBold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D7h-Ji-wK4">
+                                        <rect key="frame" x="256" y="114" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyUpOrDown" image="NSColorPanelOutline" id="lmb-0e-7sS"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-p5-gVB">
+                                        <rect key="frame" x="294" y="132" width="50" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Outline Color" id="dbm-pi-Nlq">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oZk-8G-8kD">
+                                        <rect key="frame" x="294" y="114" width="63" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌘ ⇪ O" id="21u-t1-Hhj">
+                                            <font key="font" size="13" name=".LucidaGrandeUI-Bold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KL1-iy-Nva">
+                                        <rect key="frame" x="176" y="114" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSFontPanel" id="JDf-eu-Thm"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYH-rz-5VE">
+                                        <rect key="frame" x="75" y="132" width="95" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Text Size Change" placeholderString="" id="8oP-yu-KL7">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r72-o9-9xt">
+                                        <rect key="frame" x="140" y="61" width="30" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌃ A" id="sjN-DD-mC5">
+                                            <font key="font" metaFont="systemBold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFg-mx-oIA">
+                                        <rect key="frame" x="256" y="61" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSFontPanel" id="Tdp-TC-6Pm"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HH8-Mv-qVO">
+                                        <rect key="frame" x="294" y="79" width="123" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Fill default text Bottom" placeholderString="" id="gFw-66-AA4">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xh4-hY-k72">
+                                        <rect key="frame" x="294" y="61" width="48" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="⌃ Z" id="EJL-zy-l6E">
+                                            <font key="font" metaFont="systemBold"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQb-o3-FOo">
+                                        <rect key="frame" x="176" y="61" width="32" height="32"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="NSFontPanel" id="oF6-Nv-Gb9"/>
+                                    </imageView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bPj-fJ-0LT">
+                                        <rect key="frame" x="63" y="79" width="107" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Fill default text Top" id="UDC-8p-pFB">
+                                            <font key="font" metaFont="system" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1FP-aE-F1W">
+                                        <rect key="frame" x="394" y="354" width="68" height="26"/>
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" id="Agm-t7-X78">
+                                            <font key="font" metaFont="system" size="10"/>
+                                            <string key="title">1.0 
+(Dashwood)</string>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-IE-EV9">
+                                        <rect key="frame" x="155" y="0.0" width="171" height="14"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="© avikantz | Dark Army, 2016" id="pxS-1W-1rU">
+                                            <font key="font" metaFont="systemBold" size="11"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <visualEffectView blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="n0L-id-Lkr">
+                                        <rect key="frame" x="32" y="20" width="416" height="301"/>
+                                    </visualEffectView>
+                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" horizontalScrollElasticity="none" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="unV-nX-44O">
+                                        <rect key="frame" x="32" y="20" width="416" height="301"/>
+                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="maZ-EF-5q1">
+                                            <rect key="frame" x="0.0" y="0.0" width="416" height="301"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textView editable="NO" selectable="NO" drawsBackground="NO" importsGraphics="NO" horizontallyResizable="YES" baseWritingDirection="leftToRight" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dataDetection="YES" dashSubstitution="YES" id="7I2-ri-gbf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="416" height="301"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <size key="minSize" width="416" height="301"/>
+                                                    <size key="maxSize" width="463" height="10000000"/>
+                                                    <attributedString key="textStorage">
+                                                        <fragment>
+                                                            <string key="content">Select a meme or drag a custom image.
+
+Search using the smart search field.
+
+Pinch on the text to resize. [Automatically resizes when unable to fit]
+
+Option (Alt </string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="systemLight" size="13"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="⌥">
+                                                            <attributes>
+                                                                <font key="NSFont" size="13" name=".LucidaGrandeUI"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment>
+                                                            <string key="content">) drag text to move.
+
+Reset position and size if not satisfied.
+
+Modify various attributes like font, text color, outline color, outline thickness, opacity, etc.
+
+Share with the world.
+
+</string>
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="systemLight" size="13"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Option (Alt ">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="systemSemibold" size="13"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="⌥">
+                                                            <attributes>
+                                                                <font key="NSFont" size="13" name=".LucidaGrandeUI-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content=") press here to see the shortcuts.">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="systemSemibold" size="13"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <size key="minSize" width="416" height="301"/>
+                                                    <size key="maxSize" width="463" height="10000000"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                        </clipView>
+                                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="yIH-Jd-yjV">
+                                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="YiS-rW-hdQ">
+                                            <rect key="frame" x="-100" y="-100" width="16" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </scroller>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Vne-zy-O5V" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" id="0L1-93-i5G"/>
+                                    <constraint firstAttribute="bottom" secondItem="gaz-IE-EV9" secondAttribute="bottom" id="6Y0-2l-2cE"/>
+                                    <constraint firstItem="ffU-Rd-jhK" firstAttribute="leading" secondItem="HgH-uA-2Wf" secondAttribute="trailing" constant="20" id="6nk-gw-wSV"/>
+                                    <constraint firstItem="Vne-zy-O5V" firstAttribute="top" secondItem="1FP-aE-F1W" secondAttribute="bottom" constant="12" id="788-y0-19j"/>
+                                    <constraint firstItem="1FP-aE-F1W" firstAttribute="trailing" secondItem="ffU-Rd-jhK" secondAttribute="trailing" id="DgO-iS-9AF"/>
+                                    <constraint firstItem="unV-nX-44O" firstAttribute="top" secondItem="Vne-zy-O5V" secondAttribute="bottom" constant="20" id="Jsy-ny-J3g"/>
+                                    <constraint firstItem="HgH-uA-2Wf" firstAttribute="top" secondItem="ffU-Rd-jhK" secondAttribute="top" constant="20" id="Kiw-uv-5uG"/>
+                                    <constraint firstItem="1FP-aE-F1W" firstAttribute="leading" secondItem="ffU-Rd-jhK" secondAttribute="leading" id="NSw-J0-hGu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vne-zy-O5V" secondAttribute="trailing" id="Ohi-wa-4G7"/>
+                                    <constraint firstItem="gaz-IE-EV9" firstAttribute="centerX" secondItem="kyi-eU-Vnm" secondAttribute="centerX" id="QHZ-yH-CWg"/>
+                                    <constraint firstItem="ffU-Rd-jhK" firstAttribute="top" secondItem="kyi-eU-Vnm" secondAttribute="top" constant="32" id="R2m-Ee-yDW"/>
+                                    <constraint firstItem="1FP-aE-F1W" firstAttribute="top" secondItem="ffU-Rd-jhK" secondAttribute="bottom" constant="4" id="SYl-Un-bRC"/>
+                                    <constraint firstItem="HgH-uA-2Wf" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" constant="32" id="VTS-oX-bDI"/>
+                                    <constraint firstAttribute="bottom" secondItem="unV-nX-44O" secondAttribute="bottom" constant="20" id="eiE-jW-MZJ"/>
+                                    <constraint firstItem="unV-nX-44O" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" constant="32" id="gDq-l4-ymk"/>
+                                    <constraint firstItem="n0L-id-Lkr" firstAttribute="bottom" secondItem="unV-nX-44O" secondAttribute="bottom" id="hgK-CE-9wV"/>
+                                    <constraint firstAttribute="trailing" secondItem="unV-nX-44O" secondAttribute="trailing" constant="32" id="hhn-f2-Z7N"/>
+                                    <constraint firstItem="n0L-id-Lkr" firstAttribute="top" secondItem="unV-nX-44O" secondAttribute="top" id="ljc-2a-W7J"/>
+                                    <constraint firstItem="n0L-id-Lkr" firstAttribute="trailing" secondItem="unV-nX-44O" secondAttribute="trailing" id="oM4-Hw-1BI"/>
+                                    <constraint firstItem="n0L-id-Lkr" firstAttribute="leading" secondItem="unV-nX-44O" secondAttribute="leading" id="sBa-h6-jkt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffU-Rd-jhK" secondAttribute="trailing" constant="20" id="wls-EQ-uuA"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kyi-eU-Vnm" firstAttribute="leading" secondItem="Omf-UB-VE4" secondAttribute="leading" id="2In-6R-qLO"/>
+                            <constraint firstAttribute="bottom" secondItem="kyi-eU-Vnm" secondAttribute="bottom" id="Shi-hD-WJG"/>
+                            <constraint firstItem="kyi-eU-Vnm" firstAttribute="top" secondItem="Omf-UB-VE4" secondAttribute="top" id="fzk-ir-ill"/>
+                            <constraint firstAttribute="trailing" secondItem="kyi-eU-Vnm" secondAttribute="trailing" id="q7N-Q7-2ba"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="quoteLabel" destination="HgH-uA-2Wf" id="jAM-NK-Lh7"/>
+                        <outlet property="textContainerVEView" destination="n0L-id-Lkr" id="BwB-aB-m7z"/>
+                        <outlet property="textContainerView" destination="unV-nX-44O" id="Qgt-V7-XRP"/>
+                        <outlet property="textView" destination="7I2-ri-gbf" id="RcW-rM-KQU"/>
+                        <outlet property="veView" destination="kyi-eU-Vnm" id="fyL-8n-IaL"/>
+                    </connections>
+                </viewController>
+                <customObject id="TDN-F4-KR6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1879" y="861"/>
         </scene>
     </scenes>
     <resources>
@@ -1392,6 +1800,7 @@
         <image name="undo" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uvv-ax-6Vw"/>
+        <segue reference="neb-Kp-YXs"/>
+        <segue reference="MqU-Ma-FXZ"/>
     </inferredMetricsTieBreakers>
 </document>

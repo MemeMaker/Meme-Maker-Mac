@@ -31,6 +31,8 @@
 		59AB9EF61D2C268D002386B5 /* GRVibrantTitlebarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF11D2C268D002386B5 /* GRVibrantTitlebarWindow.m */; };
 		59AB9EF71D2C268D002386B5 /* GRVibrantTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */; };
 		59AB9EFA1D2C2693002386B5 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF91D2C2693002386B5 /* DragDropImageView.m */; };
+		59B4EEAB1D3017E9000092DA /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4EEAA1D3017E9000092DA /* HelpViewController.swift */; };
+		59B4EEAE1D301847000092DA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 59B4EEAD1D301847000092DA /* quotes.json */; };
 		59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D161D2D75F600CF0EF9 /* SortViewController.swift */; };
 		59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D181D2D77D400CF0EF9 /* Constants.swift */; };
 		59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */; };
@@ -99,6 +101,8 @@
 		59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRVibrantTitleView.m; sourceTree = "<group>"; };
 		59AB9EF81D2C2693002386B5 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragDropImageView.h; path = "Supporting Files/DragDropImageView/DragDropImageView.h"; sourceTree = "<group>"; };
 		59AB9EF91D2C2693002386B5 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragDropImageView.m; path = "Supporting Files/DragDropImageView/DragDropImageView.m"; sourceTree = "<group>"; };
+		59B4EEAA1D3017E9000092DA /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = Controllers/HelpViewController.swift; sourceTree = "<group>"; };
+		59B4EEAD1D301847000092DA /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Meme Maker Mac.entitlements"; sourceTree = "<group>"; };
 		59D21D161D2D75F600CF0EF9 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortViewController.swift; path = Controllers/SortViewController.swift; sourceTree = "<group>"; };
 		59D21D181D2D77D400CF0EF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Constants.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		59490AF61CEF275E00679BE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				59B4EEAC1D301847000092DA /* Quotes */,
 				59AB9EEB1D2C268C002386B5 /* GRVibrantTitlebarWindow */,
 				59AB9EDF1D2B8059002386B5 /* DragDropImageView */,
 				59FA74D51CF3199D00C39BCF /* Default */,
@@ -232,6 +237,7 @@
 				59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */,
 				59D21D161D2D75F600CF0EF9 /* SortViewController.swift */,
 				5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */,
+				59B4EEAA1D3017E9000092DA /* HelpViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +308,15 @@
 			);
 			name = GRVibrantTitlebarWindow;
 			path = "Supporting Files/GRVibrantTitlebarWindow";
+			sourceTree = "<group>";
+		};
+		59B4EEAC1D301847000092DA /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				59B4EEAD1D301847000092DA /* quotes.json */,
+			);
+			name = Quotes;
+			path = "Supporting Files/Quotes";
 			sourceTree = "<group>";
 		};
 		59FA74D51CF3199D00C39BCF /* Default */ = {
@@ -459,6 +474,7 @@
 				59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */,
 				59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */,
 				59490AD31CEF274A00679BE2 /* Main.storyboard in Resources */,
+				59B4EEAE1D301847000092DA /* quotes.json in Resources */,
 				59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */,
 				59FA74D81CF3199D00C39BCF /* defaultMemes.dat in Resources */,
 				59FA74D91CF3199D00C39BCF /* defaultMemes.zip in Resources */,
@@ -623,6 +639,7 @@
 				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
 				59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */,
 				5935C23E1D2CEF78005E18AE /* MemeFetcher.swift in Sources */,
+				59B4EEAB1D3017E9000092DA /* HelpViewController.swift in Sources */,
 				5973F15C1D22418000080706 /* EditorViewController.swift in Sources */,
 				59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */,
 				59FA74DD1CF31C0F00C39BCF /* SettingsManager.swift in Sources */,
