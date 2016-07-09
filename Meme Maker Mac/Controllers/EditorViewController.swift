@@ -223,7 +223,7 @@ class EditorViewController: NSViewController {
 				let shareItems = [image, "Check out this meme I made."]
 				let sharingServicePicker = NSSharingServicePicker(items: shareItems)
 				sharingServicePicker.delegate = self
-				sharingServicePicker.showRelativeToRect(NSZeroRect, ofView: self.view, preferredEdge: .MaxX)
+				sharingServicePicker.showRelativeToRect(NSMakeRect(self.topField.bounds.size.width - 36, 0, 0, 0), ofView: self.topField, preferredEdge: .MaxY)
 			}
 		}
 		
@@ -259,7 +259,10 @@ class EditorViewController: NSViewController {
 			savePanel.allowedFileTypes = ["jpg"]
 			savePanel.canCreateDirectories = true
 			savePanel.canSelectHiddenExtension = true
-			savePanel.nameFieldStringValue = self.imageView.memeName
+			let formatter = NSDateFormatter()
+			formatter.dateFormat = "yyyy-MM-dd 'at' hh.mm.ss a"
+			let memeName = self.imageView.memeName.characters.count > 0 ? self.imageView.memeName : "Meme"
+			savePanel.nameFieldStringValue = memeName + " " + formatter.stringFromDate(NSDate())
 			savePanel.title = "Save"
 			if savePanel.runModal() == NSModalResponseOK {
 				let bitmapImageRep = NSBitmapImageRep(data: (self.imageView.image?.TIFFRepresentation)!)

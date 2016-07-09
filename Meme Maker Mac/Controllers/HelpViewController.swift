@@ -108,6 +108,11 @@ class HelpViewController: NSViewController {
 
 	}
 	
+	@IBAction func appStoreAction(sender: AnyObject) {
+		let URL = NSURL(string: "https://itunes.apple.com/app/id962121383")
+		NSWorkspace.sharedWorkspace().openURL(URL!)
+	}
+	
 	@IBAction func whiteroseAction(sender: AnyObject) {
 		let URL = NSURL(string: "http://darkarmy.xyz/home/")
 		NSWorkspace.sharedWorkspace().openURL(URL!)
@@ -122,6 +127,8 @@ class HelpViewController: NSViewController {
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 500 * Int64(USEC_PER_SEC)), dispatch_get_main_queue(), {
 				self.shouldAnimateWhiteRose = false
 				self.whiteroseButton.hidden = true
+				SettingsManager.setBool(true, key: kSettingsDarkMode)
+				NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(true)])
 			})
 			return
 		}

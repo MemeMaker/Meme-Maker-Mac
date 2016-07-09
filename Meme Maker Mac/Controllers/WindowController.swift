@@ -16,6 +16,8 @@ class WindowController: NSWindowController {
 	@IBOutlet weak var sortToolbarItem: NSToolbarItem!
 	@IBOutlet weak var resetToolbarItem: NSToolbarItem!
 	@IBOutlet weak var attributesToolbarItem: NSToolbarItem!
+	@IBOutlet weak var shareToolbarItem: NSToolbarItem!
+	@IBOutlet weak var saveToolbarItem: NSToolbarItem!
 	
 	@IBOutlet weak var searchField: NSSearchField!
 	
@@ -68,6 +70,8 @@ class WindowController: NSWindowController {
 		sortToolbarItem.image = NSImage(named: "sort" + suffix)
 		resetToolbarItem.image = NSImage(named: "reset" + suffix)
 		attributesToolbarItem.image = NSImage(named: "attrs" + suffix)
+		saveToolbarItem.image = NSImage(named: "save" + suffix)
+		shareToolbarItem.image = NSImage(named: "share" + suffix)
 	}
 	
 	// MARK: - Toolbar actions
@@ -108,6 +112,9 @@ class WindowController: NSWindowController {
 		NSNotificationCenter.defaultCenter().postNotificationName(kShareNotification, object: nil, userInfo: ["sender": sender])
 	}
 	
+	@IBAction func saveToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kSaveNotification, object: nil)
+	}
 
 }
 

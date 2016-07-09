@@ -70,16 +70,16 @@
 		5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeFetcher.swift; path = Models/MemeFetcher.swift; sourceTree = "<group>"; };
 		594147641D2EBBD0004A6AF7 /* XUndoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XUndoManager.swift; path = Models/XUndoManager.swift; sourceTree = "<group>"; };
-		59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59490AC51CEF274A00679BE2 /* Meme Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AC81CEF274A00679BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Maker_Mac.xcdatamodel; sourceTree = "<group>"; };
 		59490ACF1CEF274A00679BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59490AD21CEF274A00679BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59490AD41CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59490AD91CEF274A00679BE2 /* Meme Maker MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59490AD91CEF274A00679BE2 /* Meme Maker.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490ADD1CEF274A00679BE2 /* Meme_Maker_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_Maker_MacTests.swift; sourceTree = "<group>"; };
 		59490ADF1CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59490AE41CEF274A00679BE2 /* Meme Maker MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59490AE41CEF274A00679BE2 /* Meme Maker.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_Maker_MacUITests.swift; sourceTree = "<group>"; };
 		59490AEA1CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59490AFB1CEF282300679BE2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		59490ABC1CEF274A00679BE2 = {
 			isa = PBXGroup;
 			children = (
-				59490AC71CEF274A00679BE2 /* Meme Maker Mac */,
+				59490AC71CEF274A00679BE2 /* Meme Maker */,
 				59490ADC1CEF274A00679BE2 /* Meme Maker MacTests */,
 				59490AE71CEF274A00679BE2 /* Meme Maker MacUITests */,
 				59490AC61CEF274A00679BE2 /* Products */,
@@ -175,17 +175,16 @@
 		59490AC61CEF274A00679BE2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */,
-				59490AD91CEF274A00679BE2 /* Meme Maker MacTests.xctest */,
-				59490AE41CEF274A00679BE2 /* Meme Maker MacUITests.xctest */,
+				59490AC51CEF274A00679BE2 /* Meme Maker.app */,
+				59490AD91CEF274A00679BE2 /* Meme Maker.xctest */,
+				59490AE41CEF274A00679BE2 /* Meme Maker.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		59490AC71CEF274A00679BE2 /* Meme Maker Mac */ = {
+		59490AC71CEF274A00679BE2 /* Meme Maker */ = {
 			isa = PBXGroup;
 			children = (
-				59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */,
 				59490AFA1CEF277A00679BE2 /* App Delegate */,
 				59490ACF1CEF274A00679BE2 /* Assets.xcassets */,
 				59490AF81CEF276A00679BE2 /* Models */,
@@ -193,6 +192,7 @@
 				59490AF71CEF276600679BE2 /* Controllers */,
 				59490AF61CEF275E00679BE2 /* Supporting Files */,
 			);
+			name = "Meme Maker";
 			path = "Meme Maker Mac";
 			sourceTree = "<group>";
 		};
@@ -222,6 +222,7 @@
 				59AB9EDF1D2B8059002386B5 /* DragDropImageView */,
 				59FA74D51CF3199D00C39BCF /* Default */,
 				59490AD41CEF274A00679BE2 /* Info.plist */,
+				59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */,
 				59AB9EE21D2BA570002386B5 /* Meme Maker Mac-Bridging-Header.h */,
 				59FA74DA1CF31B6300C39BCF /* PrefixHeader.swift */,
 			);
@@ -354,9 +355,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		59490AC41CEF274A00679BE2 /* Meme Maker Mac */ = {
+		59490AC41CEF274A00679BE2 /* Meme Maker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker Mac" */;
+			buildConfigurationList = 59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker" */;
 			buildPhases = (
 				C620AFDF142C7C2BE8EAFE50 /* [CP] Check Pods Manifest.lock */,
 				59490AC11CEF274A00679BE2 /* Sources */,
@@ -369,14 +370,14 @@
 			);
 			dependencies = (
 			);
-			name = "Meme Maker Mac";
+			name = "Meme Maker";
 			productName = "Meme Maker Mac";
-			productReference = 59490AC51CEF274A00679BE2 /* Meme Maker Mac.app */;
+			productReference = 59490AC51CEF274A00679BE2 /* Meme Maker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		59490AD81CEF274A00679BE2 /* Meme Maker MacTests */ = {
+		59490AD81CEF274A00679BE2 /* Meme MakerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker MacTests" */;
+			buildConfigurationList = 59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */;
 			buildPhases = (
 				44AF10E14C9DBE671BBF1A79 /* [CP] Check Pods Manifest.lock */,
 				59490AD51CEF274A00679BE2 /* Sources */,
@@ -390,14 +391,14 @@
 			dependencies = (
 				59490ADB1CEF274A00679BE2 /* PBXTargetDependency */,
 			);
-			name = "Meme Maker MacTests";
+			name = "Meme MakerTests";
 			productName = "Meme Maker MacTests";
-			productReference = 59490AD91CEF274A00679BE2 /* Meme Maker MacTests.xctest */;
+			productReference = 59490AD91CEF274A00679BE2 /* Meme Maker.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		59490AE31CEF274A00679BE2 /* Meme Maker MacUITests */ = {
+		59490AE31CEF274A00679BE2 /* Meme MakerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker MacUITests" */;
+			buildConfigurationList = 59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerUITests" */;
 			buildPhases = (
 				F89B37642600B8BEF6A5FDA6 /* [CP] Check Pods Manifest.lock */,
 				59490AE01CEF274A00679BE2 /* Sources */,
@@ -410,9 +411,9 @@
 			dependencies = (
 				59490AE61CEF274A00679BE2 /* PBXTargetDependency */,
 			);
-			name = "Meme Maker MacUITests";
+			name = "Meme MakerUITests";
 			productName = "Meme Maker MacUITests";
-			productReference = 59490AE41CEF274A00679BE2 /* Meme Maker MacUITests.xctest */;
+			productReference = 59490AE41CEF274A00679BE2 /* Meme Maker.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -427,6 +428,7 @@
 				TargetAttributes = {
 					59490AC41CEF274A00679BE2 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = HN3SCP8A52;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.Mac = {
 								enabled = 0;
@@ -446,7 +448,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker Mac" */;
+			buildConfigurationList = 59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -459,9 +461,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				59490AC41CEF274A00679BE2 /* Meme Maker Mac */,
-				59490AD81CEF274A00679BE2 /* Meme Maker MacTests */,
-				59490AE31CEF274A00679BE2 /* Meme Maker MacUITests */,
+				59490AC41CEF274A00679BE2 /* Meme Maker */,
+				59490AD81CEF274A00679BE2 /* Meme MakerTests */,
+				59490AE31CEF274A00679BE2 /* Meme MakerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -674,12 +676,12 @@
 /* Begin PBXTargetDependency section */
 		59490ADB1CEF274A00679BE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59490AC41CEF274A00679BE2 /* Meme Maker Mac */;
+			target = 59490AC41CEF274A00679BE2 /* Meme Maker */;
 			targetProxy = 59490ADA1CEF274A00679BE2 /* PBXContainerItemProxy */;
 		};
 		59490AE61CEF274A00679BE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 59490AC41CEF274A00679BE2 /* Meme Maker Mac */;
+			target = 59490AC41CEF274A00679BE2 /* Meme Maker */;
 			targetProxy = 59490AE51CEF274A00679BE2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -785,13 +787,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker";
+				PRODUCT_NAME = "Meme Maker";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -804,13 +807,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker";
+				PRODUCT_NAME = "Meme Maker";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
 			};
 			name = Release;
@@ -824,8 +828,8 @@
 				INFOPLIST_FILE = "Meme Maker MacTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker Mac.app/Contents/MacOS/Meme Maker Mac";
+				PRODUCT_NAME = "Meme Maker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker";
 			};
 			name = Debug;
 		};
@@ -838,8 +842,8 @@
 				INFOPLIST_FILE = "Meme Maker MacTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker Mac.app/Contents/MacOS/Meme Maker Mac";
+				PRODUCT_NAME = "Meme Maker";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker";
 			};
 			name = Release;
 		};
@@ -851,7 +855,7 @@
 				INFOPLIST_FILE = "Meme Maker MacUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meme Maker";
 				TEST_TARGET_NAME = "Meme Maker Mac";
 			};
 			name = Debug;
@@ -864,7 +868,7 @@
 				INFOPLIST_FILE = "Meme Maker MacUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Meme Maker";
 				TEST_TARGET_NAME = "Meme Maker Mac";
 			};
 			name = Release;
@@ -872,7 +876,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker Mac" */ = {
+		59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59490AEB1CEF274A00679BE2 /* Debug */,
@@ -881,7 +885,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker Mac" */ = {
+		59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59490AEE1CEF274A00679BE2 /* Debug */,
@@ -890,7 +894,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker MacTests" */ = {
+		59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59490AF11CEF274A00679BE2 /* Debug */,
@@ -899,7 +903,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker MacUITests" */ = {
+		59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59490AF41CEF274A00679BE2 /* Debug */,

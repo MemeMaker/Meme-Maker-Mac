@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59490AC41CEF274A00679BE2"
-               BuildableName = "Meme Maker Mac.app"
-               BlueprintName = "Meme Maker Mac"
-               ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+               BuildableName = "Meme Maker.app"
+               BlueprintName = "Meme Maker"
+               ReferencedContainer = "container:Meme Maker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59490AD81CEF274A00679BE2"
-               BuildableName = "Meme Maker MacTests.xctest"
-               BlueprintName = "Meme Maker MacTests"
-               ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+               BuildableName = "Meme Maker.xctest"
+               BlueprintName = "Meme MakerTests"
+               ReferencedContainer = "container:Meme Maker.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "59490AE31CEF274A00679BE2"
-               BuildableName = "Meme Maker MacUITests.xctest"
-               BlueprintName = "Meme Maker MacUITests"
-               ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+               BuildableName = "Meme Maker.xctest"
+               BlueprintName = "Meme MakerUITests"
+               ReferencedContainer = "container:Meme Maker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59490AC41CEF274A00679BE2"
-            BuildableName = "Meme Maker Mac.app"
-            BlueprintName = "Meme Maker Mac"
-            ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+            BuildableName = "Meme Maker.app"
+            BlueprintName = "Meme Maker"
+            ReferencedContainer = "container:Meme Maker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59490AC41CEF274A00679BE2"
-            BuildableName = "Meme Maker Mac.app"
-            BlueprintName = "Meme Maker Mac"
-            ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+            BuildableName = "Meme Maker.app"
+            BlueprintName = "Meme Maker"
+            ReferencedContainer = "container:Meme Maker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "59490AC41CEF274A00679BE2"
-            BuildableName = "Meme Maker Mac.app"
-            BlueprintName = "Meme Maker Mac"
-            ReferencedContainer = "container:Meme Maker Mac.xcodeproj">
+            BuildableName = "Meme Maker.app"
+            BlueprintName = "Meme Maker"
+            ReferencedContainer = "container:Meme Maker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
