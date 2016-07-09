@@ -151,7 +151,7 @@ class ViewController: NSViewController {
 			guard let editorVC = segue.destinationController  as? EditorViewController else { return }
 			self.editorVC = editorVC
 			/*
-			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/3 * Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 333 * Int64(USEC_PER_SEC)), dispatch_get_main_queue(), {
 				let lastMemeID = SettingsManager.getInteger(kSettingsLastMemeIdOpened)
 				let fetchRequest = NSFetchRequest(entityName: "XMeme")
 				fetchRequest.predicate = NSPredicate(format: "memeID == %li", lastMemeID)

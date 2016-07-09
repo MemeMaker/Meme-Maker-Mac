@@ -91,9 +91,12 @@ class EditorViewController: NSViewController {
 			baseImage = image
 			imageView?.image = image
 			imageView.memeName = ""
-			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/5	* Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200	* Int64(USEC_PER_SEC)), dispatch_get_main_queue(), {
 				self.cookImage()
 			})
+		} else {
+			baseImage = NSImage(named: "startup")
+			imageView.image = baseImage
 		}
 		
     }
@@ -258,7 +261,7 @@ extension EditorViewController: DragDropImageViewDelegate {
 		baseImage = image
 		saveLastImage(image)
 		imageView.memeName = ""
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1/5	* Int64(NSEC_PER_SEC)), dispatch_get_main_queue(), {
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 200	* Int64(USEC_PER_SEC)), dispatch_get_main_queue(), {
 			self.cookImage()
 		})
 	}

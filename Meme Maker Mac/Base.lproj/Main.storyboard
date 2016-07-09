@@ -20,7 +20,7 @@
                                         <menuItem title="About Meme Maker" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <segue destination="f7r-El-tim" kind="show" id="8j8-fL-e9T"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -1527,7 +1527,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gaz-IE-EV9">
-                                        <rect key="frame" x="155" y="0.0" width="171" height="14"/>
+                                        <rect key="frame" x="155" y="4" width="171" height="14"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="© avikantz | Dark Army, 2016" id="pxS-1W-1rU">
                                             <font key="font" metaFont="smallSystemBold"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1619,10 +1619,25 @@ Share with the world.
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
+                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="X7z-nT-bZn">
+                                        <rect key="frame" x="404" y="12" width="64" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="117-5s-WhB"/>
+                                            <constraint firstAttribute="height" constant="64" id="Dva-o7-BGZ"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="B63-w0-kIZ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="whiteroseAction:" target="5Ii-d6-PnR" id="GbF-rp-tsx"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Vne-zy-O5V" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" id="0L1-93-i5G"/>
-                                    <constraint firstAttribute="bottom" secondItem="gaz-IE-EV9" secondAttribute="bottom" id="6Y0-2l-2cE"/>
+                                    <constraint firstAttribute="bottom" secondItem="gaz-IE-EV9" secondAttribute="bottom" constant="4" id="6Y0-2l-2cE"/>
+                                    <constraint firstAttribute="bottom" secondItem="X7z-nT-bZn" secondAttribute="bottom" constant="12" id="6cV-uI-83R"/>
                                     <constraint firstItem="ffU-Rd-jhK" firstAttribute="leading" secondItem="HgH-uA-2Wf" secondAttribute="trailing" constant="20" id="6nk-gw-wSV"/>
                                     <constraint firstItem="Vne-zy-O5V" firstAttribute="top" secondItem="1FP-aE-F1W" secondAttribute="bottom" constant="12" id="788-y0-19j"/>
                                     <constraint firstItem="1FP-aE-F1W" firstAttribute="trailing" secondItem="ffU-Rd-jhK" secondAttribute="trailing" id="DgO-iS-9AF"/>
@@ -1634,6 +1649,7 @@ Share with the world.
                                     <constraint firstItem="ffU-Rd-jhK" firstAttribute="top" secondItem="kyi-eU-Vnm" secondAttribute="top" constant="32" id="R2m-Ee-yDW"/>
                                     <constraint firstItem="1FP-aE-F1W" firstAttribute="top" secondItem="ffU-Rd-jhK" secondAttribute="bottom" constant="4" id="SYl-Un-bRC"/>
                                     <constraint firstItem="HgH-uA-2Wf" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" constant="32" id="VTS-oX-bDI"/>
+                                    <constraint firstAttribute="trailing" secondItem="X7z-nT-bZn" secondAttribute="trailing" constant="12" id="bNc-74-pMr"/>
                                     <constraint firstAttribute="bottom" secondItem="unV-nX-44O" secondAttribute="bottom" constant="20" id="eiE-jW-MZJ"/>
                                     <constraint firstItem="unV-nX-44O" firstAttribute="leading" secondItem="kyi-eU-Vnm" secondAttribute="leading" constant="32" id="gDq-l4-ymk"/>
                                     <constraint firstItem="n0L-id-Lkr" firstAttribute="bottom" secondItem="unV-nX-44O" secondAttribute="bottom" id="hgK-CE-9wV"/>
@@ -1653,11 +1669,14 @@ Share with the world.
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="copyrightLabel" destination="gaz-IE-EV9" id="TFM-FV-C4c"/>
                         <outlet property="quoteLabel" destination="HgH-uA-2Wf" id="jAM-NK-Lh7"/>
                         <outlet property="textContainerVEView" destination="n0L-id-Lkr" id="BwB-aB-m7z"/>
                         <outlet property="textContainerView" destination="unV-nX-44O" id="Qgt-V7-XRP"/>
                         <outlet property="textView" destination="7I2-ri-gbf" id="RcW-rM-KQU"/>
                         <outlet property="veView" destination="kyi-eU-Vnm" id="fyL-8n-IaL"/>
+                        <outlet property="versionLabel" destination="1FP-aE-F1W" id="Svg-wR-Ctx"/>
+                        <outlet property="whiteroseButton" destination="X7z-nT-bZn" id="35O-Ja-nw0"/>
                     </connections>
                 </viewController>
                 <customObject id="TDN-F4-KR6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
