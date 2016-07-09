@@ -214,6 +214,15 @@ class EditorViewController: NSViewController {
 			self.view.needsLayout = true
 		}
 		
+		center.addObserverForName(kShareNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+			if let image = self.imageView.image {
+				let shareItems = [image, "Check out this meme I made."]
+				let sharingServicePicker = NSSharingServicePicker(items: shareItems)
+				sharingServicePicker.delegate = self
+				sharingServicePicker.showRelativeToRect(NSZeroRect, ofView: self.view, preferredEdge: .MaxX)
+			}
+		}
+		
 		/*
 		center.addObserverForName(kUndoNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let (topA, bottomA) = self.xUndoManager.undo()
@@ -356,7 +365,7 @@ extension EditorViewController {
 	
 	@IBAction func fillDefaultTextAction(sender: NSSegmentedControl) {
 		let tag = sender.tag
-		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": Int(tag)])
 //		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
 	
@@ -455,4 +464,8 @@ extension EditorViewController: NSTextFieldDelegate {
 		bottomTextAttr.saveAttributes("bottomAttr")
 		cookImage()
 	}
+}
+
+extension EditorViewController: NSSharingServicePickerDelegate {
+	
 }

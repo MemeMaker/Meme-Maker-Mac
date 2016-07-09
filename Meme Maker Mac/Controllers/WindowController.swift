@@ -104,6 +104,10 @@ class WindowController: NSWindowController {
 		NSNotificationCenter.defaultCenter().postNotificationName(kRedoNotification, object: nil)
 	}
 	
+	@IBAction func shareToolbarAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kShareNotification, object: nil, userInfo: ["sender": sender])
+	}
+	
 
 }
 

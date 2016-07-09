@@ -74,19 +74,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	}
 	
 	@IBAction func alignTextLeftMenuAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 0)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": Int(0)])
 	}
 	
 	@IBAction func alignTextCenterMenuAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 1)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": Int(1)])
 	}
 	
 	@IBAction func alignTextRightMenuAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 2)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": Int(2)])
 	}
 	
 	@IBAction func alignTextJustifyMenuAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": NSNumber.init(int: 3)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kAlignTextNotification, object: nil, userInfo: ["alignment": Int(3)])
 	}
 	
 	@IBAction func showFontsMenuAction(sender: AnyObject) {
@@ -97,7 +97,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@IBAction func fillDefaultTextMenuAction(sender: NSMenuItem) {
 		let tag = sender.tag
-		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": NSNumber.init(long: tag)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kFillDefaultTextNotification, object: nil, userInfo: ["topbottom": Int(tag)])
 	}
 	
 	@IBAction func textColorMenuAction(sender: AnyObject) {
@@ -106,6 +106,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	
 	@IBAction func outlineColorMenuAction(sender: AnyObject) {
 		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
+	}
+	
+	@IBAction func shareMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kShareNotification, object: nil)
 	}
 	
 	

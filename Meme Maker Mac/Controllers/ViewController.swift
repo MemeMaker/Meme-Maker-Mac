@@ -47,7 +47,7 @@ class ViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	func fetchLocalMemes() -> Void {
@@ -103,8 +103,8 @@ class ViewController: NSViewController {
 		
 		center.addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
 			if let dict = notificaton.userInfo {
-				let mode = dict[kToggleViewModeKey] as! NSNumber
-				self.gridMode = mode.boolValue
+				let mode = dict[kToggleViewModeKey]
+				self.gridMode = mode!.boolValue
 				self.collectionView.reloadData()
 			}
 		}

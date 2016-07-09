@@ -58,7 +58,7 @@ class HelpViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	func updateQuoteLabel() -> Void {

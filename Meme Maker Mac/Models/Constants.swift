@@ -47,6 +47,8 @@ let kSortModeChangedNotification: String = "kSortModeChangedNotification"
 
 let kDarkModeChangedNotification: String = "kDarkModeChangedNotification"
 
+let kShareNotification: String = "kShareNotification"
+
 let kUndoNotification: String = "kUndoNotification"
 let kRedoNotification: String = "kRedoNotification"
 
