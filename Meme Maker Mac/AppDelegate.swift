@@ -26,6 +26,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			SettingsManager.setInteger(1, key: kSettingsLastSortKey) // default
 			SettingsManager.setBool(false, key: kSettingsDarkMode)
 			SettingsManager.setObject("", key: kSettingsLastSearchKey)
+			SettingsManager.setBool(true, key: kSettingsViewModeIsGrid)
 			print("Unarchiving to \(getImagesFolder())")
 			SSZipArchive.unzipFileAtPath(NSBundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
 			saveDefaultMemes()
@@ -39,7 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": SettingsManager.getBool(kSettingsDarkMode)])
 		})
 
-		
 	}
 
 	func applicationWillTerminate(aNotification: NSNotification) {
@@ -49,12 +49,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 	// MARK: - Application menu actions
 	
 	@IBAction func newMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kNewNotification, object: nil)
 	}
 	
 	@IBAction func saveMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kSaveNotification, object: nil)
 	}
 	
 	@IBAction func openMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kOpenNotification, object: nil)
+	}
+	
+	@IBAction func printMenuAction(sender: AnyObject) {
+		NSNotificationCenter.defaultCenter().postNotificationName(kPrintNotification, object: nil)
 	}
 	
 	@IBAction func resetMenuAction(sender: AnyObject) {

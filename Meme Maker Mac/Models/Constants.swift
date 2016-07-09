@@ -52,3 +52,7 @@ let kShareNotification: String = "kShareNotification"
 let kUndoNotification: String = "kUndoNotification"
 let kRedoNotification: String = "kRedoNotification"
 
+let kPrintNotification: String = "kPrintNotification"
+let kOpenNotification: String = "kOpenNotification"
+let kSaveNotification: String = "kSaveNotification"
+let kNewNotification: String = "kNewNotification"

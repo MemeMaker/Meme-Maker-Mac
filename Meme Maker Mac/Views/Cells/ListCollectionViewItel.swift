@@ -35,7 +35,7 @@ class ListCollectionViewItel: BaseCollectionViewItem {
 	}
 	
 	override func setHighlight(selected: Bool) {
-		view.layer?.borderWidth = selected ? 2.0 : 0.0
+		view.layer?.borderWidth = selected ? 3.0 : 0.0
 	}
 	
 }

@@ -136,6 +136,7 @@ class ViewController: NSViewController {
 		center.addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
 			self.veView.material = darkMode ? .Dark : .Light
+			self.collectionView.reloadData()
 		}
 		
 	}

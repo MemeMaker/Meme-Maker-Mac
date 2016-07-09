@@ -120,14 +120,15 @@ class EditorViewController: NSViewController {
 	func handleNotifications() -> Void {
 		
 		let center = NSNotificationCenter.defaultCenter()
+		let queue = NSOperationQueue.mainQueue()
 		
-		center.addObserverForName(kResetPositionNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kResetPositionNotification, object: nil, queue: queue) { (notification) in
 			self.topTextAttr.resetOffset()
 			self.bottomTextAttr.resetOffset()
 			self.cookImage()
 		}
 		
-		center.addObserverForName(kResetAllNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kResetAllNotification, object: nil, queue: queue) { (notification) in
 			self.topTextAttr.setDefault()
 			self.bottomTextAttr.setDefault()
 			NSColorPanel.sharedColorPanel().color = self.topTextAttr.textColor
@@ -135,19 +136,19 @@ class EditorViewController: NSViewController {
 			self.cookImage()
 		}
 		
-		center.addObserverForName(kFontBiggerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kFontBiggerNotification, object: nil, queue: queue) { (notification) in
 			self.topTextAttr.fontSize = min(self.topTextAttr.fontSize + 4 * self.ratio, 120 * self.ratio)
 			self.bottomTextAttr.fontSize = min(self.bottomTextAttr.fontSize + 4 * self.ratio, 120 * self.ratio)
 			self.cookImage()
 		}
 		
-		center.addObserverForName(kFontSmallerNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kFontSmallerNotification, object: nil, queue: queue) { (notification) in
 			self.topTextAttr.fontSize = max(self.topTextAttr.fontSize - 4 * self.ratio, 20 * self.ratio)
 			self.bottomTextAttr.fontSize = max(self.bottomTextAttr.fontSize - 4 * self.ratio, 20 * self.ratio)
 			self.cookImage()
 		}
 		
-		center.addObserverForName(kAlignTextNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kAlignTextNotification, object: nil, queue: queue) { (notification) in
 			guard let userInfo = notification.userInfo else { return }
 			if let alignment = userInfo["alignment"]?.integerValue {
 				self.topAlignmentSegmentedControl.selectedSegment = alignment
@@ -158,7 +159,7 @@ class EditorViewController: NSViewController {
 			}
 		}
 		
-		center.addObserverForName(kFillDefaultTextNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kFillDefaultTextNotification, object: nil, queue: queue) { (notification) in
 			guard let userInfo = notification.userInfo else { return }
 			if let topbottom = userInfo["topbottom"]?.integerValue {
 				guard let meme = self.meme else { return }
@@ -177,7 +178,7 @@ class EditorViewController: NSViewController {
 			}
 		}
 		
-		center.addObserverForName(kTextColorPanelNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kTextColorPanelNotification, object: nil, queue: queue) { (notification) in
 			let panel = NSColorPanel.sharedColorPanel()
 			panel.setTarget(self)
 			self.textColorChange = true
@@ -188,7 +189,7 @@ class EditorViewController: NSViewController {
 			panel.makeKeyAndOrderFront(self)
 		}
 		
-		center.addObserverForName(kOutlineColorPanelNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kOutlineColorPanelNotification, object: nil, queue: queue) { (notification) in
 			let panel = NSColorPanel.sharedColorPanel()
 			panel.setTarget(self)
 			self.textColorChange = false
@@ -199,7 +200,7 @@ class EditorViewController: NSViewController {
 			panel.makeKeyAndOrderFront(self)
 		}
 		
-		center.addObserverForName(kUpdateAttributesNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kUpdateAttributesNotification, object: nil, queue: queue) { (notification) in
 			guard let userInfo = notification.userInfo else { return }
 			if let topAttr = userInfo[kTopAttrName] as? XTextAttributes {
 				self.topTextAttr = topAttr
@@ -210,14 +211,14 @@ class EditorViewController: NSViewController {
 			self.cookImage()
 		}
 		
-		center.addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(NSWindowDidResizeNotification, object: nil, queue: queue) { (notification) in
 			let viewSize = self.view.bounds
 			self.imageViewWidthConstraint.constant = viewSize.width - 16
 			self.imageViewHeightConstraint.constant = viewSize.height - 96
 			self.view.needsLayout = true
 		}
 		
-		center.addObserverForName(kShareNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kShareNotification, object: nil, queue: queue) { (notification) in
 			if let image = self.imageView.image {
 				let shareItems = [image, "Check out this meme I made."]
 				let sharingServicePicker = NSSharingServicePicker(items: shareItems)
@@ -226,8 +227,50 @@ class EditorViewController: NSViewController {
 			}
 		}
 		
+		center.addObserverForName(kPrintNotification, object: nil, queue: queue) { (notification) in
+			let printInfo = NSPrintInfo.sharedPrintInfo()
+			printInfo.leftMargin = 2
+			printInfo.rightMargin = 2
+			printInfo.topMargin = 2
+			printInfo.bottomMargin = 2
+			printInfo.orientation = .Landscape
+			let op = NSPrintOperation.init(view: self.imageView, printInfo: printInfo)
+			op.runOperationModalForWindow(self.view.window!, delegate: nil, didRunSelector: nil, contextInfo: nil)
+		}
+		
+		center.addObserverForName(kOpenNotification, object: nil, queue: queue) { (notification) in
+			let openPanel = NSOpenPanel()
+			openPanel.allowedFileTypes = ["jpg", "png", "gif", "jpeg", "jp2", "tiff"]
+			openPanel.allowsMultipleSelection = false
+			if openPanel.runModal() == NSModalResponseOK {
+				if let URL = openPanel.URL {
+					if let data = NSData(contentsOfURL: URL) {
+						let image = NSImage(data: data)
+						self.baseImage = image
+						self.imageView.image = image
+						self.cookImage()
+					}
+				}
+			}
+		}
+		
+		center.addObserverForName(kSaveNotification, object: nil, queue: queue) { (notification) in
+			let savePanel = NSSavePanel()
+			savePanel.allowedFileTypes = ["jpg"]
+			savePanel.canCreateDirectories = true
+			savePanel.canSelectHiddenExtension = true
+			savePanel.nameFieldStringValue = self.imageView.memeName
+			savePanel.title = "Save"
+			if savePanel.runModal() == NSModalResponseOK {
+				let bitmapImageRep = NSBitmapImageRep(data: (self.imageView.image?.TIFFRepresentation)!)
+				if let data = bitmapImageRep?.representationUsingType(.NSJPEGFileType, properties: [NSImageCompressionFactor: NSNumber.init(float: 0.7)]) {
+					data.writeToURL(savePanel.URL!, atomically: true)
+				}
+			}
+		}
+
 		/*
-		center.addObserverForName(kUndoNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kUndoNotification, object: nil, queue: queue) { (notification) in
 			let (topA, bottomA) = self.xUndoManager.undo()
 			if let topAttr = topA {
 				self.topTextAttr = topAttr
@@ -238,7 +281,7 @@ class EditorViewController: NSViewController {
 			self.cookImage()
 		}
 		
-		center.addObserverForName(kRedoNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserverForName(kRedoNotification, object: nil, queue: queue) { (notification) in
 			let (topA, bottomA) = self.xUndoManager.redo()
 			if let topAttr = topA {
 				self.topTextAttr = topAttr

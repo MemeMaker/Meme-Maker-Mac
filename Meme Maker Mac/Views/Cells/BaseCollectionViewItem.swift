@@ -22,11 +22,7 @@ class BaseCollectionViewItem: NSCollectionViewItem {
 	
 	var gray: Bool = false {
 		didSet {
-			if gray {
-				self.view.layer?.backgroundColor = NSColor(red: 212/255, green: 212/255, blue: 212/255, alpha: 0.2).CGColor
-			} else {
-				self.view.layer?.backgroundColor = NSColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.2).CGColor
-			}
+			updateBackground()
 		}
 	}
 	
@@ -35,6 +31,17 @@ class BaseCollectionViewItem: NSCollectionViewItem {
 		self.view.wantsLayer = true
 	}
 	
+	func updateBackground() -> Void {
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		let pc = darkMode ? 82.0 : 212.0 as CGFloat
+		let ac = pc + 30.0 as CGFloat
+		if gray {
+			self.view.layer?.backgroundColor = NSColor(red: pc/255, green: pc/255, blue: pc/255, alpha: 0.3).CGColor
+		} else {
+			self.view.layer?.backgroundColor = NSColor(red: ac/255, green: ac/255, blue: ac/255, alpha: 0.3).CGColor
+		}
+	}
+
 }
 
 // MARK: - Downloading and updation

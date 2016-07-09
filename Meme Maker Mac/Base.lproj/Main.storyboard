@@ -95,7 +95,7 @@
                                         <menuItem isSeparatorItem="YES" id="Az6-Jg-qPO"/>
                                         <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
                                             <connections>
-                                                <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
+                                                <action selector="printMenuAction:" target="Voe-Tx-rLC" id="8I6-uB-qzb"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -690,7 +690,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="960" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="wx5-7x-iG8">
+                            <visualEffectView blendingMode="behindWindow" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="wx5-7x-iG8">
                                 <rect key="frame" x="0.0" y="0.0" width="960" height="600"/>
                                 <subviews>
                                     <containerView translatesAutoresizingMaskIntoConstraints="NO" id="aJm-2p-fb5">
@@ -701,7 +701,7 @@
                                     </containerView>
                                     <scrollView appearanceType="aqua" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" horizontalScrollElasticity="none" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-qD-Vmw">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
-                                        <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="nYQ-hn-LAp">
+                                        <clipView key="contentView" focusRingType="none" drawsBackground="NO" copiesOnScroll="NO" id="nYQ-hn-LAp">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -709,14 +709,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="562"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="primaryBackgroundColor" white="1" alpha="0.29999999999999999" colorSpace="deviceWhite"/>
-                                                    <color key="secondaryBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="XfG-lQ-9wD" id="AHf-Kg-8dm"/>
                                                         <outlet property="delegate" destination="XfG-lQ-9wD" id="5aQ-eo-MMp"/>
                                                     </connections>
                                                 </collectionView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                         </clipView>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="J7y-t0-qJR">
                                             <rect key="frame" x="-100" y="-100" width="233" height="15"/>
@@ -773,21 +772,6 @@
                                 </constraints>
                                 <imageCell key="cell" scrollable="YES" lineBreakMode="clipping" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="cRV-Yk-dBd"/>
                             </imageView>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
-                                <rect key="frame" x="121" y="12" width="414" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
-                                </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Bottom text" bezelStyle="round" id="79j-o4-dsV">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                </textFieldCell>
-                                <connections>
-                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
-                                    <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
-                                </connections>
-                            </textField>
                             <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ugt-Am-hsx">
                                 <rect key="frame" x="12" y="11" width="101" height="25"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="fuQ-Pa-Bxq">
@@ -828,12 +812,12 @@
                                     <action selector="bottomSizeChange:" target="qyR-yM-Rrq" id="sE6-8m-mcC"/>
                                 </connections>
                             </segmentedControl>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
+                            <textField canDrawConcurrently="YES" focusRingType="exterior" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-3w-ITS">
                                 <rect key="frame" x="121" y="444" width="414" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5xz-us-7jh"/>
                                 </constraints>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Top text" bezelStyle="round" id="7I6-dd-Otk">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="exterior" alignment="center" placeholderString="" bezelStyle="round" id="7I6-dd-Otk">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.40000000000000002" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -911,6 +895,21 @@
                                     <action selector="fillDefaultTextAction:" target="qyR-yM-Rrq" id="yPN-Wa-h54"/>
                                 </connections>
                             </segmentedControl>
+                            <textField canDrawConcurrently="YES" focusRingType="exterior" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bdl-en-70C">
+                                <rect key="frame" x="121" y="12" width="414" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="fYx-gz-2nl"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" focusRingType="exterior" alignment="center" placeholderString="" bezelStyle="round" id="79j-o4-dsV">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                </textFieldCell>
+                                <connections>
+                                    <outlet property="delegate" destination="qyR-yM-Rrq" id="7SM-jU-LMf"/>
+                                    <outlet property="nextKeyView" destination="Q3a-3w-ITS" id="aNa-Zf-1md"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Bdl-en-70C" secondAttribute="bottom" constant="12" id="1jM-Jq-Yyb"/>
@@ -1707,7 +1706,7 @@ Share with the world.
         <image name="undo" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qWg-7w-dhn"/>
         <segue reference="neb-Kp-YXs"/>
+        <segue reference="qWg-7w-dhn"/>
     </inferredMetricsTieBreakers>
 </document>
