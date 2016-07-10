@@ -54,6 +54,10 @@ class WindowController: NSWindowController {
 			self.isFullScreen = false
 		}
 		
+		if let text = SettingsManager.getObject(kSettingsLastSearchKey) {
+			searchField.stringValue = text as! String
+		}
+		
     }
 	
 	func updateButtonImages() -> Void {

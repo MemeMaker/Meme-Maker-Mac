@@ -24,15 +24,8 @@ class SettingsViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
 		
-		resetSettingsButton.state = SettingsManager.getBool(kSettingsResetSettingsOnLaunch) ? NSOnState : NSOffState
-		
-		darkModeButton.state = SettingsManager.getBool(kSettingsDarkMode) ? NSOnState : NSOffState
-		
-		lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
-		
 		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .Dark : .Light
+			self.updateViews()
 		}
 		
     }
@@ -40,7 +33,15 @@ class SettingsViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
+	}
+	
+	func updateViews() -> Void {
+		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
+		veView.material = darkMode ? .Dark : .Light
+		darkModeButton.state = darkMode ? NSOnState : NSOffState
+		resetSettingsButton.state = SettingsManager.getBool(kSettingsResetSettingsOnLaunch) ? NSOnState : NSOffState
+		lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
 	}
 	
 }
@@ -59,9 +60,7 @@ extension SettingsViewController {
 		let darkMode = sender.state == NSOnState
 		veView.material = darkMode ? .Dark : .Light;
 		SettingsManager.setBool(darkMode, key: kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": NSNumber.init(bool: darkMode)])
-		
-		
+		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	@IBAction func updateMemesAction(sender: AnyObject) {

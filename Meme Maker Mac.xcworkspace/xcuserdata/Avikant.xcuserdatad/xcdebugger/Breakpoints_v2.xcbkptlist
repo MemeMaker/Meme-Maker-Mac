@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Meme Maker Mac/Controllers/WindowController.swift"
-            timestampString = "489778167.036747"
+            timestampString = "489857498.599777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "WindowController"
             landmarkType = "3">
          </BreakpointContent>
