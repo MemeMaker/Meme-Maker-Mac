@@ -793,8 +793,9 @@
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
 				PRODUCT_NAME = "Meme Maker";
+				PROVISIONING_PROFILE = "3c1aa3da-9b5d-4bd0-ad0d-f08149664282";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -813,8 +814,9 @@
 				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
 				PRODUCT_NAME = "Meme Maker";
+				PROVISIONING_PROFILE = "3c1aa3da-9b5d-4bd0-ad0d-f08149664282";
 				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
 			};
 			name = Release;
