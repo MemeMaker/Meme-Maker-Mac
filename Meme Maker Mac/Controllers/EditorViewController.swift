@@ -133,6 +133,8 @@ class EditorViewController: NSViewController {
 			self.bottomTextAttr.setDefault()
 			NSColorPanel.sharedColorPanel().color = self.topTextAttr.textColor
 			NSFontPanel.sharedFontPanel().setPanelFont(self.topTextAttr.font, isMultiple: false)
+			self.topAlignmentSegmentedControl.selectedSegment = self.topTextAttr.absAlignment
+			self.bottomAlignmentSegmentedControl.selectedSegment = self.bottomTextAttr.absAlignment
 			self.cookImage()
 		}
 		

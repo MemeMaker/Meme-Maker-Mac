@@ -379,7 +379,7 @@
                                 <subviews>
                                     <button translatesAutoresizingMaskIntoConstraints="NO" id="QNy-0M-qOd">
                                         <rect key="frame" x="58" y="106" width="364" height="18"/>
-                                        <buttonCell key="cell" type="check" title="Dark Mode (Beta)" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fm4-CU-Qpj">
+                                        <buttonCell key="cell" type="check" title="Dark Mode" bezelStyle="regularSquare" imagePosition="left" inset="2" id="fm4-CU-Qpj">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -1711,7 +1711,7 @@ Share with the world.
         </scene>
     </scenes>
     <resources>
-        <image name="MemeMaker" width="128" height="128"/>
+        <image name="MemeMaker" width="64" height="64"/>
         <image name="NSColorPanel" width="32" height="32"/>
         <image name="NSColorPanelOutline" width="24" height="24"/>
         <image name="NSFontPanel" width="32" height="32"/>
