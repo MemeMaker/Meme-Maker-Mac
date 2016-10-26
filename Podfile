@@ -3,17 +3,17 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Meme Maker Mac' do
+target 'Meme Maker' do
 
 	pod 'SSZipArchive'
 
 end
 
-target 'Meme Maker MacTests' do
+target 'Meme MakerTests' do
 
 end
 
-target 'Meme Maker MacUITests' do
+target 'Meme MakerUITests' do
 
 end
 
