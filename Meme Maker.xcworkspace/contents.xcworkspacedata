@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Avikant/Documents/Xcode/Meme Maker Mac/Meme Maker.xcodeproj">
+      location = "group:Meme Maker.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
