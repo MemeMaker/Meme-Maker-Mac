@@ -18,9 +18,9 @@ class ListCollectionViewItel: BaseCollectionViewItem {
 		view.wantsLayer = true
 		
 		// Customize layer
-		view.layer?.backgroundColor = NSColor.clearColor().CGColor
+		view.layer?.backgroundColor = NSColor.clear.cgColor
 		view.layer?.borderWidth = 0.0
-		view.layer?.borderColor = NSColor.lightGrayColor().CGColor
+		view.layer?.borderColor = NSColor.lightGray.cgColor
 		
 	}
 	
@@ -28,13 +28,13 @@ class ListCollectionViewItel: BaseCollectionViewItem {
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
 		self.textField?.textColor = darkMode ? NSColor.init(white: 0.95, alpha: 1) : NSColor.init(white: 0.25, alpha: 1)
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
 			self.textField?.textColor = darkMode ? NSColor.init(white: 0.95, alpha: 1) : NSColor.init(white: 0.25, alpha: 1)
 		}
 	}
 	
-	override func setHighlight(selected: Bool) {
+	override func setHighlight(_ selected: Bool) {
 		view.layer?.borderWidth = selected ? 3.0 : 0.0
 	}
 	

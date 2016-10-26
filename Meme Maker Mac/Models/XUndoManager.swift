@@ -11,18 +11,18 @@ import Foundation
 
 class XUndoManager: NSObject {
 	
-	private static let sharedInstance = XUndoManager()
+	fileprivate static let sharedInstance = XUndoManager()
 	
-	private var topAttrStack: [XTextAttributes] = []
-	private var bottomAttrStack: [XTextAttributes] = []
+	fileprivate var topAttrStack: [XTextAttributes] = []
+	fileprivate var bottomAttrStack: [XTextAttributes] = []
 	
-	private var index: Int = -1
+	fileprivate var index: Int = -1
 	
 	class func sharedManager() -> XUndoManager {
 		return sharedInstance
 	}
 	
-	func append(topAttr: XTextAttributes, bottomAttr: XTextAttributes) -> Void {
+	func append(_ topAttr: XTextAttributes, bottomAttr: XTextAttributes) -> Void {
 		topAttrStack.append(topAttr)
 		bottomAttrStack.append(bottomAttr)
 		index += 1

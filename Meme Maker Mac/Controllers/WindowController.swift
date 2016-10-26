@@ -24,7 +24,7 @@ class WindowController: NSWindowController {
 	var grid: Bool = false {
 		didSet {
 			SettingsManager.setBool(grid, key: kSettingsViewModeIsGrid)
-			NSNotificationCenter.defaultCenter().postNotificationName(kToggleViewModeNotification, object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(bool: grid)])
+			NotificationCenter.default.post(name: Notification.Name(rawValue: kToggleViewModeNotification), object: nil, userInfo: [kToggleViewModeKey:NSNumber.init(value: grid as Bool)])
 			self.updateButtonImages()
 		}
 	}
@@ -42,15 +42,15 @@ class WindowController: NSWindowController {
 		grid = SettingsManager.getBool(kSettingsViewModeIsGrid)
 		updateButtonImages()
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			self.updateButtonImages()
 		}
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowWillEnterFullScreenNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.NSWindowWillEnterFullScreen, object: nil, queue: OperationQueue.main) { (notification) in
 			self.isFullScreen = true
 		}
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(NSWindowWillExitFullScreenNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name.NSWindowWillExitFullScreen, object: nil, queue: OperationQueue.main) { (notification) in
 			self.isFullScreen = false
 		}
 		
@@ -80,54 +80,54 @@ class WindowController: NSWindowController {
 	
 	// MARK: - Toolbar actions
 	
-	@IBAction func gridViewToggleAction(sender: AnyObject) {
+	@IBAction func gridViewToggleAction(_ sender: AnyObject) {
 		grid = !grid
 	}
 	
-	@IBAction func sortToolbarAction(sender: AnyObject) {
+	@IBAction func sortToolbarAction(_ sender: AnyObject) {
 		
 	}
 	
-	@IBAction func fontToolbarAction(sender: AnyObject) {
+	@IBAction func fontToolbarAction(_ sender: AnyObject) {
 		
 	}
 	
-	@IBAction func textColorToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kTextColorPanelNotification, object: nil)
+	@IBAction func textColorToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kTextColorPanelNotification), object: nil)
 	}
 	
-	@IBAction func outlineColorToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
+	@IBAction func outlineColorToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kOutlineColorPanelNotification), object: nil)
 	}
 	
-	@IBAction func resetToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kResetPositionNotification, object: nil)
+	@IBAction func resetToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kResetPositionNotification), object: nil)
 	}
 	
-	@IBAction func undoToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kUndoNotification, object: nil)
+	@IBAction func undoToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kUndoNotification), object: nil)
 	}
 	
-	@IBAction func redoToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kRedoNotification, object: nil)
+	@IBAction func redoToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kRedoNotification), object: nil)
 	}
 	
-	@IBAction func shareToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kShareNotification, object: nil, userInfo: ["sender": sender])
+	@IBAction func shareToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kShareNotification), object: nil, userInfo: ["sender": sender])
 	}
 	
-	@IBAction func saveToolbarAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kSaveNotification, object: nil)
+	@IBAction func saveToolbarAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kSaveNotification), object: nil)
 	}
 
 }
 
 extension WindowController {
 	
-	override func controlTextDidChange(obj: NSNotification) {
+	override func controlTextDidChange(_ obj: Notification) {
 		let text = self.searchField.stringValue
 		SettingsManager.setObject(text, key: kSettingsLastSearchKey)
-		NSNotificationCenter.defaultCenter().postNotificationName(kSearchBarTextChangedNotification, object: nil, userInfo: [kSettingsLastSearchKey: text])
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kSearchBarTextChangedNotification), object: nil, userInfo: [kSettingsLastSearchKey: text])
 	}
 	
 }

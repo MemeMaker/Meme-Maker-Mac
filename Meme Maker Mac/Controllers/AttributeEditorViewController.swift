@@ -27,9 +27,9 @@ class AttributeEditorViewController: NSViewController {
 		
 		updateViews()
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .Dark : .Light
+			self.veView.material = darkMode ? .dark : .light
 		}
 		
     }
@@ -37,7 +37,7 @@ class AttributeEditorViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kDarkModeChangedNotification), object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	func updateViews() -> Void {
@@ -53,7 +53,7 @@ class AttributeEditorViewController: NSViewController {
 		
 		let shadowEnabled = topTextAttr.shadowEnabled
 		shadowEnabledButton.state = shadowEnabled ? NSOnState : NSOffState
-		shadow3dbutton.hidden = !shadowEnabled
+		shadow3dbutton.isHidden = !shadowEnabled
 		
 		let shadow3d = topTextAttr.shadow3D
 		shadow3dbutton.state = shadow3d ? NSOnState : NSOffState
@@ -62,61 +62,61 @@ class AttributeEditorViewController: NSViewController {
 	
 	func updateAttributes() -> Void {
 		let userInfo:[String: AnyObject] = [kTopAttrName: topTextAttr, kBottomAttrName: bottomTextAttr]
-		NSNotificationCenter.defaultCenter().postNotificationName(kUpdateAttributesNotification, object: nil, userInfo: userInfo)
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kUpdateAttributesNotification), object: nil, userInfo: userInfo)
 	}
 	
 }
 
 extension AttributeEditorViewController {
 
-	@IBAction func fontscaleSliderAction(sender: AnyObject) {
-		let result = CGFloat((sender.integerValue + 1) * 20)
+	@IBAction func fontscaleSliderAction(_ sender: AnyObject) {
+		let result = CGFloat((sender.intValue + 1) * 20)
 		topTextAttr.fontSize = result
 		bottomTextAttr.fontSize = result
 		updateAttributes()
 	}
 	
-	@IBAction func outlinethicknessSliderAction(sender: AnyObject) {
-		let result = CGFloat(sender.integerValue)
+	@IBAction func outlinethicknessSliderAction(_ sender: AnyObject) {
+		let result = CGFloat(sender.intValue)
 		topTextAttr.strokeWidth = result
 		bottomTextAttr.strokeWidth = result
 		updateAttributes()
 	}
 	
-	@IBAction func opacitySliderAction(sender: AnyObject) {
+	@IBAction func opacitySliderAction(_ sender: AnyObject) {
 		let result = CGFloat(sender.doubleValue)
 		topTextAttr.opacity = result
 		bottomTextAttr.opacity = result
 		updateAttributes()
 	}
 	
-	@IBAction func shadowEnabledAction(sender: AnyObject) {
+	@IBAction func shadowEnabledAction(_ sender: AnyObject) {
 		let result = sender.state == NSOnState
-		shadow3dbutton.hidden = !result
+		shadow3dbutton.isHidden = !result
 		topTextAttr.shadowEnabled = result
 		bottomTextAttr.shadowEnabled = result
 		updateAttributes()
 	}
 	
-	@IBAction func shadow3dAction(sender: AnyObject) {
+	@IBAction func shadow3dAction(_ sender: AnyObject) {
 		let result = sender.state == NSOnState
 		topTextAttr.shadow3D = result
 		bottomTextAttr.shadow3D = result
 		updateAttributes()
 	}
 	
-	@IBAction func textColorAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kTextColorPanelNotification, object: nil)
+	@IBAction func textColorAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kTextColorPanelNotification), object: nil)
 	}
 	
-	@IBAction func outlineColorAction(sender: AnyObject) {
-		NSNotificationCenter.defaultCenter().postNotificationName(kOutlineColorPanelNotification, object: nil)
+	@IBAction func outlineColorAction(_ sender: AnyObject) {
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kOutlineColorPanelNotification), object: nil)
 	}
 	
-	@IBAction func textFontAction(sender: AnyObject) {
+	@IBAction func textFontAction(_ sender: AnyObject) {
 		let topTextAttr: XTextAttributes =  XTextAttributes(savename: kTopAttrName)
-		NSFontPanel.sharedFontPanel().setPanelFont(topTextAttr.font, isMultiple: false)
-		NSFontPanel.sharedFontPanel().orderFront(sender)
+		NSFontPanel.shared().setPanelFont(topTextAttr.font, isMultiple: false)
+		NSFontPanel.shared().orderFront(sender)
 	}
     
 }

@@ -24,7 +24,7 @@ class SettingsViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
 		
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			self.updateViews()
 		}
 		
@@ -33,12 +33,12 @@ class SettingsViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kDarkModeChangedNotification), object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	func updateViews() -> Void {
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		veView.material = darkMode ? .Dark : .Light
+		veView.material = darkMode ? .dark : .light
 		darkModeButton.state = darkMode ? NSOnState : NSOffState
 		resetSettingsButton.state = SettingsManager.getBool(kSettingsResetSettingsOnLaunch) ? NSOnState : NSOffState
 		lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
@@ -48,49 +48,49 @@ class SettingsViewController: NSViewController {
 
 extension SettingsViewController {
 	
-	@IBAction func memeMakerAction(sender: AnyObject) {
+	@IBAction func memeMakerAction(_ sender: AnyObject) {
 		
 	}
 
-	@IBAction func resetSettingsAction(sender: AnyObject) {
+	@IBAction func resetSettingsAction(_ sender: AnyObject) {
 		SettingsManager.setBool(sender.state == NSOnState, key: kSettingsResetSettingsOnLaunch)
 	}
 	
-	@IBAction func darkModeAction(sender: AnyObject) {
+	@IBAction func darkModeAction(_ sender: AnyObject) {
 		let darkMode = sender.state == NSOnState
-		veView.material = darkMode ? .Dark : .Light;
+		veView.material = darkMode ? .dark : .light;
 		SettingsManager.setBool(darkMode, key: kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kDarkModeChangedNotification), object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
-	@IBAction func updateMemesAction(sender: AnyObject) {
+	@IBAction func updateMemesAction(_ sender: AnyObject) {
 		let fetcher = MemeFetcher()
 		fetcher.fetchMemes()
-		updationSpinner.hidden = false
+		updationSpinner.isHidden = false
 		updationSpinner.startAnimation(self)
-		NSNotificationCenter.defaultCenter().addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kFetchCompleteNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			self.updationSpinner.stopAnimation(self)
-			self.updationSpinner.hidden = true
+			self.updationSpinner.isHidden = true
 			self.lastUpdatedLabel.stringValue = "Last updated: " + SettingsManager.getLastUpdateDateString()
 		}
 	}
 	
-	@IBAction func reportBugAction(sender: AnyObject) {
+	@IBAction func reportBugAction(_ sender: AnyObject) {
 		let shareItems = [getSystemDetails()]
 		let service = NSSharingService(named: NSSharingServiceNameComposeEmail)
 		service?.delegate = self
 		service?.recipients = ["samaritan@darmarmy.xyz"]
 		service?.subject = "Meme maker bug report"
-		service?.performWithItems(shareItems)
+		service?.perform(withItems: shareItems)
 	}
 	
-	@IBAction func feedbackAction(sender: AnyObject) {
+	@IBAction func feedbackAction(_ sender: AnyObject) {
 		let shareItems = [getSystemDetails()]
 		let service = NSSharingService(named: NSSharingServiceNameComposeEmail)
 		service?.delegate = self
 		service?.recipients = ["samaritan@darmarmy.xyz"]
 		service?.subject = "Meme maker feedback/suggestion"
-		service?.performWithItems(shareItems)
+		service?.perform(withItems: shareItems)
 	}
 	
 	func getSystemDetails() -> String {
@@ -105,11 +105,11 @@ extension SettingsViewController {
 
 extension SettingsViewController: NSSharingServiceDelegate {
 	
-	func sharingService(sharingService: NSSharingService, didShareItems items: [AnyObject]) {
+	func sharingService(_ sharingService: NSSharingService, didShareItems items: [Any]) {
 		print("share success")
 	}
 	
-	func sharingService(sharingService: NSSharingService, didFailToShareItems items: [AnyObject], error: NSError) {
+	func sharingService(_ sharingService: NSSharingService, didFailToShareItems items: [Any], error: Error) {
 		print("share failure")
 	}
 	

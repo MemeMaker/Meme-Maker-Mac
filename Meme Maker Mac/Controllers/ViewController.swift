@@ -20,7 +20,7 @@ class ViewController: NSViewController {
 	
 	var context: NSManagedObjectContext? = nil
 	
-	private var gridMode: Bool = true;
+	fileprivate var gridMode: Bool = true;
 	
 	@IBOutlet weak var veView: NSVisualEffectView!
 
@@ -29,14 +29,14 @@ class ViewController: NSViewController {
 	
 		configureCollectionView()
 		
-		let appDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = NSApplication.shared().delegate as! AppDelegate
 		context = appDelegate.managedObjectContext
 		
 		self.fetchLocalMemes()
 		
 		handleNotifications()
 		
-		if (NSDate().timeIntervalSinceDate(SettingsManager.getLastUpdateDate())) > 7 * 86400 {
+		if (Date().timeIntervalSince(SettingsManager.getLastUpdateDate() as Date)) > 7 * 86400 {
 			print("Fetching latest memes, just for you!")
 			let fetcher = MemeFetcher()
 			fetcher.fetchMemes()
@@ -47,11 +47,11 @@ class ViewController: NSViewController {
 	override func viewDidAppear() {
 		super.viewDidAppear()
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-		NSNotificationCenter.defaultCenter().postNotificationName(kDarkModeChangedNotification, object: nil, userInfo: ["darkMode": Bool(darkMode)])
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kDarkModeChangedNotification), object: nil, userInfo: ["darkMode": Bool(darkMode)])
 	}
 	
 	func fetchLocalMemes() -> Void {
-		let request = NSFetchRequest(entityName: "XMeme")
+		let request = NSFetchRequest<NSFetchRequestResult>(entityName: "XMeme")
 		
 		let sortMode = SettingsManager.getInteger(kSettingsLastSortKey)
 		if (sortMode == 1) { // Default
@@ -62,7 +62,7 @@ class ViewController: NSViewController {
 			request.sortDescriptors = [NSSortDescriptor.init(key: "rank", ascending: true)]
 		}
 		do {
-			let fetchedArray = try self.context?.executeFetchRequest(request)
+			let fetchedArray = try self.context?.fetch(request)
 			memes = NSMutableArray(array: fetchedArray!)
 			allMemes = NSMutableArray(array: fetchedArray!)
 		}
@@ -76,66 +76,66 @@ class ViewController: NSViewController {
 		self.filterMemesWithSearchText(searchText)
 	}
 	
-	private func configureCollectionView() {
+	fileprivate func configureCollectionView() {
 		// 1
 		let flowLayout = NSCollectionViewFlowLayout()
 		flowLayout.itemSize = NSSize(width: 60.0, height: 60.0)
-		flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		flowLayout.sectionInset = EdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 		flowLayout.minimumInteritemSpacing = 0
 		flowLayout.minimumLineSpacing = 0
 		collectionView.collectionViewLayout = flowLayout
 		collectionView.reloadData()
 		collectionView.wantsLayer = true
 		collectionView.layer?.cornerRadius = 4
-		collectionView.layer?.backgroundColor = NSColor.clearColor().CGColor
+		collectionView.layer?.backgroundColor = NSColor.clear.cgColor
 		collectionScrollView.wantsLayer = true
 		collectionScrollView.layer?.cornerRadius = 4
-		collectionScrollView.layer?.backgroundColor = NSColor.clearColor().CGColor
+		collectionScrollView.layer?.backgroundColor = NSColor.clear.cgColor
 }
 	
 	func handleNotifications() -> Void {
 		
-		let center = NSNotificationCenter.defaultCenter()
+		let center = NotificationCenter.default
 		
-		center.addObserverForName(NSWindowDidResizeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserver(forName: NSNotification.Name.NSWindowDidResize, object: nil, queue: OperationQueue.main) { (notification) in
 			self.collectionView.reloadData()
 		}
 		
-		center.addObserverForName(kToggleViewModeNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notificaton) in
-			if let dict = notificaton.userInfo {
+		center.addObserver(forName: NSNotification.Name(rawValue: kToggleViewModeNotification), object: nil, queue: OperationQueue.main) { (notificaton) in
+			if let dict = (notificaton as NSNotification).userInfo {
 				let mode = dict[kToggleViewModeKey]
-				self.gridMode = mode!.boolValue
+				self.gridMode = (mode! as AnyObject).boolValue
 				self.collectionView.reloadData()
 			}
 		}
 		
-		center.addObserverForName(kFetchCompleteNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserver(forName: NSNotification.Name(rawValue: kFetchCompleteNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			self.fetchLocalMemes()
 		}
 		
-		center.addObserverForName(kSortModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserver(forName: NSNotification.Name(rawValue: kSortModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			let sortMode = SettingsManager.getInteger(kSettingsLastSortKey)
 			if (sortMode == 1) { // Default
-				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "memeID", ascending: true)])
+				self.memes.sort(using: [NSSortDescriptor.init(key: "memeID", ascending: true)])
 			} else if (sortMode == 2) { // Alphabetical
-				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "name", ascending: true)])
+				self.memes.sort(using: [NSSortDescriptor.init(key: "name", ascending: true)])
 			} else if (sortMode == 3) { // Rank wise
-				self.memes.sortUsingDescriptors([NSSortDescriptor.init(key: "rank", ascending: true)])
+				self.memes.sort(using: [NSSortDescriptor.init(key: "rank", ascending: true)])
 			}
 			self.collectionView.reloadData()
 		}
 		
-		center.addObserverForName(kSearchBarTextChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
-			if let dict = notification.userInfo {
+		center.addObserver(forName: NSNotification.Name(rawValue: kSearchBarTextChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
+			if let dict = (notification as NSNotification).userInfo {
 				if let searchText = dict[kSettingsLastSearchKey] as? String {
 					self.filterMemesWithSearchText(searchText)
 				}
 			}
 		}
 		
-		center.addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		center.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			let darkMode = SettingsManager.getBool(kSettingsDarkMode)
-			self.veView.material = darkMode ? .Dark : .Light
+			self.veView.material = darkMode ? .dark : .light
 			self.collectionView.reloadData()
 		}
 		
@@ -147,7 +147,7 @@ class ViewController: NSViewController {
 	
 	// MARK: - Navigation
 	
-	override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
 		if (segue.identifier == "editorSegue") {
 			guard let editorVC = segue.destinationController  as? EditorViewController else { return }
 			self.editorVC = editorVC
@@ -178,34 +178,34 @@ class ViewController: NSViewController {
 
 extension ViewController : NSCollectionViewDataSource {
 	
-	func numberOfSectionsInCollectionView(collectionView: NSCollectionView) -> Int {
+	func numberOfSections(in collectionView: NSCollectionView) -> Int {
 		return 1
 	}
 	
-	func collectionView(collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+	func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
 		return memes.count
 	}
 	
-	func collectionView(collectionView: NSCollectionView, itemForRepresentedObjectAtIndexPath indexPath: NSIndexPath) -> NSCollectionViewItem {
+	func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
 		
 		// Change between list and grid!
 		var item = NSCollectionViewItem()
 		if isGrid() {
-			item = collectionView.makeItemWithIdentifier("GridCollectionViewItem", forIndexPath: indexPath)
+			item = collectionView.makeItem(withIdentifier: "GridCollectionViewItem", for: indexPath)
 		}
 		else {
-			item = collectionView.makeItemWithIdentifier("ListCollectionViewItel", forIndexPath: indexPath)
+			item = collectionView.makeItem(withIdentifier: "ListCollectionViewItel", for: indexPath)
 		}
 		guard let collectionViewItem = item as? BaseCollectionViewItem else { return item }
 		
 		if !isGrid() {
-			collectionViewItem.gray = (indexPath.item % 2 == 1)
+			collectionViewItem.gray = ((indexPath as NSIndexPath).item % 2 == 1)
 		}
 		
-		let meme = memes.objectAtIndex(indexPath.item) as! XMeme
+		let meme = memes.object(at: (indexPath as NSIndexPath).item) as! XMeme
 		collectionViewItem.meme = meme
 		
-		if let selectedIndexPath = collectionView.selectionIndexPaths.first where selectedIndexPath == indexPath {
+		if let selectedIndexPath = collectionView.selectionIndexPaths.first, selectedIndexPath == indexPath {
 			collectionViewItem.setHighlight(true)
 		}
 		else {
@@ -221,24 +221,24 @@ extension ViewController : NSCollectionViewDataSource {
 
 extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlowLayout {
 	
-	func collectionView(collectionView: NSCollectionView, didSelectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
+	func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
 		guard let indexPath = indexPaths.first else { return }
-		guard let item = collectionView.itemAtIndexPath(indexPath) else { return }
+		guard let item = collectionView.item(at: indexPath) else { return }
 		(item as! BaseCollectionViewItem).setHighlight(true)
-		guard let meme = memes[indexPath.item] as? XMeme else { return }
+		guard let meme = memes[(indexPath as NSIndexPath).item] as? XMeme else { return }
 //		XTextAttributes.clearTopAndBottomTexts() // Maybe don't clear them?
 		SettingsManager.setInteger(Int(meme.memeID), key: kSettingsLastMemeIdOpened)
 		self.editorVC.meme = meme
 		self.editorVC.cookImage()
 	}
 	
-	func collectionView(collectionView: NSCollectionView, didDeselectItemsAtIndexPaths indexPaths: Set<NSIndexPath>) {
+	func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
 		guard let indexPath = indexPaths.first else { return }
-		guard let item = collectionView.itemAtIndexPath(indexPath) else { return }
+		guard let item = collectionView.item(at: indexPath) else { return }
 		(item as! BaseCollectionViewItem).setHighlight(false)
 	}
 	
-	func collectionView(collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> NSSize {
+	func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
 		let width = collectionView.frame.size.width
 		if (isGrid()) {
 			var nr: CGFloat = 4
@@ -246,20 +246,20 @@ extension ViewController : NSCollectionViewDelegate, NSCollectionViewDelegateFlo
 			else if width < 400 { nr = 4 }
 			else if width < 500 { nr = 5 }
 			else { nr = 6 }
-			let size = CGSizeMake(collectionView.frame.size.width/nr, collectionView.frame.size.width/nr)
+			let size = CGSize(width: collectionView.frame.size.width/nr, height: collectionView.frame.size.width/nr)
 			return NSSizeFromCGSize(size)
 		}
-		return NSSizeFromCGSize(CGSizeMake(width, 60))
+		return NSSizeFromCGSize(CGSize(width: width, height: 60))
 	}
 	
 }
 
 extension ViewController: NSSearchFieldDelegate {
 	
-	func filterMemesWithSearchText(searchText: String!) {
+	func filterMemesWithSearchText(_ searchText: String!) {
 		memes = allMemes.mutableCopy() as! NSMutableArray
 		if (searchText.characters.count > 0) {
-			memes.filterUsingPredicate(NSPredicate(format: "name contains[cd] %@ OR tags contains[cd] %@", searchText, searchText))
+			memes.filter(using: NSPredicate(format: "name contains[cd] %@ OR tags contains[cd] %@", searchText, searchText))
 		}
 		collectionView.reloadData()
 	}

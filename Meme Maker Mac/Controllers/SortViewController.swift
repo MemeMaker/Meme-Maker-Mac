@@ -39,7 +39,7 @@ class SortViewController: NSViewController {
 		}
 		
 		updateViews()
-		NSNotificationCenter.defaultCenter().addObserverForName(kDarkModeChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) in
+		NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: kDarkModeChangedNotification), object: nil, queue: OperationQueue.main) { (notification) in
 			self.updateViews()
 		}
 		
@@ -49,10 +49,10 @@ class SortViewController: NSViewController {
 		let darkMode = SettingsManager.getBool(kSettingsDarkMode)
 		var append = ""
 		if (darkMode) {
-			veView.material = .Dark
+			veView.material = .dark
 			append = "W"
 		} else {
-			veView.material = .Light
+			veView.material = .light
 		}
 		defaultSortButton.image = NSImage(named: "sort" + append)
 		alphaSortButton.image = NSImage(named: "sortAlpha" + append)
@@ -60,31 +60,31 @@ class SortViewController: NSViewController {
 		
 	}
 	
-	@IBAction func defaultSortAction(sender: AnyObject) {
+	@IBAction func defaultSortAction(_ sender: AnyObject) {
 		defaultSortButton.state = NSOnState
 		alphaSortButton.state = NSOffState
 		popSortButton.state = NSOffState
 		SettingsManager.setInteger(1, key: kSettingsLastSortKey)
-		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
-		self.dismissController(self)
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kSortModeChangedNotification), object: nil)
+		self.dismiss(self)
 	}
 	
-	@IBAction func alphaSortAction(sender: AnyObject) {
+	@IBAction func alphaSortAction(_ sender: AnyObject) {
 		defaultSortButton.state = NSOffState
 		alphaSortButton.state = NSOnState
 		popSortButton.state = NSOffState
 		SettingsManager.setInteger(2, key: kSettingsLastSortKey)
-		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
-		self.dismissController(self)
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kSortModeChangedNotification), object: nil)
+		self.dismiss(self)
 	}
 	
-	@IBAction func popSortAction(sender: AnyObject) {
+	@IBAction func popSortAction(_ sender: AnyObject) {
 		defaultSortButton.state = NSOffState
 		alphaSortButton.state = NSOffState
 		popSortButton.state = NSOnState
 		SettingsManager.setInteger(3, key: kSettingsLastSortKey)
-		NSNotificationCenter.defaultCenter().postNotificationName(kSortModeChangedNotification, object: nil)
-		self.dismissController(self)
+		NotificationCenter.default.post(name: Notification.Name(rawValue: kSortModeChangedNotification), object: nil)
+		self.dismiss(self)
 	}
 	
 }
