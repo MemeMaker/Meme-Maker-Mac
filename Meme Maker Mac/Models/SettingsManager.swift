@@ -14,31 +14,31 @@ open class SettingsManager: NSObject {
 	
 	// MARK:- Save and fetch stuff
 	
-	open class func setObject(_ object: AnyObject, key: String) {
+	open class func setObject(_ object: Any, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(object, forKey: key)
+			dict.setObject(object, forKey: key as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	open class func getObject(_ key: String) -> AnyObject? {
+	open class func getObject(_ key: String) -> Any? {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			return dict.object(forKey: key)
+			return dict.object(forKey: key as NSString)
 		}
-		return "" as AnyObject?
+		return "" as Any?
 	}
 	
 	open class func setBool(_ bool: Bool, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber(value: bool as Bool), forKey: key)
+			dict.setObject(NSNumber(value: bool as Bool), forKey: key as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
 	open class func getBool(_ key: String) -> Bool {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.object(forKey: key) {
-				return value.boolValue
+			if let value = dict.object(forKey: key as NSString) as? BooleanLiteralType {
+				return Bool(value)
 			}
 		}
 		return false
@@ -46,15 +46,15 @@ open class SettingsManager: NSObject {
 	
 	open class func setInteger(_ value: Int, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber.init(value: value as Int), forKey: key)
+			dict.setObject(NSNumber.init(value: value as Int), forKey: key as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
 	open class func getInteger(_ key: String) -> Int {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.object(forKey: key) {
-				return value.intValue
+			if let value = dict.object(forKey: key as NSString) as? IntegerLiteralType {
+				return Int(value)
 			}
 		}
 		return 0
@@ -62,15 +62,15 @@ open class SettingsManager: NSObject {
 	
 	open class func setFloat(_ value: Float, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber.init(value: value as Float), forKey: key)
+			dict.setObject(NSNumber.init(value: value as Float), forKey: key as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
 	open class func getFloat(_ key: String) -> Float {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.object(forKey: key) {
-				return value.floatValue
+			if let value = dict.object(forKey: key as NSString) as? FloatLiteralType {
+				return Float(value)
 			}
 		}
 		return 0.0
@@ -78,7 +78,7 @@ open class SettingsManager: NSObject {
 	
 	open class func deleteObject(_ key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.removeObject(forKey: key)
+			dict.removeObject(forKey: key as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}
@@ -88,7 +88,7 @@ open class SettingsManager: NSObject {
 			let formatter = DateFormatter()
 			formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
 			let date = formatter.string(from: Date())
-			dict.setObject(date, forKey: "lastUpdateDate")
+			dict.setObject(date, forKey: "lastUpdateDate" as NSString)
 			dict.write(toFile: filePath, atomically: true)
 		}
 	}

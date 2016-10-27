@@ -11,7 +11,7 @@ import Foundation
 
 class XTextAttributes: NSObject {
 	
-	var text: NSString! = ""
+	var text: NSString = ""
 	var uppercase: Bool = true
 
 	var rect: CGRect = CGRect.zero

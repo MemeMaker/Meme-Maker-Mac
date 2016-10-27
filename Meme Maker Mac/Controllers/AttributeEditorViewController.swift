@@ -69,28 +69,28 @@ class AttributeEditorViewController: NSViewController {
 
 extension AttributeEditorViewController {
 
-	@IBAction func fontscaleSliderAction(_ sender: AnyObject) {
+	@IBAction func fontscaleSliderAction(_ sender: NSControl) {
 		let result = CGFloat((sender.intValue + 1) * 20)
 		topTextAttr.fontSize = result
 		bottomTextAttr.fontSize = result
 		updateAttributes()
 	}
 	
-	@IBAction func outlinethicknessSliderAction(_ sender: AnyObject) {
+	@IBAction func outlinethicknessSliderAction(_ sender: NSControl) {
 		let result = CGFloat(sender.intValue)
 		topTextAttr.strokeWidth = result
 		bottomTextAttr.strokeWidth = result
 		updateAttributes()
 	}
 	
-	@IBAction func opacitySliderAction(_ sender: AnyObject) {
+	@IBAction func opacitySliderAction(_ sender: NSControl) {
 		let result = CGFloat(sender.doubleValue)
 		topTextAttr.opacity = result
 		bottomTextAttr.opacity = result
 		updateAttributes()
 	}
 	
-	@IBAction func shadowEnabledAction(_ sender: AnyObject) {
+	@IBAction func shadowEnabledAction(_ sender: NSButton) {
 		let result = sender.state == NSOnState
 		shadow3dbutton.isHidden = !result
 		topTextAttr.shadowEnabled = result
@@ -98,7 +98,7 @@ extension AttributeEditorViewController {
 		updateAttributes()
 	}
 	
-	@IBAction func shadow3dAction(_ sender: AnyObject) {
+	@IBAction func shadow3dAction(_ sender: NSButton) {
 		let result = sender.state == NSOnState
 		topTextAttr.shadow3D = result
 		bottomTextAttr.shadow3D = result

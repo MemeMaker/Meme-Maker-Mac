@@ -26,11 +26,11 @@ open class MemeFetcher: NSObject {
 	}
 	
 	fileprivate func fetchMemes(_ paging: Int) -> Void {
-		let request = NSMutableURLRequest(url: apiMemesPaging(paging))
+		var request = URLRequest(url: apiMemesPaging(paging))
 		request.httpMethod = "GET"
 		URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
 			if (error != nil) {
-				print("Error: %@", error?.localizedDescription)
+				dump(error)
 				return
 			}
 			if (data != nil) {
@@ -39,10 +39,11 @@ open class MemeFetcher: NSObject {
 					let asyncContext: NSManagedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
 					asyncContext.persistentStoreCoordinator = persistentStoreCoordinator
 					
-					let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-					let code = json.value(forKey: "code") as! Int
+					let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any]
+                    // TODO: add proper error checks here to protect against getting an unexpected json format
+					let code = json!["code"] as! Int
 					if (code == 200) {
-						let jsonmemes = json.value(forKey: "data") as! NSArray
+						let jsonmemes = json!["data"] as! NSArray
 						let memesArray = XMeme.getAllMemesFromArray(jsonmemes, context: asyncContext)!
 						for meme in memesArray {
 							self.fetchedMemes.add(meme)
@@ -67,7 +68,7 @@ open class MemeFetcher: NSObject {
 					return
 				}
 			}
-			}) .resume()
+			}).resume()
 		
 	}
 

@@ -152,7 +152,7 @@ class EditorViewController: NSViewController {
 		
 		center.addObserver(forName: NSNotification.Name(rawValue: kAlignTextNotification), object: nil, queue: queue) { (notification) in
 			guard let userInfo = (notification as NSNotification).userInfo else { return }
-			if let alignment = (userInfo["alignment"]? as AnyObject).intValue {
+			if let alignment = userInfo["alignment"] as? Int {
 				self.topAlignmentSegmentedControl.selectedSegment = alignment
 				self.bottomAlignmentSegmentedControl.selectedSegment = alignment
 				self.topTextAttr.absAlignment = alignment
@@ -163,7 +163,7 @@ class EditorViewController: NSViewController {
 		
 		center.addObserver(forName: NSNotification.Name(rawValue: kFillDefaultTextNotification), object: nil, queue: queue) { (notification) in
 			guard let userInfo = (notification as NSNotification).userInfo else { return }
-			if let topbottom = (userInfo["topbottom"]? as AnyObject).intValue {
+			if let topbottom = userInfo["topbottom"] as? Int {
 				guard let meme = self.meme else { return }
 				if (topbottom == 1) {
 					if let topText = meme.topText {
@@ -324,14 +324,14 @@ extension EditorViewController {
 		if (baseImage == nil) {
 			return;
 		}
-		let imageSize = baseImage?.size as CGSize!
-		let maxHeight = (imageSize?.height)!/2 - 8	// Max height of top and bottom texts
+		let imageSize = baseImage?.size ?? CGSize()
+		let maxHeight = (imageSize.height)/2 - 8	// Max height of top and bottom texts
 		let stringDrawingOptions: NSStringDrawingOptions = [.usesLineFragmentOrigin]
 		
-		let topText = topTextAttr.uppercase ? topTextAttr.text.uppercased : topTextAttr.text;
-		let bottomText = bottomTextAttr.uppercase ? bottomTextAttr.text.uppercased : bottomTextAttr.text;
+		let topText = topTextAttr.uppercase ? topTextAttr.text.uppercased as NSString : topTextAttr.text;
+		let bottomText = bottomTextAttr.uppercase ? bottomTextAttr.text.uppercased as NSString : bottomTextAttr.text;
 		
-		topTextAttr.rect = CGRect(x: 4, y: (imageSize?.height)! - maxHeight - 8, width: (imageSize?.width)! - 8, height: maxHeight);
+		topTextAttr.rect = CGRect(x: 4, y: (imageSize.height) - maxHeight - 8, width: (imageSize.width) - 8, height: maxHeight);
 		var topTextRect = topText.boundingRect(with: CGSize(width: imageSize.width - 8, height: 1000), options: stringDrawingOptions, attributes: topTextAttr.getTextAttributes(), context: nil)
 //
 		// Adjust top size
@@ -352,26 +352,26 @@ extension EditorViewController {
 			bottomTextAttr.rect = CGRect(x: 4, y: 0, width: imageSize.width - 8, height: expectedBottomSize.height)
 		}
 		
-		let offScreenRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int((imageSize?.width)!), pixelsHigh: Int((imageSize?.height)!), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bitmapFormat: NSBitmapFormat.alphaFirst, bytesPerRow: 0, bitsPerPixel: 0)
+		let offScreenRep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(imageSize.width), pixelsHigh: Int(imageSize.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSDeviceRGBColorSpace, bitmapFormat: NSBitmapFormat.alphaFirst, bytesPerRow: 0, bitsPerPixel: 0)
 		
 		let context = NSGraphicsContext(bitmapImageRep: offScreenRep!)
 		NSGraphicsContext.saveGraphicsState()
 		NSGraphicsContext.setCurrent(context)
 		
-		baseImage?.draw(in: NSMakeRect(0, 0, (imageSize?.width)!, (imageSize?.height)!))
+		baseImage?.draw(in: NSMakeRect(0, 0, imageSize.width, imageSize.height))
 		
 		let topRect = CGRect(x: topTextAttr.rect.origin.x + topTextAttr.offset.x, y: topTextAttr.rect.origin.y + topTextAttr.offset.y, width: topTextAttr.rect.size.width, height: topTextAttr.rect.size.height)
 		let bottomRect = CGRect(x: bottomTextAttr.rect.origin.x + bottomTextAttr.offset.x, y: bottomTextAttr.rect.origin.y + bottomTextAttr.offset.y, width: bottomTextAttr.rect.size.width, height: bottomTextAttr.rect.size.height)
 		
-		topTextAttr.saveAttributes("topAttr")
-		bottomTextAttr.saveAttributes("bottomAttr")
+		let _ = topTextAttr.saveAttributes("topAttr")
+		let _ = bottomTextAttr.saveAttributes("bottomAttr")
 		
 		topText.draw(in: NSRectFromCGRect(topRect), withAttributes: topTextAttr.getTextAttributes())
 		bottomText.draw(in: NSRectFromCGRect(bottomRect), withAttributes: bottomTextAttr.getTextAttributes())
 		
 		NSGraphicsContext.restoreGraphicsState()
 		
-		let newImage = NSImage.init(size: NSSizeFromCGSize(imageSize!))
+		let newImage = NSImage.init(size: NSSizeFromCGSize(imageSize))
 		newImage.addRepresentation(offScreenRep!)
 		
 		imageView.image = newImage
@@ -421,12 +421,12 @@ extension EditorViewController {
 	}
 	
 	override func changeFont(_ sender: Any?) {
-		if let topFont = (sender? as AnyObject).convert(topTextAttr.font) {
-			topTextAttr.font = topFont
-		}
-		if let bottomFont = (sender? as AnyObject).convert(bottomTextAttr.font) {
-			bottomTextAttr.font = bottomFont
-		}
+        guard let fontManager = sender as? NSFontManager else { return }
+        
+        topTextAttr.font = fontManager.convert(topTextAttr.font)
+		
+        bottomTextAttr.font = fontManager.convert(bottomTextAttr.font) 
+		
 		cookImage()
 //		xUndoManager.append(XTextAttributes(savename: "topAttr"), bottomAttr: XTextAttributes(savename: "bottomAttr"))
 	}
@@ -510,9 +510,9 @@ extension EditorViewController: NSTextFieldDelegate {
 	
 	override func controlTextDidChange(_ obj: Notification) {
 		topTextAttr.text = "\(topField.stringValue)" as NSString!
-		topTextAttr.saveAttributes("topAttr")
+		let _ = topTextAttr.saveAttributes("topAttr")
 		bottomTextAttr.text = "\(bottomField.stringValue)" as NSString!
-		bottomTextAttr.saveAttributes("bottomAttr")
+		let _ = bottomTextAttr.saveAttributes("bottomAttr")
 		cookImage()
 	}
 }

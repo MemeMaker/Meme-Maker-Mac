@@ -101,7 +101,7 @@ class HelpViewController: NSViewController {
 	}
 	
 	func updateQuoteLabel() -> Void {
-		self.quoteLabel.stringValue = quotes[(random() % quotes.count)]
+		self.quoteLabel.stringValue = quotes[Int(arc4random_uniform(UInt32(quotes.count)))]
 		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(15 * Int64(NSEC_PER_SEC)) / Double(NSEC_PER_SEC), execute: {
 			self.updateQuoteLabel()
 		})

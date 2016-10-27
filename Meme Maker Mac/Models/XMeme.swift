@@ -31,7 +31,7 @@ class XMeme: NSManagedObject {
 			else {
 //				print("Inserting meme \(ID).")
 				meme = NSEntityDescription.insertNewObject(forEntityName: "XMeme", into: context) as! XMeme
-				meme.memeID = ((data.object(forKey: "ID")? as AnyObject).int32Value)!
+				meme.memeID = data.object(forKey: "ID") as! Int32
 			}
 		}
 		catch _ {
@@ -46,7 +46,7 @@ class XMeme: NSManagedObject {
 		meme.image = data.object(forKey: "image") as? String
 		meme.imageURL = URL(string: meme.image!)
 		meme.thumb = data.object(forKey: "thumb") as? String
-		meme.rank = ((data.object(forKey: "rank")? as AnyObject).int32Value)!
+		meme.rank = data.object(forKey: "rank") as! Int32
 	
 		return meme
 		

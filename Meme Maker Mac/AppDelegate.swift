@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			SettingsManager.setObject("", key: kSettingsLastSearchKey)
 			SettingsManager.setBool(true, key: kSettingsViewModeIsGrid)
 			print("Unarchiving to \(getImagesFolder())")
-			SSZipArchive.unzipFileAtPath(Bundle.mainBundle().pathForResource("defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
+			SSZipArchive.unzipFile(atPath: Bundle.main.path(forResource: "defaultMemes", ofType: "zip"), toDestination: getImagesFolder())
 			saveDefaultMemes()
 		}
 		SettingsManager.setInteger(timesLaunched + 1, key: kSettingsTimesLaunched)
