@@ -228,11 +228,15 @@ class XTextAttributes: NSObject {
 		let topTextAttr = XTextAttributes(savename: "topAttr")
 		topTextAttr.text = ""
 		topTextAttr.setDefault()
-		topTextAttr.saveAttributes("topAttr")
+		if topTextAttr.saveAttributes("topAttr") {
+			print("Save success")
+		}
 		let bottomTextAttr = XTextAttributes(savename: "bottomAttr")
 		bottomTextAttr.text = ""
 		bottomTextAttr.setDefault()
-		bottomTextAttr.saveAttributes("bottomAttr")
+		if bottomTextAttr.saveAttributes("bottomAttr") {
+			print("Save success")
+		}
 	}
 	
 }

@@ -8,26 +8,69 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Pods-Meme Maker MacTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-Meme Maker MacUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-Meme Maker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Pods-Meme MakerTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+		<key>Pods-Meme MakerUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 		<key>SSZipArchive.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>075D9E2F6D0AE84C443C10791963F10B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C8373D42E244EA2DCE343DAFE1CA220</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BE6C25898F96459CB19B0C54A774FB6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7354EEC5DCE87B4427F9860BA356EBC3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78884C48FCA8B19762194F395AE8CB32</key>
 		<dict>
 			<key>primary</key>
 			<true/>
