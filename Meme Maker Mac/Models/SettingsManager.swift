@@ -8,111 +8,111 @@
 
 import AppKit
 
-public class SettingsManager: NSObject {
+open class SettingsManager: NSObject {
 	
-	private static let filePath = documentsPathForFileName("prefs")
+	fileprivate static let filePath = documentsPathForFileName("prefs")
 	
 	// MARK:- Save and fetch stuff
 	
-	public class func setObject(object: AnyObject, key: String) {
+	open class func setObject(_ object: Any, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(object, forKey: key)
-			dict.writeToFile(filePath, atomically: true)
+			dict.setObject(object, forKey: key as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func getObject(key: String) -> AnyObject? {
+	open class func getObject(_ key: String) -> Any? {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			return dict.objectForKey(key)
+			return dict.object(forKey: key as NSString)
 		}
-		return ""
+		return "" as Any?
 	}
 	
-	public class func setBool(bool: Bool, key: String) {
+	open class func setBool(_ bool: Bool, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber(bool: bool), forKey: key)
-			dict.writeToFile(filePath, atomically: true)
+			dict.setObject(NSNumber(value: bool as Bool), forKey: key as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func getBool(key: String) -> Bool {
+	open class func getBool(_ key: String) -> Bool {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.objectForKey(key) {
-				return value.boolValue
+			if let value = dict.object(forKey: key as NSString) as? BooleanLiteralType {
+				return Bool(value)
 			}
 		}
 		return false
 	}
 	
-	public class func setInteger(value: Int, key: String) {
+	open class func setInteger(_ value: Int, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber.init(long: value), forKey: key)
-			dict.writeToFile(filePath, atomically: true)
+			dict.setObject(NSNumber.init(value: value as Int), forKey: key as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func getInteger(key: String) -> Int {
+	open class func getInteger(_ key: String) -> Int {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.objectForKey(key) {
-				return value.integerValue
+			if let value = dict.object(forKey: key as NSString) as? IntegerLiteralType {
+				return Int(value)
 			}
 		}
 		return 0
 	}
 	
-	public class func setFloat(value: Float, key: String) {
+	open class func setFloat(_ value: Float, key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.setObject(NSNumber.init(float: value), forKey: key)
-			dict.writeToFile(filePath, atomically: true)
+			dict.setObject(NSNumber.init(value: value as Float), forKey: key as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func getFloat(key: String) -> Float {
+	open class func getFloat(_ key: String) -> Float {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let value = dict.objectForKey(key) {
-				return value.floatValue
+			if let value = dict.object(forKey: key as NSString) as? FloatLiteralType {
+				return Float(value)
 			}
 		}
 		return 0.0
 	}
 	
-	public class func deleteObject(key: String) {
+	open class func deleteObject(_ key: String) {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			dict.removeObjectForKey(key)
-			dict.writeToFile(filePath, atomically: true)
+			dict.removeObject(forKey: key as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func saveLastUpdateDate() -> Void {
+	open class func saveLastUpdateDate() -> Void {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			let formatter = NSDateFormatter()
+			let formatter = DateFormatter()
 			formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-			let date = formatter.stringFromDate(NSDate())
-			dict.setObject(date, forKey: "lastUpdateDate")
-			dict.writeToFile(filePath, atomically: true)
+			let date = formatter.string(from: Date())
+			dict.setObject(date, forKey: "lastUpdateDate" as NSString)
+			dict.write(toFile: filePath, atomically: true)
 		}
 	}
 	
-	public class func getLastUpdateDate() -> NSDate {
+	open class func getLastUpdateDate() -> Date {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let date = dict.objectForKey("lastUpdateDate") {
+			if let date = dict.object(forKey: "lastUpdateDate") {
 				let dateString = "\(date as! String)"
-				let formatter = NSDateFormatter()
+				let formatter = DateFormatter()
 				formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-				let date = formatter.dateFromString(dateString)
+				let date = formatter.date(from: dateString)
 				return date!
 			}
 		}
-		return NSDate(timeIntervalSinceNow: (-10 * 86400))
+		return Date(timeIntervalSinceNow: (-10 * 86400))
 	}
 	
-	public class func getLastUpdateDateString() -> String {
+	open class func getLastUpdateDateString() -> String {
 		if let dict = NSMutableDictionary(contentsOfFile: filePath) {
-			if let _ = dict.objectForKey("lastUpdateDate") {
-				let formatter = NSDateFormatter()
+			if let _ = dict.object(forKey: "lastUpdateDate") {
+				let formatter = DateFormatter()
 				formatter.dateFormat = "MMM dd, yyyy hh:mm a"
 				let date = self.getLastUpdateDate()
-				return formatter.stringFromDate(date)
+				return formatter.string(from: date)
 			}
 		}
 		return ""

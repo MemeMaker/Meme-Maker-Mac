@@ -1,933 +1,2498 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		24798E4CD9C894BAE34062E6 /* Pods_Meme_Maker_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 417C7AAC2C5D6D9B254C58C2 /* Pods_Meme_Maker_Mac.framework */; };
-		355DAD2DF834F7D6EF0A7FA4 /* Pods_Meme_Maker_MacUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87ACDF416E43163D763FE822 /* Pods_Meme_Maker_MacUITests.framework */; };
-		5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */; };
-		5935C23E1D2CEF78005E18AE /* MemeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */; };
-		594147651D2EBBD0004A6AF7 /* XUndoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594147641D2EBBD0004A6AF7 /* XUndoManager.swift */; };
-		59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AC81CEF274A00679BE2 /* AppDelegate.swift */; };
-		59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */; };
-		59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59490ACF1CEF274A00679BE2 /* Assets.xcassets */; };
-		59490AD31CEF274A00679BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59490AD11CEF274A00679BE2 /* Main.storyboard */; };
-		59490ADE1CEF274A00679BE2 /* Meme_Maker_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490ADD1CEF274A00679BE2 /* Meme_Maker_MacTests.swift */; };
-		59490AE91CEF274A00679BE2 /* Meme_Maker_MacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */; };
-		59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AFB1CEF282300679BE2 /* ViewController.swift */; };
-		59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490AFD1CEF283100679BE2 /* WindowController.swift */; };
-		59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */; };
-		59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */; };
-		59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */; };
-		59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */; };
-		5973F15C1D22418000080706 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5973F15B1D22418000080706 /* EditorViewController.swift */; };
-		59AB9EEA1D2C136E002386B5 /* AttributeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */; };
-		59AB9EF41D2C268D002386B5 /* GRSeparatorLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EED1D2C268D002386B5 /* GRSeparatorLineView.m */; };
-		59AB9EF51D2C268D002386B5 /* GRVibrantTitlebarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EEF1D2C268D002386B5 /* GRVibrantTitlebarView.m */; };
-		59AB9EF61D2C268D002386B5 /* GRVibrantTitlebarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF11D2C268D002386B5 /* GRVibrantTitlebarWindow.m */; };
-		59AB9EF71D2C268D002386B5 /* GRVibrantTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */; };
-		59AB9EFA1D2C2693002386B5 /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AB9EF91D2C2693002386B5 /* DragDropImageView.m */; };
-		59B4EEAB1D3017E9000092DA /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4EEAA1D3017E9000092DA /* HelpViewController.swift */; };
-		59B4EEAE1D301847000092DA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = 59B4EEAD1D301847000092DA /* quotes.json */; };
-		59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D161D2D75F600CF0EF9 /* SortViewController.swift */; };
-		59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D21D181D2D77D400CF0EF9 /* Constants.swift */; };
-		59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */; };
-		59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74C91CF3199400C39BCF /* XMeme.swift */; };
-		59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */; };
-		59FA74D21CF3199400C39BCF /* XTextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74CB1CF3199400C39BCF /* XTextAttributes.swift */; };
-		59FA74D81CF3199D00C39BCF /* defaultMemes.dat in Resources */ = {isa = PBXBuildFile; fileRef = 59FA74D61CF3199D00C39BCF /* defaultMemes.dat */; };
-		59FA74D91CF3199D00C39BCF /* defaultMemes.zip in Resources */ = {isa = PBXBuildFile; fileRef = 59FA74D71CF3199D00C39BCF /* defaultMemes.zip */; };
-		59FA74DB1CF31B6300C39BCF /* PrefixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74DA1CF31B6300C39BCF /* PrefixHeader.swift */; };
-		59FA74DD1CF31C0F00C39BCF /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FA74DC1CF31C0F00C39BCF /* SettingsManager.swift */; };
-		5ABE70C20B1348F5F7761AC9 /* Pods_Meme_Maker_MacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD0DA5FA3406E915967ACC2 /* Pods_Meme_Maker_MacTests.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		59490ADA1CEF274A00679BE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59490ABD1CEF274A00679BE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59490AC41CEF274A00679BE2;
-			remoteInfo = "Meme Maker Mac";
-		};
-		59490AE51CEF274A00679BE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 59490ABD1CEF274A00679BE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 59490AC41CEF274A00679BE2;
-			remoteInfo = "Meme Maker Mac";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		1D1435C421C6C02100AF37B4 /* Pods-Meme Maker MacUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker MacUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker MacUITests/Pods-Meme Maker MacUITests.release.xcconfig"; sourceTree = "<group>"; };
-		2BD0DA5FA3406E915967ACC2 /* Pods_Meme_Maker_MacTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		417C7AAC2C5D6D9B254C58C2 /* Pods_Meme_Maker_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
-		5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemeFetcher.swift; path = Models/MemeFetcher.swift; sourceTree = "<group>"; };
-		594147641D2EBBD0004A6AF7 /* XUndoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XUndoManager.swift; path = Models/XUndoManager.swift; sourceTree = "<group>"; };
-		59490AC51CEF274A00679BE2 /* Meme Maker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme Maker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59490AC81CEF274A00679BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meme_Maker_Mac.xcdatamodel; sourceTree = "<group>"; };
-		59490ACF1CEF274A00679BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		59490AD21CEF274A00679BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		59490AD41CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59490AD91CEF274A00679BE2 /* Meme Maker.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59490ADD1CEF274A00679BE2 /* Meme_Maker_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_Maker_MacTests.swift; sourceTree = "<group>"; };
-		59490ADF1CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59490AE41CEF274A00679BE2 /* Meme Maker.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meme Maker.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme_Maker_MacUITests.swift; sourceTree = "<group>"; };
-		59490AEA1CEF274A00679BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59490AFB1CEF282300679BE2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
-		59490AFD1CEF283100679BE2 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = Controllers/WindowController.swift; sourceTree = "<group>"; };
-		59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridCollectionViewItem.swift; path = Views/Cells/GridCollectionViewItem.swift; sourceTree = "<group>"; };
-		59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GridCollectionViewItem.xib; path = Views/Cells/GridCollectionViewItem.xib; sourceTree = "<group>"; };
-		59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListCollectionViewItel.swift; path = Views/Cells/ListCollectionViewItel.swift; sourceTree = "<group>"; };
-		59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListCollectionViewItel.xib; path = Views/Cells/ListCollectionViewItel.xib; sourceTree = "<group>"; };
-		5973F15B1D22418000080706 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditorViewController.swift; path = Controllers/EditorViewController.swift; sourceTree = "<group>"; };
-		59AB9EE21D2BA570002386B5 /* Meme Maker Mac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Meme Maker Mac-Bridging-Header.h"; sourceTree = "<group>"; };
-		59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttributeEditorViewController.swift; path = Controllers/AttributeEditorViewController.swift; sourceTree = "<group>"; };
-		59AB9EEC1D2C268D002386B5 /* GRSeparatorLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRSeparatorLineView.h; sourceTree = "<group>"; };
-		59AB9EED1D2C268D002386B5 /* GRSeparatorLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRSeparatorLineView.m; sourceTree = "<group>"; };
-		59AB9EEE1D2C268D002386B5 /* GRVibrantTitlebarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRVibrantTitlebarView.h; sourceTree = "<group>"; };
-		59AB9EEF1D2C268D002386B5 /* GRVibrantTitlebarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRVibrantTitlebarView.m; sourceTree = "<group>"; };
-		59AB9EF01D2C268D002386B5 /* GRVibrantTitlebarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRVibrantTitlebarWindow.h; sourceTree = "<group>"; };
-		59AB9EF11D2C268D002386B5 /* GRVibrantTitlebarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRVibrantTitlebarWindow.m; sourceTree = "<group>"; };
-		59AB9EF21D2C268D002386B5 /* GRVibrantTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRVibrantTitleView.h; sourceTree = "<group>"; };
-		59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRVibrantTitleView.m; sourceTree = "<group>"; };
-		59AB9EF81D2C2693002386B5 /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DragDropImageView.h; path = "Supporting Files/DragDropImageView/DragDropImageView.h"; sourceTree = "<group>"; };
-		59AB9EF91D2C2693002386B5 /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DragDropImageView.m; path = "Supporting Files/DragDropImageView/DragDropImageView.m"; sourceTree = "<group>"; };
-		59B4EEAA1D3017E9000092DA /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HelpViewController.swift; path = Controllers/HelpViewController.swift; sourceTree = "<group>"; };
-		59B4EEAD1D301847000092DA /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
-		59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Meme Maker Mac.entitlements"; sourceTree = "<group>"; };
-		59D21D161D2D75F600CF0EF9 /* SortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortViewController.swift; path = Controllers/SortViewController.swift; sourceTree = "<group>"; };
-		59D21D181D2D77D400CF0EF9 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Models/Constants.swift; sourceTree = "<group>"; };
-		59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewItem.swift; path = Views/Cells/BaseCollectionViewItem.swift; sourceTree = "<group>"; };
-		59FA74C91CF3199400C39BCF /* XMeme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XMeme.swift; path = Models/XMeme.swift; sourceTree = "<group>"; };
-		59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "XMeme+CoreDataProperties.swift"; path = "Models/XMeme+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		59FA74CB1CF3199400C39BCF /* XTextAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTextAttributes.swift; path = Models/XTextAttributes.swift; sourceTree = "<group>"; };
-		59FA74D61CF3199D00C39BCF /* defaultMemes.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = defaultMemes.dat; sourceTree = "<group>"; };
-		59FA74D71CF3199D00C39BCF /* defaultMemes.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = defaultMemes.zip; sourceTree = "<group>"; };
-		59FA74DA1CF31B6300C39BCF /* PrefixHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrefixHeader.swift; path = "Supporting Files/PrefixHeader.swift"; sourceTree = "<group>"; };
-		59FA74DC1CF31C0F00C39BCF /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsManager.swift; path = Models/SettingsManager.swift; sourceTree = "<group>"; };
-		65B4C17DEC0499B8BF877D4D /* Pods-Meme Maker MacUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker MacUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker MacUITests/Pods-Meme Maker MacUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		87ACDF416E43163D763FE822 /* Pods_Meme_Maker_MacUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme_Maker_MacUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB0C884309A54275FAF8B5FC /* Pods-Meme Maker Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.release.xcconfig"; sourceTree = "<group>"; };
-		D49FEC4224E10DEB3074F3E0 /* Pods-Meme Maker MacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker MacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests.release.xcconfig"; sourceTree = "<group>"; };
-		D6090243400D3353415215F0 /* Pods-Meme Maker Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.debug.xcconfig"; sourceTree = "<group>"; };
-		EAB9B67E654DBBF35D454C19 /* Pods-Meme Maker MacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme Maker MacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests.debug.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		59490AC21CEF274A00679BE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24798E4CD9C894BAE34062E6 /* Pods_Meme_Maker_Mac.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AD61CEF274A00679BE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5ABE70C20B1348F5F7761AC9 /* Pods_Meme_Maker_MacTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AE11CEF274A00679BE2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				355DAD2DF834F7D6EF0A7FA4 /* Pods_Meme_Maker_MacUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		31D07C8481BA2F6C7CCA080B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				417C7AAC2C5D6D9B254C58C2 /* Pods_Meme_Maker_Mac.framework */,
-				2BD0DA5FA3406E915967ACC2 /* Pods_Meme_Maker_MacTests.framework */,
-				87ACDF416E43163D763FE822 /* Pods_Meme_Maker_MacUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		59490ABC1CEF274A00679BE2 = {
-			isa = PBXGroup;
-			children = (
-				59490AC71CEF274A00679BE2 /* Meme Maker */,
-				59490ADC1CEF274A00679BE2 /* Meme Maker MacTests */,
-				59490AE71CEF274A00679BE2 /* Meme Maker MacUITests */,
-				59490AC61CEF274A00679BE2 /* Products */,
-				673CC7EEAAC6AA940AD2734F /* Pods */,
-				31D07C8481BA2F6C7CCA080B /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		59490AC61CEF274A00679BE2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				59490AC51CEF274A00679BE2 /* Meme Maker.app */,
-				59490AD91CEF274A00679BE2 /* Meme Maker.xctest */,
-				59490AE41CEF274A00679BE2 /* Meme Maker.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		59490AC71CEF274A00679BE2 /* Meme Maker */ = {
-			isa = PBXGroup;
-			children = (
-				59490AFA1CEF277A00679BE2 /* App Delegate */,
-				59490ACF1CEF274A00679BE2 /* Assets.xcassets */,
-				59490AF81CEF276A00679BE2 /* Models */,
-				59490AF91CEF277100679BE2 /* Views */,
-				59490AF71CEF276600679BE2 /* Controllers */,
-				59490AF61CEF275E00679BE2 /* Supporting Files */,
-			);
-			name = "Meme Maker";
-			path = "Meme Maker Mac";
-			sourceTree = "<group>";
-		};
-		59490ADC1CEF274A00679BE2 /* Meme Maker MacTests */ = {
-			isa = PBXGroup;
-			children = (
-				59490ADD1CEF274A00679BE2 /* Meme_Maker_MacTests.swift */,
-				59490ADF1CEF274A00679BE2 /* Info.plist */,
-			);
-			path = "Meme Maker MacTests";
-			sourceTree = "<group>";
-		};
-		59490AE71CEF274A00679BE2 /* Meme Maker MacUITests */ = {
-			isa = PBXGroup;
-			children = (
-				59490AE81CEF274A00679BE2 /* Meme_Maker_MacUITests.swift */,
-				59490AEA1CEF274A00679BE2 /* Info.plist */,
-			);
-			path = "Meme Maker MacUITests";
-			sourceTree = "<group>";
-		};
-		59490AF61CEF275E00679BE2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				59B4EEAC1D301847000092DA /* Quotes */,
-				59AB9EEB1D2C268C002386B5 /* GRVibrantTitlebarWindow */,
-				59AB9EDF1D2B8059002386B5 /* DragDropImageView */,
-				59FA74D51CF3199D00C39BCF /* Default */,
-				59490AD41CEF274A00679BE2 /* Info.plist */,
-				59C27CA61D0C1673005BCF2B /* Meme Maker Mac.entitlements */,
-				59AB9EE21D2BA570002386B5 /* Meme Maker Mac-Bridging-Header.h */,
-				59FA74DA1CF31B6300C39BCF /* PrefixHeader.swift */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		59490AF71CEF276600679BE2 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				59490AFD1CEF283100679BE2 /* WindowController.swift */,
-				59490AFB1CEF282300679BE2 /* ViewController.swift */,
-				5973F15B1D22418000080706 /* EditorViewController.swift */,
-				59AB9EE91D2C136E002386B5 /* AttributeEditorViewController.swift */,
-				59D21D161D2D75F600CF0EF9 /* SortViewController.swift */,
-				5935C2391D2CD1B6005E18AE /* SettingsViewController.swift */,
-				59B4EEAA1D3017E9000092DA /* HelpViewController.swift */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		59490AF81CEF276A00679BE2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				59FA74DE1CF31C1200C39BCF /* XMeme */,
-				59D21D181D2D77D400CF0EF9 /* Constants.swift */,
-				5935C23D1D2CEF78005E18AE /* MemeFetcher.swift */,
-				59FA74DC1CF31C0F00C39BCF /* SettingsManager.swift */,
-				59FA74CB1CF3199400C39BCF /* XTextAttributes.swift */,
-				594147641D2EBBD0004A6AF7 /* XUndoManager.swift */,
-				59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		59490AF91CEF277100679BE2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				59490AFF1CEF333900679BE2 /* Cells */,
-				59490AD11CEF274A00679BE2 /* Main.storyboard */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		59490AFA1CEF277A00679BE2 /* App Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				59490AC81CEF274A00679BE2 /* AppDelegate.swift */,
-			);
-			name = "App Delegate";
-			sourceTree = "<group>";
-		};
-		59490AFF1CEF333900679BE2 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				59FA74C51CF318C600C39BCF /* BaseCollectionViewItem.swift */,
-				59490B001CEF335500679BE2 /* GridCollectionViewItem.swift */,
-				59490B011CEF335500679BE2 /* GridCollectionViewItem.xib */,
-				59490B041CEF336200679BE2 /* ListCollectionViewItel.swift */,
-				59490B051CEF336200679BE2 /* ListCollectionViewItel.xib */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		59AB9EDF1D2B8059002386B5 /* DragDropImageView */ = {
-			isa = PBXGroup;
-			children = (
-				59AB9EF81D2C2693002386B5 /* DragDropImageView.h */,
-				59AB9EF91D2C2693002386B5 /* DragDropImageView.m */,
-			);
-			name = DragDropImageView;
-			sourceTree = "<group>";
-		};
-		59AB9EEB1D2C268C002386B5 /* GRVibrantTitlebarWindow */ = {
-			isa = PBXGroup;
-			children = (
-				59AB9EEC1D2C268D002386B5 /* GRSeparatorLineView.h */,
-				59AB9EED1D2C268D002386B5 /* GRSeparatorLineView.m */,
-				59AB9EEE1D2C268D002386B5 /* GRVibrantTitlebarView.h */,
-				59AB9EEF1D2C268D002386B5 /* GRVibrantTitlebarView.m */,
-				59AB9EF01D2C268D002386B5 /* GRVibrantTitlebarWindow.h */,
-				59AB9EF11D2C268D002386B5 /* GRVibrantTitlebarWindow.m */,
-				59AB9EF21D2C268D002386B5 /* GRVibrantTitleView.h */,
-				59AB9EF31D2C268D002386B5 /* GRVibrantTitleView.m */,
-			);
-			name = GRVibrantTitlebarWindow;
-			path = "Supporting Files/GRVibrantTitlebarWindow";
-			sourceTree = "<group>";
-		};
-		59B4EEAC1D301847000092DA /* Quotes */ = {
-			isa = PBXGroup;
-			children = (
-				59B4EEAD1D301847000092DA /* quotes.json */,
-			);
-			name = Quotes;
-			path = "Supporting Files/Quotes";
-			sourceTree = "<group>";
-		};
-		59FA74D51CF3199D00C39BCF /* Default */ = {
-			isa = PBXGroup;
-			children = (
-				59FA74D61CF3199D00C39BCF /* defaultMemes.dat */,
-				59FA74D71CF3199D00C39BCF /* defaultMemes.zip */,
-			);
-			name = Default;
-			path = "Supporting Files/Default";
-			sourceTree = "<group>";
-		};
-		59FA74DE1CF31C1200C39BCF /* XMeme */ = {
-			isa = PBXGroup;
-			children = (
-				59FA74C91CF3199400C39BCF /* XMeme.swift */,
-				59FA74CA1CF3199400C39BCF /* XMeme+CoreDataProperties.swift */,
-			);
-			name = XMeme;
-			sourceTree = "<group>";
-		};
-		673CC7EEAAC6AA940AD2734F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D6090243400D3353415215F0 /* Pods-Meme Maker Mac.debug.xcconfig */,
-				CB0C884309A54275FAF8B5FC /* Pods-Meme Maker Mac.release.xcconfig */,
-				EAB9B67E654DBBF35D454C19 /* Pods-Meme Maker MacTests.debug.xcconfig */,
-				D49FEC4224E10DEB3074F3E0 /* Pods-Meme Maker MacTests.release.xcconfig */,
-				65B4C17DEC0499B8BF877D4D /* Pods-Meme Maker MacUITests.debug.xcconfig */,
-				1D1435C421C6C02100AF37B4 /* Pods-Meme Maker MacUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		59490AC41CEF274A00679BE2 /* Meme Maker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker" */;
-			buildPhases = (
-				C620AFDF142C7C2BE8EAFE50 /* [CP] Check Pods Manifest.lock */,
-				59490AC11CEF274A00679BE2 /* Sources */,
-				59490AC21CEF274A00679BE2 /* Frameworks */,
-				59490AC31CEF274A00679BE2 /* Resources */,
-				9DCB70142877604E2F960AB5 /* [CP] Embed Pods Frameworks */,
-				EA8DC575B28C73447B87141A /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Meme Maker";
-			productName = "Meme Maker Mac";
-			productReference = 59490AC51CEF274A00679BE2 /* Meme Maker.app */;
-			productType = "com.apple.product-type.application";
-		};
-		59490AD81CEF274A00679BE2 /* Meme MakerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */;
-			buildPhases = (
-				44AF10E14C9DBE671BBF1A79 /* [CP] Check Pods Manifest.lock */,
-				59490AD51CEF274A00679BE2 /* Sources */,
-				59490AD61CEF274A00679BE2 /* Frameworks */,
-				59490AD71CEF274A00679BE2 /* Resources */,
-				07B457AF38A1961BE71F5139 /* [CP] Embed Pods Frameworks */,
-				53DAA29D9D2384B059D636C3 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				59490ADB1CEF274A00679BE2 /* PBXTargetDependency */,
-			);
-			name = "Meme MakerTests";
-			productName = "Meme Maker MacTests";
-			productReference = 59490AD91CEF274A00679BE2 /* Meme Maker.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		59490AE31CEF274A00679BE2 /* Meme MakerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerUITests" */;
-			buildPhases = (
-				F89B37642600B8BEF6A5FDA6 /* [CP] Check Pods Manifest.lock */,
-				59490AE01CEF274A00679BE2 /* Sources */,
-				59490AE11CEF274A00679BE2 /* Frameworks */,
-				59490AE21CEF274A00679BE2 /* Resources */,
-				8C2F9F32BEE058BCFAD6CFB4 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				59490AE61CEF274A00679BE2 /* PBXTargetDependency */,
-			);
-			name = "Meme MakerUITests";
-			productName = "Meme Maker MacUITests";
-			productReference = 59490AE41CEF274A00679BE2 /* Meme Maker.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		59490ABD1CEF274A00679BE2 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = avikantz;
-				TargetAttributes = {
-					59490AC41CEF274A00679BE2 = {
-						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = HN3SCP8A52;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.Mac = {
-								enabled = 0;
-							};
-							com.apple.Sandbox = {
-								enabled = 1;
-							};
-						};
-					};
-					59490AD81CEF274A00679BE2 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 59490AC41CEF274A00679BE2;
-					};
-					59490AE31CEF274A00679BE2 = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 59490AC41CEF274A00679BE2;
-					};
-				};
-			};
-			buildConfigurationList = 59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 59490ABC1CEF274A00679BE2;
-			productRefGroup = 59490AC61CEF274A00679BE2 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				59490AC41CEF274A00679BE2 /* Meme Maker */,
-				59490AD81CEF274A00679BE2 /* Meme MakerTests */,
-				59490AE31CEF274A00679BE2 /* Meme MakerUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		59490AC31CEF274A00679BE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59490B071CEF336200679BE2 /* ListCollectionViewItel.xib in Resources */,
-				59490AD01CEF274A00679BE2 /* Assets.xcassets in Resources */,
-				59490AD31CEF274A00679BE2 /* Main.storyboard in Resources */,
-				59B4EEAE1D301847000092DA /* quotes.json in Resources */,
-				59490B031CEF335500679BE2 /* GridCollectionViewItem.xib in Resources */,
-				59FA74D81CF3199D00C39BCF /* defaultMemes.dat in Resources */,
-				59FA74D91CF3199D00C39BCF /* defaultMemes.zip in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AD71CEF274A00679BE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AE21CEF274A00679BE2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		07B457AF38A1961BE71F5139 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		44AF10E14C9DBE671BBF1A79 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		53DAA29D9D2384B059D636C3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8C2F9F32BEE058BCFAD6CFB4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker MacUITests/Pods-Meme Maker MacUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DCB70142877604E2F960AB5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C620AFDF142C7C2BE8EAFE50 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EA8DC575B28C73447B87141A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F89B37642600B8BEF6A5FDA6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		59490AC11CEF274A00679BE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59AB9EF41D2C268D002386B5 /* GRSeparatorLineView.m in Sources */,
-				59FA74D11CF3199400C39BCF /* XMeme+CoreDataProperties.swift in Sources */,
-				59FA74DB1CF31B6300C39BCF /* PrefixHeader.swift in Sources */,
-				5935C23B1D2CD1B6005E18AE /* SettingsViewController.swift in Sources */,
-				59AB9EF51D2C268D002386B5 /* GRVibrantTitlebarView.m in Sources */,
-				59490AFC1CEF282300679BE2 /* ViewController.swift in Sources */,
-				594147651D2EBBD0004A6AF7 /* XUndoManager.swift in Sources */,
-				59D21D191D2D77D400CF0EF9 /* Constants.swift in Sources */,
-				59D21D171D2D75F600CF0EF9 /* SortViewController.swift in Sources */,
-				59490B021CEF335500679BE2 /* GridCollectionViewItem.swift in Sources */,
-				59490AFE1CEF283100679BE2 /* WindowController.swift in Sources */,
-				59490ACE1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld in Sources */,
-				59490B061CEF336200679BE2 /* ListCollectionViewItel.swift in Sources */,
-				5935C23E1D2CEF78005E18AE /* MemeFetcher.swift in Sources */,
-				59B4EEAB1D3017E9000092DA /* HelpViewController.swift in Sources */,
-				5973F15C1D22418000080706 /* EditorViewController.swift in Sources */,
-				59FA74D01CF3199400C39BCF /* XMeme.swift in Sources */,
-				59FA74DD1CF31C0F00C39BCF /* SettingsManager.swift in Sources */,
-				59AB9EF61D2C268D002386B5 /* GRVibrantTitlebarWindow.m in Sources */,
-				59FA74D21CF3199400C39BCF /* XTextAttributes.swift in Sources */,
-				59FA74C61CF318C600C39BCF /* BaseCollectionViewItem.swift in Sources */,
-				59AB9EF71D2C268D002386B5 /* GRVibrantTitleView.m in Sources */,
-				59490AC91CEF274A00679BE2 /* AppDelegate.swift in Sources */,
-				59AB9EEA1D2C136E002386B5 /* AttributeEditorViewController.swift in Sources */,
-				59AB9EFA1D2C2693002386B5 /* DragDropImageView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AD51CEF274A00679BE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59490ADE1CEF274A00679BE2 /* Meme_Maker_MacTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		59490AE01CEF274A00679BE2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				59490AE91CEF274A00679BE2 /* Meme_Maker_MacUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		59490ADB1CEF274A00679BE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59490AC41CEF274A00679BE2 /* Meme Maker */;
-			targetProxy = 59490ADA1CEF274A00679BE2 /* PBXContainerItemProxy */;
-		};
-		59490AE61CEF274A00679BE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 59490AC41CEF274A00679BE2 /* Meme Maker */;
-			targetProxy = 59490AE51CEF274A00679BE2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		59490AD11CEF274A00679BE2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59490AD21CEF274A00679BE2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		59490AEB1CEF274A00679BE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		59490AEC1CEF274A00679BE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		59490AEE1CEF274A00679BE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D6090243400D3353415215F0 /* Pods-Meme Maker Mac.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
-				PRODUCT_NAME = "Meme Maker";
-				PROVISIONING_PROFILE = "3c1aa3da-9b5d-4bd0-ad0d-f08149664282";
-				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		59490AEF1CEF274A00679BE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB0C884309A54275FAF8B5FC /* Pods-Meme Maker Mac.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Meme Maker Mac/Meme Maker Mac.entitlements";
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				INFOPLIST_FILE = "Meme Maker Mac/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-Mac";
-				PRODUCT_NAME = "Meme Maker";
-				PROVISIONING_PROFILE = "3c1aa3da-9b5d-4bd0-ad0d-f08149664282";
-				SWIFT_OBJC_BRIDGING_HEADER = "Meme Maker Mac/Meme Maker Mac-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		59490AF11CEF274A00679BE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EAB9B67E654DBBF35D454C19 /* Pods-Meme Maker MacTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Meme Maker MacTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacTests";
-				PRODUCT_NAME = "Meme Maker";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker";
-			};
-			name = Debug;
-		};
-		59490AF21CEF274A00679BE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D49FEC4224E10DEB3074F3E0 /* Pods-Meme Maker MacTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Meme Maker MacTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacTests";
-				PRODUCT_NAME = "Meme Maker";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker";
-			};
-			name = Release;
-		};
-		59490AF41CEF274A00679BE2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65B4C17DEC0499B8BF877D4D /* Pods-Meme Maker MacUITests.debug.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Meme Maker MacUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacUITests";
-				PRODUCT_NAME = "Meme Maker";
-				TEST_TARGET_NAME = "Meme Maker Mac";
-			};
-			name = Debug;
-		};
-		59490AF51CEF274A00679BE2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D1435C421C6C02100AF37B4 /* Pods-Meme Maker MacUITests.release.xcconfig */;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "Meme Maker MacUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avikantz.Meme-Maker-MacUITests";
-				PRODUCT_NAME = "Meme Maker";
-				TEST_TARGET_NAME = "Meme Maker Mac";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		59490AC01CEF274A00679BE2 /* Build configuration list for PBXProject "Meme Maker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59490AEB1CEF274A00679BE2 /* Debug */,
-				59490AEC1CEF274A00679BE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59490AED1CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme Maker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59490AEE1CEF274A00679BE2 /* Debug */,
-				59490AEF1CEF274A00679BE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59490AF01CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59490AF11CEF274A00679BE2 /* Debug */,
-				59490AF21CEF274A00679BE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		59490AF31CEF274A00679BE2 /* Build configuration list for PBXNativeTarget "Meme MakerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				59490AF41CEF274A00679BE2 /* Debug */,
-				59490AF51CEF274A00679BE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		59490ACC1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */,
-			);
-			currentVersion = 59490ACD1CEF274A00679BE2 /* Meme_Maker_Mac.xcdatamodel */;
-			path = Meme_Maker_Mac.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 59490ABD1CEF274A00679BE2 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>07B457AF38A1961BE71F5139</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Meme MakerTests/Pods-Meme MakerTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>0FA8212A77C6872A4E1B2BD1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A43AF55806386D9BC296E70A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>18B25934B35B7276581B77D2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker/Pods-Meme Maker.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1D1435C421C6C02100AF37B4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker MacUITests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker MacUITests/Pods-Meme Maker MacUITests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>24798E4CD9C894BAE34062E6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>417C7AAC2C5D6D9B254C58C2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2BD0DA5FA3406E915967ACC2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_Maker_MacTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>31D07C8481BA2F6C7CCA080B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>417C7AAC2C5D6D9B254C58C2</string>
+				<string>2BD0DA5FA3406E915967ACC2</string>
+				<string>87ACDF416E43163D763FE822</string>
+				<string>74697A5780D6A37B06DC4F61</string>
+				<string>E3509DDACF1ABD54BCFF1E2A</string>
+				<string>A43AF55806386D9BC296E70A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>31D0F4EC0814FD36F3547CCD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>74697A5780D6A37B06DC4F61</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>355DAD2DF834F7D6EF0A7FA4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>87ACDF416E43163D763FE822</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>417C7AAC2C5D6D9B254C58C2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_Maker_Mac.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>44AF10E14C9DBE671BBF1A79</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>47D5340F03B30CB9CD1D7280</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker/Pods-Meme Maker.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>50F06C18395B11A0DBFB525C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme MakerTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme MakerTests/Pods-Meme MakerTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>53DAA29D9D2384B059D636C3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Meme MakerTests/Pods-Meme MakerTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>5935C2391D2CD1B6005E18AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>SettingsViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/SettingsViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5935C23B1D2CD1B6005E18AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5935C2391D2CD1B6005E18AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5935C23D1D2CEF78005E18AE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>MemeFetcher.swift</string>
+			<key>path</key>
+			<string>Models/MemeFetcher.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5935C23E1D2CEF78005E18AE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5935C23D1D2CEF78005E18AE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>594147641D2EBBD0004A6AF7</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>XUndoManager.swift</string>
+			<key>path</key>
+			<string>Models/XUndoManager.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>594147651D2EBBD0004A6AF7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>594147641D2EBBD0004A6AF7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490ABC1CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AC71CEF274A00679BE2</string>
+				<string>59490ADC1CEF274A00679BE2</string>
+				<string>59490AE71CEF274A00679BE2</string>
+				<string>59490AC61CEF274A00679BE2</string>
+				<string>673CC7EEAAC6AA940AD2734F</string>
+				<string>31D07C8481BA2F6C7CCA080B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490ABD1CEF274A00679BE2</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0730</string>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>avikantz</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>59490AC41CEF274A00679BE2</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>DevelopmentTeam</key>
+						<string>HN3SCP8A52</string>
+						<key>LastSwiftMigration</key>
+						<string>0810</string>
+						<key>SystemCapabilities</key>
+						<dict>
+							<key>com.apple.ApplicationGroups.Mac</key>
+							<dict>
+								<key>enabled</key>
+								<string>0</string>
+							</dict>
+							<key>com.apple.Sandbox</key>
+							<dict>
+								<key>enabled</key>
+								<string>1</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>59490AD81CEF274A00679BE2</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>LastSwiftMigration</key>
+						<string>0810</string>
+						<key>TestTargetID</key>
+						<string>59490AC41CEF274A00679BE2</string>
+					</dict>
+					<key>59490AE31CEF274A00679BE2</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3</string>
+						<key>LastSwiftMigration</key>
+						<string>0810</string>
+						<key>TestTargetID</key>
+						<string>59490AC41CEF274A00679BE2</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>59490AC01CEF274A00679BE2</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>59490ABC1CEF274A00679BE2</string>
+			<key>productRefGroup</key>
+			<string>59490AC61CEF274A00679BE2</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>59490AC41CEF274A00679BE2</string>
+				<string>59490AD81CEF274A00679BE2</string>
+				<string>59490AE31CEF274A00679BE2</string>
+			</array>
+		</dict>
+		<key>59490AC01CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>59490AEB1CEF274A00679BE2</string>
+				<string>59490AEC1CEF274A00679BE2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>59490AC11CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>59AB9EF41D2C268D002386B5</string>
+				<string>59FA74D11CF3199400C39BCF</string>
+				<string>59FA74DB1CF31B6300C39BCF</string>
+				<string>5935C23B1D2CD1B6005E18AE</string>
+				<string>59AB9EF51D2C268D002386B5</string>
+				<string>59490AFC1CEF282300679BE2</string>
+				<string>594147651D2EBBD0004A6AF7</string>
+				<string>59D21D191D2D77D400CF0EF9</string>
+				<string>59D21D171D2D75F600CF0EF9</string>
+				<string>59490B021CEF335500679BE2</string>
+				<string>59490AFE1CEF283100679BE2</string>
+				<string>59490ACE1CEF274A00679BE2</string>
+				<string>59490B061CEF336200679BE2</string>
+				<string>5935C23E1D2CEF78005E18AE</string>
+				<string>59B4EEAB1D3017E9000092DA</string>
+				<string>5973F15C1D22418000080706</string>
+				<string>59FA74D01CF3199400C39BCF</string>
+				<string>59FA74DD1CF31C0F00C39BCF</string>
+				<string>59AB9EF61D2C268D002386B5</string>
+				<string>59FA74D21CF3199400C39BCF</string>
+				<string>59FA74C61CF318C600C39BCF</string>
+				<string>59AB9EF71D2C268D002386B5</string>
+				<string>59490AC91CEF274A00679BE2</string>
+				<string>59AB9EEA1D2C136E002386B5</string>
+				<string>59AB9EFA1D2C2693002386B5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AC21CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>24798E4CD9C894BAE34062E6</string>
+				<string>31D0F4EC0814FD36F3547CCD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AC31CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>59490B071CEF336200679BE2</string>
+				<string>59490AD01CEF274A00679BE2</string>
+				<string>59490AD31CEF274A00679BE2</string>
+				<string>59B4EEAE1D301847000092DA</string>
+				<string>59490B031CEF335500679BE2</string>
+				<string>59FA74D81CF3199D00C39BCF</string>
+				<string>59FA74D91CF3199D00C39BCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AC41CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>59490AED1CEF274A00679BE2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>C620AFDF142C7C2BE8EAFE50</string>
+				<string>59490AC11CEF274A00679BE2</string>
+				<string>59490AC21CEF274A00679BE2</string>
+				<string>59490AC31CEF274A00679BE2</string>
+				<string>9DCB70142877604E2F960AB5</string>
+				<string>EA8DC575B28C73447B87141A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Meme Maker</string>
+			<key>productName</key>
+			<string>Meme Maker Mac</string>
+			<key>productReference</key>
+			<string>59490AC51CEF274A00679BE2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>59490AC51CEF274A00679BE2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Meme Maker.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>59490AC61CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AC51CEF274A00679BE2</string>
+				<string>59490AD91CEF274A00679BE2</string>
+				<string>59490AE41CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AC71CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AFA1CEF277A00679BE2</string>
+				<string>59490ACF1CEF274A00679BE2</string>
+				<string>59490AF81CEF276A00679BE2</string>
+				<string>59490AF91CEF277100679BE2</string>
+				<string>59490AF71CEF276600679BE2</string>
+				<string>59490AF61CEF275E00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Meme Maker</string>
+			<key>path</key>
+			<string>Meme Maker Mac</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AC81CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AC91CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490AC81CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490ACC1CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490ACD1CEF274A00679BE2</string>
+			</array>
+			<key>currentVersion</key>
+			<string>59490ACD1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>Meme_Maker_Mac.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>59490ACD1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>Meme_Maker_Mac.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490ACE1CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490ACC1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490ACF1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AD01CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490ACF1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490AD11CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AD21CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AD21CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AD31CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490AD11CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490AD41CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AD51CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>59490ADE1CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AD61CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>5ABE70C20B1348F5F7761AC9</string>
+				<string>B2322868D01192BF6072BC49</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AD71CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AD81CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>59490AF01CEF274A00679BE2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>44AF10E14C9DBE671BBF1A79</string>
+				<string>59490AD51CEF274A00679BE2</string>
+				<string>59490AD61CEF274A00679BE2</string>
+				<string>59490AD71CEF274A00679BE2</string>
+				<string>07B457AF38A1961BE71F5139</string>
+				<string>53DAA29D9D2384B059D636C3</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>59490ADB1CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Meme MakerTests</string>
+			<key>productName</key>
+			<string>Meme Maker MacTests</string>
+			<key>productReference</key>
+			<string>59490AD91CEF274A00679BE2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>59490AD91CEF274A00679BE2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Meme Maker.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>59490ADA1CEF274A00679BE2</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>59490ABD1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>59490AC41CEF274A00679BE2</string>
+			<key>remoteInfo</key>
+			<string>Meme Maker Mac</string>
+		</dict>
+		<key>59490ADB1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>59490AC41CEF274A00679BE2</string>
+			<key>targetProxy</key>
+			<string>59490ADA1CEF274A00679BE2</string>
+		</dict>
+		<key>59490ADC1CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490ADD1CEF274A00679BE2</string>
+				<string>59490ADF1CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Meme Maker MacTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490ADD1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Meme_Maker_MacTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490ADE1CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490ADD1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490ADF1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AE01CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>59490AE91CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AE11CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>355DAD2DF834F7D6EF0A7FA4</string>
+				<string>0FA8212A77C6872A4E1B2BD1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AE21CEF274A00679BE2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>59490AE31CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>59490AF31CEF274A00679BE2</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F89B37642600B8BEF6A5FDA6</string>
+				<string>59490AE01CEF274A00679BE2</string>
+				<string>59490AE11CEF274A00679BE2</string>
+				<string>59490AE21CEF274A00679BE2</string>
+				<string>8C2F9F32BEE058BCFAD6CFB4</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>59490AE61CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Meme MakerUITests</string>
+			<key>productName</key>
+			<string>Meme Maker MacUITests</string>
+			<key>productReference</key>
+			<string>59490AE41CEF274A00679BE2</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>59490AE41CEF274A00679BE2</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Meme Maker.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>59490AE51CEF274A00679BE2</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>59490ABD1CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>59490AC41CEF274A00679BE2</string>
+			<key>remoteInfo</key>
+			<string>Meme Maker Mac</string>
+		</dict>
+		<key>59490AE61CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>59490AC41CEF274A00679BE2</string>
+			<key>targetProxy</key>
+			<string>59490AE51CEF274A00679BE2</string>
+		</dict>
+		<key>59490AE71CEF274A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AE81CEF274A00679BE2</string>
+				<string>59490AEA1CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Meme Maker MacUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AE81CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Meme_Maker_MacUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AE91CEF274A00679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490AE81CEF274A00679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490AEA1CEF274A00679BE2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AEB1CEF274A00679BE2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>-</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>59490AEC1CEF274A00679BE2</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>-</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>macosx</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>59490AED1CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>59490AEE1CEF274A00679BE2</string>
+				<string>59490AEF1CEF274A00679BE2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>59490AEE1CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>47D5340F03B30CB9CD1D7280</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS</key>
+				<string>Meme Maker Mac/Meme Maker Mac.entitlements</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>Mac Developer</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker Mac/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-Mac</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string>3c1aa3da-9b5d-4bd0-ad0d-f08149664282</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Meme Maker Mac/Meme Maker Mac-Bridging-Header.h</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>59490AEF1CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>18B25934B35B7276581B77D2</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CODE_SIGN_ENTITLEMENTS</key>
+				<string>Meme Maker Mac/Meme Maker Mac.entitlements</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>Mac Developer</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker Mac/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>10.11</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-Mac</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string>3c1aa3da-9b5d-4bd0-ad0d-f08149664282</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>Meme Maker Mac/Meme Maker Mac-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>59490AF01CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>59490AF11CEF274A00679BE2</string>
+				<string>59490AF21CEF274A00679BE2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>59490AF11CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>50F06C18395B11A0DBFB525C</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker MacTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-MacTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>59490AF21CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E187151BA85533402BA65D27</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker MacTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-MacTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/Meme Maker.app/Contents/MacOS/Meme Maker</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>59490AF31CEF274A00679BE2</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>59490AF41CEF274A00679BE2</string>
+				<string>59490AF51CEF274A00679BE2</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>59490AF41CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BA089198BB1D4B2245ACDE70</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker MacUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-MacUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Meme Maker Mac</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>59490AF51CEF274A00679BE2</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>91CC70FC4E674B8E853CE337</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>COMBINE_HIDPI_IMAGES</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Meme Maker MacUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.avikantz.Meme-Maker-MacUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>Meme Maker</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Meme Maker Mac</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>59490AF61CEF275E00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59B4EEAC1D301847000092DA</string>
+				<string>59AB9EEB1D2C268C002386B5</string>
+				<string>59AB9EDF1D2B8059002386B5</string>
+				<string>59FA74D51CF3199D00C39BCF</string>
+				<string>59490AD41CEF274A00679BE2</string>
+				<string>59C27CA61D0C1673005BCF2B</string>
+				<string>59AB9EE21D2BA570002386B5</string>
+				<string>59FA74DA1CF31B6300C39BCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AF71CEF276600679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AFD1CEF283100679BE2</string>
+				<string>59490AFB1CEF282300679BE2</string>
+				<string>5973F15B1D22418000080706</string>
+				<string>59AB9EE91D2C136E002386B5</string>
+				<string>59D21D161D2D75F600CF0EF9</string>
+				<string>5935C2391D2CD1B6005E18AE</string>
+				<string>59B4EEAA1D3017E9000092DA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AF81CEF276A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59FA74DE1CF31C1200C39BCF</string>
+				<string>59D21D181D2D77D400CF0EF9</string>
+				<string>5935C23D1D2CEF78005E18AE</string>
+				<string>59FA74DC1CF31C0F00C39BCF</string>
+				<string>59FA74CB1CF3199400C39BCF</string>
+				<string>594147641D2EBBD0004A6AF7</string>
+				<string>59490ACC1CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AF91CEF277100679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AFF1CEF333900679BE2</string>
+				<string>59490AD11CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AFA1CEF277A00679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59490AC81CEF274A00679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>App Delegate</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AFB1CEF282300679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/ViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AFC1CEF282300679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490AFB1CEF282300679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490AFD1CEF283100679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>WindowController.swift</string>
+			<key>path</key>
+			<string>Controllers/WindowController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490AFE1CEF283100679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490AFD1CEF283100679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490AFF1CEF333900679BE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59FA74C51CF318C600C39BCF</string>
+				<string>59490B001CEF335500679BE2</string>
+				<string>59490B011CEF335500679BE2</string>
+				<string>59490B041CEF336200679BE2</string>
+				<string>59490B051CEF336200679BE2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Cells</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490B001CEF335500679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>GridCollectionViewItem.swift</string>
+			<key>path</key>
+			<string>Views/Cells/GridCollectionViewItem.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490B011CEF335500679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>GridCollectionViewItem.xib</string>
+			<key>path</key>
+			<string>Views/Cells/GridCollectionViewItem.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490B021CEF335500679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490B001CEF335500679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490B031CEF335500679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490B011CEF335500679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490B041CEF336200679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ListCollectionViewItel.swift</string>
+			<key>path</key>
+			<string>Views/Cells/ListCollectionViewItel.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490B051CEF336200679BE2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>ListCollectionViewItel.xib</string>
+			<key>path</key>
+			<string>Views/Cells/ListCollectionViewItel.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59490B061CEF336200679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490B041CEF336200679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59490B071CEF336200679BE2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59490B051CEF336200679BE2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5973F15B1D22418000080706</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>EditorViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/EditorViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5973F15C1D22418000080706</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5973F15B1D22418000080706</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EDF1D2B8059002386B5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59AB9EF81D2C2693002386B5</string>
+				<string>59AB9EF91D2C2693002386B5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>DragDropImageView</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EE21D2BA570002386B5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Meme Maker Mac-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EE91D2C136E002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>AttributeEditorViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/AttributeEditorViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EEA1D2C136E002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EE91D2C136E002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EEB1D2C268C002386B5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59AB9EEC1D2C268D002386B5</string>
+				<string>59AB9EED1D2C268D002386B5</string>
+				<string>59AB9EEE1D2C268D002386B5</string>
+				<string>59AB9EEF1D2C268D002386B5</string>
+				<string>59AB9EF01D2C268D002386B5</string>
+				<string>59AB9EF11D2C268D002386B5</string>
+				<string>59AB9EF21D2C268D002386B5</string>
+				<string>59AB9EF31D2C268D002386B5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>GRVibrantTitlebarWindow</string>
+			<key>path</key>
+			<string>Supporting Files/GRVibrantTitlebarWindow</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EEC1D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GRSeparatorLineView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EED1D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GRSeparatorLineView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EEE1D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GRVibrantTitlebarView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EEF1D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GRVibrantTitlebarView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF01D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GRVibrantTitlebarWindow.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF11D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GRVibrantTitlebarWindow.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF21D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>GRVibrantTitleView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF31D2C268D002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>GRVibrantTitleView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF41D2C268D002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EED1D2C268D002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EF51D2C268D002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EEF1D2C268D002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EF61D2C268D002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EF11D2C268D002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EF71D2C268D002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EF31D2C268D002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59AB9EF81D2C2693002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>DragDropImageView.h</string>
+			<key>path</key>
+			<string>Supporting Files/DragDropImageView/DragDropImageView.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EF91D2C2693002386B5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>DragDropImageView.m</string>
+			<key>path</key>
+			<string>Supporting Files/DragDropImageView/DragDropImageView.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59AB9EFA1D2C2693002386B5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59AB9EF91D2C2693002386B5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59B4EEAA1D3017E9000092DA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>HelpViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/HelpViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59B4EEAB1D3017E9000092DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59B4EEAA1D3017E9000092DA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59B4EEAC1D301847000092DA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59B4EEAD1D301847000092DA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Quotes</string>
+			<key>path</key>
+			<string>Supporting Files/Quotes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59B4EEAD1D301847000092DA</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.json</string>
+			<key>path</key>
+			<string>quotes.json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59B4EEAE1D301847000092DA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59B4EEAD1D301847000092DA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59C27CA61D0C1673005BCF2B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xml</string>
+			<key>path</key>
+			<string>Meme Maker Mac.entitlements</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59D21D161D2D75F600CF0EF9</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>SortViewController.swift</string>
+			<key>path</key>
+			<string>Controllers/SortViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59D21D171D2D75F600CF0EF9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59D21D161D2D75F600CF0EF9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59D21D181D2D77D400CF0EF9</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Constants.swift</string>
+			<key>path</key>
+			<string>Models/Constants.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59D21D191D2D77D400CF0EF9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59D21D181D2D77D400CF0EF9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74C51CF318C600C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>BaseCollectionViewItem.swift</string>
+			<key>path</key>
+			<string>Views/Cells/BaseCollectionViewItem.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74C61CF318C600C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74C51CF318C600C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74C91CF3199400C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>XMeme.swift</string>
+			<key>path</key>
+			<string>Models/XMeme.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74CA1CF3199400C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>XMeme+CoreDataProperties.swift</string>
+			<key>path</key>
+			<string>Models/XMeme+CoreDataProperties.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74CB1CF3199400C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>XTextAttributes.swift</string>
+			<key>path</key>
+			<string>Models/XTextAttributes.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74D01CF3199400C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74C91CF3199400C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74D11CF3199400C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74CA1CF3199400C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74D21CF3199400C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74CB1CF3199400C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74D51CF3199D00C39BCF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59FA74D61CF3199D00C39BCF</string>
+				<string>59FA74D71CF3199D00C39BCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Default</string>
+			<key>path</key>
+			<string>Supporting Files/Default</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74D61CF3199D00C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>defaultMemes.dat</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74D71CF3199D00C39BCF</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>archive.zip</string>
+			<key>path</key>
+			<string>defaultMemes.zip</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74D81CF3199D00C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74D61CF3199D00C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74D91CF3199D00C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74D71CF3199D00C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74DA1CF31B6300C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>PrefixHeader.swift</string>
+			<key>path</key>
+			<string>Supporting Files/PrefixHeader.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74DB1CF31B6300C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74DA1CF31B6300C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74DC1CF31C0F00C39BCF</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>SettingsManager.swift</string>
+			<key>path</key>
+			<string>Models/SettingsManager.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59FA74DD1CF31C0F00C39BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>59FA74DC1CF31C0F00C39BCF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>59FA74DE1CF31C1200C39BCF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>59FA74C91CF3199400C39BCF</string>
+				<string>59FA74CA1CF3199400C39BCF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>XMeme</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5ABE70C20B1348F5F7761AC9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BD0DA5FA3406E915967ACC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>65B4C17DEC0499B8BF877D4D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker MacUITests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker MacUITests/Pods-Meme Maker MacUITests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>673CC7EEAAC6AA940AD2734F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D6090243400D3353415215F0</string>
+				<string>CB0C884309A54275FAF8B5FC</string>
+				<string>EAB9B67E654DBBF35D454C19</string>
+				<string>D49FEC4224E10DEB3074F3E0</string>
+				<string>65B4C17DEC0499B8BF877D4D</string>
+				<string>1D1435C421C6C02100AF37B4</string>
+				<string>47D5340F03B30CB9CD1D7280</string>
+				<string>18B25934B35B7276581B77D2</string>
+				<string>50F06C18395B11A0DBFB525C</string>
+				<string>E187151BA85533402BA65D27</string>
+				<string>BA089198BB1D4B2245ACDE70</string>
+				<string>91CC70FC4E674B8E853CE337</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74697A5780D6A37B06DC4F61</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_Maker.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>87ACDF416E43163D763FE822</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_Maker_MacUITests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8C2F9F32BEE058BCFAD6CFB4</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Meme MakerUITests/Pods-Meme MakerUITests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>91CC70FC4E674B8E853CE337</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme MakerUITests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme MakerUITests/Pods-Meme MakerUITests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9DCB70142877604E2F960AB5</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker/Pods-Meme Maker-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>A43AF55806386D9BC296E70A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_MakerUITests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>B2322868D01192BF6072BC49</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E3509DDACF1ABD54BCFF1E2A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA089198BB1D4B2245ACDE70</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme MakerUITests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme MakerUITests/Pods-Meme MakerUITests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C620AFDF142C7C2BE8EAFE50</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>CB0C884309A54275FAF8B5FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker Mac.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D49FEC4224E10DEB3074F3E0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker MacTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D6090243400D3353415215F0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker Mac.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker Mac/Pods-Meme Maker Mac.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E187151BA85533402BA65D27</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme MakerTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme MakerTests/Pods-Meme MakerTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E3509DDACF1ABD54BCFF1E2A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Meme_MakerTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>EA8DC575B28C73447B87141A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-Meme Maker/Pods-Meme Maker-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>EAB9B67E654DBBF35D454C19</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Meme Maker MacTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Meme Maker MacTests/Pods-Meme Maker MacTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F89B37642600B8BEF6A5FDA6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>59490ABD1CEF274A00679BE2</string>
+</dict>
+</plist>

@@ -10,76 +10,76 @@ import Foundation
 
 let API_BASE_URL: String = "http://alpha-meme-maker.herokuapp.com"
 
-func apiMemesPaging(page: Int) -> NSURL {
-	return NSURL(string: "\(API_BASE_URL)/\(page)/")!
+func apiMemesPaging(_ page: Int) -> URL {
+	return URL(string: "\(API_BASE_URL)/\(page)/")!
 }
 
-func apiParticularMeme(memeID: Int) -> NSURL {
-	return NSURL(string: "\(API_BASE_URL)/memes/\(memeID)/")!
+func apiParticularMeme(_ memeID: Int) -> URL {
+	return URL(string: "\(API_BASE_URL)/memes/\(memeID)/")!
 }
 
-func apiSubmissionsPaging(page: Int) -> NSURL {
-	return NSURL(string: "\(API_BASE_URL)/submissions/\(page)/")!
+func apiSubmissionsPaging(_ page: Int) -> URL {
+	return URL(string: "\(API_BASE_URL)/submissions/\(page)/")!
 }
 
-func apiSubmissionsForMeme(memeID: Int) -> NSURL {
-	return NSURL(string: "\(API_BASE_URL)/memes/\(memeID)/submissions/")!
+func apiSubmissionsForMeme(_ memeID: Int) -> URL {
+	return URL(string: "\(API_BASE_URL)/memes/\(memeID)/submissions/")!
 }
 
 func getDocumentsDirectory() -> String {
-	let paths = NSSearchPathForDirectoriesInDomains(.ApplicationSupportDirectory, .UserDomainMask, true)
+	let paths = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
 	let documentsDirectory = paths[0]
 	return documentsDirectory
 }
 
-func imagesPathForFileName(name: String) -> String {
-	let directoryPath = getDocumentsDirectory().stringByAppendingString("/images/")
-	let manager = NSFileManager.defaultManager()
-	if (!manager.fileExistsAtPath(directoryPath)) {
+func imagesPathForFileName(_ name: String) -> String {
+	let directoryPath = getDocumentsDirectory() + "/images/"
+	let manager = FileManager.default
+	if (!manager.fileExists(atPath: directoryPath)) {
 		do {
-			try manager.createDirectoryAtPath(directoryPath, withIntermediateDirectories: true, attributes: nil)
+			try manager.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
 		} catch _ { }
 	}
-	return directoryPath.stringByAppendingString("\(name).jpg")
+	return directoryPath + "\(name).jpg"
 }
 
 func getImagesFolder() -> String {
-	let directoryPath = getDocumentsDirectory().stringByAppendingString("/images/")
-	let manager = NSFileManager.defaultManager()
-	if (!manager.fileExistsAtPath(directoryPath)) {
+	let directoryPath = getDocumentsDirectory() + "/images/"
+	let manager = FileManager.default
+	if (!manager.fileExists(atPath: directoryPath)) {
 		do {
-			try manager.createDirectoryAtPath(directoryPath, withIntermediateDirectories: true, attributes: nil)
+			try manager.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
 		} catch _ { }
 	}
 	return directoryPath
 }
 
-func userImagesPathForFileName(name: String) -> String {
-	let directoryPath = getDocumentsDirectory().stringByAppendingString("/userImages/")
-	let manager = NSFileManager.defaultManager()
-	if (!manager.fileExistsAtPath(directoryPath)) {
+func userImagesPathForFileName(_ name: String) -> String {
+	let directoryPath = getDocumentsDirectory() + "/userImages/"
+	let manager = FileManager.default
+	if (!manager.fileExists(atPath: directoryPath)) {
 		do {
-			try manager.createDirectoryAtPath(directoryPath, withIntermediateDirectories: true, attributes: nil)
+			try manager.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
 		} catch _ { }
 	}
-	return directoryPath.stringByAppendingString("\(name).jpg")
+	return directoryPath + "\(name).jpg"
 }
 
-func documentsPathForFileName(name: String) -> String {
-	let directoryPath = getDocumentsDirectory().stringByAppendingString("/resources/")
-	let manager = NSFileManager.defaultManager()
-	if (!manager.fileExistsAtPath(directoryPath)) {
+func documentsPathForFileName(_ name: String) -> String {
+	let directoryPath = getDocumentsDirectory() + "/resources/"
+	let manager = FileManager.default
+	if (!manager.fileExists(atPath: directoryPath)) {
 		do {
-			try manager.createDirectoryAtPath(directoryPath, withIntermediateDirectories: true, attributes: nil)
+			try manager.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
 		} catch _ { }
 	}
-	return directoryPath.stringByAppendingString("\(name).dat")
+	return directoryPath + "\(name).dat"
 }
 
-func saveLastImage(image: NSImage) -> Void {
-	let bitmapImageRep = NSBitmapImageRep(data: image.TIFFRepresentation!)
-	if let data = bitmapImageRep?.representationUsingType(.NSJPEGFileType, properties: [NSImageCompressionFactor: NSNumber.init(float: 0.7)]) {
-		data.writeToFile(userImagesPathForFileName("lastImage"), atomically: true)
+func saveLastImage(_ image: NSImage) -> Void {
+	let bitmapImageRep = NSBitmapImageRep(data: image.tiffRepresentation!)
+	if let data = bitmapImageRep?.representation(using: .JPEG, properties: [NSImageCompressionFactor: NSNumber.init(value: 0.7 as Float)]) {
+		try? data.write(to: URL(fileURLWithPath: userImagesPathForFileName("lastImage")), options: [.atomic])
 	}
 }
 

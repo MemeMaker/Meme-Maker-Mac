@@ -1,6 +1,0 @@
-framework module Pods_Meme_Maker_Mac {
-  umbrella header "Pods-Meme Maker Mac-umbrella.h"
-
-  export *
-  module * { export * }
-}

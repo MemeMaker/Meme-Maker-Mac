@@ -18,13 +18,13 @@ class GridCollectionViewItem: BaseCollectionViewItem {
 		view.wantsLayer = true
 		
 		// Customize layer
-		view.layer?.backgroundColor = NSColor.clearColor().CGColor
+		view.layer?.backgroundColor = NSColor.clear.cgColor
 		view.layer?.borderWidth = 0.0
-		view.layer?.borderColor = NSColor.whiteColor().CGColor
+		view.layer?.borderColor = NSColor.white.cgColor
 		
     }
 	
-	override func setHighlight(selected: Bool) {
+	override func setHighlight(_ selected: Bool) {
 		view.layer?.borderWidth = selected ? 3.0 : 0.0
 	}
 	

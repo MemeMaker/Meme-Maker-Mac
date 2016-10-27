@@ -11,55 +11,55 @@ import CoreData
 
 class XMeme: NSManagedObject {
 	
-	var imageURL: NSURL?
+	var imageURL: URL?
 	
-	class func createOrUpdateMemeWithData(data: NSDictionary, context: NSManagedObjectContext) -> XMeme {
+	class func createOrUpdateMemeWithData(_ data: NSDictionary, context: NSManagedObjectContext) -> XMeme {
 		
-		let ID: Int = (data.objectForKey("ID")?.integerValue)!
+		let ID: Int = ((data.object(forKey: "ID") as AnyObject).intValue)!
 		
-		let fetchRequest = NSFetchRequest(entityName: "XMeme")
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "XMeme")
 		fetchRequest.predicate = NSPredicate(format: "memeID == %li", ID)
 		
 		var meme: XMeme!
 		
 		do {
-			let fetchedArray = try context.executeFetchRequest(fetchRequest)
+			let fetchedArray = try context.fetch(fetchRequest)
 			if (fetchedArray.count > 0) {
 //				print("Meme \(ID) already present.")
 				meme = fetchedArray.first as! XMeme
 			}
 			else {
 //				print("Inserting meme \(ID).")
-				meme = NSEntityDescription.insertNewObjectForEntityForName("XMeme", inManagedObjectContext: context) as! XMeme
-				meme.memeID = (data.objectForKey("ID")?.intValue)!
+				meme = NSEntityDescription.insertNewObject(forEntityName: "XMeme", into: context) as! XMeme
+				meme.memeID = data.object(forKey: "ID") as! Int32
 			}
 		}
 		catch _ {
 			
 		}
 
-		meme.name = data.objectForKey("name") as? String
-		meme.topText = data.objectForKey("topText") as? String
-		meme.bottomText = data.objectForKey("bottomText") as? String
-		meme.tags = data.objectForKey("tags") as? String
-		meme.detail = data.objectForKey("detail") as? String
-		meme.image = data.objectForKey("image") as? String
-		meme.imageURL = NSURL(string: meme.image!)
-		meme.thumb = data.objectForKey("thumb") as? String
-		meme.rank = (data.objectForKey("rank")?.intValue)!
+		meme.name = data.object(forKey: "name") as? String
+		meme.topText = data.object(forKey: "topText") as? String
+		meme.bottomText = data.object(forKey: "bottomText") as? String
+		meme.tags = data.object(forKey: "tags") as? String
+		meme.detail = data.object(forKey: "detail") as? String
+		meme.image = data.object(forKey: "image") as? String
+		meme.imageURL = URL(string: meme.image!)
+		meme.thumb = data.object(forKey: "thumb") as? String
+		meme.rank = data.object(forKey: "rank") as! Int32
 	
 		return meme
 		
 	}
 	
-	class func getAllMemesFromArray(array: NSArray, context: NSManagedObjectContext) -> NSArray? {
+	class func getAllMemesFromArray(_ array: NSArray, context: NSManagedObjectContext) -> NSArray? {
 		
 		let memesArray: NSMutableArray = NSMutableArray()
 		
 		for dict in array {
 			
 			let meme = self.createOrUpdateMemeWithData(dict as! NSDictionary, context: context)
-			memesArray.addObject(meme)
+			memesArray.add(meme)
 			
 		}
 		
